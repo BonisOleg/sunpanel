@@ -168,8 +168,90 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
+    // Capacity Video
+    window.CapacityVideo = {
+        init: function () {
+            this.video = document.getElementById('capacity-video');
+            this.hasPlayed = false; // Флаг для відстеження відтворення
+
+            if (!this.video) {
+                console.warn('Capacity video element not found');
+                return;
+            }
+            console.log('Capacity video element found:', this.video);
+
+            this.setupVideo();
+        },
+
+        setupVideo: function () {
+            // Налаштування для iOS Safari
+            if (window.AppGlobals.isIOS) {
+                this.video.setAttribute('playsinline', '');
+                this.video.setAttribute('webkit-playsinline', '');
+                console.log('iOS video attributes set for capacity video');
+            }
+
+            // Автозапуск відео коли у viewport
+            if (typeof IntersectionObserver !== 'undefined') {
+                console.log('Setting up IntersectionObserver for capacity video');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            if (!this.hasPlayed) {
+                                console.log('Capacity video is in viewport for first time');
+                                this.playVideo();
+                            } else {
+                                // Якщо відео вже програвалося, встановлюємо останній кадр
+                                console.log('Capacity video returning to viewport, setting last frame');
+                                this.setToLastFrame();
+                            }
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                observer.observe(this.video);
+            }
+
+            // Зупинка відео на останньому кадрі
+            this.video.addEventListener('ended', () => {
+                console.log('Capacity video ended, setting to last frame');
+                this.video.currentTime = this.video.duration;
+            });
+
+            // Додаємо обробник для встановлення останнього кадру після завантаження метаданих
+            this.video.addEventListener('loadedmetadata', () => {
+                if (this.hasPlayed) {
+                    console.log('Capacity video metadata loaded, setting to last frame');
+                    this.setToLastFrame();
+                }
+            });
+        },
+
+        playVideo: function () {
+            if (this.video.paused && !this.hasPlayed) {
+                this.hasPlayed = true; // Встановлюємо флаг
+                console.log('Attempting to play capacity video (first time only)');
+                const playPromise = this.video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.warn('Capacity video autoplay prevented:', error);
+                    });
+                }
+            }
+        },
+
+        setToLastFrame: function () {
+            // Встановлюємо останній кадр
+            if (this.video.duration && this.video.duration > 0) {
+                this.video.currentTime = this.video.duration;
+                console.log('Capacity video set to last frame');
+            }
+        }
+    };
+
     // Ініціалізація відео модулів
     console.log('Initializing video modules...');
     window.HeroVideo.init();
     window.ScrollVideo.init();
+    window.CapacityVideo.init();
 }); 

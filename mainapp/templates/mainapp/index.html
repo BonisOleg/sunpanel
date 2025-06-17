@@ -163,6 +163,13 @@
 
         <!-- Capacity Section -->
         <section class="capacity" id="capacity">
+            <div class="capacity__video-container">
+                <video class="capacity__video" id="capacity-video" preload="metadata" muted playsinline
+                    webkit-playsinline>
+                    <source src="{% static 'videos/capacity-video.mp4' %}" type="video/mp4">
+                </video>
+                <div class="capacity__overlay"></div>
+            </div>
             <div class="capacity__container">
                 <div class="capacity__header">
                     <h2 class="capacity__title section-title">Наші потужності</h2>
