@@ -323,6 +323,18 @@
     .capacity__subtitle {
         font-size: var(--font-size-sm);
     }
+
+    /* Tablet Glass - проміжний розмір */
+    .capacity__glass-container {
+        padding: 12% 10%;
+    }
+
+    .capacity__glass-backdrop {
+        top: 12%;
+        left: 10%;
+        right: 10%;
+        bottom: 12%;
+    }
 }
 
 /* High DPI Displays */

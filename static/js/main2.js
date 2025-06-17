@@ -181,6 +181,8 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Capacity video element found:', this.video);
 
             this.setupVideo();
+            // Показуємо glass блок одразу при ініціалізації
+            this.showGlassEffect();
         },
 
         setupVideo: function () {
@@ -235,18 +237,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 const playPromise = this.video.play();
                 if (playPromise !== undefined) {
                     playPromise.then(() => {
-                        // Показуємо glass блок через 1 секунду після початку відео
-                        setTimeout(() => {
-                            this.showGlassEffect();
-                        }, 1000);
+                        // Показуємо glass блок одразу без паузи
+                        this.showGlassEffect();
                     }).catch(error => {
                         console.warn('Capacity video autoplay prevented:', error);
+                        // Все одно показуємо glass навіть якщо відео не запустилось
+                        this.showGlassEffect();
                     });
                 } else {
                     // Fallback для старих браузерів
-                    setTimeout(() => {
-                        this.showGlassEffect();
-                    }, 1000);
+                    this.showGlassEffect();
                 }
             }
         },

@@ -332,10 +332,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg,
+    background: linear-gradient(45deg,
             rgba(43, 90, 49, 0.85) 0%,
-            rgba(74, 130, 87, 0.7) 50%,
-            rgba(43, 90, 49, 0.85) 100%);
+            rgba(255, 107, 53, 0.2) 100%);
     z-index: 2;
 }
 
@@ -376,32 +375,7 @@
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
     border: 2px solid transparent;
-}
-
-.capacity__stat-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 60px rgba(255, 107, 53, 0.15);
-    border-color: rgba(255, 107, 53, 0.2);
-}
-
-.capacity__stat-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--primary-gradient);
-    transform: scaleX(0);
-    transition: transform var(--transition-slow);
-}
-
-.capacity__stat-card:hover::before {
-    transform: scaleX(1);
 }
 
 .stat-card__icon {
@@ -453,15 +427,8 @@
     background: var(--text-white);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(43, 90, 49, 0.15);
-    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     border: 2px solid transparent;
-}
-
-.capacity__photo-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 50px rgba(43, 90, 49, 0.25);
-    border-color: rgba(43, 90, 49, 0.3);
 }
 
 .capacity__photo {
@@ -474,12 +441,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
-    cursor: pointer;
-}
-
-.capacity__photo-card:hover .capacity__photo img {
-    transform: scale(1.1);
 }
 
 /* Liquid Glass Effect */
@@ -491,41 +452,98 @@
     height: 100%;
     z-index: 4;
     opacity: 0;
+    filter: blur(8px);
     transform: scale(0.95);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: all 0.8s ease-out;
     pointer-events: none;
 
-    /* Desktop падінги 15% */
-    padding: 15% 15%;
+    /* Desktop падінги 8% - ширший блок */
+    padding: 8% 8%;
     box-sizing: border-box;
 }
 
 .capacity__glass-container.show {
     opacity: 1;
+    filter: blur(0px);
     transform: scale(1);
     pointer-events: auto;
 }
 
 .capacity__glass-backdrop {
     position: absolute;
-    top: 15%;
-    left: 15%;
-    right: 15%;
-    bottom: 15%;
+    top: 8%;
+    left: 8%;
+    right: 8%;
+    bottom: 8%;
 
-    /* Liquid Glass ефект */
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px) saturate(180%) brightness(110%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(110%);
-
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Фоллбек без backdrop-filter - одразу матовий */
+    background: rgba(255, 255, 255, 0.42);
+    border: 1px solid rgba(255, 255, 255, 0.49);
     border-radius: 24px;
-
-    /* Інсет тіні для глибини */
     box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.1),
-        inset 0 2px 8px rgba(255, 255, 255, 0.3),
-        inset 0 -2px 4px rgba(255, 255, 255, 0.1);
+        0 8px 32px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Додаємо текстуру і для фоллбеку */
+.capacity__glass-backdrop::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E");
+    background-size: 150px 150px;
+    background-repeat: repeat;
+    opacity: 0.14;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* Якщо backdrop-filter підтримується */
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+    .capacity__glass-backdrop {
+        background: rgba(255, 255, 255, 0.105);
+        backdrop-filter: blur(20px) saturate(180%) brightness(110%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(110%);
+        border: 1px solid rgba(255, 255, 255, 0.21);
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.25),
+            0 2px 8px rgba(0, 0, 0, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.56),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.28),
+            inset 1px 0 0 rgba(255, 255, 255, 0.21),
+            inset -1px 0 0 rgba(255, 255, 255, 0.21),
+            inset 0 0 15px 3px rgba(255, 255, 255, 0.056);
+    }
+
+    /* Оновлюємо текстуру для backdrop-filter */
+    .capacity__glass-backdrop::before {
+        opacity: 0.245;
+        mix-blend-mode: overlay;
+    }
+
+    /* Додаємо тонкий рефлекс */
+    .capacity__glass-backdrop::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.42) 0%,
+                rgba(255, 255, 255, 0.07) 15%,
+                transparent 30%,
+                transparent 70%,
+                rgba(255, 255, 255, 0.056) 85%,
+                rgba(255, 255, 255, 0.21) 100%);
+        border-radius: inherit;
+        pointer-events: none;
+    }
 }
 
 .capacity__glass-content {
@@ -538,4 +556,28 @@
     justify-content: center;
     padding: 2rem;
     color: var(--text-white);
+}
+
+/* Mobile адаптація */
+@media (max-width: 768px) {
+    .capacity__glass-container {
+        /* Mobile падінги 5% по боках, 10% згори/знизу */
+        padding: 10% 5%;
+    }
+
+    .capacity__glass-backdrop {
+        top: 10%;
+        left: 5%;
+        right: 5%;
+        bottom: 10%;
+        border-radius: 20px;
+    }
+
+    .capacity__glass-content {
+        padding: 1.5rem;
+    }
+
+    .capacity__glass-backdrop::before {
+        background-size: 120px 120px;
+    }
 }
