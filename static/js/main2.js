@@ -201,9 +201,10 @@ document.addEventListener('DOMContentLoaded', function () {
                                 console.log('Capacity video is in viewport for first time');
                                 this.playVideo();
                             } else {
-                                // Якщо відео вже програвалося, встановлюємо останній кадр
+                                // Якщо відео вже програвалося, встановлюємо останній кадр і показуємо glass
                                 console.log('Capacity video returning to viewport, setting last frame');
                                 this.setToLastFrame();
+                                this.showGlassEffect();
                             }
                         }
                     });
@@ -233,10 +234,28 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log('Attempting to play capacity video (first time only)');
                 const playPromise = this.video.play();
                 if (playPromise !== undefined) {
-                    playPromise.catch(error => {
+                    playPromise.then(() => {
+                        // Показуємо glass блок через 1 секунду після початку відео
+                        setTimeout(() => {
+                            this.showGlassEffect();
+                        }, 1000);
+                    }).catch(error => {
                         console.warn('Capacity video autoplay prevented:', error);
                     });
+                } else {
+                    // Fallback для старих браузерів
+                    setTimeout(() => {
+                        this.showGlassEffect();
+                    }, 1000);
                 }
+            }
+        },
+
+        showGlassEffect: function () {
+            const glassContainer = document.getElementById('capacity-glass');
+            if (glassContainer) {
+                glassContainer.classList.add('show');
+                console.log('Capacity glass effect shown');
             }
         },
 

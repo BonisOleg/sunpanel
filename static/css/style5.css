@@ -166,6 +166,24 @@
         font-size: var(--font-size-sm);
     }
 
+    /* Liquid Glass Mobile */
+    .capacity__glass-container {
+        /* Мобільна версія: 5% по боках, 10% згори/знизу */
+        padding: 10% 5%;
+    }
+
+    .capacity__glass-backdrop {
+        top: 10%;
+        left: 5%;
+        right: 5%;
+        bottom: 10%;
+        border-radius: 16px;
+    }
+
+    .capacity__glass-content {
+        padding: 1rem;
+    }
+
     /* Types Mobile */
     .types__grid {
         grid-template-columns: 1fr;
@@ -239,6 +257,18 @@
         transform: translateZ(0);
         -webkit-object-fit: cover;
         object-fit: cover;
+    }
+
+    /* Liquid Glass iOS Safari підтримка */
+    .capacity__glass-backdrop {
+        -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(110%);
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    .capacity__glass-container {
+        /* iOS Safari падінги */
+        padding: 10% 5%;
     }
 
     .nav {

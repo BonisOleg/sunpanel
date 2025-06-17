@@ -170,53 +170,60 @@
                 </video>
                 <div class="capacity__overlay"></div>
             </div>
-            <div class="capacity__container">
-                <div class="capacity__header">
-                    <h2 class="capacity__title section-title">Наші потужності</h2>
-                    <p class="capacity__subtitle">Сучасне виробництво європейського рівня з повним циклом контролю
-                        якості</p>
-                </div>
+            <!-- Liquid Glass блок -->
+            <div class="capacity__glass-container" id="capacity-glass">
+                <div class="capacity__glass-backdrop"></div>
+                <div class="capacity__glass-content">
+                    <div class="capacity__header">
+                        <h2 class="capacity__title section-title">Наші потужності</h2>
+                        <p class="capacity__subtitle">Сучасне виробництво європейського рівня з повним циклом
+                            контролю якості</p>
+                    </div>
 
-                <!-- Статистика потужностей -->
-                <div class="capacity__stats-grid">
-                    <div class="capacity__stat-card">
-                        <div class="stat-card__icon">🏭</div>
-                        <div class="stat-card__number capacity-counter"
-                            data-target="{{ company_info.production_capacity }}">0</div>
-                        <div class="stat-card__label">тонн / місяць</div>
-                        <div class="stat-card__description">Виробнича потужність</div>
-                    </div>
-                    <div class="capacity__stat-card">
-                        <div class="stat-card__icon">🏢</div>
-                        <div class="stat-card__number capacity-counter" data-target="{{ company_info.storage_area }}">0
+                    <!-- Статистика потужностей -->
+                    <div class="capacity__stats-grid">
+                        <div class="capacity__stat-card">
+                            <div class="stat-card__icon">🏭</div>
+                            <div class="stat-card__number capacity-counter"
+                                data-target="{{ company_info.production_capacity }}">0</div>
+                            <div class="stat-card__label">тонн / місяць</div>
+                            <div class="stat-card__description">Виробнича потужність</div>
                         </div>
-                        <div class="stat-card__label">м² складів</div>
-                        <div class="stat-card__description">Складська площа</div>
+                        <div class="capacity__stat-card">
+                            <div class="stat-card__icon">🏢</div>
+                            <div class="stat-card__number capacity-counter"
+                                data-target="{{ company_info.storage_area }}">0</div>
+                            <div class="stat-card__label">м² складів</div>
+                            <div class="stat-card__description">Складська площа</div>
+                        </div>
+                        <div class="capacity__stat-card">
+                            <div class="stat-card__icon">📦</div>
+                            <div class="stat-card__number capacity-counter"
+                                data-target="{{ company_info.stock_capacity }}">0</div>
+                            <div class="stat-card__label">тонн запасу</div>
+                            <div class="stat-card__description">Складські запаси</div>
+                        </div>
                     </div>
-                    <div class="capacity__stat-card">
-                        <div class="stat-card__icon">📦</div>
-                        <div class="stat-card__number capacity-counter" data-target="{{ company_info.stock_capacity }}">
-                            0</div>
-                        <div class="stat-card__label">тонн запасу</div>
-                        <div class="stat-card__description">Складські запаси</div>
-                    </div>
-                </div>
 
-                <!-- Фото блоки -->
-                <div class="capacity__photos">
-                    <div class="capacity__photo-card">
-                        <div class="capacity__photo">
-                            <img src="{% static 'images/warehouse.jpg' %}" alt="Склад готової продукції" loading="lazy">
+                    <!-- Фото блоки -->
+                    <div class="capacity__photos">
+                        <div class="capacity__photo-card">
+                            <div class="capacity__photo">
+                                <img src="{% static 'images/warehouse.jpg' %}" alt="Склад готової продукції"
+                                    loading="lazy">
+                            </div>
                         </div>
-                    </div>
-                    <div class="capacity__photo-card">
-                        <div class="capacity__photo">
-                            <img src="{% static 'images/production-line.jpg' %}" alt="Виробнича лінія" loading="lazy">
+                        <div class="capacity__photo-card">
+                            <div class="capacity__photo">
+                                <img src="{% static 'images/production-line.jpg' %}" alt="Виробнича лінія"
+                                    loading="lazy">
+                            </div>
                         </div>
-                    </div>
-                    <div class="capacity__photo-card">
-                        <div class="capacity__photo">
-                            <img src="{% static 'images/quality-control.jpg' %}" alt="Контроль якості" loading="lazy">
+                        <div class="capacity__photo-card">
+                            <div class="capacity__photo">
+                                <img src="{% static 'images/quality-control.jpg' %}" alt="Контроль якості"
+                                    loading="lazy">
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -339,18 +339,7 @@
     z-index: 2;
 }
 
-.capacity__container {
-    position: relative;
-    z-index: 3;
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    width: 100%;
-}
+
 
 .capacity__header {
     text-align: center;
@@ -491,4 +480,62 @@
 
 .capacity__photo-card:hover .capacity__photo img {
     transform: scale(1.1);
+}
+
+/* Liquid Glass Effect */
+.capacity__glass-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    pointer-events: none;
+
+    /* Desktop падінги 15% */
+    padding: 15% 15%;
+    box-sizing: border-box;
+}
+
+.capacity__glass-container.show {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.capacity__glass-backdrop {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    right: 15%;
+    bottom: 15%;
+
+    /* Liquid Glass ефект */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(180%) brightness(110%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(110%);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+
+    /* Інсет тіні для глибини */
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 2px 8px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.capacity__glass-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    color: var(--text-white);
 }
