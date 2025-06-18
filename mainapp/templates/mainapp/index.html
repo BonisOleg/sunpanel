@@ -91,9 +91,9 @@
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#about" class="nav__link">Про нас</a></li>
                     <li class="nav__item"><a href="#capacity" class="nav__link">Потужності</a></li>
-                    <li class="nav__item"><a href="#types" class="nav__link">Типи пелет</a></li>
                     <li class="nav__item"><a href="#advantages" class="nav__link">Переваги</a></li>
                     <li class="nav__item"><a href="#production" class="nav__link">Виробництво</a></li>
+                    <li class="nav__item"><a href="#types" class="nav__link">Типи пелет</a></li>
                     <li class="nav__item"><a href="#contacts" class="nav__link">Контакти</a></li>
                 </ul>
             </div>
@@ -230,8 +230,25 @@
             </div>
         </section>
 
-        <!-- Scroll Video Section -->
-        <section class="scroll-video" id="scroll-video">
+        <!-- Advantages Section -->
+        <section class="advantages" id="advantages">
+            <div class="advantages__container">
+                <h2 class="advantages__title section-title">Переваги наших пелет</h2>
+                <div class="advantages__grid">
+                    {% for advantage in advantages %}
+                    <div class="advantages__card advantage-card">
+                        <div class="advantage-card__icon">{{ advantage.icon }}</div>
+                        <h3 class="advantage-card__title">{{ advantage.title }}</h3>
+                        <p class="advantage-card__description">{{ advantage.description }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="advantages__bg-animation"></div>
+        </section>
+
+        <!-- Production Process Section -->
+        <section class="scroll-video" id="production">
             <div class="scroll-video__video-container">
                 <video class="scroll-video__video" id="scroll-video-element" preload="metadata" muted playsinline
                     webkit-playsinline>
@@ -241,12 +258,53 @@
             </div>
             <div class="scroll-video__content">
                 <div class="scroll-video__container">
-                    <h2 class="scroll-video__title">
-                        <span class="scroll-video__line">Вогонь ефективності.</span>
-                        <span class="scroll-video__line">Чистота природи.</span>
-                        <span class="scroll-video__line">Вибір розумних.</span>
-                    </h2>
+                    <h2 class="production__title section-title">Виробничий процес</h2>
+                    <div class="production__snake-layout">
+                        <!-- Статистика виробничого процесу -->
+                        <div class="capacity__stats-grid">
+                            {% for stage in production_stages %}
+                            {% if stage.step <= 3 %} <div class="capacity__stat-card production-card">
+                                <div class="production-number-circle">
+                                    <div class="production-number">{{ stage.step }}</div>
+                                </div>
+                                <div class="stat-card__label">{{ stage.title }}</div>
+                                <div class="stat-card__description">{{ stage.description }}</div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    <!-- Другий ряд статистики -->
+                    <div class="capacity__stats-grid">
+                        {% for stage in production_stages %}
+                        {% if stage.step >= 4 and stage.step <= 6 %} <div class="capacity__stat-card production-card">
+                            <div class="production-number-circle">
+                                <div class="production-number">{{ stage.step }}</div>
+                            </div>
+                            <div class="stat-card__label">{{ stage.title }}</div>
+                            <div class="stat-card__description">{{ stage.description }}</div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
+
+                <!-- Третій ряд статистики -->
+                <div class="capacity__stats-grid" style="justify-content: center;">
+                    {% for stage in production_stages %}
+                    {% if stage.step == 7 %}
+                    <div class="capacity__stat-card production-card">
+                        <div class="production-number-circle">
+                            <div class="production-number">{{ stage.step }}</div>
+                        </div>
+                        <div class="stat-card__label">{{ stage.title }}</div>
+                        <div class="stat-card__description">{{ stage.description }}</div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+
+
+            </div>
             </div>
         </section>
 
@@ -289,41 +347,7 @@
             </div>
         </section>
 
-        <!-- Advantages Section -->
-        <section class="advantages" id="advantages">
-            <div class="advantages__container">
-                <h2 class="advantages__title section-title">Переваги наших пелет</h2>
-                <div class="advantages__grid">
-                    {% for advantage in advantages %}
-                    <div class="advantages__card advantage-card">
-                        <div class="advantage-card__icon">{{ advantage.icon }}</div>
-                        <h3 class="advantage-card__title">{{ advantage.title }}</h3>
-                        <p class="advantage-card__description">{{ advantage.description }}</p>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="advantages__bg-animation"></div>
-        </section>
 
-        <!-- Production Process Section -->
-        <section class="production" id="production">
-            <div class="production__container">
-                <h2 class="production__title section-title">Виробничий процес</h2>
-                <div class="production__timeline timeline">
-                    <div class="timeline__line" id="timeline-line"></div>
-                    {% for stage in production_stages %}
-                    <div class="timeline__item timeline-item" data-step="{{ stage.step }}">
-                        <div class="timeline-item__number">{{ stage.step }}</div>
-                        <div class="timeline-item__content">
-                            <h3 class="timeline-item__title">{{ stage.title }}</h3>
-                            <p class="timeline-item__description">{{ stage.description }}</p>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
 
         <!-- Fuel Comparison Section -->
         <section class="comparison" id="comparison">

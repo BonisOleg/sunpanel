@@ -430,7 +430,7 @@
     width: 30px;
     height: 30px;
     background: var(--primary-gradient);
-    border-radius: 50%;
+    border-radius: 52.5%;
     display: flex;
     align-items: center;
     justify-content: center;

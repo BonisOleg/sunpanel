@@ -4,12 +4,33 @@
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
 
-    // Hero Video
+    // Спільна логіка для всіх відео
+    const VideoBase = {
+        setupIOS: function (video) {
+            if (window.AppGlobals && window.AppGlobals.isIOS) {
+                video.setAttribute('playsinline', '');
+                video.setAttribute('webkit-playsinline', '');
+            }
+        },
+
+        setToLastFrame: function (video) {
+            if (video.duration && video.duration > 0) {
+                video.currentTime = video.duration;
+            }
+        },
+
+        createObserver: function (callback, threshold = 0.5) {
+            if (typeof IntersectionObserver === 'undefined') return null;
+            return new IntersectionObserver(callback, { threshold });
+        }
+    };
+
+    // Hero Video - Оптимізовано
     window.HeroVideo = {
         init: function () {
             this.video = document.getElementById('hero-video');
             this.heroBtn = document.getElementById('hero-btn');
-            this.hasPlayed = false; // Флаг для відстеження відтворення
+            this.hasPlayed = false;
 
             if (!this.video) return;
 
@@ -18,47 +39,32 @@ document.addEventListener('DOMContentLoaded', function () {
         },
 
         setupVideo: function () {
-            // Налаштування для iOS Safari
-            if (window.AppGlobals.isIOS) {
-                this.video.setAttribute('playsinline', '');
-                this.video.setAttribute('webkit-playsinline', '');
-            }
+            VideoBase.setupIOS(this.video);
 
-            // Автозапуск відео коли у viewport
-            if (typeof IntersectionObserver !== 'undefined') {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            if (!this.hasPlayed) {
-                                this.playVideo();
-                            } else {
-                                // Якщо відео вже програвалося, встановлюємо останній кадр
-                                this.setToLastFrame();
-                            }
+            const observer = VideoBase.createObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (!this.hasPlayed) {
+                            this.playVideo();
+                        } else {
+                            VideoBase.setToLastFrame(this.video);
                         }
-                    });
-                }, { threshold: 0.5 });
+                    }
+                });
+            });
 
-                observer.observe(this.video);
-            }
+            if (observer) observer.observe(this.video);
         },
 
         playVideo: function () {
             if (this.video.paused && !this.hasPlayed) {
-                this.hasPlayed = true; // Встановлюємо флаг
+                this.hasPlayed = true;
                 const playPromise = this.video.play();
                 if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        console.log('Video autoplay prevented:', error);
+                    playPromise.catch(() => {
+                        // Мовчки обробляємо помилку автоплею
                     });
                 }
-            }
-        },
-
-        setToLastFrame: function () {
-            // Встановлюємо останній кадр
-            if (this.video.duration && this.video.duration > 0) {
-                this.video.currentTime = this.video.duration;
             }
         },
 
@@ -67,185 +73,131 @@ document.addEventListener('DOMContentLoaded', function () {
             if (this.heroBtn) {
                 this.heroBtn.addEventListener('click', () => {
                     const aboutSection = document.getElementById('about');
-                    if (aboutSection) {
+                    if (aboutSection && window.AppUtils) {
                         window.AppUtils.scrollTo(aboutSection);
                     }
                 });
             }
 
-            // Зупинка відео на останньому кадрі
+            // Події відео
             this.video.addEventListener('ended', () => {
-                this.video.currentTime = this.video.duration;
+                VideoBase.setToLastFrame(this.video);
             });
 
-            // Додаємо обробник для встановлення останнього кадру після завантаження метаданих
             this.video.addEventListener('loadedmetadata', () => {
                 if (this.hasPlayed) {
-                    this.setToLastFrame();
+                    VideoBase.setToLastFrame(this.video);
                 }
             });
         }
     };
 
-    // Scroll Video
+    // Scroll Video - Оптимізовано
     window.ScrollVideo = {
         init: function () {
             this.video = document.getElementById('scroll-video-element');
-            this.hasPlayed = false; // Флаг для відстеження відтворення
+            this.hasPlayed = false;
 
-            if (!this.video) {
-                console.warn('Scroll video element not found');
-                return;
-            }
-            console.log('Scroll video element found:', this.video);
-
+            if (!this.video) return;
             this.setupVideo();
         },
 
         setupVideo: function () {
-            // Налаштування для iOS Safari
-            if (window.AppGlobals.isIOS) {
-                this.video.setAttribute('playsinline', '');
-                this.video.setAttribute('webkit-playsinline', '');
-                console.log('iOS video attributes set');
-            }
+            VideoBase.setupIOS(this.video);
 
-            // Автозапуск відео коли у viewport
-            if (typeof IntersectionObserver !== 'undefined') {
-                console.log('Setting up IntersectionObserver for scroll video');
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            if (!this.hasPlayed) {
-                                console.log('Scroll video is in viewport for first time');
-                                this.playVideo();
-                            } else {
-                                // Якщо відео вже програвалося, встановлюємо останній кадр
-                                console.log('Scroll video returning to viewport, setting last frame');
-                                this.setToLastFrame();
-                            }
+            const observer = VideoBase.createObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (!this.hasPlayed) {
+                            this.playVideo();
+                        } else {
+                            VideoBase.setToLastFrame(this.video);
                         }
-                    });
-                }, { threshold: 0.5 });
-
-                observer.observe(this.video);
-            }
-
-            // Зупинка відео на останньому кадрі
-            this.video.addEventListener('ended', () => {
-                console.log('Scroll video ended, setting to last frame');
-                this.video.currentTime = this.video.duration;
+                    }
+                });
             });
 
-            // Додаємо обробник для встановлення останнього кадру після завантаження метаданих
+            if (observer) observer.observe(this.video);
+
+            // Події відео
+            this.video.addEventListener('ended', () => {
+                VideoBase.setToLastFrame(this.video);
+            });
+
             this.video.addEventListener('loadedmetadata', () => {
                 if (this.hasPlayed) {
-                    console.log('Scroll video metadata loaded, setting to last frame');
-                    this.setToLastFrame();
+                    VideoBase.setToLastFrame(this.video);
                 }
             });
         },
 
         playVideo: function () {
             if (this.video.paused && !this.hasPlayed) {
-                this.hasPlayed = true; // Встановлюємо флаг
-                console.log('Attempting to play scroll video (first time only)');
+                this.hasPlayed = true;
                 const playPromise = this.video.play();
                 if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        console.warn('Scroll video autoplay prevented:', error);
+                    playPromise.catch(() => {
+                        // Мовчки обробляємо помилку автоплею
                     });
                 }
-            }
-        },
-
-        setToLastFrame: function () {
-            // Встановлюємо останній кадр
-            if (this.video.duration && this.video.duration > 0) {
-                this.video.currentTime = this.video.duration;
-                console.log('Scroll video set to last frame');
             }
         }
     };
 
-    // Capacity Video
+    // Capacity Video - Оптимізовано
     window.CapacityVideo = {
         init: function () {
             this.video = document.getElementById('capacity-video');
-            this.hasPlayed = false; // Флаг для відстеження відтворення
+            this.hasPlayed = false;
 
-            if (!this.video) {
-                console.warn('Capacity video element not found');
-                return;
-            }
-            console.log('Capacity video element found:', this.video);
+            if (!this.video) return;
 
             this.setupVideo();
-            // Показуємо glass блок одразу при ініціалізації
+            // Показуємо glass одразу
             this.showGlassEffect();
         },
 
         setupVideo: function () {
-            // Налаштування для iOS Safari
-            if (window.AppGlobals.isIOS) {
-                this.video.setAttribute('playsinline', '');
-                this.video.setAttribute('webkit-playsinline', '');
-                console.log('iOS video attributes set for capacity video');
-            }
+            VideoBase.setupIOS(this.video);
 
-            // Автозапуск відео коли у viewport
-            if (typeof IntersectionObserver !== 'undefined') {
-                console.log('Setting up IntersectionObserver for capacity video');
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            if (!this.hasPlayed) {
-                                console.log('Capacity video is in viewport for first time');
-                                this.playVideo();
-                            } else {
-                                // Якщо відео вже програвалося, встановлюємо останній кадр і показуємо glass
-                                console.log('Capacity video returning to viewport, setting last frame');
-                                this.setToLastFrame();
-                                this.showGlassEffect();
-                            }
+            const observer = VideoBase.createObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (!this.hasPlayed) {
+                            this.playVideo();
+                        } else {
+                            VideoBase.setToLastFrame(this.video);
+                            this.showGlassEffect();
                         }
-                    });
-                }, { threshold: 0.5 });
-
-                observer.observe(this.video);
-            }
-
-            // Зупинка відео на останньому кадрі
-            this.video.addEventListener('ended', () => {
-                console.log('Capacity video ended, setting to last frame');
-                this.video.currentTime = this.video.duration;
+                    }
+                });
             });
 
-            // Додаємо обробник для встановлення останнього кадру після завантаження метаданих
+            if (observer) observer.observe(this.video);
+
+            // Події відео
+            this.video.addEventListener('ended', () => {
+                VideoBase.setToLastFrame(this.video);
+            });
+
             this.video.addEventListener('loadedmetadata', () => {
                 if (this.hasPlayed) {
-                    console.log('Capacity video metadata loaded, setting to last frame');
-                    this.setToLastFrame();
+                    VideoBase.setToLastFrame(this.video);
                 }
             });
         },
 
         playVideo: function () {
             if (this.video.paused && !this.hasPlayed) {
-                this.hasPlayed = true; // Встановлюємо флаг
-                console.log('Attempting to play capacity video (first time only)');
+                this.hasPlayed = true;
                 const playPromise = this.video.play();
                 if (playPromise !== undefined) {
                     playPromise.then(() => {
-                        // Показуємо glass блок одразу без паузи
                         this.showGlassEffect();
-                    }).catch(error => {
-                        console.warn('Capacity video autoplay prevented:', error);
-                        // Все одно показуємо glass навіть якщо відео не запустилось
+                    }).catch(() => {
                         this.showGlassEffect();
                     });
                 } else {
-                    // Fallback для старих браузерів
                     this.showGlassEffect();
                 }
             }
@@ -253,24 +205,131 @@ document.addEventListener('DOMContentLoaded', function () {
 
         showGlassEffect: function () {
             const glassContainer = document.getElementById('capacity-glass');
-            if (glassContainer) {
-                glassContainer.classList.add('show');
-                console.log('Capacity glass effect shown');
-            }
-        },
-
-        setToLastFrame: function () {
-            // Встановлюємо останній кадр
-            if (this.video.duration && this.video.duration > 0) {
-                this.video.currentTime = this.video.duration;
-                console.log('Capacity video set to last frame');
+            if (glassContainer && !glassContainer.classList.contains('show')) {
+                requestAnimationFrame(() => {
+                    glassContainer.classList.add('show');
+                });
             }
         }
     };
 
-    // Ініціалізація відео модулів
-    console.log('Initializing video modules...');
+    // Production Snake Animation
+    window.ProductionSnake = {
+        init: function () {
+            this.snakeItems = document.querySelectorAll('.snake-item');
+            this.snakeLines = document.querySelectorAll('.snake-line');
+            this.hasAnimated = false;
+
+            if (!this.snakeItems.length) return;
+
+            this.setupObserver();
+            this.addInitialStyles();
+        },
+
+        addInitialStyles: function () {
+            // Спочатку приховуємо всі елементи
+            this.snakeItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px) scale(0.9)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+
+            this.snakeLines.forEach(line => {
+                line.style.opacity = '0';
+                line.style.transform = 'scaleX(0)';
+                line.style.transformOrigin = 'left center';
+                line.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            });
+        },
+
+        setupObserver: function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !this.hasAnimated) {
+                        this.animateSnake();
+                        this.hasAnimated = true;
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            const productionSection = document.getElementById('production');
+            if (productionSection) {
+                observer.observe(productionSection);
+            }
+        },
+
+        animateSnake: function () {
+            // Анімуємо блоки по черзі
+            this.snakeItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0) scale(1)';
+                }, index * 200);
+            });
+
+            // Анімуємо лінії з затримкою
+            setTimeout(() => {
+                this.snakeLines.forEach((line, index) => {
+                    setTimeout(() => {
+                        line.style.opacity = '0.6';
+                        line.style.transform = 'scaleX(1)';
+                    }, index * 100);
+                });
+            }, this.snakeItems.length * 200 + 300);
+
+            // Додаємо hover ефекти після завершення анімації
+            setTimeout(() => {
+                this.addHoverEffects();
+            }, this.snakeItems.length * 200 + this.snakeLines.length * 100 + 500);
+        },
+
+        addHoverEffects: function () {
+            this.snakeItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    this.highlightPath(item);
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    this.resetHighlight();
+                });
+            });
+        },
+
+        highlightPath: function (item) {
+            const step = parseInt(item.dataset.step);
+
+            // Підсвітити поточний блок
+            item.style.transform = 'translateY(-8px) scale(1.05)';
+            item.style.boxShadow = '0 15px 40px rgba(255, 107, 53, 0.3)';
+
+            // Підсвітити пов'язані лінії
+            this.snakeLines.forEach(line => {
+                const lineClass = line.className;
+                if (lineClass.includes(`--${step}-`) || lineClass.includes(`-${step}`)) {
+                    line.style.opacity = '1';
+                    line.style.background = 'linear-gradient(90deg, #ff6b35, #f7931e)';
+                    line.style.height = '4px';
+                }
+            });
+        },
+
+        resetHighlight: function () {
+            this.snakeItems.forEach(item => {
+                item.style.transform = '';
+                item.style.boxShadow = '';
+            });
+
+            this.snakeLines.forEach(line => {
+                line.style.opacity = '0.6';
+                line.style.background = 'linear-gradient(90deg, var(--primary-color), var(--secondary-color))';
+                line.style.height = '3px';
+            });
+        }
+    };
+
+    // Ініціалізація модулів
     window.HeroVideo.init();
     window.ScrollVideo.init();
     window.CapacityVideo.init();
+    window.ProductionSnake.init();
 }); 
