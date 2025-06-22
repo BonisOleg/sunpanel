@@ -4,109 +4,62 @@
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
 
-    // Універсальна система для всіх відео
+    // Система відео - ОДИН РАЗ НА СЕСІЮ
     window.VideoSystem = {
-        videos: new Map(),
+        playedVideos: new Set(),
 
         init: function () {
-            // Ініціалізуємо всі відео
-            this.initVideo('hero-video', { playOnce: false });
-            this.initVideo('capacity-video', { playOnce: false, showGlass: true });
-            this.initVideo('production-video', { playOnce: false });
+            this.initVideo('hero-video');
+            this.initVideo('capacity-video', { showGlass: true });
+            this.initVideo('production-video');
         },
 
         initVideo: function (videoId, options = {}) {
             const video = document.getElementById(videoId);
             if (!video) return;
 
-            // Встановлюємо iOS-сумісність
-            if (window.AppGlobals && window.AppGlobals.isIOS) {
-                video.setAttribute('playsinline', '');
-                video.setAttribute('webkit-playsinline', '');
-            }
-
-            // Зберігаємо відео в системі
-            this.videos.set(videoId, {
-                element: video,
-                options: options,
-                isPlaying: false
-            });
-
-            // Створюємо observer для відео
-            this.createVideoObserver(videoId);
-        },
-
-        createVideoObserver: function (videoId) {
-            const videoData = this.videos.get(videoId);
-            if (!videoData) return;
+            video.setAttribute('playsinline', '');
+            video.setAttribute('webkit-playsinline', '');
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        this.playVideo(videoId);
-                    } else {
-                        this.pauseVideo(videoId);
+                    if (entry.isIntersecting && !this.playedVideos.has(videoId)) {
+                        this.playVideoOnce(videoId, options);
                     }
                 });
             }, { threshold: 0.3 });
 
-            observer.observe(videoData.element);
+            observer.observe(video);
         },
 
-        playVideo: function (videoId) {
-            const videoData = this.videos.get(videoId);
-            if (!videoData || videoData.isPlaying) return;
+        playVideoOnce: function (videoId, options) {
+            const video = document.getElementById(videoId);
+            if (!video || this.playedVideos.has(videoId)) return;
 
-            const video = videoData.element;
+            // Позначаємо як відтворене
+            this.playedVideos.add(videoId);
 
-            // Перезапускаємо відео з початку для плавного відтворення
-            video.currentTime = 0;
-
-            const playPromise = video.play();
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    videoData.isPlaying = true;
-
-                    // Показуємо glass ефект якщо потрібно
-                    if (videoData.options.showGlass) {
-                        this.showGlassEffect(videoId);
+            // Відтворюємо відео
+            video.play().then(() => {
+                if (options.showGlass) {
+                    const glassContainer = document.getElementById(videoId.replace('-video', '-glass'));
+                    if (glassContainer) {
+                        glassContainer.classList.add('show');
                     }
-                }).catch(() => {
-                    // Мовчки обробляємо помилку автоплею
-                    if (videoData.options.showGlass) {
-                        this.showGlassEffect(videoId);
+                }
+            }).catch(() => {
+                if (options.showGlass) {
+                    const glassContainer = document.getElementById(videoId.replace('-video', '-glass'));
+                    if (glassContainer) {
+                        glassContainer.classList.add('show');
                     }
-                });
-            }
-
-            // Обробляємо закінчення відео
-            video.addEventListener('ended', () => {
-                videoData.isPlaying = false;
-                // Залишаємо на останньому кадрі для плавності
-                if (video.duration && video.duration > 0) {
-                    video.currentTime = video.duration;
                 }
             });
-        },
 
-        pauseVideo: function (videoId) {
-            const videoData = this.videos.get(videoId);
-            if (!videoData) return;
-
-            const video = videoData.element;
-            if (!video.paused) {
-                video.pause();
-                videoData.isPlaying = false;
-            }
-        },
-
-        showGlassEffect: function (videoId) {
-            const glassContainer = document.getElementById(videoId.replace('-video', '-glass'));
-            if (glassContainer && !glassContainer.classList.contains('show')) {
-                requestAnimationFrame(() => {
-                    glassContainer.classList.add('show');
-                });
-            }
+            // Коли закінчується - зависає на останньому кадрі НАЗАВЖДИ
+            video.addEventListener('ended', () => {
+                video.currentTime = video.duration;
+            }, { once: true });
         }
     };
 
@@ -147,14 +100,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            // Для production використовуємо 'show' клас
-                            if (entry.target.id === 'production-glass') {
-                                entry.target.classList.add('show');
-                            } else {
-                                entry.target.classList.add('animate');
-                            }
-                        }, 200);
+                        // Для production використовуємо 'show' клас
+                        if (entry.target.id === 'production-glass') {
+                            entry.target.classList.add('show');
+                        } else {
+                            entry.target.classList.add('animate');
+                        }
                     }
                 });
             }, { threshold: 0.2 });

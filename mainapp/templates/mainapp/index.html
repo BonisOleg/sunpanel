@@ -295,8 +295,8 @@
         <!-- Production Process Section -->
         <section class="production" id="production">
             <div class="production__video-container">
-                <video class="production__video" id="production-video" preload="metadata" muted playsinline
-                    webkit-playsinline>
+                <video class="production__video" id="production-video" preload="none" muted playsinline
+                    webkit-playsinline loading="lazy">
                     <source src="{% static 'videos/scroll-video.mp4' %}" type="video/mp4">
                 </video>
             </div>
