@@ -771,11 +771,12 @@
 }
 
 .production__table th {
-    color: #333;
+    background: #000;
+    color: #fff;
     font-weight: 600;
     padding: 12px 8px;
     text-align: left;
-    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     text-transform: lowercase;
 }
 
