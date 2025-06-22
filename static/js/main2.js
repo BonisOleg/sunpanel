@@ -1,210 +1,107 @@
-// Arkuda Pellet Landing Page JavaScript - Частина 2
-// Hero та Scroll Video модулі
+// Arkuda Pellet - Відео та анімації
+// Оптимізована система для всіх відео
 
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
 
-    // Спільна логіка для всіх відео
-    const VideoBase = {
-        setupIOS: function (video) {
+    // Універсальна система для всіх відео
+    window.VideoSystem = {
+        videos: new Map(),
+
+        init: function () {
+            // Ініціалізуємо всі відео
+            this.initVideo('hero-video', { playOnce: false });
+            this.initVideo('capacity-video', { playOnce: false, showGlass: true });
+            this.initVideo('production-video', { playOnce: false });
+        },
+
+        initVideo: function (videoId, options = {}) {
+            const video = document.getElementById(videoId);
+            if (!video) return;
+
+            // Встановлюємо iOS-сумісність
             if (window.AppGlobals && window.AppGlobals.isIOS) {
                 video.setAttribute('playsinline', '');
                 video.setAttribute('webkit-playsinline', '');
             }
+
+            // Зберігаємо відео в системі
+            this.videos.set(videoId, {
+                element: video,
+                options: options,
+                isPlaying: false
+            });
+
+            // Створюємо observer для відео
+            this.createVideoObserver(videoId);
         },
 
-        setToLastFrame: function (video) {
-            if (video.duration && video.duration > 0) {
-                video.currentTime = video.duration;
-            }
-        },
+        createVideoObserver: function (videoId) {
+            const videoData = this.videos.get(videoId);
+            if (!videoData) return;
 
-        createObserver: function (callback, threshold = 0.5) {
-            if (typeof IntersectionObserver === 'undefined') return null;
-            return new IntersectionObserver(callback, { threshold });
-        }
-    };
-
-    // Hero Video - Оптимізовано
-    window.HeroVideo = {
-        init: function () {
-            this.video = document.getElementById('hero-video');
-            this.heroBtn = document.getElementById('hero-btn');
-            this.hasPlayed = false;
-
-            if (!this.video) return;
-
-            this.setupVideo();
-            this.bindEvents();
-        },
-
-        setupVideo: function () {
-            VideoBase.setupIOS(this.video);
-
-            const observer = VideoBase.createObserver((entries) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        if (!this.hasPlayed) {
-                            this.playVideo();
-                        } else {
-                            VideoBase.setToLastFrame(this.video);
-                        }
+                        this.playVideo(videoId);
+                    } else {
+                        this.pauseVideo(videoId);
                     }
                 });
-            });
+            }, { threshold: 0.3 });
 
-            if (observer) observer.observe(this.video);
+            observer.observe(videoData.element);
         },
 
-        playVideo: function () {
-            if (this.video.paused && !this.hasPlayed) {
-                this.hasPlayed = true;
-                const playPromise = this.video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(() => {
-                        // Мовчки обробляємо помилку автоплею
-                    });
+        playVideo: function (videoId) {
+            const videoData = this.videos.get(videoId);
+            if (!videoData || videoData.isPlaying) return;
+
+            const video = videoData.element;
+
+            // Перезапускаємо відео з початку для плавного відтворення
+            video.currentTime = 0;
+
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    videoData.isPlaying = true;
+
+                    // Показуємо glass ефект якщо потрібно
+                    if (videoData.options.showGlass) {
+                        this.showGlassEffect(videoId);
+                    }
+                }).catch(() => {
+                    // Мовчки обробляємо помилку автоплею
+                    if (videoData.options.showGlass) {
+                        this.showGlassEffect(videoId);
+                    }
+                });
+            }
+
+            // Обробляємо закінчення відео
+            video.addEventListener('ended', () => {
+                videoData.isPlaying = false;
+                // Залишаємо на останньому кадрі для плавності
+                if (video.duration && video.duration > 0) {
+                    video.currentTime = video.duration;
                 }
+            });
+        },
+
+        pauseVideo: function (videoId) {
+            const videoData = this.videos.get(videoId);
+            if (!videoData) return;
+
+            const video = videoData.element;
+            if (!video.paused) {
+                video.pause();
+                videoData.isPlaying = false;
             }
         },
 
-        bindEvents: function () {
-            // Кнопка прокрутки
-            if (this.heroBtn) {
-                this.heroBtn.addEventListener('click', () => {
-                    const aboutSection = document.getElementById('about');
-                    if (aboutSection && window.AppUtils) {
-                        window.AppUtils.scrollTo(aboutSection);
-                    }
-                });
-            }
-
-            // Події відео
-            this.video.addEventListener('ended', () => {
-                VideoBase.setToLastFrame(this.video);
-            });
-
-            this.video.addEventListener('loadedmetadata', () => {
-                if (this.hasPlayed) {
-                    VideoBase.setToLastFrame(this.video);
-                }
-            });
-        }
-    };
-
-    // Scroll Video - Оптимізовано
-    window.ScrollVideo = {
-        init: function () {
-            this.video = document.getElementById('scroll-video-element');
-            this.hasPlayed = false;
-
-            if (!this.video) return;
-            this.setupVideo();
-        },
-
-        setupVideo: function () {
-            VideoBase.setupIOS(this.video);
-
-            const observer = VideoBase.createObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (!this.hasPlayed) {
-                            this.playVideo();
-                        } else {
-                            VideoBase.setToLastFrame(this.video);
-                        }
-                    }
-                });
-            });
-
-            if (observer) observer.observe(this.video);
-
-            // Події відео
-            this.video.addEventListener('ended', () => {
-                VideoBase.setToLastFrame(this.video);
-            });
-
-            this.video.addEventListener('loadedmetadata', () => {
-                if (this.hasPlayed) {
-                    VideoBase.setToLastFrame(this.video);
-                }
-            });
-        },
-
-        playVideo: function () {
-            if (this.video.paused && !this.hasPlayed) {
-                this.hasPlayed = true;
-                const playPromise = this.video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(() => {
-                        // Мовчки обробляємо помилку автоплею
-                    });
-                }
-            }
-        }
-    };
-
-    // Capacity Video - Оптимізовано
-    window.CapacityVideo = {
-        init: function () {
-            this.video = document.getElementById('capacity-video');
-            this.hasPlayed = false;
-
-            if (!this.video) return;
-
-            this.setupVideo();
-            // Показуємо glass одразу
-            this.showGlassEffect();
-        },
-
-        setupVideo: function () {
-            VideoBase.setupIOS(this.video);
-
-            const observer = VideoBase.createObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (!this.hasPlayed) {
-                            this.playVideo();
-                        } else {
-                            VideoBase.setToLastFrame(this.video);
-                            this.showGlassEffect();
-                        }
-                    }
-                });
-            });
-
-            if (observer) observer.observe(this.video);
-
-            // Події відео
-            this.video.addEventListener('ended', () => {
-                VideoBase.setToLastFrame(this.video);
-            });
-
-            this.video.addEventListener('loadedmetadata', () => {
-                if (this.hasPlayed) {
-                    VideoBase.setToLastFrame(this.video);
-                }
-            });
-        },
-
-        playVideo: function () {
-            if (this.video.paused && !this.hasPlayed) {
-                this.hasPlayed = true;
-                const playPromise = this.video.play();
-                if (playPromise !== undefined) {
-                    playPromise.then(() => {
-                        this.showGlassEffect();
-                    }).catch(() => {
-                        this.showGlassEffect();
-                    });
-                } else {
-                    this.showGlassEffect();
-                }
-            }
-        },
-
-        showGlassEffect: function () {
-            const glassContainer = document.getElementById('capacity-glass');
+        showGlassEffect: function (videoId) {
+            const glassContainer = document.getElementById(videoId.replace('-video', '-glass'));
             if (glassContainer && !glassContainer.classList.contains('show')) {
                 requestAnimationFrame(() => {
                     glassContainer.classList.add('show');
@@ -213,46 +110,99 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // Production Snake Animation - Спрощена версія
-    window.ProductionSnake = {
+    // Hero кнопка прокрутки
+    window.HeroActions = {
         init: function () {
-            const productionSection = document.getElementById('production');
-            if (!productionSection) return;
-
-            // Спрощена анімація через CSS
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
+            const heroBtn = document.getElementById('hero-btn');
+            if (heroBtn) {
+                heroBtn.addEventListener('click', () => {
+                    const aboutSection = document.getElementById('about');
+                    if (aboutSection && window.AppUtils) {
+                        window.AppUtils.scrollTo(aboutSection);
                     }
                 });
-            }, { threshold: 0.3 });
-
-            observer.observe(productionSection);
+            }
         }
     };
 
-    // Ініціалізація модулів
-    window.HeroVideo.init();
-    window.ScrollVideo.init();
-    window.CapacityVideo.init();
-    window.ProductionSnake.init();
+    // Система анімацій для скляних блоків
+    window.GlassSystem = {
+        init: function () {
+            const glassContainers = [
+                'about',
+                'advantages-glass',
+                'production-glass',
+                'contacts-glass'
+            ];
 
-    // About section glass container animation
-    const aboutGlassContainer = document.getElementById('about-glass');
-
-    if (aboutGlassContainer) {
-        const aboutObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
+            glassContainers.forEach(containerId => {
+                this.animateGlassContainer(containerId);
             });
-        }, {
-            threshold: 0.2,
-            rootMargin: '0px 0px -50px 0px'
-        });
+        },
 
-        aboutObserver.observe(aboutGlassContainer);
-    }
+        animateGlassContainer: function (containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            // Для production використовуємо 'show' клас
+                            if (entry.target.id === 'production-glass') {
+                                entry.target.classList.add('show');
+                            } else {
+                                entry.target.classList.add('animate');
+                            }
+                        }, 200);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            observer.observe(container);
+        }
+    };
+
+    // Система лічильників
+    window.CounterSystem = {
+        init: function () {
+            const counters = document.querySelectorAll('.capacity-counter');
+
+            if (counters.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            this.animateCounter(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                counters.forEach(counter => observer.observe(counter));
+            }
+        },
+
+        animateCounter: function (element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            if (!target || target <= 0) return;
+
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 16);
+        }
+    };
+
+    // Ініціалізація всіх систем
+    window.VideoSystem.init();
+    window.HeroActions.init();
+    window.GlassSystem.init();
+    window.CounterSystem.init();
 }); 

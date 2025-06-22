@@ -264,11 +264,8 @@
         border-radius: 16px;
     }
 
-    .about__glass-content {
+    .about__glass-container {
         padding: 1rem;
-    }
-
-    .about__main-layout {
         flex-direction: column;
         gap: 1rem;
     }
@@ -613,7 +610,7 @@
         bottom: 12%;
     }
 
-    .about__main-layout {
+    .about__glass-container {
         flex-direction: column;
         gap: 1.5rem;
     }
@@ -1267,6 +1264,8 @@
         min-height: auto;
         border-radius: 20px;
     }
+
+
 
     .contacts__glass-content {
         padding: 40px 30px;

@@ -1,5 +1,5 @@
-// Arkuda Pellet Landing Page JavaScript - Частина 1
-// Утиліти та навігація
+// Arkuda Pellet - Оптимізований JavaScript
+// Навігація та базові утиліти
 
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
@@ -7,13 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Глобальні змінні
     window.AppGlobals = {
         isMobile: window.innerWidth <= 768,
-        isTablet: window.innerWidth <= 1024 && window.innerWidth > 768,
         isIOS: /iPad|iPhone|iPod/.test(navigator.userAgent)
     };
 
     // Утиліти
     window.AppUtils = {
-        // Throttle функція для оптимізації scroll подій
+        // Throttle для оптимізації scroll подій
         throttle: function (func, limit) {
             let inThrottle;
             return function () {
@@ -26,25 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         },
-
-        // Debounce функція для resize подій
-        debounce: function (func, wait, immediate) {
-            let timeout;
-            return function () {
-                const context = this;
-                const args = arguments;
-                const later = function () {
-                    timeout = null;
-                    if (!immediate) func.apply(context, args);
-                };
-                const callNow = immediate && !timeout;
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-                if (callNow) func.apply(context, args);
-            };
-        },
-
-
 
         // Smooth scroll до елемента
         scrollTo: function (element, duration = 1000) {
@@ -127,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.navToggle.classList.toggle('active');
             }
 
-            // Блокуємо scroll коли меню відкрите
             if (this.navMenu && this.navMenu.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
             } else {
