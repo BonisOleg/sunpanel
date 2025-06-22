@@ -213,117 +213,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // Production Snake Animation
+    // Production Snake Animation - Спрощена версія
     window.ProductionSnake = {
         init: function () {
-            this.snakeItems = document.querySelectorAll('.snake-item');
-            this.snakeLines = document.querySelectorAll('.snake-line');
-            this.hasAnimated = false;
+            const productionSection = document.getElementById('production');
+            if (!productionSection) return;
 
-            if (!this.snakeItems.length) return;
-
-            this.setupObserver();
-            this.addInitialStyles();
-        },
-
-        addInitialStyles: function () {
-            // Спочатку приховуємо всі елементи
-            this.snakeItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(30px) scale(0.9)';
-                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            });
-
-            this.snakeLines.forEach(line => {
-                line.style.opacity = '0';
-                line.style.transform = 'scaleX(0)';
-                line.style.transformOrigin = 'left center';
-                line.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-            });
-        },
-
-        setupObserver: function () {
+            // Спрощена анімація через CSS
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting && !this.hasAnimated) {
-                        this.animateSnake();
-                        this.hasAnimated = true;
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
                     }
                 });
             }, { threshold: 0.3 });
 
-            const productionSection = document.getElementById('production');
-            if (productionSection) {
-                observer.observe(productionSection);
-            }
-        },
-
-        animateSnake: function () {
-            // Анімуємо блоки по черзі
-            this.snakeItems.forEach((item, index) => {
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0) scale(1)';
-                }, index * 200);
-            });
-
-            // Анімуємо лінії з затримкою
-            setTimeout(() => {
-                this.snakeLines.forEach((line, index) => {
-                    setTimeout(() => {
-                        line.style.opacity = '0.6';
-                        line.style.transform = 'scaleX(1)';
-                    }, index * 100);
-                });
-            }, this.snakeItems.length * 200 + 300);
-
-            // Додаємо hover ефекти після завершення анімації
-            setTimeout(() => {
-                this.addHoverEffects();
-            }, this.snakeItems.length * 200 + this.snakeLines.length * 100 + 500);
-        },
-
-        addHoverEffects: function () {
-            this.snakeItems.forEach(item => {
-                item.addEventListener('mouseenter', () => {
-                    this.highlightPath(item);
-                });
-
-                item.addEventListener('mouseleave', () => {
-                    this.resetHighlight();
-                });
-            });
-        },
-
-        highlightPath: function (item) {
-            const step = parseInt(item.dataset.step);
-
-            // Підсвітити поточний блок
-            item.style.transform = 'translateY(-8px) scale(1.05)';
-            item.style.boxShadow = '0 15px 40px rgba(255, 107, 53, 0.3)';
-
-            // Підсвітити пов'язані лінії
-            this.snakeLines.forEach(line => {
-                const lineClass = line.className;
-                if (lineClass.includes(`--${step}-`) || lineClass.includes(`-${step}`)) {
-                    line.style.opacity = '1';
-                    line.style.background = 'linear-gradient(90deg, #ff6b35, #f7931e)';
-                    line.style.height = '4px';
-                }
-            });
-        },
-
-        resetHighlight: function () {
-            this.snakeItems.forEach(item => {
-                item.style.transform = '';
-                item.style.boxShadow = '';
-            });
-
-            this.snakeLines.forEach(line => {
-                line.style.opacity = '0.6';
-                line.style.background = 'linear-gradient(90deg, var(--primary-color), var(--secondary-color))';
-                line.style.height = '3px';
-            });
+            observer.observe(productionSection);
         }
     };
 
@@ -332,4 +237,22 @@ document.addEventListener('DOMContentLoaded', function () {
     window.ScrollVideo.init();
     window.CapacityVideo.init();
     window.ProductionSnake.init();
+
+    // About section glass container animation
+    const aboutGlassContainer = document.getElementById('about-glass');
+
+    if (aboutGlassContainer) {
+        const aboutObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        aboutObserver.observe(aboutGlassContainer);
+    }
 }); 

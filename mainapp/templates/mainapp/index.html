@@ -89,12 +89,11 @@
             </div>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#about" class="nav__link">Про нас</a></li>
-                    <li class="nav__item"><a href="#capacity" class="nav__link">Потужності</a></li>
-                    <li class="nav__item"><a href="#advantages" class="nav__link">Переваги</a></li>
-                    <li class="nav__item"><a href="#production" class="nav__link">Виробництво</a></li>
-                    <li class="nav__item"><a href="#types" class="nav__link">Типи пелет</a></li>
-                    <li class="nav__item"><a href="#contacts" class="nav__link">Контакти</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">про нас</a></li>
+                    <li class="nav__item"><a href="#capacity" class="nav__link">потужності</a></li>
+                    <li class="nav__item"><a href="#advantages" class="nav__link">переваги</a></li>
+                    <li class="nav__item"><a href="#production" class="nav__link">виробництво</a></li>
+                    <li class="nav__item"><a href="#contacts" class="nav__link">контакти</a></li>
                 </ul>
             </div>
             <div class="nav__toggle" id="nav-toggle">
@@ -138,24 +137,34 @@
 
         <!-- About Section -->
         <section class="about" id="about">
-            <div class="about__container">
-                <div class="about__content">
-                    <h2 class="about__title section-title">Про Arkuda Pellet</h2>
-                    <div class="about__text">
-                        <p>
-                            <strong>Arkuda</strong> — провідний український виробник деревних паливних пелет.
-                            Наше виробництво розташоване у <strong>Рівненській області</strong>, де ми використовуємо
-                            найкращу місцеву деревину для створення продукції європейської якості.
-                        </p>
-                        <p>
-                            Вся наша продукція <strong>сертифікована згідно зі стандартами ЄС</strong> (EN A1, EN A2).
-                            Ми гарантуємо стабільну якість, екологічність та високу теплотворну здатність наших пелет.
-                        </p>
-                    </div>
-                </div>
-                <div class="about__image-container">
-                    <div class="about__image-placeholder">
-                        📸 Фото виробництва
+            <!-- Liquid Glass блок -->
+            <div class="about__glass-container" id="about-glass">
+                <div class="about__glass-backdrop"></div>
+                <div class="about__glass-content">
+                    <div class="about__main-layout">
+                        <!-- Ліва половина: зображення виробництва -->
+                        <div class="about__left-section">
+                            <div class="about__image-placeholder">
+                                📸 Фото виробництва
+                            </div>
+                        </div>
+
+                        <!-- Права половина: текст із заголовком -->
+                        <div class="about__right-section">
+                            <div class="about__header">
+                                <h2 class="about__title section-title">про arkuda pellet</h2>
+                                <p class="about__subtitle">провідний український виробник деревних паливних пелет</p>
+                            </div>
+
+                            <div class="about__text-content">
+                                <p>arkuda — провідний український виробник деревних паливних пелет. наше виробництво
+                                    розташоване у рівненській області, де ми використовуємо найкращу місцеву деревину
+                                    для створення продукції європейської якості.</p>
+                                <p>вся наша продукція сертифікована згідно зі стандартами єс (en a1, en a2). ми
+                                    гарантуємо стабільну якість, екологічність та високу теплотворну здатність наших
+                                    пелет.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -174,55 +183,50 @@
             <div class="capacity__glass-container" id="capacity-glass">
                 <div class="capacity__glass-backdrop"></div>
                 <div class="capacity__glass-content">
-                    <div class="capacity__header">
-                        <h2 class="capacity__title section-title">Наші потужності</h2>
-                        <p class="capacity__subtitle">Сучасне виробництво європейського рівня з повним циклом
-                            контролю якості</p>
-                    </div>
+                    <div class="capacity__main-layout">
+                        <!-- Ліва половина: заголовок і лічильники -->
+                        <!-- Ліва половина: заголовок і текст -->
+                        <div class="capacity__left-section">
+                            <div class="capacity__header">
+                                <h2 class="capacity__title section-title">Наші потужності</h2>
+                                <p class="capacity__subtitle">Сучасне виробництво європейського рівня з повним циклом
+                                    контролю якості</p>
+                            </div>
 
-                    <!-- Статистика потужностей -->
-                    <div class="capacity__stats-grid">
-                        <div class="capacity__stat-card">
-                            <div class="stat-card__icon">🏭</div>
-                            <div class="stat-card__number capacity-counter"
-                                data-target="{{ company_info.production_capacity }}">0</div>
-                            <div class="stat-card__label">тонн / місяць</div>
-                            <div class="stat-card__description">Виробнича потужність</div>
-                        </div>
-                        <div class="capacity__stat-card">
-                            <div class="stat-card__icon">🏢</div>
-                            <div class="stat-card__number capacity-counter"
-                                data-target="{{ company_info.storage_area }}">0</div>
-                            <div class="stat-card__label">м² складів</div>
-                            <div class="stat-card__description">Складська площа</div>
-                        </div>
-                        <div class="capacity__stat-card">
-                            <div class="stat-card__icon">📦</div>
-                            <div class="stat-card__number capacity-counter"
-                                data-target="{{ company_info.stock_capacity }}">0</div>
-                            <div class="stat-card__label">тонн запасу</div>
-                            <div class="stat-card__description">Складські запаси</div>
-                        </div>
-                    </div>
-
-                    <!-- Фото блоки -->
-                    <div class="capacity__photos">
-                        <div class="capacity__photo-card">
-                            <div class="capacity__photo">
-                                <img src="{% static 'images/warehouse.jpg' %}" alt="Склад готової продукції"
-                                    loading="lazy">
+                            <div class="capacity__text-content">
+                                <p>Наше виробництво оснащене найсучаснішим обладнанням європейського виробництва, що
+                                    дозволяє нам забезпечувати стабільно високу якість продукції.</p>
+                                <p>Ми постійно інвестуємо в розвиток виробничих потужностей та контроль якості, щоб наші
+                                    пелети відповідали найвищим європейським стандартам.</p>
+                                <p>Наша команда професіоналів забезпечує повний цикл виробництва - від отримання
+                                    сировини до відвантаження готової продукції.</p>
                             </div>
                         </div>
-                        <div class="capacity__photo-card">
-                            <div class="capacity__photo">
-                                <img src="{% static 'images/production-line.jpg' %}" alt="Виробнича лінія"
-                                    loading="lazy">
-                            </div>
-                        </div>
-                        <div class="capacity__photo-card">
-                            <div class="capacity__photo">
-                                <img src="{% static 'images/quality-control.jpg' %}" alt="Контроль якості"
-                                    loading="lazy">
+
+                        <!-- Права половина: лічільники вертикально -->
+                        <div class="capacity__right-section">
+                            <div class="capacity__stats-vertical">
+                                <div class="capacity__stat-card">
+                                    <div class="stat-card__icon">🏭</div>
+                                    <div class="stat-card__number capacity-counter"
+                                        data-target="{{ company_info.production_capacity }}">0</div>
+                                    <div class="stat-card__label">тонн / місяць</div>
+                                    <div class="stat-card__description">Виробнича потужність</div>
+                                </div>
+                                <div class="capacity__stat-card">
+                                    <div class="stat-card__icon">🏢</div>
+                                    <div class="stat-card__number capacity-counter"
+                                        data-target="{{ company_info.storage_area }}">0</div>
+                                    <div class="stat-card__label">м² складів</div>
+                                    <div class="stat-card__description">Складська площа</div>
+                                </div>
+                                <div class="capacity__stat-card">
+                                    <div class="stat-card__icon">📦</div>
+                                    <div class="stat-card__number capacity-counter"
+                                        data-target="{{ company_info.stock_capacity }}">0</div>
+                                    <div class="stat-card__label">тонн запасу</div>
+                                    <div class="stat-card__description">Складські запаси</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -230,268 +234,233 @@
             </div>
         </section>
 
-        <!-- Advantages Section -->
+        <!-- Advantages and Types Combined Section -->
         <section class="advantages" id="advantages">
-            <div class="advantages__container">
-                <h2 class="advantages__title section-title">Переваги наших пелет</h2>
-                <div class="advantages__grid">
-                    {% for advantage in advantages %}
-                    <div class="advantages__card advantage-card">
-                        <div class="advantage-card__icon">{{ advantage.icon }}</div>
-                        <h3 class="advantage-card__title">{{ advantage.title }}</h3>
-                        <p class="advantage-card__description">{{ advantage.description }}</p>
+            <!-- Liquid Glass блок -->
+            <div class="advantages__glass-container" id="advantages-glass">
+                <div class="advantages__glass-backdrop"></div>
+                <div class="advantages__glass-content">
+                    <div class="advantages__main-layout">
+                        <!-- Ліва половина: переваги -->
+                        <div class="advantages__left-section">
+                            <div class="advantages__header">
+                                <h2 class="advantages__title section-title">переваги наших пелет</h2>
+                                <p class="advantages__subtitle">європейська якість з українським серцем</p>
+                            </div>
+
+                            <div class="advantages__grid-vertical">
+                                {% for advantage in advantages %}
+                                <div class="advantages__stat-card">
+                                    <div class="stat-card__icon">{{ advantage.icon }}</div>
+                                    <div class="stat-card__label">{{ advantage.title }}</div>
+                                    <div class="stat-card__description">{{ advantage.description }}</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Права половина: типи пелет -->
+                        <div class="advantages__right-section">
+                            <div class="advantages__types-header">
+                                <h3 class="advantages__types-title">типи пелет</h3>
+                                <p class="advantages__types-subtitle">різноманітність для будь-яких потреб</p>
+                            </div>
+
+                            <div class="advantages__types-vertical">
+                                {% for pellet in pellet_types %}
+                                <div class="advantages__type-card">
+                                    <div class="type-card__header">
+                                        <div class="type-card__name">{{ pellet.name|lower }}</div>
+                                        <div class="type-card__diameter">{{ pellet.diameter }}</div>
+                                    </div>
+                                    <div class="type-card__specs">
+                                        <div class="type-card__spec">
+                                            <span class="spec-label">зольність:</span>
+                                            <span class="spec-value">{{ pellet.ash_content }}</span>
+                                        </div>
+                                        <div class="type-card__spec">
+                                            <span class="spec-label">теплотворність:</span>
+                                            <span class="spec-value">{{ pellet.calorific_value }}</span>
+                                        </div>
+                                    </div>
+                                    <ul class="type-card__features">
+                                        {% for feature in pellet.features %}
+                                        <li class="type-card__feature">{{ feature|lower }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
                     </div>
-                    {% endfor %}
                 </div>
             </div>
-            <div class="advantages__bg-animation"></div>
         </section>
 
         <!-- Production Process Section -->
-        <section class="scroll-video" id="production">
-            <div class="scroll-video__video-container">
-                <video class="scroll-video__video" id="scroll-video-element" preload="metadata" muted playsinline
+        <section class="production" id="production">
+            <div class="production__video-container">
+                <video class="production__video" id="production-video" preload="metadata" muted playsinline
                     webkit-playsinline>
                     <source src="{% static 'videos/scroll-video.mp4' %}" type="video/mp4">
                 </video>
-                <div class="scroll-video__overlay"></div>
             </div>
-            <div class="scroll-video__content">
-                <div class="scroll-video__container">
-                    <h2 class="production__title section-title">Виробничий процес</h2>
-                    <div class="production__snake-layout">
-                        <!-- Статистика виробничого процесу -->
-                        <div class="capacity__stats-grid">
+            <!-- Liquid Glass блок -->
+            <div class="production__glass-container" id="production-glass">
+                <div class="production__glass-backdrop"></div>
+                <div class="production__glass-content">
+                    <div class="production__main-layout">
+                        <!-- Ліва половина: таблиця порівняння -->
+                        <div class="production__left-section">
+                            <div class="production__comparison-header">
+                                <h3 class="production__comparison-title">порівняння видів палива</h3>
+                                <p class="production__comparison-subtitle">наші пелети vs інші види палива</p>
+                            </div>
+
+                            <div class="production__table-wrapper">
+                                <table class="production__table fuel-table">
+                                    <thead>
+                                        <tr>
+                                            <th>вид палива</th>
+                                            <th>теплотворність</th>
+                                            <th>зольність</th>
+                                            <th>викиди co₂</th>
+                                            <th>вміст сірки</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for fuel in fuel_comparison %}
+                                        <tr class="{% if fuel.highlight %}fuel-table__row--highlight{% endif %}">
+                                            <td class="fuel-table__fuel">{{ fuel.fuel|lower }}</td>
+                                            <td>{{ fuel.heat_value }}</td>
+                                            <td>{{ fuel.ash }}</td>
+                                            <td>{{ fuel.co2 }}</td>
+                                            <td>{{ fuel.sulfur }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Права половина: кроки виробництва -->
+                        <div class="production__right-section">
+                            <div class="production__header">
+                                <h3 class="production__title">процес виробництва</h3>
+                                <p class="production__subtitle">технологія створення якісних пелет</p>
+                            </div>
+
+                            <div class="production__steps-grid">
+                                <!-- Перші 6 кроків в 2 колонки -->
+                                <div class="production__steps-columns">
+                                    {% for stage in production_stages %}
+                                    {% if stage.step <= 6 %} <div class="production__step-card">
+                                        <div class="production-number-circle">
+                                            <div class="production-number">{{ stage.step }}</div>
+                                        </div>
+                                        <div class="production__step-content">
+                                            <div class="stat-card__label">{{ stage.title|lower }}</div>
+                                            <div class="stat-card__description">{{ stage.description|lower }}</div>
+                                        </div>
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+
+                            <!-- 7-й крок на всю ширину -->
                             {% for stage in production_stages %}
-                            {% if stage.step <= 3 %} <div class="capacity__stat-card production-card">
+                            {% if stage.step == 7 %}
+                            <div class="production__step-card production__step-card--full-width">
                                 <div class="production-number-circle">
                                     <div class="production-number">{{ stage.step }}</div>
                                 </div>
-                                <div class="stat-card__label">{{ stage.title }}</div>
-                                <div class="stat-card__description">{{ stage.description }}</div>
-                        </div>
-                        {% endif %}
-                        {% endfor %}
-                    </div>
-
-                    <!-- Другий ряд статистики -->
-                    <div class="capacity__stats-grid">
-                        {% for stage in production_stages %}
-                        {% if stage.step >= 4 and stage.step <= 6 %} <div class="capacity__stat-card production-card">
-                            <div class="production-number-circle">
-                                <div class="production-number">{{ stage.step }}</div>
+                                <div class="production__step-content">
+                                    <div class="stat-card__label">{{ stage.title|lower }}</div>
+                                    <div class="stat-card__description">{{ stage.description|lower }}</div>
+                                </div>
                             </div>
-                            <div class="stat-card__label">{{ stage.title }}</div>
-                            <div class="stat-card__description">{{ stage.description }}</div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-
-                <!-- Третій ряд статистики -->
-                <div class="capacity__stats-grid" style="justify-content: center;">
-                    {% for stage in production_stages %}
-                    {% if stage.step == 7 %}
-                    <div class="capacity__stat-card production-card">
-                        <div class="production-number-circle">
-                            <div class="production-number">{{ stage.step }}</div>
-                        </div>
-                        <div class="stat-card__label">{{ stage.title }}</div>
-                        <div class="stat-card__description">{{ stage.description }}</div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-
-
-            </div>
-            </div>
-        </section>
-
-        <!-- Pellet Types Section -->
-        <section class="types" id="types">
-            <div class="types__container">
-                <h2 class="types__title section-title">Типи пелет</h2>
-                <div class="types__grid">
-                    {% for pellet in pellet_types %}
-                    <div class="types__card type-card">
-                        <div class="type-card__header">
-                            <h3 class="type-card__name">{{ pellet.name }}</h3>
-                            <div class="type-card__diameter">{{ pellet.diameter }}</div>
-                        </div>
-                        <div class="type-card__specs">
-                            <div class="type-card__spec">
-                                <span class="spec-label">Зольність:</span>
-                                <span class="spec-value">{{ pellet.ash_content }}</span>
-                            </div>
-                            <div class="type-card__spec">
-                                <span class="spec-label">Теплотворність:</span>
-                                <span class="spec-value">{{ pellet.calorific_value }}</span>
-                            </div>
-                        </div>
-                        <ul class="type-card__features">
-                            {% for feature in pellet.features %}
-                            <li class="type-card__feature">{{ feature }}</li>
+                            {% endif %}
                             {% endfor %}
-                        </ul>
-                        <div class="type-card__icon">
-                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                                <circle cx="30" cy="30" r="25" stroke="currentColor" stroke-width="2" />
-                                <circle cx="30" cy="30" r="15" fill="currentColor" opacity="0.2" />
-                                <circle cx="30" cy="30" r="8" fill="currentColor" />
-                            </svg>
                         </div>
                     </div>
-                    {% endfor %}
                 </div>
             </div>
         </section>
 
-
-
-        <!-- Fuel Comparison Section -->
-        <section class="comparison" id="comparison">
-            <div class="comparison__container">
-                <h2 class="comparison__title section-title">Порівняння видів палива</h2>
-                <div class="comparison__table-wrapper">
-                    <table class="comparison__table fuel-table">
-                        <thead>
-                            <tr>
-                                <th>Вид палива</th>
-                                <th>Теплотворність</th>
-                                <th>Зольність</th>
-                                <th>Викиди CO₂</th>
-                                <th>Вміст сірки</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for fuel in fuel_comparison %}
-                            <tr class="{% if fuel.highlight %}fuel-table__row--highlight{% endif %}">
-                                <td class="fuel-table__fuel">{{ fuel.fuel }}</td>
-                                <td>{{ fuel.heat_value }}</td>
-                                <td>{{ fuel.ash }}</td>
-                                <td>{{ fuel.co2 }}</td>
-                                <td>{{ fuel.sulfur }}</td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certificates Section -->
-        <section class="certificates" id="certificates">
-            <div class="certificates__container">
-                <h2 class="certificates__title section-title">Сертифікація</h2>
-                <div class="certificates__badges">
-                    <div class="certificate-badge">
-                        <div class="certificate-badge__icon">SGS</div>
-                        <div class="certificate-badge__text">Сертифікат SGS</div>
-                    </div>
-                    <div class="certificate-badge">
-                        <div class="certificate-badge__icon">ISO</div>
-                        <div class="certificate-badge__text">ISO 9001</div>
-                    </div>
-                    <div class="certificate-badge">
-                        <div class="certificate-badge__icon">EU</div>
-                        <div class="certificate-badge__text">EU Conformity</div>
-                    </div>
-                </div>
-                <div class="certificates__slider">
-                    <div class="certificate-slide">
-                        <img src="{% static 'images/certificate-sgs.jpg' %}" alt="Сертифікат SGS" loading="lazy">
-                    </div>
-                    <div class="certificate-slide">
-                        <img src="{% static 'images/certificate-iso.jpg' %}" alt="Сертифікат ISO 9001" loading="lazy">
-                    </div>
-                    <div class="certificate-slide">
-                        <img src="{% static 'images/certificate-eu.jpg' %}" alt="Сертифікат EU" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contacts Section -->
+        <!-- Certificates and Contacts Combined Section -->
         <section class="contacts" id="contacts">
-            <div class="contacts__container">
-                <h2 class="contacts__title section-title">Контакти</h2>
+            <!-- Liquid Glass блок -->
+            <div class="contacts__glass-container" id="contacts-glass">
+                <div class="contacts__glass-backdrop"></div>
+                <div class="contacts__glass-content">
+                    <div class="contacts__main-layout">
+                        <!-- Ліва половина: сертифікація -->
+                        <div class="contacts__left-section">
+                            <div class="contacts__certificates-header">
+                                <h2 class="contacts__certificates-title section-title">сертифікація</h2>
+                                <p class="contacts__certificates-subtitle">європейські стандарти якості</p>
+                            </div>
 
-                <!-- Блок виробництва -->
-                <div class="contacts__production">
-                    <h3 class="contacts__production-title">Наше виробництво</h3>
-                    <div class="contacts__production-grid">
-                        <div class="production-card">
-                            <div class="production-card__image">
-                                <img src="{% static 'images/raw-material.jpg' %}" alt="Сировина" loading="lazy">
-                                <div class="production-card__overlay">
-                                    <span class="production-card__label">01</span>
+                            <div class="contacts__certificates-badges">
+                                <div class="contacts__certificate-card">
+                                    <div class="certificate-icon">SGS</div>
+                                    <div class="certificate-label">сертифікат sgs</div>
+                                    <div class="certificate-description">міжнародна сертифікація якості</div>
+                                </div>
+                                <div class="contacts__certificate-card">
+                                    <div class="certificate-icon">ISO</div>
+                                    <div class="certificate-label">iso 9001</div>
+                                    <div class="certificate-description">система управління якістю</div>
+                                </div>
+                                <div class="contacts__certificate-card">
+                                    <div class="certificate-icon">EU</div>
+                                    <div class="certificate-label">eu conformity</div>
+                                    <div class="certificate-description">відповідність стандартам єс</div>
                                 </div>
                             </div>
-                            <div class="production-card__content">
-                                <h4 class="production-card__title">Якісна сировина</h4>
-                                <p class="production-card__description">Відбираємо тільки найкращу деревину з
-                                    Рівненських лісів</p>
-                            </div>
                         </div>
 
-                        <div class="production-card">
-                            <div class="production-card__image">
-                                <img src="{% static 'images/production-line.jpg' %}" alt="Виробнича лінія"
-                                    loading="lazy">
-                                <div class="production-card__overlay">
-                                    <span class="production-card__label">02</span>
+                        <!-- Права половина: контакти -->
+                        <div class="contacts__right-section">
+                            <div class="contacts__header">
+                                <h2 class="contacts__title section-title">контакти</h2>
+                                <p class="contacts__subtitle">зв'яжіться з нами для співпраці</p>
+                            </div>
+
+                            <div class="contacts__info-vertical">
+                                <div class="contacts__phone-card">
+                                    <div class="contact-icon">📞</div>
+                                    <div class="contact-label">телефони</div>
+                                    <div class="contact-content">
+                                        {% for phone in company_info.phones %}
+                                        <a href="tel:{{ phone }}" class="contacts__phone">{{ phone }}</a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                <div class="contacts__address-card">
+                                    <div class="contact-icon">📍</div>
+                                    <div class="contact-label">адреса</div>
+                                    <div class="contact-content">{{ company_info.address|lower }}</div>
+                                </div>
+
+                                <div class="contacts__messengers-card">
+                                    <div class="contact-icon">💬</div>
+                                    <div class="contact-label">месенджери</div>
+                                    <div class="contact-content">
+                                        <a href="https://wa.me/{{ company_info.phones.0|cut:'+' }}"
+                                            class="messenger-btn messenger-btn--whatsapp" target="_blank"
+                                            rel="noopener">
+                                            <span>whatsapp</span>
+                                        </a>
+                                        <a href="https://t.me/{{ company_info.phones.0|cut:'+' }}"
+                                            class="messenger-btn messenger-btn--telegram" target="_blank"
+                                            rel="noopener">
+                                            <span>telegram</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="production-card__content">
-                                <h4 class="production-card__title">Сучасне обладнання</h4>
-                                <p class="production-card__description">Автоматизовані лінії європейського виробництва
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="production-card">
-                            <div class="production-card__image">
-                                <img src="{% static 'images/quality-control.jpg' %}" alt="Контроль якості"
-                                    loading="lazy">
-                                <div class="production-card__overlay">
-                                    <span class="production-card__label">03</span>
-                                </div>
-                            </div>
-                            <div class="production-card__content">
-                                <h4 class="production-card__title">Контроль якості</h4>
-                                <p class="production-card__description">Багаторівневий контроль на кожному етапі
-                                    виробництва</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contacts__content">
-                    <div class="contacts__info">
-                        <div class="contacts__phones">
-                            {% for phone in company_info.phones %}
-                            <a href="tel:{{ phone }}" class="contacts__phone">{{ phone }}</a>
-                            {% endfor %}
-                        </div>
-                        <div class="contacts__address">{{ company_info.address }}</div>
-                        <div class="contacts__distances">
-                            <h3>Відстані до кордонів:</h3>
-                            <ul>
-                                {% for distance in distances_to_borders %}
-                                <li>{{ distance.country }}: {{ distance.distance }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <div class="contacts__messengers">
-                            <a href="https://wa.me/{{ company_info.phones.0|cut:'+' }}"
-                                class="messenger-btn messenger-btn--whatsapp" target="_blank" rel="noopener">
-                                <span>WhatsApp</span>
-                            </a>
-                            <a href="https://t.me/{{ company_info.phones.0|cut:'+' }}"
-                                class="messenger-btn messenger-btn--telegram" target="_blank" rel="noopener">
-                                <span>Telegram</span>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -507,11 +476,11 @@
             </div>
             <nav class="footer__nav">
                 <ul class="footer__nav-list">
-                    <li><a href="#about">Про нас</a></li>
-                    <li><a href="#capacity">Потужності</a></li>
-                    <li><a href="#types">Типи пелет</a></li>
-                    <li><a href="#advantages">Переваги</a></li>
-                    <li><a href="#contacts">Контакти</a></li>
+                    <li><a href="#about">про нас</a></li>
+                    <li><a href="#capacity">потужності</a></li>
+                    <li><a href="#advantages">переваги</a></li>
+                    <li><a href="#production">виробництво</a></li>
+                    <li><a href="#contacts">контакти</a></li>
                 </ul>
             </nav>
             <div class="footer__meta">

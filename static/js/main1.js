@@ -44,16 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             };
         },
 
-        // Перевірка чи елемент у viewport
-        isInViewport: function (element, offset = 0) {
-            const rect = element.getBoundingClientRect();
-            return (
-                rect.top < (window.innerHeight || document.documentElement.clientHeight) - offset &&
-                rect.bottom > offset &&
-                rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
-                rect.right > 0
-            );
-        },
+
 
         // Smooth scroll до елемента
         scrollTo: function (element, duration = 1000) {

@@ -30,10 +30,50 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // Scroll Animations - Оптимізовано
+    // Glass Container Animations - Оновлено для всіх секцій (без production)
+    window.GlassAnimations = {
+        init: function () {
+            this.glassContainers = document.querySelectorAll(
+                '.capacity__glass-container, .about__glass-container, .advantages__glass-container, .contacts__glass-container'
+            );
+            this.setupScrollTriggers();
+        },
+
+        setupScrollTriggers: function () {
+            const observer = AnimationUtils.createObserver((entries) => {
+                entries.forEach(entry => {
+                    const glassContainer = entry.target.querySelector(
+                        '.capacity__glass-container, .about__glass-container, .advantages__glass-container, .contacts__glass-container'
+                    );
+
+                    if (glassContainer) {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                glassContainer.classList.add('show');
+                            }, 300);
+                        } else {
+                            glassContainer.classList.remove('show');
+                        }
+                    }
+                });
+            });
+
+            if (observer) {
+                // Спостерігаємо за секціями, а не за glass контейнерами (без production)
+                const sections = document.querySelectorAll('.capacity, .about, .advantages, .contacts');
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
+            }
+        }
+    };
+
+    // Scroll Animations - Оновлено (без production)
     window.ScrollAnimations = {
         init: function () {
-            this.animatedElements = document.querySelectorAll('.timeline-item, .advantage-card, .capacity__stat-card');
+            this.animatedElements = document.querySelectorAll(
+                '.advantage-card, .capacity__stat-card, .advantages__stat-card, .advantages__type-card, .contacts__certificate-card, .contacts__phone-card, .contacts__address-card, .contacts__messengers-card'
+            );
             this.setupIntersectionObserver();
         },
 
@@ -43,8 +83,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animate');
 
-                        // Анімація лічильників
-                        if (entry.target.classList.contains('capacity__stat-card')) {
+                        // Анімація лічильників для різних типів карток
+                        if (entry.target.classList.contains('capacity__stat-card') ||
+                            entry.target.classList.contains('advantages__stat-card')) {
                             this.animateStatCard(entry.target);
                         }
                     }
@@ -59,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
 
         animateStatCard: function (card) {
-            const numberEl = card.querySelector('.stat-card__number');
+            const numberEl = card.querySelector('.stat-card__number, .capacity-counter');
             if (!numberEl) return;
 
             const target = parseInt(numberEl.getAttribute('data-target')) ||
@@ -101,49 +142,35 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // Performance Optimizations - Спрощено
+    // Performance Optimizations - Оновлено (без production)
     window.Performance = {
         init: function () {
-            this.optimizeAnimations();
-            this.prefersReducedMotion();
-        },
-
-        optimizeAnimations: function () {
             // Додаємо will-change для елементів з анімаціями
             const animatedElements = document.querySelectorAll(
-                '.advantage-card, .timeline-item, .capacity__stat-card, .capacity__glass-container'
+                '.advantage-card, .capacity__stat-card, .advantages__stat-card, .advantages__type-card, .contacts__certificate-card, .capacity__glass-container, .about__glass-container, .advantages__glass-container, .contacts__glass-container'
             );
 
             animatedElements.forEach(el => {
                 el.style.willChange = 'transform, opacity';
             });
-        },
 
-        prefersReducedMotion: function () {
+            // Перевіряємо prefers-reduced-motion
             if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                const style = document.createElement('style');
-                style.textContent = `
-                    *, *::before, *::after {
-                        animation-duration: 0.01ms !important;
-                        transition-duration: 0.01ms !important;
-                    }
-                `;
-                document.head.appendChild(style);
+                document.documentElement.style.setProperty('--transition-normal', '0.01ms');
+                document.documentElement.style.setProperty('--transition-fast', '0.01ms');
+                document.documentElement.style.setProperty('--transition-slow', '0.01ms');
             }
         }
     };
 
-    // Lightbox Modal - Спрощено
+    // Lightbox Modal
     window.LightboxModal = {
         init: function () {
             this.lightbox = document.getElementById('lightbox');
             if (!this.lightbox) return;
 
             this.lightboxImage = document.getElementById('lightbox-image');
-            this.bindEvents();
-        },
 
-        bindEvents: function () {
             // Закриття
             this.lightbox.addEventListener('click', (e) => {
                 if (e.target === this.lightbox || e.target.classList.contains('lightbox__close')) {
@@ -181,32 +208,99 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // Responsive Table - Спрощено
-    window.ResponsiveTable = {
-        init: function () {
-            const tables = document.querySelectorAll('.fuel-table');
-            tables.forEach(table => {
-                const wrapper = table.closest('.comparison__table-wrapper');
-                if (wrapper && window.AppGlobals && window.AppGlobals.isMobile) {
-                    wrapper.style.overflowX = 'auto';
-                    wrapper.style.webkitOverflowScrolling = 'touch';
-                }
-            });
+    // Ініціалізація модулів - Оновлено
+    window.GlassAnimations.init();
+    window.ScrollAnimations.init();
+    window.MagneticButtons.init();
+    window.Performance.init();
+    window.LightboxModal.init();
+
+    // Production Video Background
+    const ProductionVideo = {
+        init() {
+            const video = document.getElementById('production-video');
+            if (!video) return;
+
+            let options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            let observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (video.paused) {
+                            video.play().catch(() => {
+                                console.log('Video autoplay failed');
+                            });
+                        }
+                    } else {
+                        if (!video.paused) {
+                            video.pause();
+                        }
+                    }
+                });
+            }, options);
+
+            observer.observe(video);
         }
     };
 
-    // Ініціалізація модулів
-    const modules = [
-        window.ScrollAnimations,
-        window.MagneticButtons,
-        window.Performance,
-        window.LightboxModal,
-        window.ResponsiveTable
-    ];
+    // Initialize production video
+    ProductionVideo.init();
 
-    modules.forEach(module => {
-        if (module && module.init) {
-            module.init();
-        }
-    });
+    // Advantages section glass container animation
+    const advantagesGlassContainer = document.getElementById('advantages-glass');
+
+    if (advantagesGlassContainer) {
+        const advantagesObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        advantagesObserver.observe(advantagesGlassContainer);
+    }
+
+    // Production section glass container animation
+    const productionGlassContainer = document.getElementById('production-glass');
+
+    if (productionGlassContainer) {
+        const productionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        productionObserver.observe(productionGlassContainer);
+    }
+
+    // Contacts section glass container animation
+    const contactsGlassContainer = document.getElementById('contacts-glass');
+
+    if (contactsGlassContainer) {
+        const contactsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        contactsObserver.observe(contactsGlassContainer);
+    }
 }); 
