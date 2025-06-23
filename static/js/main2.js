@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
         init: function () {
             const glassContainers = [
                 'about',
-                'advantages-glass',
+                'advantages',
                 'production-glass',
                 'contacts-glass'
             ];

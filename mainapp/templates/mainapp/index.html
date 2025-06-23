@@ -231,60 +231,87 @@
 
         <!-- Advantages and Types Combined Section -->
         <section class="advantages" id="advantages">
-            <!-- Liquid Glass блок -->
-            <div class="advantages__glass-container" id="advantages-glass">
-                <div class="advantages__glass-backdrop"></div>
-                <div class="advantages__glass-content">
-                    <div class="advantages__main-layout">
-                        <!-- Ліва половина: переваги -->
-                        <div class="advantages__left-section">
-                            <div class="advantages__header">
-                                <h2 class="advantages__title section-title">переваги наших пелет</h2>
-                                <p class="advantages__subtitle">європейська якість з українським серцем</p>
+            <!-- EN A1 Block -->
+            <div class="pellet-block pellet-block--en-a1">
+                <div class="pellet-block__content">
+                    <div class="pellet-block__header">
+                        <div class="pellet-block__title-row">
+                            <h3 class="pellet-block__name">EN A1</h3>
+                            <span class="pellet-block__diameter">6 мм</span>
+                        </div>
+                    </div>
+                    <div class="pellet-block__info">
+                        <div class="pellet-block__specs-row">
+                            <div class="pellet-block__spec">
+                                <span class="spec-label">зольність</span>
+                                <span class="spec-value">
+                                    < 0.7%</span>
                             </div>
-
-                            <div class="advantages__grid-vertical">
-                                {% for advantage in advantages %}
-                                <div class="advantages__stat-card">
-                                    <div class="stat-card__icon">{{ advantage.icon }}</div>
-                                    <div class="stat-card__label">{{ advantage.title }}</div>
-                                    <div class="stat-card__description">{{ advantage.description }}</div>
-                                </div>
-                                {% endfor %}
+                            <div class="pellet-block__spec">
+                                <span class="spec-label">теплотворність</span>
+                                <span class="spec-value">4.6-5.3 кВт/кг</span>
+                            </div>
+                            <div class="pellet-block__spec">
+                                <span class="spec-label">найвища якість</span>
+                            </div>
+                            <div class="pellet-block__spec">
+                                <span class="spec-label">мінімум золи</span>
+                            </div>
+                            <div class="pellet-block__spec">
+                                <span class="spec-label">максимум тепла</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
 
-                        <!-- Права половина: типи пелет -->
-                        <div class="advantages__right-section">
-                            <div class="advantages__types-header">
-                                <h3 class="advantages__types-title">типи пелет</h3>
-                                <p class="advantages__types-subtitle">різноманітність для будь-яких потреб</p>
+            <!-- Advantages Row -->
+            <div class="advantages-row">
+                <!-- Верхня бігуча стрічка (справа наліво) -->
+                <div class="running-text running-text--top">
+                    <div class="running-text__content running-text__content--right-to-left">
+                        Безпечно - пресована деревина не вибухає. мінімальний викид co₂ при згоранні. Економно - дешевше
+                        за газ у 2-3 рази. безпечне зберігання та використання. Екологічно - 100% деревина без хімії.
+                    </div>
+                </div>
+
+                <!-- Нижня бігуча стрічка (зліва направо) -->
+                <div class="running-text running-text--bottom">
+                    <div class="running-text__content running-text__content--left-to-right">
+                        Стабільна ціна протягом року. Екологічно - 100% деревина без хімії. Безпечне зберігання та
+                        використання. Економно - дешевше за газ у 2-3 рази. мінімальний викид co₂ при згоранні.
+                    </div>
+                </div>
+            </div>
+
+            <!-- EN A2 Block -->
+            <div class="pellet-block pellet-block--en-a2">
+                <div class="pellet-block__content">
+                    <div class="pellet-block__header">
+                        <div class="pellet-block__title-row">
+                            <span class="pellet-block__diameter">6-8 мм</span>
+                            <h3 class="pellet-block__name">EN A2</h3>
+                        </div>
+                    </div>
+                    <div class="pellet-block__info">
+                        <div class="pellet-block__specs-row">
+                            <div class="pellet-block__spec">
+                                <span class="spec-label">зольність</span>
+                                <span class="spec-value">
+                                    < 1.2%</span>
                             </div>
-
-                            <div class="advantages__types-vertical">
-                                {% for pellet in pellet_types %}
-                                <div class="advantages__type-card">
-                                    <div class="type-card__header">
-                                        <div class="type-card__name">{{ pellet.name|lower }}</div>
-                                        <div class="type-card__diameter">{{ pellet.diameter }}</div>
-                                    </div>
-                                    <div class="type-card__specs">
-                                        <div class="type-card__spec">
-                                            <span class="spec-label">зольність:</span>
-                                            <span class="spec-value">{{ pellet.ash_content }}</span>
-                                        </div>
-                                        <div class="type-card__spec">
-                                            <span class="spec-label">теплотворність:</span>
-                                            <span class="spec-value">{{ pellet.calorific_value }}</span>
-                                        </div>
-                                    </div>
-                                    <ul class="type-card__features">
-                                        {% for feature in pellet.features %}
-                                        <li class="type-card__feature">{{ feature|lower }}</li>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                                {% endfor %}
+                            <div class="pellet-block__spec">
+                                <span class="spec-label">теплотворність</span>
+                                <span class="spec-value">4.3-5.0 кВт/кг</span>
+                            </div>
+                            <div class="pellet-block__spec">
+                                <span class="spec-label">відмінна якість</span>
+                            </div>
+                            <div class="pellet-block__spec">
+                                <span class="spec-label">економічно</span>
+                            </div>
+                            <div class="pellet-block__spec">
+                                <span class="spec-label">стабільне горіння</span>
                             </div>
                         </div>
                     </div>
@@ -484,8 +511,6 @@
             </div>
         </div>
     </footer>
-
-
 
     <!-- JavaScript -->
     <script src="{% static 'js/main1.js' %}"></script>
