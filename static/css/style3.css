@@ -300,46 +300,6 @@
     }
 }
 
-.advantage-card {
-    flex: 1;
-    max-width: 280px;
-    text-align: center;
-    background: linear-gradient(135deg,
-            rgba(34, 197, 94, 0.1) 0%,
-            rgba(34, 197, 94, 0.05) 100%);
-    border: 1px solid rgba(34, 197, 94, 0.3);
-    border-radius: 20px;
-    padding: 30px 25px;
-    transition: all 0.3s ease;
-}
-
-.advantage-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(34, 197, 94, 0.15);
-    border-color: rgba(34, 197, 94, 0.5);
-}
-
-.advantage-card__icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.advantage-card__label {
-    font-size: calc(var(--font-size-base) * 1.2);
-    font-weight: 600;
-    color: rgba(34, 197, 94, 0.9);
-    margin-bottom: 12px;
-    text-transform: lowercase;
-}
-
-.advantage-card__description {
-    font-size: calc(var(--font-size-base) * 0.9);
-    color: rgba(34, 197, 94, 0.8);
-    line-height: 1.4;
-    text-transform: lowercase;
-}
-
 /* Tablet Styles */
 @media (max-width: 1024px) {
     .pellet-block__content {
@@ -360,9 +320,7 @@
         gap: 40px;
     }
 
-    .advantage-card {
-        padding: 30px 25px;
-    }
+}
 }
 
 /* Mobile Styles */
@@ -455,25 +413,7 @@
         animation-duration: 180s;
     }
 
-    .advantage-card {
-        max-width: 100%;
-        width: 100%;
-        padding: 25px 20px;
-    }
 
-    .advantage-card__icon {
-        font-size: 2.2rem;
-        margin-bottom: 12px;
-    }
-
-    .advantage-card__label {
-        font-size: calc(var(--font-size-base) * 1.1);
-        margin-bottom: 10px;
-    }
-
-    .advantage-card__description {
-        font-size: calc(var(--font-size-base) * 0.85);
-    }
 }
 
 /* iOS Safari Optimizations */
@@ -486,8 +426,7 @@
                 rgba(255, 255, 255, 0.15) 100%);
     }
 
-    .advantages__stat-card,
-    .advantages__type-card {
+    .advantages__stat-card {
         -webkit-backdrop-filter: blur(10px);
     }
 }
@@ -1272,10 +1211,7 @@
         gap: 1rem;
     }
 
-    .advantage-card {
-        min-width: 200px;
-        padding: 1rem;
-    }
+
 
 }
 

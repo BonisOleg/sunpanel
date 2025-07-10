@@ -108,395 +108,258 @@
 
 
 .contacts {
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
+    padding: 80px 0;
+    background: #f5f5f5;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    color: var(--text-white);
 }
 
-.contacts__video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+.contacts__container {
+    max-width: 1200px;
     width: 100%;
-    height: 100%;
-    z-index: 1;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.contacts__video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    -webkit-object-fit: cover;
-}
-
-.contacts__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg,
-            rgba(43, 90, 49, 0.85) 0%,
-            rgba(255, 107, 53, 0.2) 100%);
-    z-index: 2;
-}
-
-.contacts__glass-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 4;
-    opacity: 0;
-    filter: blur(4px);
-    transform: scale(0.98);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-    padding: 8% 8%;
-    box-sizing: border-box;
-}
-
-.contacts__glass-container.show {
-    opacity: 1;
-    filter: blur(0);
-    transform: scale(1);
-    pointer-events: auto;
-}
-
-.contacts__glass-backdrop {
-    position: absolute;
-    top: 8%;
-    left: 8%;
-    right: 8%;
-    bottom: 8%;
-    background: rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+.contacts__card {
+    background: white;
     border-radius: 24px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 60px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
 }
 
-
-
-.contacts__glass-content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
+.contacts__section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
-    color: var(--text-white);
+    gap: 40px;
 }
 
-.contacts__main-layout {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    height: 100%;
-}
-
-.contacts__left-section {
-    flex: 0 0 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    justify-content: center;
-}
-
-.contacts__right-section {
-    flex: 0 0 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    justify-content: center;
-    padding-left: 2rem;
-}
-
-/* Certificates section on the left */
-.contacts__certificates-header {
-    text-align: left;
-    margin-bottom: 1.5rem;
-    flex-shrink: 0;
-}
-
-.contacts__certificates-title.section-title {
-    margin-bottom: 0.5rem;
-    font-size: calc(var(--font-size-2xl) * 2.6);
-    color: white;
-    text-align: left;
-    text-transform: lowercase;
-    font-weight: 800;
-    background: none;
-    -webkit-background-clip: initial;
-    -webkit-text-fill-color: white;
-    background-clip: initial;
-}
-
-.contacts__certificates-subtitle {
-    font-size: calc(var(--font-size-base) * 1.5);
-    color: white;
-    max-width: 500px;
-    margin: 0;
-    line-height: 1.4;
-    text-align: left;
-    text-transform: lowercase;
-}
-
-.contacts__certificates-badges {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    flex-shrink: 0;
-}
-
-.contacts__certificate-card {
-    position: relative;
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    text-align: center;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateZ(0);
-    min-width: 280px;
-}
-
-
-
-.contacts__certificate-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
-    background-size: 120px 120px;
-    opacity: 0.2;
-    mix-blend-mode: soft-light;
-    border-radius: inherit;
-    pointer-events: none;
-}
-
-.contacts__certificate-card::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 60%;
-    bottom: 60%;
-    background: radial-gradient(ellipse at top left,
-            rgba(255, 255, 255, 0.6) 0%,
-            rgba(255, 255, 255, 0.2) 50%,
-            transparent 100%);
-    border-radius: inherit;
-    pointer-events: none;
-}
-
-.certificate-icon {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    display: block;
-    position: relative;
-    z-index: 2;
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    font-weight: 800;
-}
-
-.certificate-label {
-    font-size: var(--font-size-sm);
-    text-transform: lowercase;
-    letter-spacing: 1px;
-    margin-bottom: 0.25rem;
+.contacts__title {
+    font-size: 32px;
     font-weight: 600;
-    position: relative;
-    z-index: 2;
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.certificate-description {
-    font-weight: 500;
-    font-size: var(--font-size-xs);
-    position: relative;
-    z-index: 2;
-    color: rgba(255, 255, 255, 0.8);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    text-transform: lowercase;
-}
-
-/* Contacts section on the right */
-.contacts__header {
-    text-align: left;
-    margin-bottom: 1.5rem;
-    flex-shrink: 0;
-}
-
-.contacts__title.section-title {
-    margin-bottom: 0.5rem;
-    font-size: calc(var(--font-size-xl) * 1.8);
-    color: white;
-    text-align: left;
-    text-transform: lowercase;
-    font-weight: 700;
-    background: none;
-    -webkit-background-clip: initial;
-    -webkit-text-fill-color: white;
-    background-clip: initial;
-}
-
-.contacts__subtitle {
-    font-size: calc(var(--font-size-base) * 1.2);
-    color: white;
-    max-width: 400px;
+    color: #1a1a1a;
     margin: 0;
-    line-height: 1.4;
-    text-align: left;
-    text-transform: lowercase;
+    line-height: 1.2;
 }
 
-.contacts__info-vertical {
+.contacts__phones {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    flex-shrink: 0;
-}
-
-.contacts__phone-card,
-.contacts__address-card,
-.contacts__messengers-card {
-    position: relative;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    text-align: left;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateZ(0);
-    min-width: 280px;
-}
-
-
-
-.contacts__phone-card::before,
-.contacts__address-card::before,
-.contacts__messengers-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
-    background-size: 120px 120px;
-    opacity: 0.2;
-    mix-blend-mode: soft-light;
-    border-radius: inherit;
-    pointer-events: none;
-}
-
-.contacts__phone-card::after,
-.contacts__address-card::after,
-.contacts__messengers-card::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 60%;
-    bottom: 60%;
-    background: radial-gradient(ellipse at top left,
-            rgba(255, 255, 255, 0.6) 0%,
-            rgba(255, 255, 255, 0.2) 50%,
-            transparent 100%);
-    border-radius: inherit;
-    pointer-events: none;
-}
-
-.contact-icon {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    display: block;
-    position: relative;
-    z-index: 2;
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.contact-label {
-    font-size: var(--font-size-sm);
-    text-transform: lowercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    position: relative;
-    z-index: 2;
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.contact-content {
-    position: relative;
-    z-index: 2;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    text-transform: lowercase;
+    gap: 16px;
 }
 
 .contacts__phone {
-    display: block;
-    font-size: var(--font-size-base);
+    font-size: 28px;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.95);
+    color: #2563eb;
     text-decoration: none;
-    margin-bottom: 0.25rem;
-    transition: all var(--transition-normal);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s ease;
 }
 
 .contacts__phone:hover {
-    color: var(--accent-color);
-    transform: scale(1.02);
+    color: #1d4ed8;
 }
 
-.messenger-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    text-decoration: none;
+.contacts__location {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contacts__location-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #374151;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.contacts__distances {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contacts__country-group h4 {
+    font-size: 16px;
     font-weight: 600;
-    transition: all var(--transition-normal);
-    margin-right: 0.5rem;
-    font-size: var(--font-size-sm);
-    text-transform: lowercase;
+    color: #1a1a1a;
+    margin: 0 0 8px 0;
 }
 
-.messenger-btn--whatsapp {
-    background: rgba(37, 211, 102, 0.8);
-    color: var(--text-white);
+.contacts__country-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
-.messenger-btn--telegram {
-    background: rgba(0, 136, 204, 0.8);
-    color: var(--text-white);
+.contacts__country-group li {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.4;
 }
 
-.messenger-btn:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.contacts__messengers {
+    display: flex;
+    gap: 16px;
+}
+
+.contacts__messenger {
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.contacts__messenger--whatsapp {
+    background: #25d366;
+    color: white;
+}
+
+.contacts__messenger--whatsapp:hover {
+    background: #22c55e;
+    transform: translateY(-2px);
+}
+
+.contacts__messenger--viber {
+    background: #665cac;
+    color: white;
+}
+
+.contacts__messenger--viber:hover {
+    background: #5b52a3;
+    transform: translateY(-2px);
+}
+
+/* Certificates Section */
+.contacts__section--certificates {
+    border-left: 1px solid #e5e7eb;
+    padding-left: 40px;
+}
+
+.contacts__certificates {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.contacts__certificate {
+    background: #f9fafb;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+}
+
+.contacts__certificate h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 8px 0;
+}
+
+.contacts__certificate p {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0 0 16px 0;
+}
+
+.contacts__certificate-data {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contacts__spec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.contacts__spec:last-child {
+    border-bottom: none;
+}
+
+.contacts__spec span:first-child {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 400;
+}
+
+.contacts__spec span:last-child {
+    font-size: 14px;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .contacts {
+        padding: 40px 0;
+    }
+
+    .contacts__card {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 24px;
+        border-radius: 16px;
+    }
+
+    .contacts__section--certificates {
+        border-left: none;
+        border-top: 1px solid #e5e7eb;
+        padding-left: 0;
+        padding-top: 40px;
+    }
+
+    .contacts__title {
+        font-size: 24px;
+    }
+
+    .contacts__phone {
+        font-size: 20px;
+    }
+
+    .contacts__location-title {
+        font-size: 16px;
+    }
+
+    .contacts__messengers {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .contacts__messenger {
+        text-align: center;
+    }
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .contacts__card {
+        padding: 48px;
+        gap: 60px;
+    }
+
+    .contacts__title {
+        font-size: 28px;
+    }
+
+    .contacts__phone {
+        font-size: 24px;
+    }
 }
 
 .footer {

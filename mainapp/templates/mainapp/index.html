@@ -74,6 +74,7 @@
     <link rel="stylesheet" href="{% static 'css/style3.css' %}">
     <link rel="stylesheet" href="{% static 'css/style4.css' %}">
     <link rel="stylesheet" href="{% static 'css/style5.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style6.css' %}">
 
     <!-- Preload Critical Resources -->
     <link rel="preload" href="{% static 'videos/hero-video.mp4' %}" as="video" type="video/mp4">
@@ -409,79 +410,105 @@
             </div>
         </section>
 
-        <!-- Certificates and Contacts Combined Section -->
+        <!-- Contacts and Certificates Section -->
         <section class="contacts" id="contacts">
-            <!-- Liquid Glass блок -->
-            <div class="contacts__glass-container" id="contacts-glass">
-                <div class="contacts__glass-backdrop"></div>
-                <div class="contacts__glass-content">
-                    <div class="contacts__main-layout">
-                        <!-- Ліва половина: сертифікація -->
-                        <div class="contacts__left-section">
-                            <div class="contacts__certificates-header">
-                                <h2 class="contacts__certificates-title section-title">сертифікація</h2>
-                                <p class="contacts__certificates-subtitle">європейські стандарти якості</p>
-                            </div>
+            <!-- Contact Section -->
+            <div class="contacts__section">
+                <h2 class="contacts__title">Контакти для зв'язку</h2>
 
-                            <div class="contacts__certificates-badges">
-                                <div class="contacts__certificate-card">
-                                    <div class="certificate-icon">SGS</div>
-                                    <div class="certificate-label">сертифікат sgs</div>
-                                    <div class="certificate-description">міжнародна сертифікація якості</div>
-                                </div>
-                                <div class="contacts__certificate-card">
-                                    <div class="certificate-icon">ISO</div>
-                                    <div class="certificate-label">iso 9001</div>
-                                    <div class="certificate-description">система управління якістю</div>
-                                </div>
-                                <div class="contacts__certificate-card">
-                                    <div class="certificate-icon">EU</div>
-                                    <div class="certificate-label">eu conformity</div>
-                                    <div class="certificate-description">відповідність стандартам єс</div>
-                                </div>
-                            </div>
+                <div class="contacts__phones">
+                    <a href="tel:+380500344881" class="contacts__phone">+380500344881</a>
+                    <a href="tel:+380634952145" class="contacts__phone">+380634952145</a>
+                </div>
+
+                <div class="contacts__location">
+                    <h3 class="contacts__location-title">Україна, Рівненська область, Сарненський район</h3>
+
+                    <div class="contacts__distances">
+                        <div class="contacts__country-group">
+                            <h4>Польща:</h4>
+                            <ul>
+                                <li>205 км – Ягодин/Дорогуськ,</li>
+                                <li>305 км – Рава-Руська/Хребенне,</li>
+                                <li>362км – Краківець/Корчова,</li>
+                                <li>399 км – Шегині/Медика,</li>
+                                <li>432 км – Смільниця/Коросценко</li>
+                            </ul>
                         </div>
 
-                        <!-- Права половина: контакти -->
-                        <div class="contacts__right-section">
-                            <div class="contacts__header">
-                                <h2 class="contacts__title section-title">контакти</h2>
-                                <p class="contacts__subtitle">зв'яжіться з нами для співпраці</p>
+                        <div class="contacts__country-group">
+                            <h4>Словаччина:</h4>
+                            <ul>
+                                <li>586 км – Ужгород/Вишне-Немецьке</li>
+                            </ul>
+                        </div>
+
+                        <div class="contacts__country-group">
+                            <h4>Угорщина:</h4>
+                            <ul>
+                                <li>581 км – Чоп/Захонь</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contacts__messengers">
+                    <a href="https://wa.me/380500344881" class="contacts__messenger contacts__messenger--whatsapp"
+                        target="_blank">
+                        WhatsApp
+                    </a>
+                    <a href="viber://chat?number=380500344881" class="contacts__messenger contacts__messenger--viber"
+                        target="_blank">
+                        Viber
+                    </a>
+                </div>
+            </div>
+
+            <!-- Certificates Section -->
+            <div class="contacts__section contacts__section--certificates">
+                <h2 class="contacts__title">Сертифікація</h2>
+
+                <div class="contacts__certificates">
+                    <div class="contacts__certificate">
+                        <h3>SGS Analytical Report</h3>
+                        <p><strong>№ 2002137</strong></p>
+                        <p>Деревні паливні пелети</p>
+                        <div class="contacts__certificate-data">
+                            <div class="contacts__spec">
+                                <span>Вологість:</span>
+                                <span>9.04%</span>
                             </div>
+                            <div class="contacts__spec">
+                                <span>Зольність (сухе):</span>
+                                <span>0.84%</span>
+                            </div>
+                            <div class="contacts__spec">
+                                <span>Теплота згорання:</span>
+                                <span>4183 ккал/кг</span>
+                            </div>
+                            <div class="contacts__spec">
+                                <span>Вища теплота згорання:</span>
+                                <span>4998 ккал/кг</span>
+                            </div>
+                        </div>
+                    </div>
 
-                            <div class="contacts__info-vertical">
-                                <div class="contacts__phone-card">
-                                    <div class="contact-icon">📞</div>
-                                    <div class="contact-label">телефони</div>
-                                    <div class="contact-content">
-                                        {% for phone in company_info.phones %}
-                                        <a href="tel:{{ phone }}" class="contacts__phone">{{ phone }}</a>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-
-                                <div class="contacts__address-card">
-                                    <div class="contact-icon">📍</div>
-                                    <div class="contact-label">адреса</div>
-                                    <div class="contact-content">{{ company_info.address|lower }}</div>
-                                </div>
-
-                                <div class="contacts__messengers-card">
-                                    <div class="contact-icon">💬</div>
-                                    <div class="contact-label">месенджери</div>
-                                    <div class="contact-content">
-                                        <a href="https://wa.me/{{ company_info.phones.0|cut:'+' }}"
-                                            class="messenger-btn messenger-btn--whatsapp" target="_blank"
-                                            rel="noopener">
-                                            <span>whatsapp</span>
-                                        </a>
-                                        <a href="https://t.me/{{ company_info.phones.0|cut:'+' }}"
-                                            class="messenger-btn messenger-btn--telegram" target="_blank"
-                                            rel="noopener">
-                                            <span>telegram</span>
-                                        </a>
-                                    </div>
-                                </div>
+                    <div class="contacts__certificate">
+                        <h3>Протокол випробувань</h3>
+                        <p><strong>від 26 лютого 2024 р.</strong></p>
+                        <p>Гранули паливні (пелети)</p>
+                        <div class="contacts__certificate-data">
+                            <div class="contacts__spec">
+                                <span>Вологість:</span>
+                                <span>7.551% / 9.604%</span>
+                            </div>
+                            <div class="contacts__spec">
+                                <span>Зольність:</span>
+                                <span>1.29% / 0.83%</span>
+                            </div>
+                            <div class="contacts__spec">
+                                <span>Механічна міцність:</span>
+                                <span>94.11% / 90.91%</span>
                             </div>
                         </div>
                     </div>

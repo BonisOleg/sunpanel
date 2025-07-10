@@ -97,92 +97,6 @@
     box-shadow: 0 10px 20px rgba(43, 90, 49, 0.3);
 }
 
-.type-card:hover,
-.advantage-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.15);
-}
-
-
-.scroll-video {
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    color: var(--text-white);
-    text-align: center;
-}
-
-.scroll-video__video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.scroll-video__video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.scroll-video__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg,
-            rgba(43, 90, 49, 0.85) 0%,
-            rgba(255, 107, 53, 0.2) 100%);
-    z-index: 2;
-}
-
-.scroll-video__content {
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.scroll-video__container {
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.scroll-video__title {
-    font-size: var(--font-size-4xl);
-    font-weight: 700;
-    line-height: 1.3;
-}
-
-.scroll-video__line {
-    display: block;
-    margin-bottom: 0.5rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards;
-}
-
-.scroll-video__line:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-.scroll-video__line:nth-child(3) {
-    animation-delay: 0.6s;
-    color: var(--accent-color);
-}
-
-
 /* About Section - Liquid Glass with Two Columns */
 .about {
     position: relative;
@@ -198,33 +112,32 @@
 
     background: linear-gradient(135deg,
             rgba(255, 255, 255, 0.15) 0%,
-            rgba(255, 255, 255, 0.05) 50%,
-            rgba(255, 255, 255, 0.1) 100%);
-    border: none;
-    box-shadow: none;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateY(50px);
-    opacity: 0;
-    z-index: 2;
+            rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .about.animate {
-    transform: translateY(0);
-    opacity: 1;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.25) 0%,
+            rgba(255, 255, 255, 0.15) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
-/* Glass Backdrop Effect */
 .about__glass-backdrop {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-        linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
-    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
 }
 
 .about__glass-backdrop::before {
@@ -232,124 +145,118 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-    mix-blend-mode: overlay;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
 }
 
 .about__glass-backdrop::after {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg,
-            transparent 30%,
-            rgba(255, 255, 255, 0.05) 50%,
-            transparent 70%);
-    animation: shimmer 8s ease-in-out infinite;
-    pointer-events: none;
-}
-
-/* Main Layout - Two Columns */
-
-/* Left Section - Production Image */
-.about__left-section {
-    position: relative;
-    width: 50%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background: #0000FF;
-}
-
-.about__image-container {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    margin: 0;
+    background: radial-gradient(circle at 50% 50%,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(255, 255, 255, 0.05) 40%,
+            transparent 70%);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.about__left-section {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     padding: 0;
-    border-radius: 0;
+}
+
+.about__image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
     overflow: hidden;
-    max-width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg,
+            rgba(43, 90, 49, 0.1) 0%,
+            rgba(255, 107, 53, 0.05) 100%);
 }
 
 .about__production-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    margin: 0;
-    padding: 0;
-    max-width: 50vw;
+    transition: transform 0.8s ease;
 }
 
-/* Right Section - Text Content */
 .about__right-section {
+    flex: 1;
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    padding: 60px;
-    width: 50%;
+    justify-content: center;
+    padding: 4rem 2rem;
+    min-height: 100vh;
 }
 
 .about__header {
-    text-align: right;
+    margin-bottom: 2rem;
 }
 
 .about__title {
-    font-size: calc(var(--font-size-base) * 5);
-    font-weight: 900;
-    background: linear-gradient(to bottom, #8B6B3D 0%, #D4804E 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-transform: lowercase;
-    text-align: right;
     letter-spacing: -0.02em;
 }
 
 .about__subtitle {
-    font-size: calc(var(--font-size-base) * 1.2);
-    color: #8B6B3D !important;
-    font-weight: 400;
-    line-height: 1.4;
+    font-size: var(--font-size-lg);
+    color: var(--text-light);
+    font-weight: 500;
+    line-height: 1.6;
     text-transform: lowercase;
-    text-align: right;
 }
 
 .about__text-content {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 1.5rem;
 }
 
 .about__text-content p {
-    font-size: calc(var(--font-size-base) * 0.733);
-    color: #8B6B3D !important;
-    line-height: 1.6;
-    margin: 0;
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+    color: var(--text-dark);
+    font-weight: 400;
     text-align: justify;
-    font-weight: 700;
 }
 
-/* Tablet Styles */
 @media (max-width: 1024px) {
     .about__right-section {
-        padding: 40px;
+        padding: 3rem 1.5rem;
     }
 
     .about__title {
-        font-size: calc(var(--font-size-base) * 4);
+        font-size: var(--font-size-3xl);
     }
 }
 
-/* Mobile Styles */
 @media (max-width: 768px) {
     .about {
         flex-direction: column;
@@ -357,37 +264,33 @@
     }
 
     .about__left-section {
-        order: 2;
         min-height: 50vh;
-        width: 100%;
-        max-width: 100%;
     }
 
     .about__image-container {
-        max-width: 100%;
+        height: 50vh;
     }
 
     .about__production-image {
-        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .about__right-section {
-        order: 1;
-        padding: 30px;
-        gap: 30px;
-        width: 100%;
+        min-height: auto;
+        padding: 2rem 1rem;
     }
 
     .about__title {
-        font-size: calc(var(--font-size-base) * 3);
+        font-size: var(--font-size-2xl);
     }
 
     .about__subtitle {
-        font-size: calc(var(--font-size-base) * 1.2);
+        font-size: var(--font-size-base);
     }
 
     .about__text-content p {
-        font-size: calc(var(--font-size-base) * 0.733);
+        font-size: var(--font-size-sm);
         text-align: left;
     }
 }

@@ -226,17 +226,7 @@
 
 
 
-    /* Contacts Mobile */
-    .contacts__phone {
-        display: block;
-        margin: 0.5rem 0;
-        font-size: var(--font-size-xl);
-    }
-
-    .contacts__messengers {
-        flex-direction: column;
-        align-items: center;
-    }
+    /* Contacts styles handled in style4.css */
 
     /* Footer Mobile */
     .footer__container {
@@ -426,68 +416,7 @@
     }
 
     /* Contacts Mobile */
-    .contacts__glass-container {
-        padding: 10% 5%;
-    }
-
-    .contacts__glass-backdrop {
-        top: 10%;
-        left: 5%;
-        right: 5%;
-        bottom: 10%;
-        border-radius: 16px;
-    }
-
-    .contacts__glass-content {
-        padding: 1rem;
-    }
-
-    .contacts__main-layout {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .contacts__left-section {
-        flex: none;
-    }
-
-    .contacts__right-section {
-        padding-left: 0;
-    }
-
-    .contacts__certificates-title.section-title {
-        font-size: var(--font-size-xl);
-        color: white;
-        background: none;
-        -webkit-background-clip: initial;
-        -webkit-text-fill-color: white;
-        background-clip: initial;
-    }
-
-    .contacts__certificates-subtitle {
-        font-size: var(--font-size-sm);
-    }
-
-    .contacts__title.section-title {
-        font-size: var(--font-size-lg);
-        color: white;
-        background: none;
-        -webkit-background-clip: initial;
-        -webkit-text-fill-color: white;
-        background-clip: initial;
-    }
-
-    .contacts__subtitle {
-        font-size: var(--font-size-sm);
-    }
-
-    .contacts__certificate-card,
-    .contacts__phone-card,
-    .contacts__address-card,
-    .contacts__messengers-card {
-        padding: 1rem;
-        min-width: auto;
-    }
+    /* Contacts mobile styles removed - handled in style4.css */
 }
 
 /* iOS Safari Specific Fixes */
@@ -717,55 +646,7 @@
     }
 
     /* Contacts Tablet */
-    .contacts__glass-container {
-        padding: 12% 10%;
-    }
-
-    .contacts__glass-backdrop {
-        top: 12%;
-        left: 10%;
-        right: 10%;
-        bottom: 12%;
-    }
-
-    .contacts__main-layout {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .contacts__left-section {
-        flex: none;
-    }
-
-    .contacts__right-section {
-        padding-left: 0;
-    }
-
-    .contacts__certificates-title.section-title {
-        font-size: var(--font-size-xl);
-        color: white;
-        background: none;
-        -webkit-background-clip: initial;
-        -webkit-text-fill-color: white;
-        background-clip: initial;
-    }
-
-    .contacts__certificates-subtitle {
-        font-size: var(--font-size-sm);
-    }
-
-    .contacts__title.section-title {
-        font-size: var(--font-size-lg);
-        color: white;
-        background: none;
-        -webkit-background-clip: initial;
-        -webkit-text-fill-color: white;
-        background-clip: initial;
-    }
-
-    .contacts__subtitle {
-        font-size: var(--font-size-sm);
-    }
+    /* Contacts tablet styles removed - handled in style4.css */
 }
 
 /* High DPI Displays */
@@ -888,39 +769,10 @@
     margin-top: 0;
 }
 
-/* Certificates and Contacts Combined Section - Liquid Glass */
-.contacts {
-    position: relative;
-    min-height: 100vh;
-    padding: 120px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-/* Liquid Glass Container */
-.contacts__glass-container {
-    position: relative;
-    width: 90%;
-    max-width: 1400px;
-    min-height: 70vh;
-    border-radius: 30px;
-    backdrop-filter: blur(20px) saturate(200%);
-    -webkit-backdrop-filter: blur(20px) saturate(200%);
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.15) 0%,
-            rgba(255, 255, 255, 0.05) 50%,
-            rgba(255, 255, 255, 0.1) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.2),
-        inset 0 1px 2px rgba(255, 255, 255, 0.3),
-        inset 0 -1px 2px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateY(50px);
-    opacity: 0;
+/* Contacts styles moved to style4.css */
+transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+transform: translateY(50px);
+opacity: 0;
 }
 
 .contacts__glass-container.animate {

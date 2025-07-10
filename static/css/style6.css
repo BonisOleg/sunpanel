@@ -1,0 +1,249 @@
+/* Minimalist Contacts and Certificates Section */
+
+.contacts {
+    padding: 40px;
+    background: white;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+}
+
+.contacts__section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: calc(100vh - 80px);
+}
+
+.contacts__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.contacts__phones {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contacts__phone {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contacts__phone:hover {
+    color: #1d4ed8;
+}
+
+.contacts__location {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contacts__location-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #374151;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.contacts__distances {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contacts__country-group h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 6px 0;
+}
+
+.contacts__country-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.contacts__country-group li {
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.3;
+}
+
+.contacts__messengers {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.contacts__messenger {
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.contacts__messenger--whatsapp {
+    background: #25d366;
+    color: white;
+}
+
+.contacts__messenger--whatsapp:hover {
+    background: #22c55e;
+    transform: translateY(-2px);
+}
+
+.contacts__messenger--viber {
+    background: #665cac;
+    color: white;
+}
+
+.contacts__messenger--viber:hover {
+    background: #5b52a3;
+    transform: translateY(-2px);
+}
+
+/* Certificates Section */
+.contacts__section--certificates {
+    border-left: 1px solid #e5e7eb;
+    padding-left: 30px;
+    height: calc(100vh - 80px);
+}
+
+.contacts__certificates {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contacts__certificate {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.contacts__certificate h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 6px 0;
+}
+
+.contacts__certificate p {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0 0 12px 0;
+}
+
+.contacts__certificate-data {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contacts__spec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.contacts__spec:last-child {
+    border-bottom: none;
+}
+
+.contacts__spec span:first-child {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 400;
+}
+
+.contacts__spec span:last-child {
+    font-size: 12px;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .contacts {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 24px 16px;
+        height: auto;
+    }
+
+    .contacts__section,
+    .contacts__section--certificates {
+        height: auto;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .contacts__title {
+        font-size: 20px;
+    }
+
+    .contacts__phone {
+        font-size: 18px;
+    }
+
+    .contacts__location-title {
+        font-size: 14px;
+    }
+
+    .contacts__messengers {
+        gap: 8px;
+        margin-top: 16px;
+    }
+
+    .contacts__messenger {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .contacts {
+        padding: 32px 20px;
+        gap: 40px;
+    }
+
+    .contacts__section,
+    .contacts__section--certificates {
+        height: auto;
+    }
+
+    .contacts__title {
+        font-size: 22px;
+    }
+
+    .contacts__phone {
+        font-size: 18px;
+    }
+}

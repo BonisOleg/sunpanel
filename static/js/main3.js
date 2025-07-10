@@ -4,12 +4,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
 
-    // Простіші анімації для карток
+    // Простіші анімації для карток (тільки існуючі класи)
     window.CardAnimations = {
         init: function () {
-            const cards = document.querySelectorAll(
-                '.capacity__stat-card, .advantages__stat-card, .advantages__type-card'
-            );
+            const cards = document.querySelectorAll('.capacity__stat-card');
 
             if (cards.length === 0) return;
 
