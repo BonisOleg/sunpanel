@@ -42,10 +42,7 @@
     min-width: 120px;
 }
 
-.certificate-badge:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.15);
-}
+
 
 .certificate-badge__icon {
     font-size: var(--font-size-lg);
@@ -162,9 +159,7 @@
     transition: color 0.3s ease;
 }
 
-.contacts__phone:hover {
-    color: #1d4ed8;
-}
+
 
 .contacts__location {
     display: flex;
@@ -175,7 +170,7 @@
 .contacts__location-title {
     font-size: 18px;
     font-weight: 500;
-    color: #374151;
+    color: #2D3748;
     margin: 0;
     line-height: 1.4;
 }
@@ -204,7 +199,7 @@
 
 .contacts__country-group li {
     font-size: 14px;
-    color: #6b7280;
+    color: #4A5568;
     line-height: 1.4;
 }
 
@@ -227,20 +222,14 @@
     color: white;
 }
 
-.contacts__messenger--whatsapp:hover {
-    background: #22c55e;
-    transform: translateY(-2px);
-}
+
 
 .contacts__messenger--viber {
     background: #665cac;
     color: white;
 }
 
-.contacts__messenger--viber:hover {
-    background: #5b52a3;
-    transform: translateY(-2px);
-}
+
 
 /* Certificates Section */
 .contacts__section--certificates {
@@ -270,7 +259,7 @@
 
 .contacts__certificate p {
     font-size: 14px;
-    color: #6b7280;
+    color: #4A5568;
     margin: 0 0 16px 0;
 }
 
@@ -294,7 +283,7 @@
 
 .contacts__spec span:first-child {
     font-size: 14px;
-    color: #6b7280;
+    color: #4A5568;
     font-weight: 400;
 }
 
@@ -399,9 +388,7 @@
     transition: opacity var(--transition-fast);
 }
 
-.footer__nav-list a:hover {
-    opacity: 1;
-}
+
 
 .footer__meta {
     text-align: center;
@@ -431,11 +418,7 @@
     height: 100%;
 }
 
-.production-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(255, 107, 53, 0.15);
-    border-color: rgba(255, 107, 53, 0.2);
-}
+
 
 .production-card__image {
     position: relative;
@@ -451,9 +434,7 @@
     transition: transform 0.4s ease;
 }
 
-.production-card:hover .production-card__image img {
-    transform: scale(1.1);
-}
+
 
 .production-card__overlay {
     position: absolute;
@@ -653,10 +634,7 @@
     transition: all 0.3s ease;
 }
 
-.production__step-card:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.4);
-}
+
 
 .production__step-card--full-width {
     grid-column: 1 / -1;

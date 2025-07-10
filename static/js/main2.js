@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
             video.setAttribute('webkit-playsinline', '');
             video.muted = true;
 
-            // Встановлюємо вдвічі повільнішу швидкість відтворення
-            video.playbackRate = 0.5;
+            // Встановлюємо нормальну швидкість відтворення
+            video.playbackRate = 1.0;
 
             // Обробник закінчення відео - залишаємо на останньому кадрі
             video.addEventListener('ended', () => {
@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (playPromise !== undefined) {
                 playPromise.then(() => {
-                    // Переконуємося що швидкість залишається повільною
-                    video.playbackRate = 0.5;
-                    console.log(`${videoId} почав одноразове відтворення зі швидкістю 0.5x`);
+                    // Переконуємося що швидкість залишається нормальною
+                    video.playbackRate = 1.0;
+                    console.log(`${videoId} почав одноразове відтворення з нормальною швидкістю`);
                     this.handleGlassEffect(videoId, options);
                 }).catch((error) => {
                     console.warn(`Не вдалося запустити ${videoId}:`, error);

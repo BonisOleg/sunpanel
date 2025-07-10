@@ -15,7 +15,7 @@
     --secondary-color: #D4A574;
     --accent-color: #F4B942;
     --text-dark: #1A1A1A;
-    --text-light: #666666;
+    --text-light: #4A4A4A;
     --text-white: #FFFFFF;
     --bg-light: #F8F9FA;
     --bg-dark: #1A1A1A;
@@ -81,9 +81,7 @@ body {
     transition: transform var(--transition-normal);
 }
 
-.btn-magnetic:hover {
-    transform: scale(1.05);
-}
+
 
 
 .nav {
@@ -129,12 +127,7 @@ body {
     position: relative;
 }
 
-.nav__link:hover {
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
+
 
 .nav__link::after {
     content: '';
@@ -147,9 +140,7 @@ body {
     transition: width var(--transition-normal);
 }
 
-.nav__link:hover::after {
-    width: 100%;
-}
+
 
 .nav__toggle {
     display: none;

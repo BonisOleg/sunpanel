@@ -885,11 +885,7 @@ opacity: 0;
     gap: 20px;
 }
 
-.contacts__certificate-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    border-color: rgba(255, 255, 255, 0.25);
-}
+
 
 .certificate-icon {
     flex-shrink: 0;
@@ -973,15 +969,7 @@ opacity: 0;
     transition: all 0.3s ease;
 }
 
-.contacts__phone-card:hover,
-.contacts__address-card:hover,
-.contacts__messengers-card:hover {
-    transform: translateX(5px);
-    border-color: rgba(255, 255, 255, 0.2);
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.12) 0%,
-            rgba(255, 255, 255, 0.06) 100%);
-}
+
 
 .contact-icon {
     font-size: 1.5rem;
@@ -1010,9 +998,7 @@ opacity: 0;
     transition: color 0.3s ease;
 }
 
-.contacts__phone:hover {
-    color: #000;
-}
+
 
 .contact-content {
     font-size: calc(var(--font-size-base) * 0.95);
@@ -1050,24 +1036,11 @@ opacity: 0;
     border: 1px solid rgba(0, 136, 204, 0.2);
 }
 
-.messenger-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
 
-.messenger-btn--whatsapp:hover {
-    background: linear-gradient(135deg,
-            rgba(37, 211, 102, 0.15) 0%,
-            rgba(37, 211, 102, 0.08) 100%);
-    border-color: rgba(37, 211, 102, 0.3);
-}
 
-.messenger-btn--telegram:hover {
-    background: linear-gradient(135deg,
-            rgba(0, 136, 204, 0.15) 0%,
-            rgba(0, 136, 204, 0.08) 100%);
-    border-color: rgba(0, 136, 204, 0.3);
-}
+
+
+
 
 /* Tablet Styles */
 @media (max-width: 1024px) {

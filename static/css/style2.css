@@ -91,11 +91,7 @@
     gap: 0.5rem;
 }
 
-.hero__btn:hover {
-    background: linear-gradient(135deg, #4A8257 0%, #FF8C42 100%);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(43, 90, 49, 0.3);
-}
+
 
 /* About Section - Liquid Glass with Two Columns */
 .about {
@@ -373,9 +369,7 @@
     transition: transform 0.3s ease;
 }
 
-.type-card:hover::before {
-    transform: scaleX(1);
-}
+
 
 .type-card__header {
     display: flex;
