@@ -116,17 +116,28 @@
     }
 
     .hero__title {
-        font-size: var(--font-size-4xl);
-        line-height: 1.3;
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        line-height: 1.2;
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero__title-accent::after {
+        height: 3px;
+        bottom: -6px;
     }
 
     .hero__subtitle {
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-lg);
+        max-width: 90%;
+        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
     }
 
     .hero__btn {
-        padding: 0.75rem 2rem;
+        padding: 1rem 2.5rem;
         font-size: var(--font-size-base);
+        border-radius: 50px;
+        backdrop-filter: blur(15px) saturate(160%);
+        -webkit-backdrop-filter: blur(15px) saturate(160%);
     }
 
     /* Scroll Video Mobile */
@@ -403,12 +414,12 @@
     }
 
     .production__step-card .production-number-circle {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
     }
 
     .production__step-card .production-number {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .production__header {
@@ -431,9 +442,16 @@
         object-fit: cover;
     }
 
+    /* Hero кнопка glass ефект для iOS Safari */
+    .hero__btn {
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
     /* Liquid Glass iOS Safari підтримка */
     .capacity__glass-backdrop {
-        -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(110%);
+        -webkit-backdrop-filter: blur(10px) saturate(160%) brightness(110%);
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
     }
@@ -465,7 +483,23 @@
 /* Tablet Styles */
 @media (min-width: 769px) and (max-width: 1024px) {
     .hero__title {
-        font-size: var(--font-size-4xl);
+        font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+        text-shadow: 0 3px 18px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero__title-accent::after {
+        height: 3px;
+        bottom: -7px;
+    }
+
+    .hero__subtitle {
+        font-size: var(--font-size-xl);
+        max-width: 85%;
+    }
+
+    .hero__btn {
+        padding: 1.1rem 2.8rem;
+        font-size: var(--font-size-lg);
     }
 
     .about__container {
@@ -780,44 +814,29 @@ opacity: 0;
     opacity: 1;
 }
 
-/* Glass Backdrop Effect */
+/* СПРОЩЕНА CONTACTS СЕКЦІЯ БЕЗ GLASS ЕФЕКТІВ ДЛЯ КРАЩОЇ ПРОДУКТИВНОСТІ */
+
+.contacts__glass-container {
+    /* Видаляємо всі glass ефекти */
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.contacts__glass-container.animate {
+    /* Видаляємо анімації */
+    transform: none;
+    opacity: 1;
+}
+
+/* Прибираємо Glass Backdrop Effect */
 .contacts__glass-backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        radial-gradient(circle at 35% 15%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 65% 85%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-        linear-gradient(315deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
-    pointer-events: none;
+    display: none;
 }
 
-.contacts__glass-backdrop::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
-    mix-blend-mode: overlay;
-}
-
+.contacts__glass-backdrop::before,
 .contacts__glass-backdrop::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(315deg,
-            transparent 30%,
-            rgba(255, 255, 255, 0.04) 50%,
-            transparent 70%);
-    animation: shimmer 14s ease-in-out infinite;
-    pointer-events: none;
+    display: none;
 }
 
 /* Main Layout - Two Columns */
@@ -871,39 +890,37 @@ opacity: 0;
 }
 
 .contacts__certificate-card {
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.1) 0%,
-            rgba(255, 255, 255, 0.05) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    /* Замінюємо glass ефекти на прості фони */
+    background: rgba(249, 250, 251, 0.8);
+    border: 1px solid #e5e7eb;
     border-radius: 15px;
     padding: 25px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    /* Видаляємо backdrop-filter */
+    transition: transform 0.2s ease;
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-
+.contacts__certificate-card:hover {
+    transform: translateY(-2px);
+}
 
 .certificate-icon {
     flex-shrink: 0;
     width: 60px;
     height: 60px;
     border-radius: 12px;
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.15) 0%,
-            rgba(255, 255, 255, 0.08) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Замінюємо glass на простий фон */
+    background: rgba(243, 244, 246, 0.9);
+    border: 1px solid #d1d5db;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
     font-size: calc(var(--font-size-base) * 0.9);
     color: #000;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    /* Видаляємо backdrop-filter */
 }
 
 .certificate-label {
@@ -958,82 +975,19 @@ opacity: 0;
 .contacts__phone-card,
 .contacts__address-card,
 .contacts__messengers-card {
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.08) 0%,
-            rgba(255, 255, 255, 0.04) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    /* Замінюємо glass ефекти на прості фони */
+    background: rgba(249, 250, 251, 0.8);
+    border: 1px solid #e5e7eb;
     border-radius: 12px;
     padding: 20px;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: all 0.3s ease;
+    /* Видаляємо backdrop-filter */
+    transition: transform 0.2s ease;
 }
 
-
-
-.contact-icon {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    display: block;
-}
-
-.contact-label {
-    font-size: calc(var(--font-size-base) * 1.1);
-    font-weight: 600;
-    color: #000;
-    margin-bottom: 10px;
-    text-transform: lowercase;
-}
-
-.contact-content {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.contacts__phone {
-    color: rgba(0, 0, 0, 0.8);
-    text-decoration: none;
-    font-size: calc(var(--font-size-base) * 0.95);
-    transition: color 0.3s ease;
-}
-
-
-
-.contact-content {
-    font-size: calc(var(--font-size-base) * 0.95);
-    color: rgba(0, 0, 0, 0.8);
-    line-height: 1.4;
-}
-
-.messenger-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: calc(var(--font-size-base) * 0.9);
-    font-weight: 500;
-    transition: all 0.3s ease;
-    margin-right: 10px;
-    margin-bottom: 5px;
-}
-
-.messenger-btn--whatsapp {
-    background: linear-gradient(135deg,
-            rgba(37, 211, 102, 0.1) 0%,
-            rgba(37, 211, 102, 0.05) 100%);
-    color: rgba(37, 211, 102, 0.9);
-    border: 1px solid rgba(37, 211, 102, 0.2);
-}
-
-.messenger-btn--telegram {
-    background: linear-gradient(135deg,
-            rgba(0, 136, 204, 0.1) 0%,
-            rgba(0, 136, 204, 0.05) 100%);
-    color: rgba(0, 136, 204, 0.9);
-    border: 1px solid rgba(0, 136, 204, 0.2);
+.contacts__phone-card:hover,
+.contacts__address-card:hover,
+.contacts__messengers-card:hover {
+    transform: translateY(-1px);
 }
 
 
@@ -1158,11 +1112,8 @@ opacity: 0;
 /* iOS Safari Optimizations */
 @supports (-webkit-touch-callout: none) {
     .contacts__glass-container {
-        -webkit-backdrop-filter: blur(20px) saturate(200%);
-        background: linear-gradient(135deg,
-                rgba(255, 255, 255, 0.2) 0%,
-                rgba(255, 255, 255, 0.08) 50%,
-                rgba(255, 255, 255, 0.15) 100%);
+        /* Видаляємо всі glass ефекти для iOS */
+        background: white;
     }
 
     .contacts__certificate-card,
@@ -1170,6 +1121,7 @@ opacity: 0;
     .contacts__address-card,
     .contacts__messengers-card,
     .certificate-icon {
-        -webkit-backdrop-filter: blur(10px);
+        /* Видаляємо backdrop-filter для iOS */
+        background: rgba(249, 250, 251, 0.95);
     }
 }

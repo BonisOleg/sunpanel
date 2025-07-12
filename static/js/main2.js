@@ -140,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function () {
         init: function () {
             const glassContainers = [
                 'about',
-                'advantages',
                 'production-glass'
             ];
 
@@ -162,9 +161,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         } else {
                             entry.target.classList.add('animate');
                         }
+                        // Відключаємо observer після першого спрацювання для оптимізації
+                        observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.2 });
+            }, { threshold: 0.3 });
 
             observer.observe(container);
         }
@@ -180,9 +181,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             this.animateCounter(entry.target);
+                            // Відключаємо observer після спрацювання для оптимізації
+                            observer.unobserve(entry.target);
                         }
                     });
-                }, { threshold: 0.5 });
+                }, { threshold: 0.4 });
 
                 counters.forEach(counter => observer.observe(counter));
             }
@@ -196,8 +199,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const target = parseInt(element.getAttribute('data-target'));
             if (!target || target <= 0) return;
 
-            const duration = 2000;
-            const increment = target / (duration / 16);
+            const duration = 1500; // Скорочено до 1.5s
+            const increment = target / (duration / 50); // Рідше оновлення
             let current = 0;
 
             const timer = setInterval(() => {
@@ -207,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     clearInterval(timer);
                 }
                 element.textContent = Math.floor(current).toLocaleString();
-            }, 16);
+            }, 50); // Рідше оновлення для меншого навантаження
         }
     };
 

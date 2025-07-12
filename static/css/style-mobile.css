@@ -1,0 +1,292 @@
+/* ================================================
+   МОБІЛЬНА АДАПТАЦІЯ - ГОРИЗОНТАЛЬНІ ЛІЧІЛЬНИКИ
+   Оптимізовано для iOS Safari
+   ================================================ */
+
+/* Базові змінні для мобільної версії */
+@media (max-width: 768px) {
+    :root {
+        --mobile-counter-size: 1.8rem;
+        --mobile-label-size: 0.65rem;
+        --mobile-description-size: 0.6rem;
+        --mobile-icon-size: 1.2rem;
+        --mobile-card-padding: 0.6rem;
+        --mobile-card-gap: 0.5rem;
+    }
+}
+
+/* =============== МОБІЛЬНА АДАПТАЦІЯ =============== */
+@media (max-width: 768px) {
+
+    /* Основний контейнер лічільників - горизонтальний макет */
+    .capacity__stats-vertical {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: var(--mobile-card-gap);
+        margin: 1rem 0;
+        width: 100%;
+    }
+
+    /* Компактні картки лічільників */
+    .capacity__stat-card {
+        flex: 1;
+        min-width: 0;
+        /* Дозволяє flex-елементам стискатися */
+        padding: var(--mobile-card-padding) !important;
+        margin: 0;
+        border-radius: 8px !important;
+        text-align: center;
+
+        /* Оптимізований скляний ефект для iOS Safari */
+        background: rgba(255, 255, 255, 0.25) !important;
+        border: 1px solid rgba(255, 255, 255, 0.35) !important;
+
+        /* Видаляємо важкі ефекти для швидкості */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+
+        /* Швидкі переходи */
+        transition: transform 0.2s ease !important;
+        transform: translateZ(0);
+        /* Увімкнення апаратного прискорення */
+    }
+
+    /* Легкий ховер ефект для сенсорних пристроїв */
+    .capacity__stat-card:active {
+        transform: translateZ(0) scale(0.98);
+    }
+
+    /* Іконки лічільників */
+    .stat-card__icon {
+        font-size: var(--mobile-icon-size) !important;
+        margin-bottom: 0.3rem !important;
+        display: block;
+        line-height: 1;
+    }
+
+    /* Числа лічільників */
+    .stat-card__number {
+        font-size: var(--mobile-counter-size) !important;
+        font-weight: 800 !important;
+        line-height: 1.1 !important;
+        margin-bottom: 0.2rem !important;
+        color: rgba(255, 255, 255, 0.95) !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    /* Лейбли лічільників */
+    .stat-card__label {
+        font-size: var(--mobile-label-size) !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        margin-bottom: 0.15rem !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Описи лічільників */
+    .stat-card__description {
+        font-size: var(--mobile-description-size) !important;
+        font-weight: 500 !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        line-height: 1.2 !important;
+        margin: 0;
+    }
+
+    /* Адаптація для дуже малих екранів (iPhone SE, тощо) */
+    @media (max-width: 375px) {
+        .capacity__stats-vertical {
+            gap: 0.3rem;
+        }
+
+        .capacity__stat-card {
+            padding: 0.5rem !important;
+        }
+
+        .stat-card__number {
+            font-size: 1.5rem !important;
+        }
+
+        .stat-card__label {
+            font-size: 0.6rem !important;
+        }
+
+        .stat-card__description {
+            font-size: 0.55rem !important;
+        }
+
+        .stat-card__icon {
+            font-size: 1rem !important;
+        }
+    }
+
+    /* Адаптація для середніх мобільних екранів */
+    @media (min-width: 376px) and (max-width: 414px) {
+        .capacity__stat-card {
+            padding: 0.7rem !important;
+        }
+
+        .stat-card__number {
+            font-size: 1.9rem !important;
+        }
+
+        .stat-card__label {
+            font-size: 0.7rem !important;
+        }
+    }
+
+    /* Адаптація основного лейауту для мобільних */
+    .capacity__main-layout {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+
+    .capacity__left-section {
+        flex: none !important;
+        order: 1;
+    }
+
+    .capacity__right-section {
+        flex: none !important;
+        padding-left: 0 !important;
+        order: 2;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    /* Оптимізація тексту в лівій секції */
+    .capacity__text-content p {
+        font-size: 0.8rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 0.7rem !important;
+        text-align: left !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    /* Заголовки */
+    .capacity__title.section-title {
+        font-size: 1.8rem !important;
+        text-align: left !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .capacity__subtitle {
+        font-size: 0.9rem !important;
+        text-align: left !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* Скляний контейнер для мобільних */
+    .capacity__glass-container {
+        padding: 8% 4% !important;
+    }
+
+    .capacity__glass-backdrop {
+        top: 8% !important;
+        left: 4% !important;
+        right: 4% !important;
+        bottom: 8% !important;
+        border-radius: 16px !important;
+
+        /* Оптимізований скляний ефект */
+        background: rgba(255, 255, 255, 0.2) !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .capacity__glass-content {
+        padding: 1.2rem !important;
+    }
+}
+
+/* =============== LANDSCAPE ОРІЄНТАЦІЯ =============== */
+@media (max-width: 768px) and (orientation: landscape) {
+    .capacity__glass-container {
+        padding: 5% 8% !important;
+    }
+
+    .capacity__main-layout {
+        flex-direction: row !important;
+        align-items: center !important;
+    }
+
+    .capacity__left-section {
+        flex: 0 0 60% !important;
+    }
+
+    .capacity__right-section {
+        flex: 0 0 40% !important;
+        padding-left: 1rem !important;
+    }
+
+    .capacity__stats-vertical {
+        flex-direction: column !important;
+        gap: 0.4rem !important;
+    }
+
+    .capacity__stat-card {
+        padding: 0.4rem !important;
+    }
+
+    .stat-card__number {
+        font-size: 1.4rem !important;
+    }
+}
+
+/* =============== iOS SAFARI ОПТИМІЗАЦІЇ =============== */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 768px) {
+
+        /* Видалення lag на iOS */
+        .capacity__stat-card {
+            -webkit-transform: translateZ(0) !important;
+            transform: translateZ(0) !important;
+            -webkit-backface-visibility: hidden !important;
+            backface-visibility: hidden !important;
+        }
+
+        /* Оптимізація рендерингу тексту на iOS */
+        .stat-card__number,
+        .stat-card__label,
+        .stat-card__description {
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
+        }
+
+        /* Відключення zoom на iOS при focus */
+        .capacity__stat-card * {
+            -webkit-touch-callout: none !important;
+            -webkit-user-select: none !important;
+            user-select: none !important;
+        }
+    }
+}
+
+/* =============== ВИСОКІ DPI ЕКРАНИ =============== */
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    .capacity__stat-card {
+        border-width: 0.5px !important;
+    }
+
+    .stat-card__number,
+    .stat-card__label {
+        text-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.3) !important;
+    }
+}
+
+/* =============== ACCESSIBILITY =============== */
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+    .capacity__stat-card {
+        transition: none !important;
+        transform: none !important;
+    }
+
+    .capacity__stat-card:active {
+        transform: none !important;
+    }
+}

@@ -75,6 +75,11 @@
     <link rel="stylesheet" href="{% static 'css/style4.css' %}">
     <link rel="stylesheet" href="{% static 'css/style5.css' %}">
     <link rel="stylesheet" href="{% static 'css/style6.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-mobile-override.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-production-mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-production-critical.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-newspaper-mobile.css' %}">
 
     <!-- Preload Critical Resources -->
     <link rel="preload" href="{% static 'videos/hero-video.mp4' %}" as="video" type="video/mp4">
@@ -155,13 +160,13 @@
                     <p class="about__subtitle">провідна українська компанія з проектування сонячних електростанцій</p>
                 </div>
 
-                <div class="about__text-content">
-                    <p>greenSolarTech — провідна українська компанія з проектування <br>та будівництва сонячних
-                        електростанцій. наш офіс розташований <br>у києві, де ми реалізуємо проєкти по всій україні<br>
-                        створюючи енергетичну незалежність європейської якості.</p>
-                    <p>всі наші рішення базуються на сучасних технологіях <br>та обладнанні провідних світових
-                        виробників. ми гарантуємо<br> надійність, економічність та екологічність наших<br> сонячних
-                        електростанцій.</p>
+                                <div class="about__text-content">
+                    <p>greenSolarTech — провідна українська компанія з проектування 
+                        та будівництва сонячних електростанцій. реалізуємо проєкти 
+                        по всій україні створюючи енергетичну незалежність.</p>
+                    <p>всі рішення базуються на сучасних технологіях світових 
+                        виробників. гарантуємо надійність та екологічність 
+                        наших сонячних електростанцій.</p>
                 </div>
             </div>
         </section>
@@ -228,92 +233,10 @@
             </div>
         </section>
 
-        <!-- Advantages and Types Combined Section -->
-        <section class="advantages" id="advantages">
-            <!-- Монокристалічні панелі Block -->
-            <div class="pellet-block pellet-block--en-a1">
-                <div class="pellet-block__content">
-                    <div class="pellet-block__header">
-                        <div class="pellet-block__title-row">
-                            <h3 class="pellet-block__name">монокристалічні</h3>
-                            <span class="pellet-block__diameter">540-700 Вт</span>
-                        </div>
-                    </div>
-                    <div class="pellet-block__info">
-                        <div class="pellet-block__specs-row">
-                            <div class="pellet-block__spec">
-                                <span class="spec-label">ефективність</span>
-                                <span class="spec-value">до 22%</span>
-                            </div>
-                            <div class="pellet-block__spec">
-                                <span class="spec-label">гарантія</span>
-                                <span class="spec-value">25 років</span>
-                            </div>
-                            <div class="pellet-block__spec">
-                                <span class="spec-label">найвища якість</span>
-                            </div>
-                            <div class="pellet-block__spec">
-                                <span class="spec-label">максимум енергії</span>
-                            </div>
-                            <div class="pellet-block__spec">
-                                <span class="spec-label">надійність</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Advantages Row -->
-            <div class="advantages-row">
-                <!-- Верхня бігуча стрічка (справа наліво) -->
-                <div class="running-text running-text--top">
-                    <div class="running-text__content running-text__content--right-to-left">
-                        Екологічно - 100% чиста енергія сонця. Економно - окупність за 5-7 років. Зелений тариф - продаж
-                        електроенергії державі. Енергонезалежність - власна електроенергія.
-                    </div>
-                </div>
-
-                <!-- Нижня бігуча стрічка (зліва направо) -->
-                <div class="running-text running-text--bottom">
-                    <div class="running-text__content running-text__content--left-to-right">
-                        Довгострокова інвестиція - понад 25 років роботи. Екологічно - зниження викидів CO₂. Надійність
-                        - мінімальне обслуговування. Економія - зниження рахунків за електроенергію.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Полікристалічні панелі Block -->
-            <div class="pellet-block pellet-block--en-a2">
-                <div class="pellet-block__content">
-                    <div class="pellet-block__header">
-                        <div class="pellet-block__title-row">
-                            <span class="pellet-block__diameter">440-550 Вт</span>
-                            <h3 class="pellet-block__name">полікристалічні</h3>
-                        </div>
-                    </div>
-                    <div class="pellet-block__info">
-                        <div class="pellet-block__specs-row">
-                            <div class="pellet-block__spec">
-                                <span class="spec-label">ефективність</span>
-                                <span class="spec-value">до 20%</span>
-                            </div>
-                            <div class="pellet-block__spec">
-                                <span class="spec-label">гарантія</span>
-                                <span class="spec-value">20-25 років</span>
-                            </div>
-                            <div class="pellet-block__spec">
-                                <span class="spec-label">відмінна якість</span>
-                            </div>
-                            <div class="pellet-block__spec">
-                                <span class="spec-label">економічно</span>
-                            </div>
-                            <div class="pellet-block__spec">
-                                <span class="spec-label">стабільна генерація</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Advantages Section - Empty White Block -->
+        <section class="advantages page-section" id="advantages"
+            style="background: white; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+            <!-- Пуста секція -->
         </section>
 
         <!-- Production Process Section -->
