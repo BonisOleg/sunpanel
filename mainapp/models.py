@@ -29,6 +29,22 @@ class Product(models.Model):
         return self.name
 
 
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, related_name='images', on_delete=models.CASCADE, verbose_name="Товар")
+    image = models.ImageField(upload_to='products/gallery/', verbose_name="Зображення")
+    alt_text = models.CharField(max_length=200, blank=True, verbose_name="Альтернативний текст")
+    is_main = models.BooleanField(default=False, verbose_name="Головне зображення")
+    order = models.PositiveIntegerField(default=0, verbose_name="Порядок відображення")
+    
+    class Meta:
+        verbose_name = "Зображення товару"
+        verbose_name_plural = "Зображення товарів"
+        ordering = ['order', 'id']
+    
+    def __str__(self):
+        return f"{self.product.name} - Зображення {self.order}"
+
+
 class Portfolio(models.Model):
     title = models.CharField(max_length=200, verbose_name="Назва проєкту")
     description = models.TextField(verbose_name="Опис проєкту")

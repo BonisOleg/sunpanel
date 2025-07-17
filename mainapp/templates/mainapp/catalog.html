@@ -8,6 +8,7 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/catalog.css' %}">
+<link rel="stylesheet" href="{% static 'css/product-links.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -78,21 +79,23 @@
                             <div class="carousel-track">
                                 {% for product in inverters %}
                                 <div class="product-card">
-                                    {% if product.image %}
-                                    <div class="product-image">
-                                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                                    </div>
-                                    {% endif %}
-                                    <div class="product-info">
-                                        <h3 class="product-name">{{ product.name }}</h3>
-                                        <p class="product-brand">{{ product.brand }}</p>
-                                        <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
-                                        <button class="add-to-cart-btn" data-id="{{ product.id }}"
-                                            data-name="{{ product.name }}" data-price="{{ product.price }}"
-                                            data-image="{% if product.image %}{{ product.image.url }}{% endif %}">
-                                            Додати в кошик
-                                        </button>
-                                    </div>
+                                    <a href="{% url 'mainapp:product_detail' product.id %}" class="product-link">
+                                        {% if product.image %}
+                                        <div class="product-image">
+                                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                                        </div>
+                                        {% endif %}
+                                        <div class="product-info">
+                                            <h3 class="product-name">{{ product.name }}</h3>
+                                            <p class="product-brand">{{ product.brand }}</p>
+                                            <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
+                                        </div>
+                                    </a>
+                                    <button class="add-to-cart-btn" data-product-id="{{ product.id }}"
+                                        data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
+                                        data-product-image="{% if product.image %}{{ product.image.url }}{% endif %}">
+                                        Додати в кошик
+                                    </button>
                                 </div>
                                 {% endfor %}
                             </div>
@@ -119,21 +122,23 @@
                             <div class="carousel-track">
                                 {% for product in solar_panels %}
                                 <div class="product-card">
-                                    {% if product.image %}
-                                    <div class="product-image">
-                                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                                    </div>
-                                    {% endif %}
-                                    <div class="product-info">
-                                        <h3 class="product-name">{{ product.name }}</h3>
-                                        <p class="product-brand">{{ product.brand }}</p>
-                                        <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
-                                        <button class="add-to-cart-btn" data-id="{{ product.id }}"
-                                            data-name="{{ product.name }}" data-price="{{ product.price }}"
-                                            data-image="{% if product.image %}{{ product.image.url }}{% endif %}">
-                                            Додати в кошик
-                                        </button>
-                                    </div>
+                                    <a href="{% url 'mainapp:product_detail' product.id %}" class="product-link">
+                                        {% if product.image %}
+                                        <div class="product-image">
+                                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                                        </div>
+                                        {% endif %}
+                                        <div class="product-info">
+                                            <h3 class="product-name">{{ product.name }}</h3>
+                                            <p class="product-brand">{{ product.brand }}</p>
+                                            <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
+                                        </div>
+                                    </a>
+                                    <button class="add-to-cart-btn" data-product-id="{{ product.id }}"
+                                        data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
+                                        data-product-image="{% if product.image %}{{ product.image.url }}{% endif %}">
+                                        Додати в кошик
+                                    </button>
                                 </div>
                                 {% endfor %}
                             </div>
@@ -160,21 +165,23 @@
                             <div class="carousel-track">
                                 {% for product in batteries %}
                                 <div class="product-card">
-                                    {% if product.image %}
-                                    <div class="product-image">
-                                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                                    </div>
-                                    {% endif %}
-                                    <div class="product-info">
-                                        <h3 class="product-name">{{ product.name }}</h3>
-                                        <p class="product-brand">{{ product.brand }}</p>
-                                        <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
-                                        <button class="add-to-cart-btn" data-id="{{ product.id }}"
-                                            data-name="{{ product.name }}" data-price="{{ product.price }}"
-                                            data-image="{% if product.image %}{{ product.image.url }}{% endif %}">
-                                            Додати в кошик
-                                        </button>
-                                    </div>
+                                    <a href="{% url 'mainapp:product_detail' product.id %}" class="product-link">
+                                        {% if product.image %}
+                                        <div class="product-image">
+                                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                                        </div>
+                                        {% endif %}
+                                        <div class="product-info">
+                                            <h3 class="product-name">{{ product.name }}</h3>
+                                            <p class="product-brand">{{ product.brand }}</p>
+                                            <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
+                                        </div>
+                                    </a>
+                                    <button class="add-to-cart-btn" data-product-id="{{ product.id }}"
+                                        data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
+                                        data-product-image="{% if product.image %}{{ product.image.url }}{% endif %}">
+                                        Додати в кошик
+                                    </button>
                                 </div>
                                 {% endfor %}
                             </div>
@@ -201,21 +208,23 @@
                             <div class="carousel-track">
                                 {% for product in backup_kits %}
                                 <div class="product-card">
-                                    {% if product.image %}
-                                    <div class="product-image">
-                                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                                    </div>
-                                    {% endif %}
-                                    <div class="product-info">
-                                        <h3 class="product-name">{{ product.name }}</h3>
-                                        <p class="product-brand">{{ product.brand }}</p>
-                                        <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
-                                        <button class="add-to-cart-btn" data-id="{{ product.id }}"
-                                            data-name="{{ product.name }}" data-price="{{ product.price }}"
-                                            data-image="{% if product.image %}{{ product.image.url }}{% endif %}">
-                                            Додати в кошик
-                                        </button>
-                                    </div>
+                                    <a href="{% url 'mainapp:product_detail' product.id %}" class="product-link">
+                                        {% if product.image %}
+                                        <div class="product-image">
+                                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                                        </div>
+                                        {% endif %}
+                                        <div class="product-info">
+                                            <h3 class="product-name">{{ product.name }}</h3>
+                                            <p class="product-brand">{{ product.brand }}</p>
+                                            <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
+                                        </div>
+                                    </a>
+                                    <button class="add-to-cart-btn" data-product-id="{{ product.id }}"
+                                        data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
+                                        data-product-image="{% if product.image %}{{ product.image.url }}{% endif %}">
+                                        Додати в кошик
+                                    </button>
                                 </div>
                                 {% endfor %}
                             </div>

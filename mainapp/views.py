@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView
 from django.http import HttpResponse
-from .models import Product, Portfolio, Review
+from .models import Product, Portfolio, Review, ProductImage
 from django.db.models import Q, Avg
 from django.db import models
 
@@ -157,11 +157,22 @@ class CatalogView(TemplateView):
         categories = Product.objects.values_list('category', flat=True).distinct()
         brands = Product.objects.values_list('brand', flat=True).distinct()
         
-        # Товари по категоріях для каруселей
-        inverters = products.filter(category__icontains='інвертор').order_by('-featured', 'name')[:10]
-        solar_panels = products.filter(category__icontains='панель').order_by('-featured', 'name')[:10]
-        batteries = products.filter(category__icontains='акумулятор').order_by('-featured', 'name')[:10]
-        backup_kits = products.filter(category__icontains='комплект').order_by('-featured', 'name')[:10]
+        # Товари по категоріях для каруселей (підтримка українських та російських назв)
+        inverters = products.filter(
+            Q(category__icontains='інвертор') | Q(category__icontains='Инвертор')
+        ).order_by('-featured', 'name')[:10]
+        
+        solar_panels = products.filter(
+            Q(category__icontains='панель') | Q(category__icontains='панели')
+        ).order_by('-featured', 'name')[:10]
+        
+        batteries = products.filter(
+            Q(category__icontains='акумулятор') | Q(category__icontains='Аккумулятор')
+        ).order_by('-featured', 'name')[:10]
+        
+        backup_kits = products.filter(
+            Q(category__icontains='комплект') | Q(category__icontains='комплек')
+        ).order_by('-featured', 'name')[:10]
         
         context.update({
             'title': 'Каталог товарів — GreenSolarTech',
@@ -188,24 +199,28 @@ class CategoryView(TemplateView):
         context = super().get_context_data(**kwargs)
         category_key = kwargs.get('category')
         
-        # Маппінг англійських ключів URL на українські категорії
+        # Маппінг англійських ключів URL на фільтри категорій (підтримка українських та російських назв)
         category_mapping = {
-            'inverters': 'інвертор',
-            'solar-panels': 'сонячна панель', 
-            'batteries': 'акумулятор',
-            'backup-power': 'комплект резервного живлення'
+            'inverters': ['інвертор', 'Инвертор'],
+            'solar-panels': ['панель', 'панели'], 
+            'batteries': ['акумулятор', 'Аккумулятор'],
+            'backup-power': ['комплект', 'комплек']
         }
         
-        # Отримуємо українську назву категорії
-        ukrainian_category = category_mapping.get(category_key, category_key)
+        # Отримуємо ключові слова для категорії
+        category_keywords = category_mapping.get(category_key, [category_key])
         
         # Отримуємо параметри фільтрації
         brand = self.request.GET.get('brand')
         min_price = self.request.GET.get('min_price')
         max_price = self.request.GET.get('max_price')
         
-        # Базовий запит для категорії
-        products = Product.objects.filter(in_stock=True, category__icontains=ukrainian_category)
+        # Базовий запит для категорії з підтримкою множинних ключових слів
+        category_filter = Q()
+        for keyword in category_keywords:
+            category_filter |= Q(category__icontains=keyword)
+        
+        products = Product.objects.filter(in_stock=True).filter(category_filter)
         
         # Фільтрація
         if brand:
@@ -216,7 +231,7 @@ class CategoryView(TemplateView):
             products = products.filter(price__lte=max_price)
         
         # Унікальні бренди для цієї категорії
-        brands = Product.objects.filter(category__icontains=ukrainian_category).values_list('brand', flat=True).distinct()
+        brands = Product.objects.filter(category_filter).values_list('brand', flat=True).distinct()
         
         # Назви категорій для відображення
         category_names = {
@@ -298,3 +313,41 @@ def robots_txt(request):
 Allow: /
 Sitemap: https://greensolalrtech.com/sitemap.xml'''
     return HttpResponse(txt_content, content_type='text/plain')
+
+
+class ProductDetailView(TemplateView):
+    template_name = 'mainapp/product_detail.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        product_id = kwargs.get('product_id')
+        
+        # Отримуємо товар або 404
+        product = get_object_or_404(Product, id=product_id, in_stock=True)
+        
+        # Отримуємо всі зображення товару
+        product_images = ProductImage.objects.filter(product=product).order_by('order', 'id')
+        
+        # Якщо немає додаткових зображень, використовуємо основне
+        if not product_images and product.image:
+            main_image = product.image
+        else:
+            main_image = product_images.first().image if product_images else product.image
+        
+        # Схожі товари (з тієї ж категорії або бренду)
+        similar_products = Product.objects.filter(
+            Q(category=product.category) | Q(brand=product.brand),
+            in_stock=True
+        ).exclude(id=product.id)[:6]
+        
+        context.update({
+            'title': f'{product.name} — GreenSolarTech',
+            'description': f'{product.name} від {product.brand}. {product.description[:150]}...',
+            'keywords': f'{product.name}, {product.brand}, {product.category}, сонячне обладнання',
+            'product': product,
+            'product_images': product_images,
+            'main_image': main_image,
+            'similar_products': similar_products,
+        })
+        
+        return context

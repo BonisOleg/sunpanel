@@ -8,6 +8,7 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/catalog.css' %}">
+<link rel="stylesheet" href="{% static 'css/product-links.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -59,7 +60,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="filters-btn">Застосувати фільтри</button>
+
                         <a href="{% url 'mainapp:category' category_key %}" class="filters-reset">Скинути фільтри</a>
                     </form>
 
@@ -98,53 +99,55 @@
                     <div class="products-grid">
                         {% for product in products %}
                         <div class="product-card">
-                            {% if product.image %}
-                            <div class="product-image">
-                                <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                                {% if product.featured %}
-                                <div class="product-badge">Рекомендовано</div>
-                                {% endif %}
-                            </div>
-                            {% else %}
-                            <div class="product-image product-placeholder">
-                                <span>Немає зображення</span>
-                                {% if product.featured %}
-                                <div class="product-badge">Рекомендовано</div>
-                                {% endif %}
-                            </div>
-                            {% endif %}
-                            <div class="product-info">
-                                <h3 class="product-name">{{ product.name }}</h3>
-                                <p class="product-brand">{{ product.brand }}</p>
-                                {% if product.power or product.efficiency or product.warranty %}
-                                <div class="product-specs">
-                                    {% if product.power %}
-                                    <div class="spec-item">
-                                        <span class="spec-label">Потужність:</span>
-                                        <span class="spec-value">{{ product.power }}</span>
-                                    </div>
+                            <a href="{% url 'mainapp:product_detail' product.id %}" class="product-link">
+                                {% if product.image %}
+                                <div class="product-image">
+                                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    {% if product.featured %}
+                                    <div class="product-badge">Рекомендовано</div>
                                     {% endif %}
-                                    {% if product.efficiency %}
-                                    <div class="spec-item">
-                                        <span class="spec-label">Ефективність:</span>
-                                        <span class="spec-value">{{ product.efficiency }}</span>
-                                    </div>
-                                    {% endif %}
-                                    {% if product.warranty %}
-                                    <div class="spec-item">
-                                        <span class="spec-label">Гарантія:</span>
-                                        <span class="spec-value">{{ product.warranty }}</span>
-                                    </div>
+                                </div>
+                                {% else %}
+                                <div class="product-image product-placeholder">
+                                    <span>Немає зображення</span>
+                                    {% if product.featured %}
+                                    <div class="product-badge">Рекомендовано</div>
                                     {% endif %}
                                 </div>
                                 {% endif %}
-                                <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
-                                <button class="add-to-cart-btn" data-id="{{ product.id }}"
-                                    data-name="{{ product.name }}" data-price="{{ product.price }}"
-                                    data-image="{% if product.image %}{{ product.image.url }}{% endif %}">
-                                    Додати в кошик
-                                </button>
-                            </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">{{ product.name }}</h3>
+                                    <p class="product-brand">{{ product.brand }}</p>
+                                    {% if product.power or product.efficiency or product.warranty %}
+                                    <div class="product-specs">
+                                        {% if product.power %}
+                                        <div class="spec-item">
+                                            <span class="spec-label">Потужність:</span>
+                                            <span class="spec-value">{{ product.power }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if product.efficiency %}
+                                        <div class="spec-item">
+                                            <span class="spec-label">Ефективність:</span>
+                                            <span class="spec-value">{{ product.efficiency }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if product.warranty %}
+                                        <div class="spec-item">
+                                            <span class="spec-label">Гарантія:</span>
+                                            <span class="spec-value">{{ product.warranty }}</span>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    {% endif %}
+                                    <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
+                                </div>
+                            </a>
+                            <button class="add-to-cart-btn" data-product-id="{{ product.id }}"
+                                data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
+                                data-product-image="{% if product.image %}{{ product.image.url }}{% endif %}">
+                                Додати в кошик
+                            </button>
                         </div>
                         {% endfor %}
                     </div>
@@ -162,12 +165,6 @@
 {% endblock %}
 
 {% block extra_js %}
-<script>
-    // Автоматичне застосування фільтрів при зміні
-    document.querySelectorAll('.filter-select, .price-input').forEach(element => {
-        element.addEventListener('change', function () {
-            document.getElementById('filters-form').submit();
-        });
-    });
-</script>
+<script src="{% static 'js/catalog-carousel.js' %}"></script>
+<script src="{% static 'js/cart.js' %}"></script>
 {% endblock %}

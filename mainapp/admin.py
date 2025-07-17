@@ -1,5 +1,10 @@
 from django.contrib import admin
-from .models import Product, Portfolio, Review
+from .models import Product, Portfolio, Review, ProductImage
+
+class ProductImageInline(admin.TabularInline):
+    model = ProductImage
+    extra = 3
+    fields = ('image', 'alt_text', 'is_main', 'order')
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
@@ -8,6 +13,7 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ['name', 'brand', 'model', 'category']
     list_editable = ['in_stock', 'featured']
     prepopulated_fields = {}
+    inlines = [ProductImageInline]
     
     fieldsets = (
         ('Основна інформація', {

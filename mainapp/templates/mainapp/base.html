@@ -51,6 +51,7 @@
     <link rel="stylesheet" href="{% static 'css/style-production-critical.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-newspaper-mobile.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-products.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cart-modal.css' %}">
 
     {% block extra_css %}{% endblock %}
 </head>
@@ -138,7 +139,6 @@
                 </div>
             </div>
             <div class="cart-modal__order-form" id="order-form">
-                <h4 class="order-form__title">Оформити замовлення</h4>
                 <form class="order-form" id="checkout-form">
                     <div class="form-group">
                         <label for="customer-name">Ім'я *</label>

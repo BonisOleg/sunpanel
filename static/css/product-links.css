@@ -1,0 +1,37 @@
+/* Стилі для посилань на товари */
+.product-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    flex: 1;
+}
+
+.product-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card .product-link {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card .add-to-cart-btn {
+    margin-top: auto;
+}
+
+/* Ефект при наведенні на картку товару */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-card {
+    transition: all 0.3s ease;
+}
