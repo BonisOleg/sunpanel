@@ -1,0 +1,155 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block description %}{{ description }}{% endblock %}
+{% block keywords %}{{ keywords }}{% endblock %}
+{% block canonical %}https://greensolalrtech.com/reviews/{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/reviews.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="reviews-page">
+    <div class="reviews-container">
+        <header class="reviews-header">
+            <h1 class="reviews-title">Відгуки клієнтів</h1>
+            <p class="reviews-subtitle">Думки наших клієнтів про співпрацю з GreenSolarTech</p>
+        </header>
+
+        {% if average_rating %}
+        <section class="rating-overview">
+            <div class="rating-card">
+                <div class="rating-score">
+                    <span class="score-number">{{ average_rating|floatformat:1 }}</span>
+                    <div class="score-stars">
+                        {% for star in "12345" %}
+                        {% if forloop.counter <= average_rating %} <span class="star active">★</span>
+                            {% else %}
+                            <span class="star">☆</span>
+                            {% endif %}
+                            {% endfor %}
+                    </div>
+                </div>
+                <div class="rating-info">
+                    <p class="rating-text">Середній рейтинг</p>
+                    <p class="reviews-count">На основі {{ total_reviews }} відгуків</p>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
+        {% if reviews %}
+        <section class="reviews-section">
+            <h2 class="section-title">Відгуки наших клієнтів</h2>
+            <div class="reviews-grid">
+                {% for review in reviews %}
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <h3 class="reviewer-name">{{ review.client_name }}</h3>
+                            {% if review.client_position %}
+                            <p class="reviewer-position">{{ review.client_position }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="review-rating">
+                            {% for star in "12345" %}
+                            {% if forloop.counter <= review.rating %} <span class="star active">★</span>
+                                {% else %}
+                                <span class="star">☆</span>
+                                {% endif %}
+                                {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="review-content">
+                        <p class="review-text">{{ review.review_text }}</p>
+                    </div>
+
+                    <div class="review-meta">
+                        {% if review.project_type %}
+                        <span class="meta-item">{{ review.get_project_type_display }}</span>
+                        {% endif %}
+                        {% if review.location %}
+                        <span class="meta-item">{{ review.location }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% else %}
+        <div class="no-reviews">
+            <p>Відгуки будуть додані найближчим часом.</p>
+        </div>
+        {% endif %}
+
+        <section class="feedback-section">
+            <div class="feedback-card">
+                <h3 class="feedback-title">Поділіться вашим досвідом</h3>
+                <p class="feedback-description">Ваша думка допомагає нам ставати кращими</p>
+                <a href="{% url 'mainapp:index' %}#contacts" class="feedback-btn">Залишити відгук</a>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Анімація появи відгуків при скролі
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Додаємо анімацію до всіх карток відгуків
+    document.querySelectorAll('.review-card').forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        observer.observe(card);
+    });
+
+    // Анімація лічильників статистики
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const statsObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const finalValue = target.textContent;
+                const number = parseInt(finalValue.replace(/\D/g, ''));
+
+                if (!isNaN(number)) {
+                    let current = 0;
+                    const increment = number / 30;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= number) {
+                            current = number;
+                            clearInterval(timer);
+                        }
+                        target.textContent = finalValue.replace(number.toString(), Math.floor(current).toString());
+                    }, 50);
+                }
+
+                statsObserver.unobserve(target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(stat => {
+        statsObserver.observe(stat);
+    });
+</script>
+{% endblock %}

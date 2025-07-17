@@ -1,0 +1,140 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block description %}{{ description }}{% endblock %}
+{% block keywords %}{{ keywords }}{% endblock %}
+{% block canonical %}https://greensolalrtech.com/portfolio/{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="portfolio-page">
+    <div class="portfolio-container">
+        <header class="portfolio-header">
+            <h1 class="portfolio-title">Портфоліо проєктів</h1>
+            <p class="portfolio-subtitle">Реалізовані сонячні електростанції по всій Україні</p>
+        </header>
+
+        {% if featured_projects %}
+        <section class="featured-section">
+            <h2 class="section-title">Рекомендовані проєкти</h2>
+            <div class="featured-grid">
+                {% for project in featured_projects %}
+                <div class="featured-card">
+                    {% if project.image %}
+                    <div class="featured-image">
+                        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                    </div>
+                    {% endif %}
+                    <div class="featured-content">
+                        <h3 class="featured-title">{{ project.title }}</h3>
+                        <div class="featured-meta">
+                            <span class="meta-item">
+                                <strong>Потужність:</strong> {{ project.power_capacity }} кВт
+                            </span>
+                            <span class="meta-item">
+                                <strong>Локація:</strong> {{ project.location }}
+                            </span>
+                            <span class="meta-item">
+                                <strong>Тип:</strong> {{ project.get_project_type_display }}
+                            </span>
+                        </div>
+                        <p class="featured-description">{{ project.description|truncatewords:25 }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {% if projects %}
+        <section class="projects-section">
+            <h2 class="section-title">Всі проєкти</h2>
+            <div class="projects-grid">
+                {% for project in projects %}
+                <div class="project-card">
+                    {% if project.image %}
+                    <div class="project-image">
+                        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                    </div>
+                    {% endif %}
+                    <div class="project-content">
+                        <h3 class="project-title">{{ project.title }}</h3>
+                        <div class="project-meta">
+                            <div class="meta-row">
+                                <span class="meta-label">Потужність:</span>
+                                <span class="meta-value">{{ project.power_capacity }} кВт</span>
+                            </div>
+                            <div class="meta-row">
+                                <span class="meta-label">Локація:</span>
+                                <span class="meta-value">{{ project.location }}</span>
+                            </div>
+                            <div class="meta-row">
+                                <span class="meta-label">Тип проєкту:</span>
+                                <span class="meta-value">{{ project.get_project_type_display }}</span>
+                            </div>
+                            {% if project.completion_date %}
+                            <div class="meta-row">
+                                <span class="meta-label">Завершено:</span>
+                                <span class="meta-value">{{ project.completion_date|date:"M Y" }}</span>
+                            </div>
+                            {% endif %}
+                            {% if project.client_name %}
+                            <div class="meta-row">
+                                <span class="meta-label">Клієнт:</span>
+                                <span class="meta-value">{{ project.client_name }}</span>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <p class="project-description">{{ project.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% else %}
+        <div class="no-projects">
+            <p>Проєкти в портфоліо будуть додані найближчим часом.</p>
+        </div>
+        {% endif %}
+
+        <section class="contact-section">
+            <div class="contact-card">
+                <h3 class="contact-title">Обговоримо ваш проєкт?</h3>
+                <p class="contact-description">Залиште заявку, і ми зв'яжемося з вами для обговорення деталей</p>
+                <a href="{% url 'mainapp:index' %}#contacts" class="contact-btn">Зв'язатися з нами</a>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Анімація появи карток при скролі
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Додаємо анімацію до всіх карток проєктів
+    document.querySelectorAll('.project-card, .featured-project-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+</script>
+{% endblock %}

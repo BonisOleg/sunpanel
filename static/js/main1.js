@@ -28,7 +28,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Smooth scroll до елемента
         scrollTo: function (element, duration = 1000) {
-            const targetPosition = element.offsetTop - 80; // 80px для навігації
+            // Визначаємо правильну позицію для різних блоків
+            let targetPosition;
+
+            if (element.id === 'hero') {
+                targetPosition = 0; // Для hero секції скролимо на самий верх
+            } else {
+                // Для інших секцій враховуємо висоту навігації
+                const rect = element.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                targetPosition = rect.top + scrollTop - 80; // 80px для навігації
+            }
+
             const startPosition = window.pageYOffset;
             const distance = targetPosition - startPosition;
             let startTime = null;

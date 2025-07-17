@@ -57,6 +57,20 @@ body {
     overflow-x: hidden;
 }
 
+/* Додаткове забезпечення плавного скролу */
+* {
+    scroll-behavior: smooth;
+}
+
+/* Запобігаємо стрибкам при навігації */
+section {
+    scroll-margin-top: 80px;
+}
+
+/* Особливий стиль для hero секції */
+#hero {
+    scroll-margin-top: 0;
+}
 
 .container {
     max-width: var(--container-max-width);

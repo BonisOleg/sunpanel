@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk" itemscope itemtype="https://schema.org/Organization">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="format-detection" content="telephone=yes">
+
+    <!-- SEO Meta Tags -->
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{{ description }}{% endblock %}">
+    <meta name="keywords" content="{% block keywords %}{{ keywords }}{% endblock %}">
+    <meta name="author" content="GreenSolarTech">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="{% block canonical %}https://greensolalrtech.com/{% endblock %}">
+
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="{% block og_title %}{{ title }}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ description }}{% endblock %}">
+    <meta property="og:image" content="https://greensolalrtech.com{% static 'images/og-image.jpg' %}">
+    <meta property="og:url" content="{% block og_url %}https://greensolalrtech.com/{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+    <meta property="og:site_name" content="GreenSolarTech">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}{{ title }}{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{{ description }}{% endblock %}">
+    <meta name="twitter:image" content="https://greensolalrtech.com{% static 'images/og-image.jpg' %}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+
+    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style4.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style5.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style6.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-mobile-override.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-production-mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-production-critical.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-newspaper-mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-products.css' %}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav__container">
+            <div class="nav__logo">
+                <a href="{% url 'mainapp:index' %}" class="nav__logo-link">
+                    <span class="nav__logo-text">GreenSolarTech</span>
+                </a>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="{% url 'mainapp:index' %}" class="nav__link">головна</a></li>
+                    <li class="nav__item"><a href="{% url 'mainapp:catalog' %}" class="nav__link">каталог</a></li>
+                    <li class="nav__item"><a href="{% url 'mainapp:portfolio' %}" class="nav__link">портфоліо</a></li>
+                    <li class="nav__item"><a href="{% url 'mainapp:reviews' %}" class="nav__link">відгуки</a></li>
+                    <li class="nav__item"><a href="{% url 'mainapp:index' %}#contacts" class="nav__link">контакти</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav__cart" id="cart-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13H17Z"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="nav__cart-count" id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__logo">
+                <span class="footer__logo-text">GreenSolarTech</span>
+            </div>
+            <nav class="footer__nav">
+                <ul class="footer__nav-list">
+                    <li><a href="{% url 'mainapp:catalog' %}">каталог</a></li>
+                    <li><a href="{% url 'mainapp:portfolio' %}">портфоліо</a></li>
+                    <li><a href="{% url 'mainapp:reviews' %}">відгуки</a></li>
+                    <li><a href="{% url 'mainapp:index' %}#contacts">контакти</a></li>
+                </ul>
+            </nav>
+            <div class="footer__meta">
+                <p>&copy; 2024 GreenSolarTech. Усі права захищені.</p>
+                <p><a href="/sitemap.xml">Карта сайту</a> • <a href="#privacy">Політика конфіденційності</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-modal__overlay" id="cart-overlay"></div>
+        <div class="cart-modal__content">
+            <div class="cart-modal__header">
+                <h3 class="cart-modal__title">Кошик</h3>
+                <button class="cart-modal__close" id="cart-close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+            <div class="cart-modal__items" id="cart-items">
+                <!-- Cart items will be inserted here -->
+            </div>
+            <div class="cart-modal__total">
+                <div class="cart-total">
+                    <span class="cart-total__label">Загальна сума:</span>
+                    <span class="cart-total__amount" id="cart-total">₴0</span>
+                </div>
+            </div>
+            <div class="cart-modal__order-form" id="order-form">
+                <h4 class="order-form__title">Оформити замовлення</h4>
+                <form class="order-form" id="checkout-form">
+                    <div class="form-group">
+                        <label for="customer-name">Ім'я *</label>
+                        <input type="text" id="customer-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-phone">Телефон *</label>
+                        <input type="tel" id="customer-phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-email">Email *</label>
+                        <input type="email" id="customer-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-comment">Коментар</label>
+                        <textarea id="customer-comment" name="comment" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary order-btn">Відправити замовлення</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{% static 'js/main1.js' %}"></script>
+    <script src="{% static 'js/main2.js' %}"></script>
+    <script src="{% static 'js/main3.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+    <script src="{% static 'js/cart.js' %}"></script>
+</body>
+
+</html>

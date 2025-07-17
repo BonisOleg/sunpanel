@@ -80,6 +80,7 @@
     <link rel="stylesheet" href="{% static 'css/style-production-mobile.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-production-critical.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-newspaper-mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-products.css' %}">
 
     <!-- Preload Critical Resources -->
     <link rel="preload" href="{% static 'videos/hero-video.mp4' %}" as="video" type="video/mp4">
@@ -95,10 +96,10 @@
             </div>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#about" class="nav__link">про нас</a></li>
-                    <li class="nav__item"><a href="#capacity" class="nav__link">потужності</a></li>
-                    <li class="nav__item"><a href="#advantages" class="nav__link">переваги</a></li>
-                    <li class="nav__item"><a href="#production" class="nav__link">рішення</a></li>
+                    <li class="nav__item"><a href="#hero" class="nav__link">головна</a></li>
+                    <li class="nav__item"><a href="{% url 'mainapp:catalog' %}" class="nav__link">каталог</a></li>
+                    <li class="nav__item"><a href="{% url 'mainapp:portfolio' %}" class="nav__link">портфоліо</a></li>
+                    <li class="nav__item"><a href="{% url 'mainapp:reviews' %}" class="nav__link">відгуки</a></li>
                     <li class="nav__item"><a href="#contacts" class="nav__link">контакти</a></li>
                 </ul>
             </div>
@@ -106,6 +107,14 @@
                 <span></span>
                 <span></span>
                 <span></span>
+            </div>
+            <div class="nav__cart" id="cart-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13H17Z"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="nav__cart-count" id="cart-count">0</span>
             </div>
         </div>
     </nav>
@@ -160,12 +169,12 @@
                     <p class="about__subtitle">провідна українська компанія з проектування сонячних електростанцій</p>
                 </div>
 
-                                <div class="about__text-content">
-                    <p>greenSolarTech — провідна українська компанія з проектування 
-                        та будівництва сонячних електростанцій. реалізуємо проєкти 
+                <div class="about__text-content">
+                    <p>greenSolarTech — провідна українська компанія з проектування
+                        та будівництва сонячних електростанцій. реалізуємо проєкти
                         по всій україні створюючи енергетичну незалежність.</p>
-                    <p>всі рішення базуються на сучасних технологіях світових 
-                        виробників. гарантуємо надійність та екологічність 
+                    <p>всі рішення базуються на сучасних технологіях світових
+                        виробників. гарантуємо надійність та екологічність
                         наших сонячних електростанцій.</p>
                 </div>
             </div>
@@ -233,10 +242,70 @@
             </div>
         </section>
 
-        <!-- Advantages Section - Empty White Block -->
-        <section class="advantages page-section" id="advantages"
-            style="background: white; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
-            <!-- Пуста секція -->
+        <!-- Products Section -->
+        <section class="products page-section" id="products">
+            <div class="products__container">
+                {% if products %}
+                <div class="products__carousel">
+                    <div class="products__grid">
+                        {% for product in products %}
+                        <div class="product-card">
+                            <div class="product-card__image-container">
+                                {% if product.image %}
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-card__image">
+                                {% else %}
+                                <div class="product-card__placeholder">
+                                    <span>Немає зображення</span>
+                                </div>
+                                {% endif %}
+                                {% if product.featured %}
+                                <div class="product-card__badge">Рекомендовано</div>
+                                {% endif %}
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">{{ product.name }}</h3>
+                                <p class="product-card__brand">{{ product.brand }}</p>
+                                <div class="product-card__specs">
+                                    {% if product.power %}
+                                    <div class="product-card__spec">
+                                        <span class="spec-label">Потужність:</span>
+                                        <span class="spec-value">{{ product.power }}</span>
+                                    </div>
+                                    {% endif %}
+                                    {% if product.efficiency %}
+                                    <div class="product-card__spec">
+                                        <span class="spec-label">Ефективність:</span>
+                                        <span class="spec-value">{{ product.efficiency }}</span>
+                                    </div>
+                                    {% endif %}
+                                    {% if product.warranty %}
+                                    <div class="product-card__spec">
+                                        <span class="spec-label">Гарантія:</span>
+                                        <span class="spec-value">{{ product.warranty }}</span>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                <div class="product-card__price">
+                                    <span class="product-card__currency">₴</span>
+                                    <span class="product-card__amount">{{ product.price }}</span>
+                                </div>
+                                <button class="product-card__btn btn-primary">
+                                    <span>Детальніше</span>
+                                    <svg class="product-card__arrow" width="16" height="16" viewBox="0 0 16 16">
+                                        <path d="M8 0l8 8-8 8-1.5-1.5L12 8 6.5 1.5z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% else %}
+                <div class="products__empty">
+                    <p>Товари будуть додані найближчим часом</p>
+                </div>
+                {% endif %}
+            </div>
         </section>
 
         <!-- Production Process Section -->
@@ -460,10 +529,59 @@
         </div>
     </footer>
 
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-modal__overlay" id="cart-overlay"></div>
+        <div class="cart-modal__content">
+            <div class="cart-modal__header">
+                <h3 class="cart-modal__title">Кошик</h3>
+                <button class="cart-modal__close" id="cart-close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+            <div class="cart-modal__items" id="cart-items">
+                <!-- Cart items will be inserted here -->
+            </div>
+            <div class="cart-modal__total">
+                <div class="cart-total">
+                    <span class="cart-total__label">Загальна сума:</span>
+                    <span class="cart-total__amount" id="cart-total">₴0</span>
+                </div>
+            </div>
+            <div class="cart-modal__order-form" id="order-form">
+                <h4 class="order-form__title">Оформити замовлення</h4>
+                <form class="order-form" id="checkout-form">
+                    <div class="form-group">
+                        <label for="customer-name">Ім'я *</label>
+                        <input type="text" id="customer-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-phone">Телефон *</label>
+                        <input type="tel" id="customer-phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-email">Email *</label>
+                        <input type="email" id="customer-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-comment">Коментар</label>
+                        <textarea id="customer-comment" name="comment" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary order-btn">Відправити замовлення</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="{% static 'js/main1.js' %}"></script>
     <script src="{% static 'js/main2.js' %}"></script>
     <script src="{% static 'js/main3.js' %}"></script>
+    <script src="{% static 'js/products-carousel.js' %}"></script>
+    <script src="{% static 'js/cart.js' %}"></script>
 </body>
 
 </html>

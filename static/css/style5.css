@@ -451,7 +451,6 @@
 
     /* Liquid Glass iOS Safari підтримка */
     .capacity__glass-backdrop {
-        -webkit-backdrop-filter: blur(10px) saturate(160%) brightness(110%);
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
     }

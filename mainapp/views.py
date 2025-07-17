@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.http import HttpResponse
+from .models import Product, Portfolio, Review
+from django.db.models import Q, Avg
+from django.db import models
 
 
 class IndexView(TemplateView):
@@ -102,6 +105,158 @@ class IndexView(TemplateView):
                 {'country': 'Угорщина', 'distance': '581 км'},
             ]
         })
+        
+        # Додаю товари до контексту
+        context['products'] = Product.objects.filter(in_stock=True).order_by('-featured', 'name')  # Всі товари в наявності (рекомендовані першими)
+        context['featured_products'] = Product.objects.filter(featured=True, in_stock=True)[:4]  # Рекомендовані товари
+        
+        return context
+
+
+class PortfolioView(TemplateView):
+    template_name = 'mainapp/portfolio.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'title': 'Портфоліо проєктів — GreenSolarTech',
+            'description': 'Готові проєкти сонячних електростанцій від GreenSolarTech. Приватні та комерційні СЕС по всій Україні.',
+            'keywords': 'портфоліо сонячних електростанцій, готові проєкти СЕС, приватні сонячні станції',
+            'portfolio_projects': Portfolio.objects.all().order_by('-featured', '-completion_date'),
+            'featured_projects': Portfolio.objects.filter(featured=True)[:3]
+        })
+        return context
+
+
+class CatalogView(TemplateView):
+    template_name = 'mainapp/catalog.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        # Отримуємо параметри фільтрації
+        category = self.request.GET.get('category')
+        brand = self.request.GET.get('brand')
+        price_min = self.request.GET.get('price_min')
+        price_max = self.request.GET.get('price_max')
+        
+        # Базовий запит
+        products = Product.objects.filter(in_stock=True)
+        
+        # Фільтрація
+        if category:
+            products = products.filter(category__icontains=category)
+        if brand:
+            products = products.filter(brand__icontains=brand)
+        if price_min:
+            products = products.filter(price__gte=price_min)
+        if price_max:
+            products = products.filter(price__lte=price_max)
+        
+        # Унікальні категорії та бренди для фільтрів
+        categories = Product.objects.values_list('category', flat=True).distinct()
+        brands = Product.objects.values_list('brand', flat=True).distinct()
+        
+        # Товари по категоріях для каруселей
+        inverters = products.filter(category__icontains='інвертор').order_by('-featured', 'name')[:10]
+        solar_panels = products.filter(category__icontains='панель').order_by('-featured', 'name')[:10]
+        batteries = products.filter(category__icontains='акумулятор').order_by('-featured', 'name')[:10]
+        backup_kits = products.filter(category__icontains='комплект').order_by('-featured', 'name')[:10]
+        
+        context.update({
+            'title': 'Каталог товарів — GreenSolarTech',
+            'description': 'Повний каталог обладнання для сонячних електростанцій: інвертори, панелі, акумулятори, комплекти.',
+            'keywords': 'каталог сонячного обладнання, інвертори, сонячні панелі, акумулятори',
+            'categories': categories,
+            'brands': brands,
+            'selected_category': category,
+            'selected_brand': brand,
+            'price_min': price_min,
+            'price_max': price_max,
+            'inverters': inverters,
+            'solar_panels': solar_panels,
+            'batteries': batteries,
+            'backup_kits': backup_kits,
+        })
+        return context
+
+
+class CategoryView(TemplateView):
+    template_name = 'mainapp/category.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        category_key = kwargs.get('category')
+        
+        # Маппінг англійських ключів URL на українські категорії
+        category_mapping = {
+            'inverters': 'інвертор',
+            'solar-panels': 'сонячна панель', 
+            'batteries': 'акумулятор',
+            'backup-power': 'комплект резервного живлення'
+        }
+        
+        # Отримуємо українську назву категорії
+        ukrainian_category = category_mapping.get(category_key, category_key)
+        
+        # Отримуємо параметри фільтрації
+        brand = self.request.GET.get('brand')
+        min_price = self.request.GET.get('min_price')
+        max_price = self.request.GET.get('max_price')
+        
+        # Базовий запит для категорії
+        products = Product.objects.filter(in_stock=True, category__icontains=ukrainian_category)
+        
+        # Фільтрація
+        if brand:
+            products = products.filter(brand__icontains=brand)
+        if min_price:
+            products = products.filter(price__gte=min_price)
+        if max_price:
+            products = products.filter(price__lte=max_price)
+        
+        # Унікальні бренди для цієї категорії
+        brands = Product.objects.filter(category__icontains=ukrainian_category).values_list('brand', flat=True).distinct()
+        
+        # Назви категорій для відображення
+        category_names = {
+            'inverters': 'Інвертори',
+            'solar-panels': 'Сонячні панелі', 
+            'batteries': 'Акумуляторні батареї',
+            'backup-power': 'Комплекти резервного живлення'
+        }
+        
+        category_name = category_names.get(category_key, category_key.title())
+        
+        context.update({
+            'title': f'{category_name} — GreenSolarTech',
+            'description': f'Каталог {category_name.lower()} для сонячних електростанцій від провідних виробників.',
+            'keywords': f'{category_name.lower()}, сонячне обладнання, GreenSolarTech',
+            'products': products.order_by('-featured', 'name'),
+            'category_name': category_name,
+            'category_key': category_key,
+            'brands': brands,
+            'selected_brand': brand,
+            'min_price': min_price,
+            'max_price': max_price
+        })
+        return context
+
+
+class ReviewsView(TemplateView):
+    template_name = 'mainapp/reviews.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'title': 'Відгуки клієнтів — GreenSolarTech',
+            'description': 'Відгуки наших клієнтів про будівництво сонячних електростанцій та якість обслуговування.',
+            'keywords': 'відгуки про сонячні електростанції, відгуки клієнтів GreenSolarTech',
+            'reviews': Review.objects.filter(is_published=True).order_by('-created_at'),
+            'average_rating': Review.objects.filter(is_published=True).aggregate(
+                avg_rating=Avg('rating')
+            )['avg_rating'] or 0
+        })
         return context
 
 
@@ -114,6 +269,24 @@ def sitemap_xml(request):
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://greensolalrtech.com/portfolio/</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://greensolalrtech.com/catalog/</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://greensolalrtech.com/reviews/</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 </urlset>'''
     return HttpResponse(xml_content, content_type='application/xml')
