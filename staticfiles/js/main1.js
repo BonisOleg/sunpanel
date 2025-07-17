@@ -86,13 +86,33 @@ document.addEventListener('DOMContentLoaded', function () {
             // Клік по nav links
             this.navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-
-                    if (targetElement) {
-                        window.AppUtils.scrollTo(targetElement);
+                    const href = link.getAttribute('href');
+                    
+                    // Якщо це якорне посилання (починається з #)
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(href);
+                        
+                        if (targetElement) {
+                            window.AppUtils.scrollTo(targetElement);
+                            this.closeMobileMenu();
+                        }
+                    } 
+                    // Якщо це посилання з якорем в кінці (наприклад /#contacts)
+                    else if (href.includes('#') && window.location.pathname === href.split('#')[0]) {
+                        e.preventDefault();
+                        const anchor = '#' + href.split('#')[1];
+                        const targetElement = document.querySelector(anchor);
+                        
+                        if (targetElement) {
+                            window.AppUtils.scrollTo(targetElement);
+                            this.closeMobileMenu();
+                        }
+                    } 
+                    else {
+                        // Якщо це URL посилання - дозволяємо браузеру перейти
                         this.closeMobileMenu();
+                        // Не викликаємо preventDefault(), щоб дозволити перехід
                     }
                 });
             });

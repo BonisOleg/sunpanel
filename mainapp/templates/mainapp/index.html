@@ -80,7 +80,6 @@
     <link rel="stylesheet" href="{% static 'css/style-production-mobile.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-production-critical.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-newspaper-mobile.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style-products.css' %}">
 
     <!-- Preload Critical Resources -->
     <link rel="preload" href="{% static 'videos/hero-video.mp4' %}" as="video" type="video/mp4">
@@ -96,11 +95,11 @@
             </div>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#hero" class="nav__link">головна</a></li>
+                    <li class="nav__item"><a href="{% url 'mainapp:index' %}" class="nav__link">головна</a></li>
                     <li class="nav__item"><a href="{% url 'mainapp:catalog' %}" class="nav__link">каталог</a></li>
                     <li class="nav__item"><a href="{% url 'mainapp:portfolio' %}" class="nav__link">портфоліо</a></li>
                     <li class="nav__item"><a href="{% url 'mainapp:reviews' %}" class="nav__link">відгуки</a></li>
-                    <li class="nav__item"><a href="#contacts" class="nav__link">контакти</a></li>
+                    <li class="nav__item"><a href="{% url 'mainapp:index' %}#contacts" class="nav__link">контакти</a></li>
                 </ul>
             </div>
             <div class="nav__toggle" id="nav-toggle">
@@ -242,71 +241,7 @@
             </div>
         </section>
 
-        <!-- Products Section -->
-        <section class="products page-section" id="products">
-            <div class="products__container">
-                {% if products %}
-                <div class="products__carousel">
-                    <div class="products__grid">
-                        {% for product in products %}
-                        <div class="product-card">
-                            <div class="product-card__image-container">
-                                {% if product.image %}
-                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-card__image">
-                                {% else %}
-                                <div class="product-card__placeholder">
-                                    <span>Немає зображення</span>
-                                </div>
-                                {% endif %}
-                                {% if product.featured %}
-                                <div class="product-card__badge">Рекомендовано</div>
-                                {% endif %}
-                            </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">{{ product.name }}</h3>
-                                <p class="product-card__brand">{{ product.brand }}</p>
-                                <div class="product-card__specs">
-                                    {% if product.power %}
-                                    <div class="product-card__spec">
-                                        <span class="spec-label">Потужність:</span>
-                                        <span class="spec-value">{{ product.power }}</span>
-                                    </div>
-                                    {% endif %}
-                                    {% if product.efficiency %}
-                                    <div class="product-card__spec">
-                                        <span class="spec-label">Ефективність:</span>
-                                        <span class="spec-value">{{ product.efficiency }}</span>
-                                    </div>
-                                    {% endif %}
-                                    {% if product.warranty %}
-                                    <div class="product-card__spec">
-                                        <span class="spec-label">Гарантія:</span>
-                                        <span class="spec-value">{{ product.warranty }}</span>
-                                    </div>
-                                    {% endif %}
-                                </div>
-                                <div class="product-card__price">
-                                    <span class="product-card__currency">₴</span>
-                                    <span class="product-card__amount">{{ product.price }}</span>
-                                </div>
-                                <button class="product-card__btn btn-primary">
-                                    <span>Детальніше</span>
-                                    <svg class="product-card__arrow" width="16" height="16" viewBox="0 0 16 16">
-                                        <path d="M8 0l8 8-8 8-1.5-1.5L12 8 6.5 1.5z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% else %}
-                <div class="products__empty">
-                    <p>Товари будуть додані найближчим часом</p>
-                </div>
-                {% endif %}
-            </div>
-        </section>
+
 
         <!-- Production Process Section -->
         <section class="production" id="production">
@@ -580,7 +515,6 @@
     <script src="{% static 'js/main1.js' %}"></script>
     <script src="{% static 'js/main2.js' %}"></script>
     <script src="{% static 'js/main3.js' %}"></script>
-    <script src="{% static 'js/products-carousel.js' %}"></script>
     <script src="{% static 'js/cart.js' %}"></script>
 </body>
 

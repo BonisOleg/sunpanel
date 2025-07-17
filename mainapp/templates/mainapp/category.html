@@ -11,8 +11,8 @@
 {% endblock %}
 
 {% block content %}
-<section class="catalog-page">
-    <div class="catalog-page__container">
+<div class="catalog-page">
+    <div class="catalog-container">
         <!-- Хлібні крихти -->
         <nav class="breadcrumb">
             <a href="{% url 'mainapp:index' %}" class="breadcrumb__link">Головна</a>
@@ -22,12 +22,14 @@
             <span class="breadcrumb__current">{{ category_name }}</span>
         </nav>
 
-        <h1 class="catalog-page__title">{{ category_name }}</h1>
-        <p class="catalog-page__subtitle">Каталог {{ category_name|lower }} для сонячних електростанцій</p>
+        <div class="catalog-header">
+            <h1 class="catalog-title">{{ category_name }}</h1>
+            <p class="catalog-subtitle">Каталог {{ category_name|lower }} для сонячних електростанцій</p>
+        </div>
 
         <div class="catalog-layout">
-            <!-- Фільтри ліворуч (20%) -->
-            <aside class="catalog-filters">
+            <!-- Фільтри ліворуч (20%) - використовуємо ту ж структуру що й в основному каталозі -->
+            <aside class="catalog-sidebar">
                 <div class="filters-container">
                     <h3 class="filters-title">Фільтри</h3>
 
@@ -47,72 +49,75 @@
 
                         <!-- Фільтр по ціні -->
                         <div class="filter-group">
-                            <label class="filter-label">Ціна (₴)</label>
+                            <label class="filter-label">Ціна</label>
                             <div class="price-range">
                                 <input type="number" name="min_price" placeholder="Від" value="{{ min_price }}"
                                     class="price-input">
+                                <span class="price-separator">-</span>
                                 <input type="number" name="max_price" placeholder="До" value="{{ max_price }}"
                                     class="price-input">
                             </div>
                         </div>
 
-                        <button type="submit" class="filters-apply-btn">Застосувати</button>
-                        <button type="button" class="filters-reset-btn"
-                            onclick="window.location.href='{% url 'mainapp:category' category_key %}'">
-                            Скинути
-                        </button>
+                        <button type="submit" class="filters-btn">Застосувати фільтри</button>
+                        <a href="{% url 'mainapp:category' category_key %}" class="filters-reset">Скинути фільтри</a>
                     </form>
 
                     <!-- Швидкі переходи на інші категорії -->
                     <div class="quick-categories">
-                        <h4 class="quick-categories__title">Інші категорії</h4>
-                        <ul class="quick-categories__list">
-                            <li><a href="{% url 'mainapp:category' 'інвертор' %}"
-                                    class="quick-category-link {% if category_key == 'інвертор' %}active{% endif %}">
+                        <h4 class="quick-categories-title">Інші категорії</h4>
+                        <ul class="quick-categories-list">
+                            <li><a href="{% url 'mainapp:category' 'inverters' %}"
+                                    class="quick-category-link {% if category_key == 'inverters' %}active{% endif %}">
                                     ⚡ Інвертори</a></li>
-                            <li><a href="{% url 'mainapp:category' 'сонячна-панель' %}"
-                                    class="quick-category-link {% if category_key == 'сонячна-панель' %}active{% endif %}">
+                            <li><a href="{% url 'mainapp:category' 'solar-panels' %}"
+                                    class="quick-category-link {% if category_key == 'solar-panels' %}active{% endif %}">
                                     ☀️ Сонячні панелі</a></li>
-                            <li><a href="{% url 'mainapp:category' 'акумулятор' %}"
-                                    class="quick-category-link {% if category_key == 'акумулятор' %}active{% endif %}">
+                            <li><a href="{% url 'mainapp:category' 'batteries' %}"
+                                    class="quick-category-link {% if category_key == 'batteries' %}active{% endif %}">
                                     🔋 Акумулятори</a></li>
-                            <li><a href="{% url 'mainapp:category' 'комплект' %}"
-                                    class="quick-category-link {% if category_key == 'комплект' %}active{% endif %}">
+                            <li><a href="{% url 'mainapp:category' 'backup-power' %}"
+                                    class="quick-category-link {% if category_key == 'backup-power' %}active{% endif %}">
                                     📦 Комплекти</a></li>
                         </ul>
                     </div>
                 </div>
             </aside>
 
-            <!-- Список товарів праворуч (80%) -->
-            <main class="catalog-content">
-                <div class="category-products">
+            <!-- Список товарів праворуч (80%) - використовуємо ту ж структуру що й в основному каталозі -->
+            <div class="catalog-content">
+                <div class="category-section">
                     <div class="category-header">
+                        <h2 class="category-title">{{ category_name }}</h2>
                         <div class="products-count">
                             Знайдено товарів: <strong>{{ products.count }}</strong>
                         </div>
                     </div>
 
+                    {% if products %}
                     <div class="products-grid">
                         {% for product in products %}
-                        <div class="product-card-catalog">
-                            <div class="product-card-catalog__image-container">
-                                {% if product.image %}
-                                <img src="{{ product.image.url }}" alt="{{ product.name }}"
-                                    class="product-card-catalog__image">
-                                {% else %}
-                                <div class="product-card-catalog__placeholder">
-                                    <span>Немає зображення</span>
-                                </div>
-                                {% endif %}
+                        <div class="product-card">
+                            {% if product.image %}
+                            <div class="product-image">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}">
                                 {% if product.featured %}
-                                <div class="product-card-catalog__badge">Рекомендовано</div>
+                                <div class="product-badge">Рекомендовано</div>
                                 {% endif %}
                             </div>
-                            <div class="product-card-catalog__content">
-                                <h3 class="product-card-catalog__title">{{ product.name }}</h3>
-                                <p class="product-card-catalog__brand">{{ product.brand }}</p>
-                                <div class="product-card-catalog__specs">
+                            {% else %}
+                            <div class="product-image product-placeholder">
+                                <span>Немає зображення</span>
+                                {% if product.featured %}
+                                <div class="product-badge">Рекомендовано</div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            <div class="product-info">
+                                <h3 class="product-name">{{ product.name }}</h3>
+                                <p class="product-brand">{{ product.brand }}</p>
+                                {% if product.power or product.efficiency or product.warranty %}
+                                <div class="product-specs">
                                     {% if product.power %}
                                     <div class="spec-item">
                                         <span class="spec-label">Потужність:</span>
@@ -132,32 +137,28 @@
                                     </div>
                                     {% endif %}
                                 </div>
-                                <div class="product-card-catalog__price">
-                                    <span class="price-currency">₴</span>
-                                    <span class="price-amount">{{ product.price }}</span>
-                                </div>
-                                <div class="product-card-catalog__actions">
-                                    <button class="add-to-cart-btn" data-product-id="{{ product.id }}"
-                                        data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
-                                        data-product-image="{% if product.image %}{{ product.image.url }}{% endif %}">
-                                        Додати в кошик
-                                    </button>
-                                    <button class="product-details-btn">Детальніше</button>
-                                </div>
+                                {% endif %}
+                                <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
+                                <button class="add-to-cart-btn" data-id="{{ product.id }}"
+                                    data-name="{{ product.name }}" data-price="{{ product.price }}"
+                                    data-image="{% if product.image %}{{ product.image.url }}{% endif %}">
+                                    Додати в кошик
+                                </button>
                             </div>
-                        </div>
-                        {% empty %}
-                        <div class="no-products">
-                            <p>У категорії "{{ category_name }}" товари не знайдено</p>
-                            <a href="{% url 'mainapp:catalog' %}" class="btn-primary">Переглянути весь каталог</a>
                         </div>
                         {% endfor %}
                     </div>
+                    {% else %}
+                    <div class="no-products">
+                        <p>У категорії "{{ category_name }}" товари не знайдено</p>
+                        <a href="{% url 'mainapp:catalog' %}" class="reset-filters-btn">Переглянути весь каталог</a>
+                    </div>
+                    {% endif %}
                 </div>
-            </main>
+            </div>
         </div>
     </div>
-</section>
+</div>
 {% endblock %}
 
 {% block extra_js %}

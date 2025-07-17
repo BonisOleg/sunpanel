@@ -13,11 +13,6 @@
 {% block content %}
 <div class="catalog-page">
     <div class="catalog-container">
-        <header class="catalog-header">
-            <h1 class="catalog-title">Каталог товарів</h1>
-            <p class="catalog-subtitle">Обладнання для сонячних електростанцій від провідних виробників</p>
-        </header>
-
         <div class="catalog-layout">
             <!-- Фільтри ліворуч (20%) -->
             <aside class="catalog-sidebar">
@@ -72,12 +67,12 @@
             <!-- Основний контент праворуч (80%) -->
             <div class="catalog-content">
                 <!-- Інвертори -->
-                {% if inverters %}
                 <div class="category-section">
                     <div class="category-header">
                         <h2 class="category-title">⚡ Інвертори</h2>
                         <a href="{% url 'mainapp:category' 'inverters' %}" class="view-all-btn">Дивитися всі</a>
                     </div>
+                    {% if inverters %}
                     <div class="products-carousel" data-category="inverters">
                         <div class="carousel-container">
                             <div class="carousel-track">
@@ -105,16 +100,20 @@
                         <button class="carousel-btn carousel-prev" data-direction="prev">‹</button>
                         <button class="carousel-btn carousel-next" data-direction="next">›</button>
                     </div>
+                    {% else %}
+                    <div class="no-products-category">
+                        <p>Товари в категорії інверторів будуть додані найближчим часом</p>
+                    </div>
+                    {% endif %}
                 </div>
-                {% endif %}
 
                 <!-- Сонячні панелі -->
-                {% if solar_panels %}
                 <div class="category-section">
                     <div class="category-header">
                         <h2 class="category-title">☀️ Сонячні панелі</h2>
                         <a href="{% url 'mainapp:category' 'solar-panels' %}" class="view-all-btn">Дивитися всі</a>
                     </div>
+                    {% if solar_panels %}
                     <div class="products-carousel" data-category="solar-panels">
                         <div class="carousel-container">
                             <div class="carousel-track">
@@ -142,16 +141,20 @@
                         <button class="carousel-btn carousel-prev" data-direction="prev">‹</button>
                         <button class="carousel-btn carousel-next" data-direction="next">›</button>
                     </div>
+                    {% else %}
+                    <div class="no-products-category">
+                        <p>Товари в категорії сонячних панелей будуть додані найближчим часом</p>
+                    </div>
+                    {% endif %}
                 </div>
-                {% endif %}
 
                 <!-- Акумулятори -->
-                {% if batteries %}
                 <div class="category-section">
                     <div class="category-header">
                         <h2 class="category-title">🔋 Акумулятори</h2>
                         <a href="{% url 'mainapp:category' 'batteries' %}" class="view-all-btn">Дивитися всі</a>
                     </div>
+                    {% if batteries %}
                     <div class="products-carousel" data-category="batteries">
                         <div class="carousel-container">
                             <div class="carousel-track">
@@ -179,16 +182,20 @@
                         <button class="carousel-btn carousel-prev" data-direction="prev">‹</button>
                         <button class="carousel-btn carousel-next" data-direction="next">›</button>
                     </div>
+                    {% else %}
+                    <div class="no-products-category">
+                        <p>Товари в категорії акумуляторів будуть додані найближчим часом</p>
+                    </div>
+                    {% endif %}
                 </div>
-                {% endif %}
 
                 <!-- Комплекти резервного живлення -->
-                {% if backup_kits %}
                 <div class="category-section">
                     <div class="category-header">
                         <h2 class="category-title">📦 Комплекти резервного живлення</h2>
                         <a href="{% url 'mainapp:category' 'backup-power' %}" class="view-all-btn">Дивитися всі</a>
                     </div>
+                    {% if backup_kits %}
                     <div class="products-carousel" data-category="backup-power">
                         <div class="carousel-container">
                             <div class="carousel-track">
@@ -216,8 +223,12 @@
                         <button class="carousel-btn carousel-prev" data-direction="prev">‹</button>
                         <button class="carousel-btn carousel-next" data-direction="next">›</button>
                     </div>
+                    {% else %}
+                    <div class="no-products-category">
+                        <p>Товари в категорії комплектів будуть додані найближчим часом</p>
+                    </div>
+                    {% endif %}
                 </div>
-                {% endif %}
 
                 {% if not inverters and not solar_panels and not batteries and not backup_kits %}
                 <div class="no-products">
