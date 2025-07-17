@@ -133,13 +133,42 @@
     box-shadow: none;
 }
 
-/* Category Strips */
+/* ФОРСОВАНЕ ВИДАЛЕННЯ КАРТОК! */
+.category-strip,
+.category-strip-container,
+.catalog-content > section,
+.category-section {
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 0 40px 0 !important;
+    padding: 0 !important;
+}
+
+/* Категорії як прості блоки */
+.category-section {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 0;
+    background: transparent;
+    overflow: visible;
+}
+
+.category-section:last-child {
+    margin-bottom: 0;
+}
+
+/* Категорії просто одна над одною - НІ КАРТОК НІ ФОНІВ! */
 .category-strip {
-    background: white;
-    margin-bottom: 24px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
+    background: none;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    padding: 0;
 }
 
 .category-strip:last-child {
@@ -147,7 +176,11 @@
 }
 
 .category-strip-container {
-    padding: 32px;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
 }
 
 .category-header {

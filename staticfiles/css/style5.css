@@ -1,0 +1,1126 @@
+/* Animations and Responsive */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-5xl: 2rem;
+        --font-size-4xl: 1.75rem;
+        --font-size-3xl: 1.5rem;
+        --font-size-2xl: 1.25rem;
+        --section-padding: var(--section-padding-mobile);
+    }
+
+    /* Navigation Mobile */
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        height: 100dvh;
+        background: var(--text-white);
+        transition: right var(--transition-normal);
+        padding: 4rem 2rem;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+    }
+
+    .nav__menu.active {
+        right: 0;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .nav__toggle {
+        display: flex;
+    }
+
+    .nav__toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .nav__toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav__toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* Hero Mobile */
+    .hero {
+        min-height: 70vh;
+        padding: 2rem 0;
+    }
+
+    .advantages__grid,
+    .types__grid,
+    .certificates__slider {
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .advantages__grid::-webkit-scrollbar,
+    .types__grid::-webkit-scrollbar,
+    .certificates__slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    .hero__title {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        line-height: 1.2;
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero__title-accent::after {
+        height: 3px;
+        bottom: -6px;
+    }
+
+    .hero__subtitle {
+        font-size: var(--font-size-lg);
+        max-width: 90%;
+        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero__btn {
+        padding: 1rem 2.5rem;
+        font-size: var(--font-size-base);
+        border-radius: 50px;
+        backdrop-filter: blur(15px) saturate(160%);
+        -webkit-backdrop-filter: blur(15px) saturate(160%);
+    }
+
+    /* Scroll Video Mobile */
+    .scroll-video {
+        height: 60vh;
+        min-height: 400px;
+    }
+
+    .scroll-video__title {
+        font-size: var(--font-size-2xl);
+        padding: 0 1rem;
+    }
+
+    /* About Mobile */
+    .about__container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about__title {
+        text-align: center;
+    }
+
+    .about__text {
+        font-size: var(--font-size-base);
+    }
+
+    /* Capacity Mobile */
+    .capacity__stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .capacity__stats-vertical {
+        gap: 1rem;
+    }
+
+    .capacity__main-layout {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .capacity__left-section {
+        flex: none;
+    }
+
+    .capacity__right-section {
+        padding-left: 0;
+    }
+
+    .capacity__text-content p {
+        font-size: var(--font-size-sm);
+        margin-bottom: 0.8rem;
+    }
+
+    .capacity__title.section-title {
+        font-size: var(--font-size-xl);
+        color: white !important;
+        background: none !important;
+        -webkit-background-clip: initial !important;
+        -webkit-text-fill-color: white !important;
+        background-clip: initial !important;
+    }
+
+    .capacity__subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    /* Liquid Glass Mobile */
+    .capacity__glass-container {
+
+        padding: 10% 5%;
+    }
+
+    .capacity__glass-backdrop {
+        top: 10%;
+        left: 5%;
+        right: 5%;
+        bottom: 10%;
+        border-radius: 16px;
+    }
+
+    .capacity__glass-content {
+        padding: 1rem;
+    }
+
+    /* Types Mobile */
+    .types__grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .type-card {
+        padding: 1.5rem;
+    }
+
+
+
+    /* Contacts styles handled in style4.css */
+
+    /* Footer Mobile */
+    .footer__container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .footer__nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    /* About Mobile */
+    .about__glass-container {
+        padding: 10% 5%;
+    }
+
+    .about__glass-backdrop {
+        top: 10%;
+        left: 5%;
+        right: 5%;
+        bottom: 10%;
+        border-radius: 16px;
+    }
+
+    .about__glass-container {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .about__left-section {
+        flex: none;
+        padding-right: 0;
+    }
+
+    .about__right-section {
+        flex: none;
+    }
+
+    .about__title.section-title {
+        font-size: var(--font-size-xl);
+        color: black;
+        background: none;
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: black;
+        background-clip: initial;
+    }
+
+    .about__subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    .about__text-content p {
+        font-size: var(--font-size-sm);
+        text-align: left;
+    }
+
+    /* Advantages Mobile */
+    .advantages__glass-container {
+        padding: 10% 5%;
+    }
+
+    .advantages__glass-backdrop {
+        top: 10%;
+        left: 5%;
+        right: 5%;
+        bottom: 10%;
+        border-radius: 16px;
+    }
+
+    .advantages__glass-content {
+        padding: 1rem;
+    }
+
+    .advantages__main-layout {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .advantages__left-section {
+        flex: none;
+    }
+
+    .advantages__right-section {
+        padding-left: 0;
+    }
+
+    .advantages__title.section-title {
+        font-size: var(--font-size-xl);
+        color: white;
+        background: none;
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: white;
+        background-clip: initial;
+    }
+
+    .advantages__subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    .advantages__types-title {
+        font-size: var(--font-size-lg);
+    }
+
+    .advantages__types-subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    .advantages__stat-card,
+    .advantages__type-card {
+        padding: 1rem;
+        min-width: auto;
+    }
+
+    /* Production Mobile */
+    .production__glass-container {
+        padding: 10% 5%;
+    }
+
+    .production__glass-backdrop {
+        top: 10%;
+        left: 5%;
+        right: 5%;
+        bottom: 10%;
+        border-radius: 20px;
+    }
+
+    .production__glass-content {
+        padding: 1.5rem;
+    }
+
+    .production__main-layout {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .production__left-section {
+        flex: none;
+    }
+
+    .production__right-section {
+        padding-left: 0;
+    }
+
+    .production__title.section-title {
+        font-size: calc(var(--font-size-xl) * 2);
+        text-align: left;
+        color: white !important;
+        background: none !important;
+        -webkit-background-clip: initial !important;
+        -webkit-text-fill-color: white !important;
+        background-clip: initial !important;
+    }
+
+    .production__subtitle {
+        font-size: var(--font-size-base);
+        text-align: left;
+    }
+
+    .production__comparison-title {
+        font-size: var(--font-size-lg);
+    }
+
+    .production__comparison-subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    .production__step-card {
+        padding: 1rem;
+        min-width: auto;
+    }
+
+    .production__step-card .production-number-circle {
+        width: 45px;
+        height: 45px;
+    }
+
+    .production__step-card .production-number {
+        font-size: 1.4rem;
+    }
+
+    .production__header {
+        text-align: left;
+    }
+
+    /* Contacts Mobile */
+    /* Contacts mobile styles removed - handled in style4.css */
+}
+
+/* iOS Safari Specific Fixes */
+@supports (-webkit-touch-callout: none) {
+
+    .hero__video,
+    .scroll-video__video,
+    .capacity__video {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-object-fit: cover;
+        object-fit: cover;
+    }
+
+    /* Hero кнопка glass ефект для iOS Safari */
+    .hero__btn {
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    /* Liquid Glass iOS Safari підтримка */
+    .capacity__glass-backdrop {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    .capacity__glass-container {
+
+        padding: 10% 5%;
+    }
+
+    .nav {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    .hero,
+    .scroll-video,
+    .capacity {
+        height: 100vh;
+        height: 100dvh;
+        height: -webkit-fill-available;
+        min-height: 100vh;
+        min-height: 100dvh;
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero__title {
+        font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+        text-shadow: 0 3px 18px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero__title-accent::after {
+        height: 3px;
+        bottom: -7px;
+    }
+
+    .hero__subtitle {
+        font-size: var(--font-size-xl);
+        max-width: 85%;
+    }
+
+    .hero__btn {
+        padding: 1.1rem 2.8rem;
+        font-size: var(--font-size-lg);
+    }
+
+    .about__container {
+        gap: 3rem;
+    }
+
+    .types__grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .advantages__grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .capacity__stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .capacity__stats-vertical {
+        gap: 1rem;
+    }
+
+    .capacity__main-layout {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .capacity__left-section {
+        flex: none;
+    }
+
+    .capacity__right-section {
+        padding-left: 0;
+    }
+
+    .capacity__title.section-title {
+        font-size: var(--font-size-xl);
+        color: white !important;
+        background: none !important;
+        -webkit-background-clip: initial !important;
+        -webkit-text-fill-color: white !important;
+        background-clip: initial !important;
+    }
+
+    .capacity__subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+
+    .capacity__glass-container {
+        padding: 12% 10%;
+    }
+
+    .capacity__glass-backdrop {
+        top: 12%;
+        left: 10%;
+        right: 10%;
+        bottom: 12%;
+    }
+
+    /* About Tablet */
+    .about__glass-container {
+        padding: 12% 10%;
+    }
+
+    .about__glass-backdrop {
+        top: 12%;
+        left: 10%;
+        right: 10%;
+        bottom: 12%;
+    }
+
+    .about__glass-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .about__left-section {
+        flex: none;
+        padding-right: 0;
+    }
+
+    .about__right-section {
+        flex: none;
+    }
+
+    .about__title.section-title {
+        font-size: var(--font-size-xl);
+        color: black;
+        background: none;
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: black;
+        background-clip: initial;
+    }
+
+    .about__subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    /* Advantages Tablet */
+    .advantages__glass-container {
+        padding: 12% 10%;
+    }
+
+    .advantages__glass-backdrop {
+        top: 12%;
+        left: 10%;
+        right: 10%;
+        bottom: 12%;
+    }
+
+    .advantages__main-layout {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .advantages__left-section {
+        flex: none;
+    }
+
+    .advantages__right-section {
+        padding-left: 0;
+    }
+
+    .advantages__title.section-title {
+        font-size: var(--font-size-xl);
+        color: white;
+        background: none;
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: white;
+        background-clip: initial;
+    }
+
+    .advantages__subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    /* Production Tablet */
+    .production__glass-container {
+        padding: 8% 6%;
+    }
+
+    .production__glass-backdrop {
+        top: 8%;
+        left: 6%;
+        right: 6%;
+        bottom: 8%;
+        border-radius: 20px;
+    }
+
+    .production__main-layout {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .production__left-section {
+        flex: none;
+    }
+
+    .production__right-section {
+        padding-left: 0;
+    }
+
+    .production__title.section-title {
+        font-size: calc(var(--font-size-xl) * 2.2);
+        text-align: left;
+        color: white !important;
+        background: none !important;
+        -webkit-background-clip: initial !important;
+        -webkit-text-fill-color: white !important;
+        background-clip: initial !important;
+    }
+
+    .production__subtitle {
+        font-size: calc(var(--font-size-base) * 1.1);
+        text-align: left;
+    }
+
+    /* Contacts Tablet */
+    /* Contacts tablet styles removed - handled in style4.css */
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+    .type-card,
+    .advantage-card,
+    .stat-card {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms;
+        animation-iteration-count: 1;
+        transition-duration: 0.01ms;
+        scroll-behavior: auto;
+    }
+}
+
+/* Card Stack Effect - Sections slide up like solitaire cards */
+.main section {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main section:not(.hero):not(.capacity) {
+    background: var(--text-white);
+    box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 20px 20px 0 0;
+    margin-top: -20px;
+}
+
+/* Z-index increasing for proper stacking */
+.main section:nth-child(1) {
+    z-index: 1;
+}
+
+/* hero */
+.main section:nth-child(2) {
+    z-index: 2;
+}
+
+/* about */
+.main section:nth-child(3) {
+    z-index: 3;
+}
+
+/* capacity */
+.main section:nth-child(4) {
+    z-index: 4;
+}
+
+/* scroll-video */
+.main section:nth-child(5) {
+    z-index: 5;
+}
+
+/* types */
+.main section:nth-child(6) {
+    z-index: 6;
+}
+
+/* advantages */
+.main section:nth-child(7) {
+    z-index: 7;
+}
+
+/* production */
+.main section:nth-child(8) {
+    z-index: 8;
+}
+
+/* comparison */
+.main section:nth-child(9) {
+    z-index: 9;
+}
+
+/* certificates */
+.main section:nth-child(10) {
+    z-index: 10;
+}
+
+/* Different backgrounds to show stacking effect */
+.about,
+.types,
+.production,
+.certificates {
+    background: var(--text-white);
+}
+
+.capacity {
+    background: transparent;
+}
+
+.advantages,
+.comparison {
+    background: var(--bg-light);
+}
+
+.scroll-video {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    margin-top: 0;
+}
+
+/* Contacts styles moved to style4.css */
+transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+transform: translateY(50px);
+opacity: 0;
+}
+
+.contacts__glass-container.animate {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* СПРОЩЕНА CONTACTS СЕКЦІЯ БЕЗ GLASS ЕФЕКТІВ ДЛЯ КРАЩОЇ ПРОДУКТИВНОСТІ */
+
+.contacts__glass-container {
+    /* Видаляємо всі glass ефекти */
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.contacts__glass-container.animate {
+    /* Видаляємо анімації */
+    transform: none;
+    opacity: 1;
+}
+
+/* Прибираємо Glass Backdrop Effect */
+.contacts__glass-backdrop {
+    display: none;
+}
+
+.contacts__glass-backdrop::before,
+.contacts__glass-backdrop::after {
+    display: none;
+}
+
+/* Main Layout - Two Columns */
+.contacts__glass-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px;
+    height: 100%;
+}
+
+.contacts__main-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: flex-start;
+    min-height: 60vh;
+}
+
+/* Left Section - Certificates */
+.contacts__left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contacts__certificates-header {
+    text-align: left;
+}
+
+.contacts__certificates-title {
+    font-size: calc(var(--font-size-base) * 2.5);
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-transform: lowercase;
+}
+
+.contacts__certificates-subtitle {
+    font-size: calc(var(--font-size-base) * 1.2);
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 400;
+    line-height: 1.4;
+    text-transform: lowercase;
+}
+
+.contacts__certificates-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contacts__certificate-card {
+    /* Замінюємо glass ефекти на прості фони */
+    background: rgba(249, 250, 251, 0.8);
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    padding: 25px;
+    /* Видаляємо backdrop-filter */
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contacts__certificate-card:hover {
+    transform: translateY(-2px);
+}
+
+.certificate-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    /* Замінюємо glass на простий фон */
+    background: rgba(243, 244, 246, 0.9);
+    border: 1px solid #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: calc(var(--font-size-base) * 0.9);
+    color: #000;
+    /* Видаляємо backdrop-filter */
+}
+
+.certificate-label {
+    font-size: calc(var(--font-size-base) * 1.2);
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 5px;
+    text-transform: lowercase;
+}
+
+.certificate-description {
+    font-size: calc(var(--font-size-base) * 0.9);
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 1.4;
+    text-transform: lowercase;
+}
+
+/* Right Section - Contacts */
+.contacts__right-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contacts__header {
+    text-align: left;
+}
+
+.contacts__title {
+    font-size: calc(var(--font-size-base) * 2.5);
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-transform: lowercase;
+}
+
+.contacts__subtitle {
+    font-size: calc(var(--font-size-base) * 1.2);
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 400;
+    line-height: 1.4;
+    text-transform: lowercase;
+}
+
+.contacts__info-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contacts__phone-card,
+.contacts__address-card,
+.contacts__messengers-card {
+    /* Замінюємо glass ефекти на прості фони */
+    background: rgba(249, 250, 251, 0.8);
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    /* Видаляємо backdrop-filter */
+    transition: transform 0.2s ease;
+}
+
+.contacts__phone-card:hover,
+.contacts__address-card:hover,
+.contacts__messengers-card:hover {
+    transform: translateY(-1px);
+}
+
+
+
+
+
+
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .contacts {
+        padding: 100px 0;
+    }
+
+    .contacts__glass-content {
+        padding: 50px 40px;
+    }
+
+    .contacts__main-layout {
+        gap: 60px;
+    }
+
+    .contacts__title,
+    .contacts__certificates-title {
+        font-size: calc(var(--font-size-base) * 2.2);
+    }
+
+    .contacts__certificate-card {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .certificate-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .contacts__phone-card,
+    .contacts__address-card,
+    .contacts__messengers-card {
+        padding: 18px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .contacts {
+        padding: 80px 0;
+    }
+
+    .contacts__glass-container {
+        width: 95%;
+        min-height: auto;
+        border-radius: 20px;
+    }
+
+
+
+    .contacts__glass-content {
+        padding: 40px 30px;
+    }
+
+    .contacts__main-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .contacts__left-section {
+        gap: 30px;
+    }
+
+    .contacts__right-section {
+        gap: 30px;
+    }
+
+    .contacts__title,
+    .contacts__certificates-title {
+        font-size: calc(var(--font-size-base) * 1.8);
+        text-align: center;
+    }
+
+    .contacts__subtitle,
+    .contacts__certificates-subtitle {
+        font-size: var(--font-size-base);
+        text-align: center;
+    }
+
+    .contacts__header,
+    .contacts__certificates-header {
+        text-align: center;
+    }
+
+    .contacts__certificate-card {
+        padding: 20px;
+        gap: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .certificate-icon {
+        width: 45px;
+        height: 45px;
+        align-self: center;
+    }
+
+    .contacts__phone-card,
+    .contacts__address-card,
+    .contacts__messengers-card {
+        padding: 18px;
+        text-align: center;
+    }
+
+    .contact-content {
+        align-items: center;
+    }
+
+    .messenger-btn {
+        margin: 5px;
+    }
+}
+
+/* iOS Safari Optimizations */
+@supports (-webkit-touch-callout: none) {
+    .contacts__glass-container {
+        /* Видаляємо всі glass ефекти для iOS */
+        background: white;
+    }
+
+    .contacts__certificate-card,
+    .contacts__phone-card,
+    .contacts__address-card,
+    .contacts__messengers-card,
+    .certificate-icon {
+        /* Видаляємо backdrop-filter для iOS */
+        background: rgba(249, 250, 251, 0.95);
+    }
+}

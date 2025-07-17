@@ -1,0 +1,368 @@
+/* ================================================
+   PRODUCTION СЕКЦІЯ - МОБІЛЬНА ОПТИМІЗАЦІЯ
+   Масштабований контент для iOS Safari
+   ================================================ */
+
+/* ОСНОВНА МОБІЛЬНА АДАПТАЦІЯ */
+@media screen and (max-width: 768px) {
+
+    /* Production контейнер - компактний розмір */
+    .production {
+        padding: 20px 10px !important;
+        min-height: auto !important;
+    }
+
+    .production__glass-container {
+        padding: 5% 3% !important;
+    }
+
+    .production__glass-backdrop {
+        top: 5% !important;
+        left: 3% !important;
+        right: 3% !important;
+        bottom: 5% !important;
+        border-radius: 12px !important;
+    }
+
+    .production__glass-content {
+        padding: 1rem !important;
+    }
+
+    /* Головний лейаут - вертикальна колонка */
+    .production__main-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        max-width: 100% !important;
+    }
+
+    /* Ліва секція - таблиця порівняння */
+    .production__left-section {
+        flex: none !important;
+        width: 100% !important;
+        order: 1 !important;
+    }
+
+    .production__comparison-header {
+        text-align: center !important;
+        margin-bottom: 0.8rem !important;
+    }
+
+    .production__comparison-title {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.3rem !important;
+        color: white !important;
+        font-weight: 600 !important;
+        text-transform: lowercase !important;
+    }
+
+    .production__comparison-subtitle {
+        font-size: 0.75rem !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        text-transform: lowercase !important;
+    }
+
+    /* КРИТИЧНА ОПТИМІЗАЦІЯ ТАБЛИЦІ */
+    .production__table-wrapper {
+        padding: 0.6rem !important;
+        overflow-x: auto !important;
+        border-radius: 8px !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+
+        /* Smooth scrolling для iOS */
+        -webkit-overflow-scrolling: touch !important;
+        scroll-behavior: smooth !important;
+    }
+
+    .production__table {
+        width: 100% !important;
+        min-width: 320px !important;
+        /* Замість 400px */
+        font-size: 0.65rem !important;
+        /* Зменшено з 12px */
+        border-collapse: collapse !important;
+        margin: 0 !important;
+    }
+
+    .production__table th {
+        background: #000 !important;
+        color: #fff !important;
+        font-weight: 600 !important;
+        padding: 0.4rem 0.3rem !important;
+        /* Зменшено відступи */
+        text-align: center !important;
+        font-size: 0.6rem !important;
+        line-height: 1.2 !important;
+        text-transform: lowercase !important;
+    }
+
+    .production__table td {
+        color: rgba(51, 51, 51, 0.9) !important;
+        padding: 0.35rem 0.25rem !important;
+        /* Зменшено відступи */
+        text-align: center !important;
+        font-size: 0.6rem !important;
+        line-height: 1.2 !important;
+        border-bottom: 1px solid rgba(51, 51, 51, 0.1) !important;
+    }
+
+    .fuel-table__row--highlight td {
+        background: rgba(51, 51, 51, 0.1) !important;
+        font-weight: 600 !important;
+    }
+
+    .fuel-table__fuel {
+        font-weight: 600 !important;
+        text-align: left !important;
+    }
+
+    /* Права секція - етапи проєкту */
+    .production__right-section {
+        flex: none !important;
+        width: 100% !important;
+        order: 2 !important;
+        margin-top: 1rem !important;
+    }
+
+    .production__header {
+        text-align: center !important;
+        margin-bottom: 0.8rem !important;
+    }
+
+    .production__title {
+        font-size: 1.1rem !important;
+        color: white !important;
+        margin-bottom: 0.3rem !important;
+        text-transform: lowercase !important;
+        font-weight: 600 !important;
+    }
+
+    /* Оптимізація етапів проєкту */
+    .production__steps-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.8rem !important;
+    }
+
+    .production__steps-columns {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        /* Одна колонка замість двох */
+        gap: 0.6rem !important;
+    }
+
+    .production__step-card {
+        background: rgba(255, 255, 255, 0.25) !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        border-radius: 8px !important;
+        padding: 0.7rem !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+
+        /* Відключення важких ефектів */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        transform: translateZ(0) !important;
+    }
+
+    .production__step-card--full-width {
+        grid-column: 1 !important;
+    }
+
+    /* Номери етапів */
+    .production-number-circle {
+        width: 28px !important;
+        height: 28px !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+        border: 1px solid rgba(255, 255, 255, 0.7) !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+    }
+
+    .production-number {
+        font-size: 0.9rem !important;
+        font-weight: 700 !important;
+        color: #333 !important;
+        line-height: 1 !important;
+    }
+
+    /* Контент етапів */
+    .production__step-content {
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.2rem !important;
+    }
+
+    .production__step-card .stat-card__label {
+        font-size: 0.7rem !important;
+        font-weight: 600 !important;
+        color: rgba(255, 255, 255, 0.95) !important;
+        margin-bottom: 0.1rem !important;
+        text-transform: lowercase !important;
+        line-height: 1.2 !important;
+    }
+
+    .production__step-card .stat-card__description {
+        font-size: 0.65rem !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        text-transform: lowercase !important;
+        line-height: 1.3 !important;
+        margin: 0 !important;
+    }
+}
+
+/* ДУЖЕ МАЛІ ЕКРАНИ (iPhone SE) */
+@media screen and (max-width: 375px) {
+    .production__table {
+        min-width: 280px !important;
+        font-size: 0.6rem !important;
+    }
+
+    .production__table th,
+    .production__table td {
+        padding: 0.3rem 0.2rem !important;
+        font-size: 0.55rem !important;
+    }
+
+    .production__comparison-title,
+    .production__title {
+        font-size: 1rem !important;
+    }
+
+    .production__step-card {
+        padding: 0.6rem !important;
+        gap: 0.6rem !important;
+    }
+
+    .production-number-circle {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    .production-number {
+        font-size: 0.8rem !important;
+    }
+
+    .production__step-card .stat-card__label {
+        font-size: 0.65rem !important;
+    }
+
+    .production__step-card .stat-card__description {
+        font-size: 0.6rem !important;
+    }
+}
+
+/* СЕРЕДНІ МОБІЛЬНІ ЕКРАНИ */
+@media screen and (min-width: 376px) and (max-width: 414px) {
+    .production__table {
+        min-width: 300px !important;
+    }
+
+    .production__comparison-title,
+    .production__title {
+        font-size: 1.15rem !important;
+    }
+}
+
+/* ВЕЛИКІ МОБІЛЬНІ ЕКРАНИ */
+@media screen and (min-width: 415px) and (max-width: 768px) {
+    .production__table {
+        min-width: 340px !important;
+        font-size: 0.7rem !important;
+    }
+
+    .production__table th,
+    .production__table td {
+        font-size: 0.65rem !important;
+    }
+
+    .production__comparison-title,
+    .production__title {
+        font-size: 1.2rem !important;
+    }
+
+    .production__steps-columns {
+        grid-template-columns: 1fr 1fr !important;
+        /* Дві колонки на великих мобільних */
+        gap: 0.8rem !important;
+    }
+}
+
+/* LANDSCAPE ОРІЄНТАЦІЯ */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .production__glass-container {
+        padding: 3% 5% !important;
+    }
+
+    .production__main-layout {
+        flex-direction: row !important;
+        gap: 1.5rem !important;
+    }
+
+    .production__left-section {
+        flex: 0 0 50% !important;
+        order: 1 !important;
+    }
+
+    .production__right-section {
+        flex: 0 0 50% !important;
+        order: 2 !important;
+        margin-top: 0 !important;
+    }
+
+    .production__table {
+        min-width: 280px !important;
+        font-size: 0.6rem !important;
+    }
+
+    .production__steps-columns {
+        grid-template-columns: 1fr !important;
+        gap: 0.5rem !important;
+    }
+
+    .production__step-card {
+        padding: 0.5rem !important;
+    }
+}
+
+/* iOS SAFARI ОПТИМІЗАЦІЇ */
+@supports (-webkit-touch-callout: none) {
+    @media screen and (max-width: 768px) {
+
+        /* Апаратне прискорення */
+        .production__step-card,
+        .production__table-wrapper {
+            -webkit-transform: translateZ(0) !important;
+            transform: translateZ(0) !important;
+            -webkit-backface-visibility: hidden !important;
+            backface-visibility: hidden !important;
+        }
+
+        /* Smooth scrolling для таблиці */
+        .production__table-wrapper {
+            -webkit-overflow-scrolling: touch !important;
+        }
+
+        /* Оптимізація тексту */
+        .production__table th,
+        .production__table td,
+        .stat-card__label,
+        .stat-card__description {
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
+        }
+    }
+}
+
+/* ACCESSIBILITY */
+@media screen and (max-width: 768px) and (prefers-reduced-motion: reduce) {
+    .production__step-card {
+        transition: none !important;
+        transform: none !important;
+    }
+}
