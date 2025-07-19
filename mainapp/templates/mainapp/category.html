@@ -41,7 +41,7 @@
                             <select name="brand" class="filter-select">
                                 <option value="">Всі виробники</option>
                                 {% for brand in brands %}
-                                <option value="{{ brand }}" {% if selected_brand==brand %}selected{% endif %}>
+                                <option value="{{ brand }}" {% if selected_brand == brand %}selected{% endif %}>
                                     {{ brand }}
                                 </option>
                                 {% endfor %}

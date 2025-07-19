@@ -48,7 +48,7 @@ p {
 
 .stats strong {
     font-size: 1.5rem;
-    color: #28a745;
+    color: #fafbfa;
     margin-right: 10px;
 }
 
@@ -159,19 +159,259 @@ button:hover {
 
 /* Mobile */
 @media (max-width: 768px) {
+    .reviews-page {
+        padding-top: 130px;
+        /* Опускаємо контент на 50px нижче + заголовок */
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        /* iOS Safari виправлення */
+    }
+
+    .container {
+        padding: 0 20px;
+        /* Адекватні падінги по боках */
+        margin-top: 0;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+        margin: 25px 0 15px;
+    }
+
+    .stars span {
+        font-size: 20px;
+        cursor: pointer;
+        transition: color 0.2s ease;
+        /* iOS Safari оптимізації для тач-подій */
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    /* Форма відгуків */
+    form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+    }
+
+    form div {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #2c3e50;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        font-size: 16px;
+        /* Запобігання зуму на iOS */
+        font-family: inherit;
+        /* iOS Safari виправлення */
+        -webkit-appearance: none;
+        appearance: none;
+        -webkit-border-radius: 8px;
+        box-sizing: border-box;
+    }
+
+    input[type="text"]:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+        border-color: #28a745;
+        box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+    }
+
+    textarea {
+        min-height: 100px;
+        resize: vertical;
+        /* iOS Safari виправлення для textarea */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    select {
+        background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 12px;
+        padding-right: 40px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 15px;
+        background: #28a745;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        /* iOS Safari виправлення */
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button[type="submit"]:hover,
+    button[type="submit"]:active {
+        background: #218838;
+    }
+
+    /* Відгуки */
+    .review {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        margin-bottom: 20px;
+        /* iOS Safari оптимізації */
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    .review-header {
+        margin-bottom: 15px;
+    }
+
+    .review-header strong {
+        font-size: 1.1rem;
+        color: #2c3e50;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .rating {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .review-info {
+        font-size: 0.9rem;
+        color: #6c757d;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #e9ecef;
+    }
+
+    .stats {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        margin: 20px 0;
+        font-size: 1.2rem;
+        color: #2c3e50;
+    }
+
+    .message {
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+        background: #d4edda;
+        border: 1px solid #c3e6cb;
+        color: #155724;
+    }
+
+    .error {
+        color: #dc3545;
+        font-size: 0.9rem;
+        margin-top: 5px;
+        display: block;
+    }
+}
+
+/* Дуже малі екрани */
+@media (max-width: 480px) {
+    .reviews-page {
+        padding-top: 120px;
+    }
+
     .container {
         padding: 0 15px;
     }
 
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
-    .stars span {
-        font-size: 20px;
+    form,
+    .review {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .stats {
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+}
+
+/* iOS Safari специфічні виправлення */
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    .reviews-page {
+        /* Виправлення viewport проблем */
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+
+    /* Виправлення z-index проблем */
+    form,
+    .review {
+        position: relative;
+        z-index: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    /* Виправлення скролу */
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Landscape orientation */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .reviews-page {
+        padding-top: 100px;
+    }
+
+    form,
+    .review {
+        padding: 15px;
+    }
+}
+
+/* Зменшення анімацій для користувачів з prefers-reduced-motion */
+@media screen and (max-width: 768px) and (prefers-reduced-motion: reduce) {
+
+    .stars span,
+    button[type="submit"],
+    input[type="text"],
+    select,
+    textarea {
+        transition: none;
     }
 }

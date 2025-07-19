@@ -1,0 +1,308 @@
+/* ============================================
+   iOS SAFARI SUPER OPTIMIZATIONS
+   ============================================ */
+
+/* Глобальні iOS Safari виправлення */
+@supports (-webkit-touch-callout: none) {
+
+    /* Виправлення viewport проблем */
+    html {
+        height: 100%;
+        height: -webkit-fill-available;
+    }
+
+    body {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        /* Покращений тач-скрол */
+        -webkit-overflow-scrolling: touch;
+        /* Запобігання випадковому відскоку */
+        overscroll-behavior-y: none;
+    }
+
+    /* Виправлення адресної строки */
+    .catalog-page,
+    .reviews-page {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        position: relative;
+    }
+}
+
+/* iOS Safari специфічні медіа-запити */
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+
+    /* Виправлення рендерингу для ретіна дісплеїв */
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Запобігання багам з трансформами */
+    .catalog-container,
+    .container {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    /* Виправлення активних станів */
+    button,
+    .add-to-cart-btn,
+    .filters-btn,
+    [type="submit"] {
+        -webkit-tap-highlight-color: rgba(40, 167, 69, 0.2);
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    /* Виправлення інпутів */
+    input,
+    select,
+    textarea {
+        -webkit-appearance: none;
+        -webkit-border-radius: 0;
+        border-radius: 8px;
+        /* Запобігання зуму */
+        font-size: 16px;
+        /* Виправлення тіней */
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        -webkit-box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+        box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+    }
+}
+
+/* iPhone X та новіші (з вирізом) */
+@media screen and (max-width: 414px) and (-webkit-device-pixel-ratio: 3) {
+
+    .catalog-page,
+    .reviews-page {
+        /* Врахування safe area */
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .catalog-container,
+    .container {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+}
+
+/* iPhone SE та малі екрани */
+@media screen and (max-width: 375px) and (-webkit-device-pixel-ratio: 2) {
+    .catalog-page {
+        padding-top: 85px;
+    }
+
+    .reviews-page {
+        padding-top: 125px;
+    }
+
+    .filters-container {
+        padding: 12px;
+    }
+
+    .product-card {
+        min-width: 140px;
+    }
+
+    .catalog-title,
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Landscape режим на iPhone */
+@media screen and (max-height: 414px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+
+    .catalog-page,
+    .reviews-page {
+        padding-top: 70px;
+    }
+
+    .filters-container {
+        padding: 10px;
+    }
+
+    .filter-group {
+        margin-bottom: 10px;
+    }
+
+    h1,
+    .catalog-title {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    h2,
+    .category-title {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+}
+
+/* Виправлення скролу каруселі на iOS */
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+    .products-carousel {
+        /* Плавний скрол на iOS */
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        /* Приховання скролбару */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .products-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .carousel-track {
+        /* Віртуалізація для кращої продуктивності */
+        will-change: scroll-position;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* Виправлення форм на iOS Safari */
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+
+    /* Селекти з кастомними стрілками */
+    select {
+        background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 12px;
+        background-color: #fff;
+        padding-right: 40px;
+    }
+
+    /* Виправлення textarea */
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+        /* Виправлення скролу */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Виправлення checkbox та radio */
+    input[type="checkbox"],
+    input[type="radio"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        background: #fff;
+        position: relative;
+    }
+
+    input[type="radio"] {
+        border-radius: 50%;
+    }
+
+    input[type="checkbox"]:checked::before,
+    input[type="radio"]:checked::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+        height: 8px;
+        background: #28a745;
+        border-radius: inherit;
+    }
+
+    input[type="checkbox"]:checked::before {
+        content: '✓';
+        font-size: 12px;
+        color: #28a745;
+        width: auto;
+        height: auto;
+        background: none;
+    }
+}
+
+/* Анімації та переходи оптимізовані для iOS */
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+
+    /* GPU прискорення для анімацій */
+    .product-card,
+    .review,
+    .filters-container,
+    button {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    /* Оптимізовані переходи */
+    .product-card:hover,
+    .add-to-cart-btn:active,
+    button:active {
+        -webkit-transform: translateZ(0) scale(0.98);
+        transform: translateZ(0) scale(0.98);
+        transition: transform 0.1s ease;
+    }
+}
+
+/* Accessibility покращення для iOS */
+@media screen and (max-width: 768px) and (prefers-reduced-motion: reduce) {
+
+    /* Відключення анімацій для чутливих користувачів */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Dark Mode підтримка для iOS 13+ */
+@media screen and (max-width: 768px) and (prefers-color-scheme: dark) {
+
+    /* Опціонально: темна тема для iOS Safari */
+    :root {
+        color-scheme: light;
+        /* Примусово світла тема */
+    }
+}
+
+/* Виправлення для iOS 15+ Safari */
+@supports (height: 100dvh) {
+
+    .catalog-page,
+    .reviews-page {
+        min-height: 100dvh;
+    }
+}
+
+/* Покращення продуктивності скролу */
+@media screen and (max-width: 768px) {
+
+    /* Віртуалізація для великих списків */
+    .category-section {
+        contain: layout style paint;
+    }
+
+    /* Lazy loading для зображень */
+    .product-image img {
+        content-visibility: auto;
+        contain-intrinsic-size: 200px 200px;
+    }
+}

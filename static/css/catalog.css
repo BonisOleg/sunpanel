@@ -649,18 +649,21 @@
 @media (max-width: 768px) {
     .catalog-layout {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 20px;
     }
 
+    /* Фільтри вгору на мобільних */
     .catalog-sidebar {
-        order: 2;
+        order: 1;
         position: static;
         max-height: none;
         overflow-y: visible;
+        margin-bottom: 20px;
     }
 
+    /* Категорії під фільтрами */
     .catalog-content {
-        order: 1;
+        order: 2;
     }
 
     .category-header {
@@ -681,23 +684,55 @@
         gap: 16px;
     }
 
-    /* Мобільна адаптація каруселі - ВИСОКА СПЕЦИФІЧНІСТЬ */
+    /* Мобільна адаптація каруселі з центруванням */
     .catalog-page .catalog-content .products-carousel {
-        /* На мобільних використовуємо нативний скрол */
+        /* Центрування каруселі */
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 0 20px;
+
+        /* На мобільних використовуємо flexbox для центрування */
+        display: flex;
+        justify-content: center;
         overflow-x: auto;
         overflow-y: hidden;
         padding-bottom: 10px;
         margin-bottom: -10px;
+        /* iOS Safari оптимізації */
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
     }
 
     .catalog-page .catalog-content .carousel-container {
         overflow: visible;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .catalog-page .catalog-content .carousel-track {
+        /* Центруємо та розподіляємо товари */
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 15px;
+        width: 100%;
+        min-width: 100%;
+
         /* Відключаємо transform на мобільних */
         transform: none !important;
         transition: none;
+    }
+
+    /* Стилізація карток товарів для центрування */
+    .catalog-page .catalog-content .product-card {
+        flex: 1;
+        max-width: 250px;
+        min-width: 220px;
+        margin: 0 auto;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        background: #fff;
     }
 
     /* Приховуємо кнопки навігації на мобільних - ВИСОКА СПЕЦИФІЧНІСТЬ */
@@ -713,12 +748,36 @@
         margin-top: 24px;
         padding-top: 20px;
     }
+
+    /* iOS Safari специфічні оптимізації */
+    .filters-form {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    .filter-select {
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 8px;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 12px;
+        padding-right: 40px;
+    }
+
+    .price-input {
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 8px;
+    }
 }
 
 /* Mobile (480px and down) */
 @media (max-width: 480px) {
     .catalog-page {
-        padding: 70px 0 40px;
+        padding: 80px 0 40px;
+        /* Збільшуємо верхній падінг для iOS Safari */
     }
 
     .catalog-container {
@@ -726,58 +785,106 @@
     }
 
     .catalog-layout {
-        gap: 20px;
+        gap: 15px;
     }
 
     .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 12px;
     }
 
-    /* Ще компактніша адаптація каруселі для малих екранів - ВИСОКА СПЕЦИФІЧНІСТЬ */
+    /* Компактніша адаптація каруселі для малих екранів */
     .catalog-page .catalog-content .products-carousel {
-        margin: 0 -8px;
-        padding: 0 8px;
-        /* Покращений скрол для маленьких екранів */
-        -webkit-overflow-scrolling: touch;
-        scroll-behavior: smooth;
+        padding: 0 15px;
     }
 
     .catalog-page .catalog-content .carousel-track {
-        padding: 0;
-        margin: 0;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .catalog-page .catalog-content .product-card {
+        flex: 1;
+        max-width: 200px;
+        min-width: 180px;
+    }
+
+    /* Фільтри на малих екранах */
+    .filters-container {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .filter-group {
+        margin-bottom: 15px;
+    }
+
+    .filter-select,
+    .price-input {
+        font-size: 16px;
+        /* Запобігання зуму на iOS */
+        padding: 12px 15px;
+    }
+
+    .filters-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .filters-reset {
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: 10px;
     }
 
     .catalog-title {
-        font-size: 1.75rem;
-    }
-
-    .catalog-sidebar {
-        padding: 20px;
-    }
-
-    .category-title {
-        font-size: 1.25rem;
-    }
-
-    .view-all-btn {
-        font-size: 12px;
-        padding: 6px 12px;
-        min-width: 90px;
-    }
-
-    /* Кнопки каруселі приховані на мобільних - ВИСОКА СПЕЦИФІЧНІСТЬ */
-    .catalog-page .catalog-content .carousel-btn {
-        display: none;
-    }
-
-    .breadcrumb {
-        font-size: 13px;
+        font-size: 1.6rem;
         margin-bottom: 12px;
     }
 
-    .products-count {
-        font-size: 13px;
+    .category-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* iOS Safari специфічні виправлення */
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    .catalog-page {
+        /* Виправлення viewport на iOS */
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+
+    .filters-container {
+        /* Запобігання багам рендерингу */
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    /* Виправлення активних станів на iOS */
+    .filter-select:focus,
+    .price-input:focus {
+        outline: none;
+        border-color: var(--catalog-primary-color);
+        box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+    }
+}
+
+/* Landscape orientation на мобільних */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .catalog-page {
+        padding: 60px 0 30px;
+    }
+
+    .filters-container {
+        padding: 12px;
+    }
+
+    .filter-group {
+        margin-bottom: 12px;
     }
 }
 
