@@ -320,32 +320,149 @@
     position: relative;
     width: 100%;
     overflow: hidden;
+    /* Забезпечуємо адаптивність контейнера */
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .carousel-container {
     overflow: hidden;
     width: 100%;
+    /* Обмежуємо ширину та забезпечуємо скрол */
+    max-width: 100%;
+    position: relative;
 }
 
 .carousel-track {
     display: flex;
     gap: 16px;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    width: max-content;
+    /* Адаптивна ширина на основі кількості товарів */
+    width: fit-content;
+    min-width: 100%;
 }
 
-/* ============================================
-   PRODUCT CARDS
-   ============================================ */
+/* Адаптивні картки товарів */
 .product-card {
-    flex: 0 0 280px;
+    /* Динамічна ширина залежно від розміру екрану */
+    flex: 0 0 min(280px, calc(100vw - 120px));
     background: var(--catalog-white);
     border: 1px solid var(--catalog-border-light);
     border-radius: var(--catalog-border-radius);
     overflow: hidden;
     transition: var(--catalog-transition);
     position: relative;
+    /* Забезпечуємо мінімальну ширину */
+    min-width: 250px;
+    max-width: 320px;
 }
+
+/* Логіка для різних розмірів екрану - ВИСОКА СПЕЦИФІЧНІСТЬ */
+@media (min-width: 1400px) {
+    .catalog-page .catalog-content .products-carousel .product-card {
+        flex: 0 0 280px;
+    }
+
+    .catalog-page .catalog-content .carousel-track {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1399px) and (min-width: 1200px) {
+    .catalog-page .catalog-content .products-carousel .product-card {
+        flex: 0 0 260px;
+    }
+
+    .catalog-page .catalog-content .carousel-track {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .catalog-page .catalog-content .products-carousel .product-card {
+        flex: 0 0 240px;
+    }
+
+    .catalog-page .catalog-content .carousel-track {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .catalog-page .catalog-content .products-carousel .product-card {
+        flex: 0 0 220px;
+    }
+
+    .catalog-page .catalog-content .carousel-track {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+    .catalog-page .catalog-content .products-carousel .product-card {
+        flex: 0 0 200px;
+    }
+
+    .catalog-page .catalog-content .carousel-track {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    .catalog-page .catalog-content .products-carousel .product-card {
+        flex: 0 0 180px;
+    }
+
+    .catalog-page .catalog-content .carousel-track {
+        gap: 10px;
+    }
+}
+
+/* Покращена логіка для мобільних пристроїв iOS Safari - ВИСОКА СПЕЦИФІЧНІСТЬ */
+@supports (-webkit-touch-callout: none) {
+    .catalog-page .catalog-content .products-carousel {
+        /* Додаткові оптимізації для iOS Safari */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .catalog-page .catalog-content .carousel-track {
+        /* Покращена підтримка touch на iOS */
+        transform: translateZ(0);
+        will-change: transform;
+    }
+}
+
+/* Альтернативний спосіб скролу для touch пристроїв - ВИСОКА СПЕЦИФІЧНІСТЬ */
+@media (pointer: coarse) {
+    .catalog-page .catalog-content .products-carousel {
+        /* На touch пристроях додаємо можливість нативного скролу */
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE/Edge */
+    }
+
+    .catalog-page .catalog-content .products-carousel::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari */
+    }
+
+    .catalog-page .catalog-content .carousel-container {
+        overflow: visible;
+    }
+
+    .catalog-page .catalog-content .carousel-track {
+        /* На touch пристроях дозволяємо природній скрол */
+        transition: none;
+        transform: none !important;
+    }
+}
+
+/* ============================================
+   PRODUCT CARDS
+   ============================================ */
 
 .product-card:hover {
     transform: translateY(-4px);
@@ -466,46 +583,8 @@
 }
 
 /* ============================================
-   CAROUSEL NAVIGATION
+   CAROUSEL NAVIGATION - ВІДКЛЮЧЕНО (ВИКОРИСТОВУЄМО НОВІ СТИЛІ НИЖЧЕ)
    ============================================ */
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid var(--catalog-border-light);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 20px;
-    color: var(--catalog-text-primary);
-    transition: var(--catalog-transition);
-    z-index: 2;
-    box-shadow: var(--catalog-shadow-sm);
-}
-
-.carousel-btn:hover:not(:disabled) {
-    background: var(--catalog-white);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    color: var(--catalog-primary-color);
-}
-
-.carousel-prev {
-    left: -20px;
-}
-
-.carousel-next {
-    right: -20px;
-}
-
-.carousel-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
 
 /* ============================================
    EMPTY STATES
@@ -598,20 +677,32 @@
     }
 
     .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 16px;
     }
 
-    .product-card {
-        flex: 0 0 250px;
+    /* Мобільна адаптація каруселі - ВИСОКА СПЕЦИФІЧНІСТЬ */
+    .catalog-page .catalog-content .products-carousel {
+        /* На мобільних використовуємо нативний скрол */
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 10px;
+        margin-bottom: -10px;
     }
 
-    .carousel-prev {
-        left: -15px;
+    .catalog-page .catalog-content .carousel-container {
+        overflow: visible;
     }
 
-    .carousel-next {
-        right: -15px;
+    .catalog-page .catalog-content .carousel-track {
+        /* Відключаємо transform на мобільних */
+        transform: none !important;
+        transition: none;
+    }
+
+    /* Приховуємо кнопки навігації на мобільних - ВИСОКА СПЕЦИФІЧНІСТЬ */
+    .catalog-page .catalog-content .carousel-btn {
+        display: none;
     }
 
     .catalog-title {
@@ -639,16 +730,22 @@
     }
 
     .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         gap: 12px;
     }
 
-    .product-card {
-        flex: 0 0 220px;
+    /* Ще компактніша адаптація каруселі для малих екранів - ВИСОКА СПЕЦИФІЧНІСТЬ */
+    .catalog-page .catalog-content .products-carousel {
+        margin: 0 -8px;
+        padding: 0 8px;
+        /* Покращений скрол для маленьких екранів */
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
     }
 
-    .carousel-track {
-        gap: 12px;
+    .catalog-page .catalog-content .carousel-track {
+        padding: 0;
+        margin: 0;
     }
 
     .catalog-title {
@@ -669,18 +766,9 @@
         min-width: 90px;
     }
 
-    .carousel-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 18px;
-    }
-
-    .carousel-prev {
-        left: -10px;
-    }
-
-    .carousel-next {
-        right: -10px;
+    /* Кнопки каруселі приховані на мобільних - ВИСОКА СПЕЦИФІЧНІСТЬ */
+    .catalog-page .catalog-content .carousel-btn {
+        display: none;
     }
 
     .breadcrumb {
@@ -713,4 +801,392 @@ img[alt*="панел" i],
 img[alt*="акумулятор" i] {
     object-fit: contain !important;
     object-position: center !important;
+}
+
+/* ============================================
+   ПЛАНШЕТНА АДАПТАЦІЯ 
+   ============================================ */
+
+/* iPad Pro та великі планшети - ВИСОКА СПЕЦИФІЧНІСТЬ */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .catalog-layout {
+        grid-template-columns: 240px 1fr;
+        gap: 24px;
+    }
+
+    .catalog-page .catalog-content .products-carousel .product-card {
+        flex: 0 0 240px;
+    }
+
+    .catalog-page .catalog-content .carousel-track {
+        gap: 16px;
+    }
+
+    /* Покращені кнопки для планшетів - ВИСОКА СПЕЦИФІЧНІСТЬ */
+    .catalog-page .catalog-content .carousel-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(4px);
+    }
+}
+
+/* iPad та середні планшети в портретному режимі */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .catalog-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .catalog-sidebar {
+        order: 2;
+        position: static;
+        columns: 2;
+        column-gap: 20px;
+    }
+
+    .filter-group {
+        break-inside: avoid;
+        margin-bottom: 16px;
+    }
+
+    .product-card {
+        flex: 0 0 220px;
+    }
+
+    .carousel-track {
+        gap: 14px;
+    }
+}
+
+/* ============================================
+   ПОКРАЩЕННЯ ДЛЯ iOS SAFARI
+   ============================================ */
+
+/* Спеціальна оптимізація для iOS Safari */
+@supports (-webkit-touch-callout: none) and (pointer: coarse) {
+    .products-carousel {
+        /* Покращений momentum scrolling */
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .products-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Відключаємо JavaScript прокрутку на iOS touch */
+    .carousel-track {
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* Приховуємо кнопки на touch пристроях */
+    .carousel-btn {
+        display: none;
+    }
+
+    /* Додаємо індикатор можливості скролу */
+    .products-carousel::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 100%;
+        background: linear-gradient(to left, rgba(248, 249, 250, 0.8), transparent);
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+/* ============================================
+   ДОДАТКОВІ ОПТИМІЗАЦІЇ АДАПТИВНОСТІ
+   ============================================ */
+
+/* Дуже маленькі екрани */
+@media (max-width: 360px) {
+    .product-card {
+        flex: 0 0 160px;
+        min-width: 160px;
+    }
+
+    .carousel-track {
+        gap: 8px;
+    }
+
+    .catalog-container {
+        padding: 0 12px;
+    }
+
+    .category-title {
+        font-size: 1.1rem;
+    }
+
+    .product-name {
+        font-size: 0.95rem;
+        min-height: 2.4rem;
+    }
+}
+
+/* Великі екрани */
+@media (min-width: 1600px) {
+    .catalog-container {
+        max-width: 1600px;
+    }
+
+    .product-card {
+        flex: 0 0 300px;
+        max-width: 300px;
+    }
+
+    .carousel-track {
+        gap: 24px;
+    }
+
+    .carousel-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+    }
+
+    .carousel-prev {
+        left: -24px;
+    }
+
+    .carousel-next {
+        right: -24px;
+    }
+}
+
+/* ============================================
+   АНІМАЦІЇ ТА ПЕРЕХОДИ
+   ============================================ */
+
+/* Покращені переходи для каруселі */
+.carousel-track {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Smooth scroll fallback для браузерів що не підтримують CSS scroll-behavior */
+@media (prefers-reduced-motion: no-preference) {
+    .products-carousel {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Відключення анімацій для користувачів з accessibility потребами */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-track {
+        transition: none !important;
+    }
+
+    .product-card {
+        transition: none !important;
+    }
+
+    .carousel-btn {
+        transition: none !important;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY ПОКРАЩЕННЯ
+   ============================================ */
+
+/* Focus states для accessibility */
+.carousel-btn:focus {
+    outline: 2px solid var(--catalog-primary-color);
+    outline-offset: 2px;
+}
+
+.product-card:focus-within {
+    outline: 2px solid var(--catalog-primary-color);
+    outline-offset: 2px;
+}
+
+/* Покращення для screen readers */
+.carousel-btn[aria-hidden="true"] {
+    display: none;
+}
+
+/* ============================================
+   ЛОГІКА АДАПТИВНОСТІ КОНТЕЙНЕРІВ
+   ============================================ */
+
+/* Забезпечуємо що контейнери категорій завжди вміщаються в екран */
+.category-section {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.products-carousel {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    contain: layout style;
+}
+
+/* Оптимізація для rendering performance */
+.carousel-track {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* ============================================
+   PRODUCTS GRID & CAROUSEL - ВИСОКА СПЕЦИФІЧНІСТЬ
+   ============================================ */
+.catalog-page .catalog-content .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.catalog-page .catalog-content .products-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Забезпечуємо адаптивність контейнера */
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.catalog-page .catalog-content .carousel-container {
+    overflow: hidden;
+    width: 100%;
+    /* Обмежуємо ширину та забезпечуємо скрол */
+    max-width: 100%;
+    position: relative;
+}
+
+.catalog-page .catalog-content .carousel-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Адаптивна ширина на основі кількості товарів */
+    width: fit-content;
+    min-width: 100%;
+}
+
+/* Адаптивні картки товарів - ВИСОКА СПЕЦИФІЧНІСТЬ */
+.catalog-page .catalog-content .products-carousel .product-card {
+    /* Динамічна ширина залежно від розміру екрану */
+    flex: 0 0 min(280px, calc(100vw - 120px));
+    background: var(--catalog-white);
+    border: 1px solid var(--catalog-border-light);
+    border-radius: var(--catalog-border-radius);
+    overflow: hidden;
+    transition: var(--catalog-transition);
+    position: relative;
+    /* Забезпечуємо мінімальну ширину */
+    min-width: 250px;
+    max-width: 320px;
+}
+
+/* ============================================
+   КНОПКИ КАРУСЕЛІ - ЧИСТА РЕАЛІЗАЦІЯ БЕЗ !IMPORTANT
+   ============================================ */
+
+/* Забезпечуємо видимість кнопок в контейнері */
+div[data-category].products-carousel {
+    position: relative;
+    overflow: visible;
+    padding: 0 20px;
+}
+
+/* Базові стилі для всіх кнопок каруселі */
+div[data-category] .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--catalog-primary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--catalog-primary-color);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(40, 167, 69, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    user-select: none;
+    pointer-events: auto;
+}
+
+div[data-category] .carousel-btn:hover:not(:disabled) {
+    background: var(--catalog-primary-color);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 25px rgba(40, 167, 69, 0.4);
+    border-color: var(--catalog-primary-hover);
+}
+
+div[data-category] .carousel-btn:active:not(:disabled) {
+    transform: translateY(-50%) scale(0.95);
+}
+
+div[data-category] .carousel-prev {
+    left: 10px;
+}
+
+div[data-category] .carousel-next {
+    right: 10px;
+}
+
+div[data-category] .carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.7);
+    border-color: #ddd;
+    color: #999;
+    transform: translateY(-50%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптивні розміри кнопок */
+@media (min-width: 1600px) {
+    div[data-category] .carousel-btn {
+        width: 56px;
+        height: 56px;
+        font-size: 26px;
+    }
+
+    div[data-category] .carousel-prev {
+        left: 15px;
+    }
+
+    div[data-category] .carousel-next {
+        right: 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    div[data-category] .carousel-btn {
+        width: 46px;
+        height: 46px;
+        font-size: 20px;
+    }
+}
+
+/* На мобільних приховуємо кнопки для touch скролу */
+@media (max-width: 767px) {
+    div[data-category] .carousel-btn {
+        display: none;
+    }
 }

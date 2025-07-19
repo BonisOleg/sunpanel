@@ -8,14 +8,15 @@ class CatalogCarousel {
         this.cards = carouselElement.querySelectorAll('.product-card');
 
         this.currentIndex = 0;
-        this.cardWidth = 280;
-        this.cardGap = 16;
+        this.cardWidth = this.calculateCardWidth();
+        this.cardGap = this.calculateCardGap();
         this.cardsToShow = this.calculateCardsToShow();
         this.maxIndex = Math.max(0, this.cards.length - this.cardsToShow);
 
         // Прапорці для оптимізації
         this.isAnimating = false;
         this.resizeTimeout = null;
+        this.isTouchDevice = this.detectTouchDevice();
 
         this.init();
     }
@@ -23,9 +24,42 @@ class CatalogCarousel {
     init() {
         if (this.cards.length === 0) return;
 
-        this.updateButtons();
-        this.addEventListeners();
+        // На touch пристроях використовуємо нативний скрол
+        if (this.isTouchDevice && window.innerWidth <= 768) {
+            this.setupNativeScroll();
+        } else {
+            this.setupButtonScroll();
+        }
+
         this.setupResizeHandler();
+    }
+
+    detectTouchDevice() {
+        return 'ontouchstart' in window ||
+            navigator.maxTouchPoints > 0 ||
+            navigator.msMaxTouchPoints > 0;
+    }
+
+    calculateCardWidth() {
+        const viewportWidth = window.innerWidth;
+
+        if (viewportWidth >= 1400) return 280;
+        if (viewportWidth >= 1200) return 260;
+        if (viewportWidth >= 992) return 240;
+        if (viewportWidth >= 768) return 220;
+        if (viewportWidth >= 576) return 200;
+        return 180;
+    }
+
+    calculateCardGap() {
+        const viewportWidth = window.innerWidth;
+
+        if (viewportWidth >= 1400) return 20;
+        if (viewportWidth >= 1200) return 18;
+        if (viewportWidth >= 992) return 16;
+        if (viewportWidth >= 768) return 14;
+        if (viewportWidth >= 576) return 12;
+        return 10;
     }
 
     calculateCardsToShow() {
@@ -34,7 +68,35 @@ class CatalogCarousel {
 
         const containerWidth = container.offsetWidth;
         const totalCardWidth = this.cardWidth + this.cardGap;
-        return Math.max(1, Math.floor(containerWidth / totalCardWidth));
+        const cardsToShow = Math.floor(containerWidth / totalCardWidth);
+
+        // Мінімум 1 картка, максимум - кількість доступних карток
+        return Math.max(1, Math.min(cardsToShow, this.cards.length));
+    }
+
+    setupNativeScroll() {
+        // Приховуємо кнопки навігації на touch пристроях
+        if (this.prevBtn) this.prevBtn.style.display = 'none';
+        if (this.nextBtn) this.nextBtn.style.display = 'none';
+
+        // Додаємо smooth scrolling поведінку
+        this.carousel.style.overflowX = 'auto';
+        this.carousel.style.scrollbarWidth = 'none';
+        this.carousel.style.msOverflowStyle = 'none';
+
+        // Приховуємо scrollbar
+        const style = document.createElement('style');
+        style.textContent = `
+            .products-carousel::-webkit-scrollbar {
+                display: none;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    setupButtonScroll() {
+        this.updateButtons();
+        this.addEventListeners();
     }
 
     addEventListeners() {
@@ -53,8 +115,10 @@ class CatalogCarousel {
             });
         }
 
-        // Підтримка свайпів
-        this.addTouchSupport();
+        // Підтримка свайпів тільки на планшетах
+        if (this.isTouchDevice && window.innerWidth > 768) {
+            this.addTouchSupport();
+        }
 
         // Підтримка клавіатури
         this.addKeyboardSupport();
@@ -70,13 +134,27 @@ class CatalogCarousel {
     }
 
     handleResize() {
+        // Перераховуємо всі розміри при зміні viewport
+        const newCardWidth = this.calculateCardWidth();
+        const newCardGap = this.calculateCardGap();
         const newCardsToShow = this.calculateCardsToShow();
+        
+        // Оновлюємо значення
+        this.cardWidth = newCardWidth;
+        this.cardGap = newCardGap;
+        
         if (newCardsToShow !== this.cardsToShow) {
             this.cardsToShow = newCardsToShow;
             this.maxIndex = Math.max(0, this.cards.length - this.cardsToShow);
             this.currentIndex = Math.min(this.currentIndex, this.maxIndex);
-            this.updatePosition(false); // без анімації
-            this.updateButtons();
+            
+            // Вибираємо тип скролу залежно від пристрою
+            if (this.isTouchDevice && window.innerWidth <= 768) {
+                this.setupNativeScroll();
+            } else {
+                this.setupButtonScroll();
+                this.updatePosition(false); // без анімації
+            }
         }
     }
 
