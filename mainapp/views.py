@@ -1,11 +1,17 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import TemplateView, View
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
 from .models import Product, Portfolio, Review, ProductImage, Category, Brand
 from .forms import ReviewForm
 from django.db.models import Q, Avg
 from django.db import models
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+from django.core.mail import send_mail
+from django.conf import settings
+import json
+from datetime import datetime
 
 
 class IndexView(TemplateView):
@@ -139,10 +145,10 @@ class PortfolioView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         
-        # Отримуємо проекти в потрібному порядку
-        project1 = Portfolio.objects.get(title__contains='Комерційна СЕС')
-        project2 = Portfolio.objects.get(title__contains='Промислова СЕС') 
-        project3 = Portfolio.objects.get(title__contains='Приватна СЕС')
+        # Отримуємо проекти в потрібному порядку за ID
+        project1 = Portfolio.objects.get(id=4)  # Приватна СЕС потужністю 17.2 кВт
+        project2 = Portfolio.objects.get(id=5)  # Комерційна СЕС потужністю 43 кВт
+        project3 = Portfolio.objects.get(id=6)  # Приватна СЕС потужністю 10.6 кВт
         
         # Додаємо фото до кожного проекту
         project1.all_images = self.get_project_images('project1_')
@@ -185,9 +191,16 @@ class CatalogView(TemplateView):
         if price_max:
             products = products.filter(price__lte=price_max)
         
-        # Унікальні категорії та бренди для фільтрів
-        categories = Category.objects.filter(is_active=True).values_list('name', flat=True).order_by('name')
-        brands = Brand.objects.filter(is_active=True).values_list('name', flat=True).order_by('name')
+        # Унікальні категорії та бренди для фільтрів - лише ті що мають товари в наявності
+        categories = Category.objects.filter(
+            product__in_stock=True,
+            is_active=True
+        ).values_list('name', flat=True).distinct().order_by('name')
+        
+        brands = Brand.objects.filter(
+            product__in_stock=True,
+            is_active=True
+        ).values_list('name', flat=True).distinct().order_by('name')
         
         # Товари по категоріях для каруселей (підтримка українських та російських назв)
         inverters = products.filter(
@@ -415,3 +428,161 @@ class ProductDetailView(TemplateView):
         })
         
         return context
+
+
+# API Views
+@method_decorator(csrf_exempt, name='dispatch')
+class CallbackAPIView(View):
+    """API для обробки заявок зворотного зв'язку"""
+    
+    def post(self, request):
+        try:
+            data = json.loads(request.body)
+            
+            # Валідація данних
+            name = data.get('name', '').strip()
+            phone = data.get('phone', '').strip()
+            message = data.get('message', '').strip()
+            
+            if not name:
+                return JsonResponse({'error': 'Імʼя є обовʼязковим'}, status=400)
+            
+            if not phone:
+                return JsonResponse({'error': 'Телефон є обовʼязковим'}, status=400)
+            
+            # Підготовка email листа
+            subject = f'Нова заявка на зворотний звʼязок - {name}'
+            
+            email_message = f"""
+Нова заявка на зворотний звʼязок з сайту GreenSolarTech
+
+Ім'я: {name}
+Телефон: {phone}
+Повідомлення: {message if message else 'Не вказано'}
+
+Дата та час: {datetime.now().strftime('%d.%m.%Y о %H:%M')}
+
+---
+Автоматичне повідомлення з сайту greensolalrtech.com
+            """
+            
+            # Відправка email
+            try:
+                send_mail(
+                    subject=subject,
+                    message=email_message,
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[settings.CONTACT_EMAIL],
+                    fail_silently=False,
+                )
+                
+                return JsonResponse({
+                    'success': True,
+                    'message': 'Заявку успішно відправлено'
+                })
+                
+            except Exception as email_error:
+                print(f"Помилка відправки email: {email_error}")
+                return JsonResponse({
+                    'error': 'Помилка відправки заявки. Спробуйте пізніше.'
+                }, status=500)
+                
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Невірний формат данних'}, status=400)
+        except Exception as e:
+            print(f"Загальна помилка API: {e}")
+            return JsonResponse({'error': 'Внутрішня помилка сервера'}, status=500)
+    
+    def get(self, request):
+        return JsonResponse({'error': 'Метод не дозволений'}, status=405)
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class OrderAPIView(View):
+    """API для обробки замовлень з корзини"""
+    
+    def post(self, request):
+        try:
+            data = json.loads(request.body)
+            
+            # Валідація данних
+            name = data.get('name', '').strip()
+            phone = data.get('phone', '').strip()
+            email = data.get('email', '').strip()
+            comment = data.get('comment', '').strip()
+            items = data.get('items', [])
+            total = data.get('total', 0)
+            
+            if not name:
+                return JsonResponse({'error': 'Імʼя є обовʼязковим'}, status=400)
+            
+            if not phone:
+                return JsonResponse({'error': 'Телефон є обовʼязковим'}, status=400)
+            
+            if not email:
+                return JsonResponse({'error': 'Email є обовʼязковим'}, status=400)
+            
+            if not items:
+                return JsonResponse({'error': 'Корзина пуста'}, status=400)
+            
+            # Формування списку товарів
+            items_list = []
+            for item in items:
+                item_text = f"• {item.get('name', 'Невідомий товар')} x {item.get('quantity', 1)} шт. - ₴{item.get('price', 0)}"
+                items_list.append(item_text)
+            
+            items_text = '\n'.join(items_list)
+            
+            # Підготовка email листа
+            subject = f'Нове замовлення #{datetime.now().strftime("%Y%m%d%H%M")} - {name}'
+            
+            email_message = f"""
+Нове замовлення з сайту GreenSolarTech
+
+ДАНІ ЗАМОВНИКА:
+Ім'я: {name}
+Телефон: {phone}
+Email: {email}
+
+ТОВАРИ:
+{items_text}
+
+ЗАГАЛЬНА СУМА: ₴{total}
+
+КОМЕНТАР: {comment if comment else 'Не вказано'}
+
+Дата та час: {datetime.now().strftime('%d.%m.%Y о %H:%M')}
+
+---
+Автоматичне повідомлення з сайту greensolalrtech.com
+            """
+            
+            # Відправка email
+            try:
+                send_mail(
+                    subject=subject,
+                    message=email_message,
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[settings.CONTACT_EMAIL],
+                    fail_silently=False,
+                )
+                
+                return JsonResponse({
+                    'success': True,
+                    'message': 'Замовлення успішно відправлено'
+                })
+                
+            except Exception as email_error:
+                print(f"Помилка відправки email замовлення: {email_error}")
+                return JsonResponse({
+                    'error': 'Помилка відправки замовлення. Спробуйте пізніше.'
+                }, status=500)
+                
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Невірний формат данних'}, status=400)
+        except Exception as e:
+            print(f"Загальна помилка API замовлень: {e}")
+            return JsonResponse({'error': 'Внутрішня помилка сервера'}, status=500)
+    
+    def get(self, request):
+        return JsonResponse({'error': 'Метод не дозволений'}, status=405)

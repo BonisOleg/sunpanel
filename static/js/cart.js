@@ -400,15 +400,30 @@ class ShoppingCart {
         }
     }
 
-    // Симуляція відправки замовлення (можна замінити на реальний API)
-    simulateOrderSubmission(orderData) {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                // Тут можна відправити дані на сервер
-                // fetch('/api/orders', { method: 'POST', body: JSON.stringify(orderData) })
-                resolve();
-            }, 1000);
+    // Відправка замовлення на сервер
+    async simulateOrderSubmission(orderData) {
+        // Отримання CSRF токена
+        const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value ||
+            document.querySelector('meta[name="csrf-token"]')?.content;
+
+        const response = await fetch('/api/orders/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrfToken
+            },
+            body: JSON.stringify({
+                ...orderData,
+                csrfmiddlewaretoken: csrfToken
+            })
         });
+
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error || 'Помилка сервера');
+        }
+
+        return await response.json();
     }
 
     // Очищення корзини

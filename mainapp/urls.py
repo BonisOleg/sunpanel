@@ -12,4 +12,7 @@ urlpatterns = [
     path('reviews/', views.ReviewsView.as_view(), name='reviews'),
     path('sitemap.xml', views.sitemap_xml, name='sitemap'),
     path('robots.txt', views.robots_txt, name='robots'),
+    # API endpoints
+    path('api/callback/', views.CallbackAPIView.as_view(), name='callback_api'),
+    path('api/orders/', views.OrderAPIView.as_view(), name='order_api'),
 ] 

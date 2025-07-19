@@ -33,6 +33,9 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
     <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+    
+    <!-- CSRF Token for AJAX -->
+    <meta name="csrf-token" content="{% csrf_token %}">
 
     <!-- CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,6 +51,7 @@
     <link rel="stylesheet" href="{% static 'css/style-mobile.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-mobile-override.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-production-mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/call-button.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-production-critical.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-newspaper-mobile.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-products.css' %}?v=2025011801">
@@ -186,6 +190,7 @@
     <script src="{% static 'js/main3.js' %}"></script>
     {% block extra_js %}{% endblock %}
     <script src="{% static 'js/cart.js' %}"></script>
+    <script src="{% static 'js/callback.js' %}"></script>
 </body>
 
 </html>
