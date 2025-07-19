@@ -50,8 +50,26 @@
     <link rel="stylesheet" href="{% static 'css/style-production-mobile.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-production-critical.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-newspaper-mobile.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style-products.css' %}">
-    <link rel="stylesheet" href="{% static 'css/cart-modal.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-products.css' %}?v=2025011801">
+    <link rel="stylesheet" href="{% static 'css/cart-modal.css' %}?v=2025011801">
+
+    <style>
+    /* КРИТИЧНЕ ВИПРАВЛЕННЯ ЗОБРАЖЕНЬ ТОВАРІВ НА ГОЛОВНІЙ */
+    .product-card__image,
+    .product-card .product-card__image {
+        object-fit: contain !important;
+        object-position: center !important;
+        background: #f8f9fa !important;
+    }
+    
+    /* КРИТИЧНЕ ВИПРАВЛЕННЯ ЗОБРАЖЕНЬ В КОШИКУ */
+    .cart-item__img,
+    .cart-modal .cart-item__img {
+        object-fit: contain !important;
+        object-position: center !important;
+        background: #f8f9fa !important;
+    }
+    </style>
 
     {% block extra_css %}{% endblock %}
 </head>

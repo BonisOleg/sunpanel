@@ -1,15 +1,72 @@
 from django.db import models
 from django.utils import timezone
+from django.utils.text import slugify
 
 # Create your models here.
+
+class Category(models.Model):
+    name = models.CharField(max_length=100, unique=True, verbose_name="Назва категорії")
+    slug = models.SlugField(max_length=100, unique=True, verbose_name="URL-фрагмент")
+    description = models.TextField(blank=True, verbose_name="Опис категорії")
+    is_active = models.BooleanField(default=True, verbose_name="Активна")
+    created_at = models.DateTimeField(default=timezone.now, verbose_name="Дата створення")
+    
+    class Meta:
+        verbose_name = "Категорія"
+        verbose_name_plural = "Категорії"
+        ordering = ['name']
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            base_slug = slugify(self.name)
+            slug = base_slug
+            counter = 1
+            while Category.objects.filter(slug=slug).exclude(pk=self.pk).exists():
+                slug = f"{base_slug}-{counter}"
+                counter += 1
+            self.slug = slug
+        super().save(*args, **kwargs)
+    
+    def __str__(self):
+        return self.name
+
+
+class Brand(models.Model):
+    name = models.CharField(max_length=100, unique=True, verbose_name="Назва бренду")
+    slug = models.SlugField(max_length=100, unique=True, verbose_name="URL-фрагмент")
+    logo = models.ImageField(upload_to='brands/', blank=True, verbose_name="Логотип")
+    description = models.TextField(blank=True, verbose_name="Опис бренду")
+    website = models.URLField(blank=True, verbose_name="Веб-сайт")
+    is_active = models.BooleanField(default=True, verbose_name="Активний")
+    created_at = models.DateTimeField(default=timezone.now, verbose_name="Дата створення")
+    
+    class Meta:
+        verbose_name = "Бренд"
+        verbose_name_plural = "Бренди"
+        ordering = ['name']
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            base_slug = slugify(self.name)
+            slug = base_slug
+            counter = 1
+            while Brand.objects.filter(slug=slug).exclude(pk=self.pk).exists():
+                slug = f"{base_slug}-{counter}"
+                counter += 1
+            self.slug = slug
+        super().save(*args, **kwargs)
+    
+    def __str__(self):
+        return self.name
+
 
 class Product(models.Model):
     name = models.CharField(max_length=200, verbose_name="Назва товару")
     description = models.TextField(verbose_name="Опис")
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Ціна")
     image = models.ImageField(upload_to='products/', verbose_name="Зображення")
-    category = models.CharField(max_length=100, verbose_name="Категорія")
-    brand = models.CharField(max_length=100, verbose_name="Бренд")
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="Категорія")
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, verbose_name="Бренд")
     model = models.CharField(max_length=100, verbose_name="Модель")
     power = models.CharField(max_length=50, verbose_name="Потужність", blank=True)
     efficiency = models.CharField(max_length=50, verbose_name="Ефективність", blank=True)

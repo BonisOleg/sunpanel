@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Portfolio, Review, ProductImage
+from .models import Product, Portfolio, Review, ProductImage, Category, Brand
 
 class ProductImageInline(admin.TabularInline):
     model = ProductImage
@@ -10,7 +10,7 @@ class ProductImageInline(admin.TabularInline):
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'brand', 'category', 'price', 'in_stock', 'featured', 'created_at']
     list_filter = ['category', 'brand', 'in_stock', 'featured', 'created_at']
-    search_fields = ['name', 'brand', 'model', 'category']
+    search_fields = ['name', 'brand__name', 'model', 'category__name']
     list_editable = ['in_stock', 'featured']
     prepopulated_fields = {}
     inlines = [ProductImageInline]
@@ -79,6 +79,52 @@ class ReviewAdmin(admin.ModelAdmin):
         }),
         ('Статус', {
             'fields': ('is_published',)
+        }),
+    )
+    
+    def get_readonly_fields(self, request, obj=None):
+        if obj:  # Editing existing object
+            return ['created_at']
+        return []
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ['name', 'slug', 'is_active', 'created_at']
+    list_filter = ['is_active', 'created_at']
+    search_fields = ['name', 'description']
+    list_editable = ['is_active']
+    prepopulated_fields = {'slug': ('name',)}
+    
+    fieldsets = (
+        ('Основна інформація', {
+            'fields': ('name', 'slug', 'description')
+        }),
+        ('Статус', {
+            'fields': ('is_active',)
+        }),
+    )
+    
+    def get_readonly_fields(self, request, obj=None):
+        if obj:  # Editing existing object
+            return ['created_at']
+        return []
+
+
+@admin.register(Brand)
+class BrandAdmin(admin.ModelAdmin):
+    list_display = ['name', 'slug', 'website', 'is_active', 'created_at']
+    list_filter = ['is_active', 'created_at']
+    search_fields = ['name', 'description', 'website']
+    list_editable = ['is_active']
+    prepopulated_fields = {'slug': ('name',)}
+    
+    fieldsets = (
+        ('Основна інформація', {
+            'fields': ('name', 'slug', 'logo', 'description', 'website')
+        }),
+        ('Статус', {
+            'fields': ('is_active',)
         }),
     )
     

@@ -395,7 +395,7 @@
                 <h1>{{ product.name }}</h1>
 
                 {% if product.brand %}
-                <div class="product-brand">{{ product.brand }}</div>
+                <div class="product-brand">{{ product.brand.name }}</div>
                 {% endif %}
 
                 <div class="product-price">₴{{ product.price|floatformat:0 }}</div>
@@ -435,7 +435,7 @@
                     {% endif %}
                     <div class="spec-item">
                         <span class="spec-label">Категорія:</span>
-                        <span class="spec-value">{{ product.category }}</span>
+                        <span class="spec-value">{{ product.category.name }}</span>
                     </div>
                     <div class="spec-item">
                         <span class="spec-label">Наявність:</span>

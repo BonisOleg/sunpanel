@@ -363,8 +363,14 @@
 .product-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain !important;
     transition: transform 0.3s ease;
+}
+
+/* Додаткові селектори з вищою специфічністю */
+.product-card .product-image img,
+.catalog-page .product-image img {
+    object-fit: contain !important;
 }
 
 .product-card:hover .product-image img {
@@ -694,4 +700,17 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+/* КРИТИЧНІ СТИЛІ ДЛЯ ЗОБРАЖЕНЬ ТОВАРІВ - НАЙВИЩИЙ ПРІОРИТЕТ */
+.catalog-page .product-image img,
+.product-card .product-image img,
+.products-carousel .product-image img,
+.products-grid .product-image img,
+div[class*="product"] img,
+img[alt*="інвертор" i],
+img[alt*="панел" i],
+img[alt*="акумулятор" i] {
+    object-fit: contain !important;
+    object-position: center !important;
 }

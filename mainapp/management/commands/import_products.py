@@ -3,7 +3,7 @@ import requests
 from django.core.management.base import BaseCommand, CommandError
 from django.core.files.base import ContentFile
 from django.utils.text import slugify
-from mainapp.models import Product
+from mainapp.models import Product, Category, Brand
 import os
 from urllib.parse import urlparse
 import time
@@ -69,13 +69,47 @@ class Command(BaseCommand):
                         skipped_count += 1
                         continue
                     
+                    # Створюємо або отримуємо категорію
+                    category_obj = None
+                    if category:
+                        category_obj, created = Category.objects.get_or_create(
+                            name=category,
+                            defaults={'description': f'Категорія {category}'}
+                        )
+                        if created:
+                            self.stdout.write(f'Створено нову категорію: {category}')
+                    
+                    # Створюємо або отримуємо бренд
+                    brand_obj = None
+                    if brand:
+                        brand_obj, created = Brand.objects.get_or_create(
+                            name=brand,
+                            defaults={'description': f'Бренд {brand}'}
+                        )
+                        if created:
+                            self.stdout.write(f'Створено новий бренд: {brand}')
+                    
+                    # Якщо немає бренду, створюємо загальний
+                    if not brand_obj:
+                        brand_obj, _ = Brand.objects.get_or_create(
+                            name='Загальний',
+                            defaults={'description': 'Загальний бренд'}
+                        )
+                    
+                    # Якщо немає категорії, створюємо загальну
+                    if not category_obj:
+                        category_obj, _ = Category.objects.get_or_create(
+                            name='Загальна',
+                            defaults={'description': 'Загальна категорія'}
+                        )
+                    
                     # Створюємо товар
                     product = Product(
                         name=name,
                         description=description,
                         price=price if pd.notna(price) else 0,
-                        category=category,
-                        brand=brand,
+                        category=category_obj,
+                        brand=brand_obj,
                         model='',  # В Excel немає окремого поля для моделі
                         country=country,
                         in_stock=True,

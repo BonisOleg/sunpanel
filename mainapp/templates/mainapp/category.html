@@ -7,8 +7,8 @@
 {% block canonical %}https://greensolalrtech.com/catalog/{{ category_key }}/{% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/catalog.css' %}">
-<link rel="stylesheet" href="{% static 'css/product-links.css' %}">
+<link rel="stylesheet" href="{% static 'css/catalog.css' %}?v=2025011801">
+<link rel="stylesheet" href="{% static 'css/product-links.css' %}?v=2025011801">
 {% endblock %}
 
 {% block content %}
@@ -117,7 +117,7 @@
                                 {% endif %}
                                 <div class="product-info">
                                     <h3 class="product-name">{{ product.name }}</h3>
-                                    <p class="product-brand">{{ product.brand }}</p>
+                                    <p class="product-brand">{{ product.brand.name }}</p>
                                     {% if product.power or product.efficiency or product.warranty %}
                                     <div class="product-specs">
                                         {% if product.power %}

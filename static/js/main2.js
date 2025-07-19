@@ -120,16 +120,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // Hero кнопка прокрутки
+    // Hero кнопка переходу до каталогу
     window.HeroActions = {
         init: function () {
             const heroBtn = document.getElementById('hero-btn');
             if (heroBtn) {
                 heroBtn.addEventListener('click', () => {
-                    const aboutSection = document.getElementById('about');
-                    if (aboutSection && window.AppUtils) {
-                        window.AppUtils.scrollTo(aboutSection);
-                    }
+                    window.location.href = '/catalog/';
                 });
             }
         }

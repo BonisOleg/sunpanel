@@ -1,8 +1,7 @@
-// Catalog Carousel Management - покращена версія
+// Catalog Carousel Management - Optimized Version
 class CatalogCarousel {
     constructor(carouselElement) {
         this.carousel = carouselElement;
-        this.container = carouselElement.querySelector('.carousel-container');
         this.track = carouselElement.querySelector('.carousel-track');
         this.prevBtn = carouselElement.querySelector('.carousel-prev');
         this.nextBtn = carouselElement.querySelector('.carousel-next');
@@ -10,99 +9,127 @@ class CatalogCarousel {
 
         this.currentIndex = 0;
         this.cardWidth = 280;
-        this.gap = 16;
+        this.cardGap = 16;
         this.cardsToShow = this.calculateCardsToShow();
         this.maxIndex = Math.max(0, this.cards.length - this.cardsToShow);
-        this.isMobile = window.innerWidth <= 768;
+
+        // Прапорці для оптимізації
+        this.isAnimating = false;
+        this.resizeTimeout = null;
 
         this.init();
     }
 
     init() {
-        // Для мобільних пристроїв використовуємо нативний скрол
-        if (this.isMobile) {
-            this.initMobileScroll();
-        } else {
-            this.initDesktopCarousel();
-        }
+        if (this.cards.length === 0) return;
 
-        // Обробка зміни розміру вікна
-        window.addEventListener('resize', () => {
-            const wasMobile = this.isMobile;
-            this.isMobile = window.innerWidth <= 768;
-
-            if (wasMobile !== this.isMobile) {
-                // Переключення між мобільним та десктопним режимами
-                if (this.isMobile) {
-                    this.initMobileScroll();
-                } else {
-                    this.initDesktopCarousel();
-                }
-            } else if (!this.isMobile) {
-                // Оновлення параметрів для десктопу
-                this.updateDesktopParams();
-            }
-        });
-    }
-
-    initMobileScroll() {
-        // Скидаємо transform для мобільних
-        this.track.style.transform = '';
-
-        // Приховуємо кнопки навігації
-        if (this.prevBtn) this.prevBtn.style.display = 'none';
-        if (this.nextBtn) this.nextBtn.style.display = 'none';
-
-        // Додаємо smooth scrolling для мобільних
-        this.container.style.scrollBehavior = 'smooth';
-    }
-
-    initDesktopCarousel() {
-        // Показуємо кнопки навігації
-        if (this.prevBtn) this.prevBtn.style.display = 'flex';
-        if (this.nextBtn) this.nextBtn.style.display = 'flex';
-
-        // Скидаємо scroll для десктопу
-        this.container.scrollLeft = 0;
-        this.container.style.scrollBehavior = 'auto';
-
-        this.updateDesktopParams();
-        this.addEventListeners();
-        this.updatePosition();
         this.updateButtons();
-    }
-
-    updateDesktopParams() {
-        this.cardsToShow = this.calculateCardsToShow();
-        this.maxIndex = Math.max(0, this.cards.length - this.cardsToShow);
-        this.currentIndex = Math.min(this.currentIndex, this.maxIndex);
+        this.addEventListeners();
+        this.setupResizeHandler();
     }
 
     calculateCardsToShow() {
-        if (this.isMobile) return 1;
+        const container = this.carousel.querySelector('.carousel-container');
+        if (!container) return 1;
 
-        const containerWidth = this.container.offsetWidth;
-        const cardTotalWidth = this.cardWidth + this.gap;
-        return Math.floor(containerWidth / cardTotalWidth);
+        const containerWidth = container.offsetWidth;
+        const totalCardWidth = this.cardWidth + this.cardGap;
+        return Math.max(1, Math.floor(containerWidth / totalCardWidth));
     }
 
     addEventListeners() {
-        if (this.isMobile) return;
-
-        // Видаляємо старі слухачі подій
+        // Кнопки навігації
         if (this.prevBtn) {
-            this.prevBtn.removeEventListener('click', this.goToPrevBound);
-            this.goToPrevBound = () => this.goToPrev();
-            this.prevBtn.addEventListener('click', this.goToPrevBound);
+            this.prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.goToPrev();
+            });
         }
 
         if (this.nextBtn) {
-            this.nextBtn.removeEventListener('click', this.goToNextBound);
-            this.goToNextBound = () => this.goToNext();
-            this.nextBtn.addEventListener('click', this.goToNextBound);
+            this.nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.goToNext();
+            });
         }
 
+        // Підтримка свайпів
+        this.addTouchSupport();
+
         // Підтримка клавіатури
+        this.addKeyboardSupport();
+    }
+
+    setupResizeHandler() {
+        // Debounced resize handler для performance
+        const debouncedResize = this.debounce(() => {
+            this.handleResize();
+        }, 250);
+
+        window.addEventListener('resize', debouncedResize);
+    }
+
+    handleResize() {
+        const newCardsToShow = this.calculateCardsToShow();
+        if (newCardsToShow !== this.cardsToShow) {
+            this.cardsToShow = newCardsToShow;
+            this.maxIndex = Math.max(0, this.cards.length - this.cardsToShow);
+            this.currentIndex = Math.min(this.currentIndex, this.maxIndex);
+            this.updatePosition(false); // без анімації
+            this.updateButtons();
+        }
+    }
+
+    addTouchSupport() {
+        let startX = 0;
+        let startY = 0;
+        let isDragging = false;
+        let startTime = 0;
+
+        const handleTouchStart = (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            startTime = Date.now();
+            isDragging = true;
+        };
+
+        const handleTouchMove = (e) => {
+            if (!isDragging) return;
+
+            const deltaX = Math.abs(e.touches[0].clientX - startX);
+            const deltaY = Math.abs(e.touches[0].clientY - startY);
+
+            // Якщо горизонтальний рух більший за вертикальний - блокуємо скрол
+            if (deltaX > deltaY && deltaX > 10) {
+                e.preventDefault();
+            }
+        };
+
+        const handleTouchEnd = (e) => {
+            if (!isDragging) return;
+
+            const endX = e.changedTouches[0].clientX;
+            const deltaX = startX - endX;
+            const deltaTime = Date.now() - startTime;
+
+            isDragging = false;
+
+            // Мінімальні вимоги для свайпу
+            if (Math.abs(deltaX) > 50 && deltaTime < 500) {
+                if (deltaX > 0) {
+                    this.goToNext();
+                } else {
+                    this.goToPrev();
+                }
+            }
+        };
+
+        this.track.addEventListener('touchstart', handleTouchStart, { passive: true });
+        this.track.addEventListener('touchmove', handleTouchMove, { passive: false });
+        this.track.addEventListener('touchend', handleTouchEnd, { passive: true });
+    }
+
+    addKeyboardSupport() {
         this.carousel.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') {
                 e.preventDefault();
@@ -112,13 +139,10 @@ class CatalogCarousel {
                 this.goToNext();
             }
         });
-
-        // Додаємо можливість фокусування для клавіатури
-        this.carousel.setAttribute('tabindex', '0');
     }
 
     goToPrev() {
-        if (this.isMobile || this.currentIndex <= 0) return;
+        if (this.isAnimating || this.currentIndex === 0) return;
 
         this.currentIndex--;
         this.updatePosition();
@@ -126,58 +150,86 @@ class CatalogCarousel {
     }
 
     goToNext() {
-        if (this.isMobile || this.currentIndex >= this.maxIndex) return;
+        if (this.isAnimating || this.currentIndex >= this.maxIndex) return;
 
         this.currentIndex++;
         this.updatePosition();
         this.updateButtons();
     }
 
-    updatePosition() {
-        if (this.isMobile) return;
+    updatePosition(animate = true) {
+        if (!this.track) return;
 
-        const translateX = -this.currentIndex * (this.cardWidth + this.gap);
+        if (animate) {
+            this.isAnimating = true;
+            // Відключаємо прапорець після завершення анімації
+            setTimeout(() => {
+                this.isAnimating = false;
+            }, 300);
+        }
+
+        const translateX = -this.currentIndex * (this.cardWidth + this.cardGap);
         this.track.style.transform = `translateX(${translateX}px)`;
     }
 
     updateButtons() {
-        if (this.isMobile) return;
-
         if (this.prevBtn) {
-            this.prevBtn.disabled = this.currentIndex === 0;
+            const isDisabled = this.currentIndex === 0;
+            this.prevBtn.disabled = isDisabled;
+            this.prevBtn.style.opacity = isDisabled ? '0.5' : '1';
+            this.prevBtn.setAttribute('aria-disabled', isDisabled);
         }
 
         if (this.nextBtn) {
-            this.nextBtn.disabled = this.currentIndex >= this.maxIndex;
+            const isDisabled = this.currentIndex >= this.maxIndex;
+            this.nextBtn.disabled = isDisabled;
+            this.nextBtn.style.opacity = isDisabled ? '0.5' : '1';
+            this.nextBtn.setAttribute('aria-disabled', isDisabled);
         }
+    }
+
+    // Utility function для debounce
+    debounce(func, wait) {
+        return (...args) => {
+            clearTimeout(this.resizeTimeout);
+            this.resizeTimeout = setTimeout(() => func.apply(this, args), wait);
+        };
     }
 }
 
-// Ініціалізація каруселей при завантаженні сторінки
+// Optimized initialization
 document.addEventListener('DOMContentLoaded', () => {
+    // Ініціалізація каруселей
     const carousels = document.querySelectorAll('.products-carousel');
-
-    carousels.forEach(carousel => {
-        // Додаємо невелику затримку для кращої ініціалізації
-        setTimeout(() => {
+    if (carousels.length > 0) {
+        carousels.forEach(carousel => {
             new CatalogCarousel(carousel);
-        }, 100);
-    });
+        });
+    }
 
-    // Автоматичне застосування фільтрів при зміні
+    // Оптимізована робота з фільтрами
     const filterForm = document.getElementById('filters-form');
     if (filterForm) {
         const filterElements = filterForm.querySelectorAll('.filter-select, .price-input');
 
-        filterElements.forEach(element => {
-            element.addEventListener('change', () => {
-                filterForm.submit();
-            });
-        });
-    }
+        // Debounce для input полів
+        let filterTimeout = null;
 
-    // Покращення UX для touch пристроїв
-    if ('ontouchstart' in window) {
-        document.body.classList.add('touch-device');
+        filterElements.forEach(element => {
+            if (element.type === 'number') {
+                // Для числових полів використовуємо debounce
+                element.addEventListener('input', () => {
+                    clearTimeout(filterTimeout);
+                    filterTimeout = setTimeout(() => {
+                        filterForm.submit();
+                    }, 500);
+                });
+            } else {
+                // Для select відразу
+                element.addEventListener('change', () => {
+                    filterForm.submit();
+                });
+            }
+        });
     }
 }); 

@@ -1,7 +1,9 @@
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import TemplateView
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import TemplateView, View
 from django.http import HttpResponse
-from .models import Product, Portfolio, Review, ProductImage
+from django.contrib import messages
+from .models import Product, Portfolio, Review, ProductImage, Category, Brand
+from .forms import ReviewForm
 from django.db.models import Q, Avg
 from django.db import models
 
@@ -116,14 +118,44 @@ class IndexView(TemplateView):
 class PortfolioView(TemplateView):
     template_name = 'mainapp/portfolio.html'
     
+    def get_project_images(self, project_prefix):
+        """Отримує всі фото проекту за префіксом"""
+        import os
+        from django.conf import settings
+        
+        portfolio_path = os.path.join(settings.MEDIA_ROOT, 'portfolio')
+        if not os.path.exists(portfolio_path):
+            return []
+            
+        images = []
+        for filename in os.listdir(portfolio_path):
+            if filename.startswith(project_prefix) and filename.lower().endswith(('.jpg', '.jpeg', '.png')):
+                # Виключаємо main файли оскільки це дублікати
+                if not filename.endswith('_main.jpg'):
+                    images.append(f'portfolio/{filename}')
+        
+        return sorted(images)
+    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        
+        # Отримуємо проекти в потрібному порядку
+        project1 = Portfolio.objects.get(title__contains='Комерційна СЕС')
+        project2 = Portfolio.objects.get(title__contains='Промислова СЕС') 
+        project3 = Portfolio.objects.get(title__contains='Приватна СЕС')
+        
+        # Додаємо фото до кожного проекту
+        project1.all_images = self.get_project_images('project1_')
+        project2.all_images = self.get_project_images('project2_')
+        project3.all_images = self.get_project_images('project3_')
+        
         context.update({
             'title': 'Портфоліо проєктів — GreenSolarTech',
             'description': 'Готові проєкти сонячних електростанцій від GreenSolarTech. Приватні та комерційні СЕС по всій Україні.',
             'keywords': 'портфоліо сонячних електростанцій, готові проєкти СЕС, приватні сонячні станції',
-            'portfolio_projects': Portfolio.objects.all().order_by('-featured', '-completion_date'),
-            'featured_projects': Portfolio.objects.filter(featured=True)[:3]
+            'project1': project1,
+            'project2': project2,
+            'project3': project3
         })
         return context
 
@@ -145,33 +177,33 @@ class CatalogView(TemplateView):
         
         # Фільтрація
         if category:
-            products = products.filter(category__icontains=category)
+            products = products.filter(category__name__icontains=category)
         if brand:
-            products = products.filter(brand__icontains=brand)
+            products = products.filter(brand__name__icontains=brand)
         if price_min:
             products = products.filter(price__gte=price_min)
         if price_max:
             products = products.filter(price__lte=price_max)
         
         # Унікальні категорії та бренди для фільтрів
-        categories = Product.objects.values_list('category', flat=True).distinct()
-        brands = Product.objects.values_list('brand', flat=True).distinct()
+        categories = Category.objects.filter(is_active=True).values_list('name', flat=True).order_by('name')
+        brands = Brand.objects.filter(is_active=True).values_list('name', flat=True).order_by('name')
         
         # Товари по категоріях для каруселей (підтримка українських та російських назв)
         inverters = products.filter(
-            Q(category__icontains='інвертор') | Q(category__icontains='Инвертор')
+            Q(category__name__icontains='Інвертор') | Q(category__name__icontains='Инвертор')
         ).order_by('-featured', 'name')[:10]
         
         solar_panels = products.filter(
-            Q(category__icontains='панель') | Q(category__icontains='панели')
+            Q(category__name__icontains='панел') | Q(category__name__icontains='панел')
         ).order_by('-featured', 'name')[:10]
         
         batteries = products.filter(
-            Q(category__icontains='акумулятор') | Q(category__icontains='Аккумулятор')
+            Q(category__name__icontains='Акумулятор') | Q(category__name__icontains='Аккумулятор')
         ).order_by('-featured', 'name')[:10]
         
         backup_kits = products.filter(
-            Q(category__icontains='комплект') | Q(category__icontains='комплек')
+            Q(category__name__icontains='комплект') | Q(category__name__icontains='комплек')
         ).order_by('-featured', 'name')[:10]
         
         context.update({
@@ -201,9 +233,9 @@ class CategoryView(TemplateView):
         
         # Маппінг англійських ключів URL на фільтри категорій (підтримка українських та російських назв)
         category_mapping = {
-            'inverters': ['інвертор', 'Инвертор'],
-            'solar-panels': ['панель', 'панели'], 
-            'batteries': ['акумулятор', 'Аккумулятор'],
+            'inverters': ['Інвертор', 'Инвертор'],
+            'solar-panels': ['панел', 'панел'], 
+            'batteries': ['Акумулятор', 'Аккумулятор'],
             'backup-power': ['комплект', 'комплек']
         }
         
@@ -218,20 +250,23 @@ class CategoryView(TemplateView):
         # Базовий запит для категорії з підтримкою множинних ключових слів
         category_filter = Q()
         for keyword in category_keywords:
-            category_filter |= Q(category__icontains=keyword)
+            category_filter |= Q(category__name__icontains=keyword)
         
         products = Product.objects.filter(in_stock=True).filter(category_filter)
         
         # Фільтрація
         if brand:
-            products = products.filter(brand__icontains=brand)
+            products = products.filter(brand__name__icontains=brand)
         if min_price:
             products = products.filter(price__gte=min_price)
         if max_price:
             products = products.filter(price__lte=max_price)
         
         # Унікальні бренди для цієї категорії
-        brands = Product.objects.filter(category_filter).values_list('brand', flat=True).distinct()
+        brands = Brand.objects.filter(
+            product__in=Product.objects.filter(category_filter),
+            is_active=True
+        ).values_list('name', flat=True).distinct().order_by('name')
         
         # Назви категорій для відображення
         category_names = {
@@ -258,21 +293,46 @@ class CategoryView(TemplateView):
         return context
 
 
-class ReviewsView(TemplateView):
+class ReviewsView(View):
     template_name = 'mainapp/reviews.html'
     
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context.update({
+    def get(self, request):
+        form = ReviewForm()
+        context = {
             'title': 'Відгуки клієнтів — GreenSolarTech',
             'description': 'Відгуки наших клієнтів про будівництво сонячних електростанцій та якість обслуговування.',
             'keywords': 'відгуки про сонячні електростанції, відгуки клієнтів GreenSolarTech',
             'reviews': Review.objects.filter(is_published=True).order_by('-created_at'),
             'average_rating': Review.objects.filter(is_published=True).aggregate(
                 avg_rating=Avg('rating')
-            )['avg_rating'] or 0
-        })
-        return context
+            )['avg_rating'] or 0,
+            'total_reviews': Review.objects.filter(is_published=True).count(),
+            'form': form
+        }
+        return render(request, self.template_name, context)
+    
+    def post(self, request):
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.is_published = False  # Модерація перед публікацією
+            review.save()
+            messages.success(request, 'Дякуємо за ваш відгук! Він буде опублікований після модерації.')
+            return redirect('mainapp:reviews')
+        
+        # Якщо форма невалідна, показуємо помилки
+        context = {
+            'title': 'Відгуки клієнтів — GreenSolarTech',
+            'description': 'Відгуки наших клієнтів про будівництво сонячних електростанцій та якість обслуговування.',
+            'keywords': 'відгуки про сонячні електростанції, відгуки клієнтів GreenSolarTech',
+            'reviews': Review.objects.filter(is_published=True).order_by('-created_at'),
+            'average_rating': Review.objects.filter(is_published=True).aggregate(
+                avg_rating=Avg('rating')
+            )['avg_rating'] or 0,
+            'total_reviews': Review.objects.filter(is_published=True).count(),
+            'form': form
+        }
+        return render(request, self.template_name, context)
 
 
 def sitemap_xml(request):
