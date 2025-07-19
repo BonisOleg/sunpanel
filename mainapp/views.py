@@ -108,9 +108,9 @@ class IndexView(TemplateView):
             ]
         })
         
-        # Додаю товари до контексту
-        context['products'] = Product.objects.filter(in_stock=True).order_by('-featured', 'name')  # Всі товари в наявності (рекомендовані першими)
-        context['featured_products'] = Product.objects.filter(featured=True, in_stock=True)[:4]  # Рекомендовані товари
+        # Додаю товари до контексту з оптимізацією запитів
+        context['products'] = Product.objects.filter(in_stock=True).select_related('category', 'brand').prefetch_related('images').order_by('-featured', 'name')  # Всі товари в наявності (рекомендовані першими)
+        context['featured_products'] = Product.objects.filter(featured=True, in_stock=True).select_related('category', 'brand').prefetch_related('images')[:4]  # Рекомендовані товари
         
         return context
 
@@ -172,8 +172,8 @@ class CatalogView(TemplateView):
         price_min = self.request.GET.get('price_min')
         price_max = self.request.GET.get('price_max')
         
-        # Базовий запит
-        products = Product.objects.filter(in_stock=True)
+        # Базовий запит з оптимізацією
+        products = Product.objects.filter(in_stock=True).select_related('category', 'brand').prefetch_related('images')
         
         # Фільтрація
         if category:
@@ -252,7 +252,7 @@ class CategoryView(TemplateView):
         for keyword in category_keywords:
             category_filter |= Q(category__name__icontains=keyword)
         
-        products = Product.objects.filter(in_stock=True).filter(category_filter)
+        products = Product.objects.filter(in_stock=True).filter(category_filter).select_related('category', 'brand').prefetch_related('images')
         
         # Фільтрація
         if brand:
@@ -262,9 +262,9 @@ class CategoryView(TemplateView):
         if max_price:
             products = products.filter(price__lte=max_price)
         
-        # Унікальні бренди для цієї категорії
+        # Унікальні бренди для цієї категорії з оптимізацією
         brands = Brand.objects.filter(
-            product__in=Product.objects.filter(category_filter),
+            product__in=Product.objects.filter(category_filter, in_stock=True),
             is_active=True
         ).values_list('name', flat=True).distinct().order_by('name')
         
@@ -382,11 +382,15 @@ class ProductDetailView(TemplateView):
         context = super().get_context_data(**kwargs)
         product_id = kwargs.get('product_id')
         
-        # Отримуємо товар або 404
-        product = get_object_or_404(Product, id=product_id, in_stock=True)
+        # Отримуємо товар або 404 з оптимізацією
+        product = get_object_or_404(
+            Product.objects.select_related('category', 'brand').prefetch_related('images'),
+            id=product_id, 
+            in_stock=True
+        )
         
-        # Отримуємо всі зображення товару
-        product_images = ProductImage.objects.filter(product=product).order_by('order', 'id')
+        # Отримуємо всі зображення товару (вже завантажені через prefetch_related)
+        product_images = product.images.all().order_by('order', 'id')
         
         # Якщо немає додаткових зображень, використовуємо основне
         if not product_images and product.image:
@@ -394,11 +398,11 @@ class ProductDetailView(TemplateView):
         else:
             main_image = product_images.first().image if product_images else product.image
         
-        # Схожі товари (з тієї ж категорії або бренду)
+        # Схожі товари (з тієї ж категорії або бренду) з оптимізацією
         similar_products = Product.objects.filter(
             Q(category=product.category) | Q(brand=product.brand),
             in_stock=True
-        ).exclude(id=product.id)[:6]
+        ).exclude(id=product.id).select_related('category', 'brand').prefetch_related('images')[:6]
         
         context.update({
             'title': f'{product.name} — GreenSolarTech',
