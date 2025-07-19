@@ -13,13 +13,13 @@
     <meta name="keywords" content="{% block keywords %}{{ keywords }}{% endblock %}">
     <meta name="author" content="GreenSolarTech">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="{% block canonical %}https://greensolalrtech.com/{% endblock %}">
+    <link rel="canonical" href="{% block canonical %}https://greensolartech.com/{% endblock %}">
 
     <!-- OpenGraph Meta Tags -->
     <meta property="og:title" content="{% block og_title %}{{ title }}{% endblock %}">
     <meta property="og:description" content="{% block og_description %}{{ description }}{% endblock %}">
-    <meta property="og:image" content="https://greensolalrtech.com{% static 'images/og-image.jpg' %}">
-    <meta property="og:url" content="{% block og_url %}https://greensolalrtech.com/{% endblock %}">
+    <meta property="og:image" content="https://greensolartech.com{% static 'images/og-image.jpg' %}">
+    <meta property="og:url" content="{% block og_url %}https://greensolartech.com/{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="uk_UA">
     <meta property="og:site_name" content="GreenSolarTech">
@@ -28,12 +28,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{% block twitter_title %}{{ title }}{% endblock %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ description }}{% endblock %}">
-    <meta name="twitter:image" content="https://greensolalrtech.com{% static 'images/og-image.jpg' %}">
+    <meta name="twitter:image" content="https://greensolartech.com{% static 'images/og-image.jpg' %}">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
     <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
-    
+
     <!-- CSRF Token for AJAX -->
     <meta name="csrf-token" content="{% csrf_token %}">
 
@@ -58,21 +58,21 @@
     <link rel="stylesheet" href="{% static 'css/cart-modal.css' %}?v=2025011801">
 
     <style>
-    /* КРИТИЧНЕ ВИПРАВЛЕННЯ ЗОБРАЖЕНЬ ТОВАРІВ НА ГОЛОВНІЙ */
-    .product-card__image,
-    .product-card .product-card__image {
-        object-fit: contain !important;
-        object-position: center !important;
-        background: #f8f9fa !important;
-    }
-    
-    /* КРИТИЧНЕ ВИПРАВЛЕННЯ ЗОБРАЖЕНЬ В КОШИКУ */
-    .cart-item__img,
-    .cart-modal .cart-item__img {
-        object-fit: contain !important;
-        object-position: center !important;
-        background: #f8f9fa !important;
-    }
+        /* КРИТИЧНЕ ВИПРАВЛЕННЯ ЗОБРАЖЕНЬ ТОВАРІВ НА ГОЛОВНІЙ */
+        .product-card__image,
+        .product-card .product-card__image {
+            object-fit: contain !important;
+            object-position: center !important;
+            background: #f8f9fa !important;
+        }
+
+        /* КРИТИЧНЕ ВИПРАВЛЕННЯ ЗОБРАЖЕНЬ В КОШИКУ */
+        .cart-item__img,
+        .cart-modal .cart-item__img {
+            object-fit: contain !important;
+            object-position: center !important;
+            background: #f8f9fa !important;
+        }
     </style>
 
     {% block extra_css %}{% endblock %}

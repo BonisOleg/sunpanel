@@ -5,7 +5,7 @@
 ## Кроки налаштування:
 
 ### 1. Створіть Gmail акаунт для проекту
-- Створіть новий Gmail акаунт (наприклад: greensolalrtech@gmail.com)
+- Створіть новий Gmail акаунт (наприклад: greensolartech@gmail.com)
 - Або використовуйте існуючий
 
 ### 2. Увімкніть двофакторну автентифікацію
@@ -23,10 +23,10 @@
 У файлі `config/settings.py` замініть:
 
 ```python
-EMAIL_HOST_USER = 'greensolalrtech@gmail.com'  # Ваш Gmail
+EMAIL_HOST_USER = 'greensolartech@gmail.com'  # Ваш Gmail
 EMAIL_HOST_PASSWORD = 'your_app_password'  # App Password з кроку 3
-DEFAULT_FROM_EMAIL = 'GreenSolarTech <greensolalrtech@gmail.com>'
-CONTACT_EMAIL = 'greensolalrtech@gmail.com'  # Email для отримання заявок
+DEFAULT_FROM_EMAIL = 'GreenSolarTech <greensolartech@gmail.com>'
+CONTACT_EMAIL = 'greensolartech@gmail.com'  # Email для отримання заявок
 ```
 
 ### 5. Налаштування для production

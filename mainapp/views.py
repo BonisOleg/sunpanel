@@ -27,9 +27,9 @@ class IndexView(TemplateView):
                 'name': 'GreenSolarTech',
                 'phones': ['+380500344881', '+380634952145'],
                 'address': 'Київська область, м. Київ, Україна',
-                'production_capacity': 50,  # МВт встановлено
-                'storage_area': 105,  # приватних СЕС
-                'stock_capacity': 22,  # комерційних СЕС
+                'production_capacity': 1.8,  # МВт встановлено
+                'storage_area': 18,  # приватних СЕС
+                'stock_capacity': 4,  # комерційних СЕС
             },
             'panel_types': [
                 {
@@ -353,25 +353,25 @@ def sitemap_xml(request):
     xml_content = '''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://greensolalrtech.com/</loc>
+        <loc>https://greensolartech.com/</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://greensolalrtech.com/portfolio/</loc>
+        <loc>https://greensolartech.com/portfolio/</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://greensolalrtech.com/catalog/</loc>
+        <loc>https://greensolartech.com/catalog/</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://greensolalrtech.com/reviews/</loc>
+        <loc>https://greensolartech.com/reviews/</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -384,7 +384,7 @@ def robots_txt(request):
     """Генерація robots.txt для SEO"""
     txt_content = '''User-agent: *
 Allow: /
-Sitemap: https://greensolalrtech.com/sitemap.xml'''
+Sitemap: https://greensolartech.com/sitemap.xml'''
     return HttpResponse(txt_content, content_type='text/plain')
 
 
@@ -463,7 +463,7 @@ class CallbackAPIView(View):
 Дата та час: {datetime.now().strftime('%d.%m.%Y о %H:%M')}
 
 ---
-Автоматичне повідомлення з сайту greensolalrtech.com
+Автоматичне повідомлення з сайту greensolartech.com
             """
             
             # Відправка email
@@ -554,7 +554,7 @@ Email: {email}
 Дата та час: {datetime.now().strftime('%d.%m.%Y о %H:%M')}
 
 ---
-Автоматичне повідомлення з сайту greensolalrtech.com
+Автоматичне повідомлення з сайту greensolartech.com
             """
             
             # Відправка email

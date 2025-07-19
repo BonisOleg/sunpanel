@@ -61,7 +61,7 @@ class CallbackSystem {
                                 <span class="contact-icon">📧</span>
                                 <div class="contact-details">
                                     <strong>Email:</strong><br>
-                                    <a href="mailto:info@greensolalrtech.com">info@greensolalrtech.com</a>
+                                    <a href="mailto:info@greensolartech.com">info@greensolartech.com</a>
                                 </div>
                             </div>
                             <div class="contact-item">

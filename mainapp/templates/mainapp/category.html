@@ -4,7 +4,7 @@
 {% block title %}{{ title }}{% endblock %}
 {% block description %}{{ description }}{% endblock %}
 {% block keywords %}{{ keywords }}{% endblock %}
-{% block canonical %}https://greensolalrtech.com/catalog/{{ category_key }}/{% endblock %}
+{% block canonical %}https://greensolartech.com/catalog/{{ category_key }}/{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/catalog.css' %}?v=2025011801">
@@ -41,7 +41,7 @@
                             <select name="brand" class="filter-select">
                                 <option value="">Всі виробники</option>
                                 {% for brand in brands %}
-                                <option value="{{ brand }}" {% if selected_brand == brand %}selected{% endif %}>
+                                <option value="{{ brand }}" {% if selected_brand==brand %}selected{% endif %}>
                                     {{ brand }}
                                 </option>
                                 {% endfor %}
