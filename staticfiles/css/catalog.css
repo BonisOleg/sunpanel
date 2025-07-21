@@ -200,83 +200,17 @@
 }
 
 /* ============================================
-   PRODUCTS CAROUSEL - CLEAN IMPLEMENTATION
+   PRODUCTS CAROUSEL - ПРОСТИЙ ГОРИЗОНТАЛЬНИЙ СКРОЛ
    ============================================ */
 .products-carousel {
     position: relative;
     width: 100%;
-    overflow: hidden;
     margin: 0 auto;
 }
 
-.products-carousel.mobile-mode {
-    overflow: visible;
-    padding: 0;
-}
-
-.products-carousel.mobile-mode .carousel-container {
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding: 10px 0;
-    margin: 0 -16px;
-    padding-left: 16px;
-    padding-right: 16px;
-}
-
-.products-carousel.mobile-mode .carousel-container::-webkit-scrollbar {
-    display: none;
-}
-
-.products-carousel.mobile-mode .carousel-track {
-    display: flex;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 16px;
-    padding: 0;
-    min-width: auto;
-    width: auto;
-    transform: none;
-    transition: none;
-}
-
-.products-carousel.mobile-mode .product-card {
-    flex: 0 0 auto;
-    width: 260px;
-    max-width: 280px;
-    min-width: 240px;
-    margin: 0;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-}
-
-.products-carousel.mobile-mode .carousel-btn {
-    display: none;
-}
-
 .carousel-container {
-    overflow-x: auto;
-    overflow-y: hidden;
     width: 100%;
     position: relative;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.carousel-container.desktop-mode {
-    overflow-x: hidden;
-}
-
-.carousel-container::-webkit-scrollbar {
-    display: none;
 }
 
 .carousel-track {
@@ -284,38 +218,73 @@
     gap: 20px;
     width: fit-content;
     min-width: 100%;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
 }
 
-.carousel-track.desktop-mode {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* DESKTOP - з кнопками навігації */
+@media (min-width: 769px) {
+    .products-carousel {
+        overflow: hidden;
+    }
+
+    .carousel-container {
+        overflow-x: hidden;
+    }
+
+    .carousel-track {
+        transition: transform 0.3s ease;
+        transform: translateX(var(--carousel-translate-x, 0));
+    }
+
+    .carousel-btn {
+        display: flex;
+    }
 }
 
-.carousel-track.mobile-mode {
-    transform: none;
-    transition: none;
-}
+/* МОБІЛЬНІ - нативний горизонтальний скрол */
+@media (max-width: 768px) {
+    .products-carousel {
+        overflow: visible;
+        padding: 0;
+    }
 
-.carousel-track.desktop-mode {
-    transform: translateX(var(--carousel-translate-x, 0));
-}
+    .carousel-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding: 10px 0;
+        margin: 0 -16px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 
-.carousel-track.animating {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    .carousel-container::-webkit-scrollbar {
+        display: none;
+    }
 
-.carousel-track.draggable-cursor {
-    cursor: grab;
-}
+    .carousel-track {
+        gap: 16px;
+        min-width: auto;
+        width: auto;
+        transform: none;
+        transition: none;
+    }
 
-.carousel-track.grabbing-cursor {
-    cursor: grabbing;
-}
+    .product-card {
+        flex: 0 0 auto;
+        width: 260px;
+        min-width: 240px;
+        max-width: 280px;
+        scroll-snap-align: start;
+        scroll-snap-stop: normal;
+    }
 
-.product-card.mobile-snap {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    .carousel-btn {
+        display: none;
+    }
 }
 
 /* ============================================
@@ -736,62 +705,42 @@
         align-self: flex-end;
     }
 
-    /* ЗАБЕЗПЕЧЕННЯ РОБОТИ НА iPhone - Критично важливі стилі */
-    .products-carousel.mobile-mode .carousel-container {
-        /* Примусове встановлення для iPhone */
-        overflow-x: scroll;
+    /* НА МОБІЛЬНИХ ПЕРЕВИЗНАЧАЄМО СТИЛІ КАРУСЕЛІ */
+    .carousel-container {
+        overflow-x: auto;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
-        scroll-behavior: smooth;
         scroll-snap-type: x mandatory;
-        /* Для Safari на iOS */
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-        will-change: scroll-position;
-        /* Приховання скролбарів */
         scrollbar-width: none;
         -ms-overflow-style: none;
+        padding: 10px 0;
+        margin: 0 -16px;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
-    .products-carousel.mobile-mode .carousel-container::-webkit-scrollbar {
+    .carousel-container::-webkit-scrollbar {
         display: none;
-        width: 0;
-        height: 0;
     }
 
-    .products-carousel.mobile-mode .carousel-track {
-        /* Flexbox налаштування для горизонтального скролу */
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        justify-content: flex-start;
+    .carousel-track {
         gap: 16px;
+        min-width: auto;
         width: auto;
-        min-width: 100%;
-        /* Відключення transform на мобільних */
         transform: none;
         transition: none;
-        /* GPU прискорення */
-        -webkit-transform: translateZ(0);
-        will-change: scroll-position;
     }
 
-    .products-carousel.mobile-mode .product-card {
-        /* Фіксована ширина для скролу */
+    .product-card {
         flex: 0 0 auto;
         width: 260px;
         min-width: 240px;
         max-width: 280px;
-        /* Scroll snap */
         scroll-snap-align: start;
-        scroll-snap-stop: normal;
-        /* GPU прискорення для iOS */
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        /* Touch оптимізація */
-        touch-action: pan-x pan-y;
+    }
+
+    .carousel-btn {
+        display: none;
     }
 
     /* ЦЕНТРОВАНІ КАРТКИ НА МОБІЛЬНИХ - GRID */
