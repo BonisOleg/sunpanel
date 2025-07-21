@@ -150,10 +150,7 @@ class PortfolioView(TemplateView):
         project2 = Portfolio.objects.get(id=5)  # Комерційна СЕС потужністю 43 кВт
         project3 = Portfolio.objects.get(id=6)  # Приватна СЕС потужністю 10.6 кВт
         
-        # Додаємо фото до кожного проекту
-        # project1.all_images уже працює через property в моделі
-        project2.all_images = self.get_project_images('project2_')
-        project3.all_images = self.get_project_images('project3_')
+        # all_images працює через property в моделі Portfolio
         
         context.update({
             'title': 'Портфоліо проєктів — GreenSolarTech',
