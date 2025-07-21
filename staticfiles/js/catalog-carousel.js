@@ -1,5 +1,5 @@
-// Простий Catalog Carousel з Touch підтримкою
-class SimpleCatalogCarousel {
+// Каталог Карусель з чистим CSS підходом без інлайн стилів
+class CatalogCarousel {
     constructor(carouselElement) {
         this.carousel = carouselElement;
         this.track = carouselElement.querySelector('.carousel-track');
@@ -12,12 +12,11 @@ class SimpleCatalogCarousel {
         this.isMobile = window.innerWidth <= 768;
         this.isAnimating = false;
 
-        // Touch змінні
+        // Touch змінні для desktop
         this.startX = 0;
         this.currentX = 0;
         this.isDragging = false;
         this.startTime = 0;
-        this.startScrollLeft = 0;
 
         this.init();
     }
@@ -32,52 +31,81 @@ class SimpleCatalogCarousel {
 
     setupLayout() {
         if (this.isMobile) {
-            // На мобільних: нативний скрол + центрування
             this.setupMobileLayout();
         } else {
-            // На desktop: JavaScript керування
             this.setupDesktopLayout();
         }
     }
 
     setupMobileLayout() {
-        // Приховуємо кнопки
-        if (this.prevBtn) this.prevBtn.style.display = 'none';
-        if (this.nextBtn) this.nextBtn.style.display = 'none';
+        // Додаємо мобільні класи
+        this.carousel.classList.add('mobile-mode');
+        this.carousel.classList.remove('desktop-mode');
 
-        // Налаштовуємо smooth scroll
-        this.container.style.overflowX = 'auto';
-        this.container.style.scrollBehavior = 'smooth';
-        this.container.style.webkitOverflowScrolling = 'touch';
-        this.container.style.scrollSnapType = 'x mandatory';
+        if (this.container) {
+            this.container.classList.add('mobile-mode');
+            this.container.classList.remove('desktop-mode');
+        }
 
-        // Відключаємо transform
-        this.track.style.transform = 'none';
-        this.track.style.transition = 'none';
+        if (this.track) {
+            this.track.classList.add('mobile-mode');
+            this.track.classList.remove('desktop-mode');
+        }
 
-        // Додаємо scroll snap до карток
+        // Додаємо мобільні класи до кнопок
+        if (this.prevBtn) {
+            this.prevBtn.classList.add('mobile-mode');
+            this.prevBtn.classList.remove('desktop-mode');
+        }
+
+        if (this.nextBtn) {
+            this.nextBtn.classList.add('mobile-mode');
+            this.nextBtn.classList.remove('desktop-mode');
+        }
+
+        // Додаємо scroll snap до карток через CSS клас
         this.cards.forEach(card => {
-            card.style.scrollSnapAlign = 'start';
+            card.classList.add('mobile-snap');
         });
 
-        console.log('Mobile layout setup complete');
+        console.log('Mobile layout setup complete with CSS classes');
     }
 
     setupDesktopLayout() {
-        // Показуємо кнопки
-        if (this.prevBtn) this.prevBtn.style.display = 'flex';
-        if (this.nextBtn) this.nextBtn.style.display = 'flex';
+        // Додаємо desktop класи
+        this.carousel.classList.add('desktop-mode');
+        this.carousel.classList.remove('mobile-mode');
 
-        // Налаштовуємо overflow
-        this.container.style.overflowX = 'hidden';
+        if (this.container) {
+            this.container.classList.add('desktop-mode');
+            this.container.classList.remove('mobile-mode');
+        }
 
-        // Активуємо transform
-        this.track.style.transition = 'transform 0.3s ease';
+        if (this.track) {
+            this.track.classList.add('desktop-mode');
+            this.track.classList.remove('mobile-mode');
+        }
+
+        // Додаємо desktop класи до кнопок
+        if (this.prevBtn) {
+            this.prevBtn.classList.add('desktop-mode');
+            this.prevBtn.classList.remove('mobile-mode');
+        }
+
+        if (this.nextBtn) {
+            this.nextBtn.classList.add('desktop-mode');
+            this.nextBtn.classList.remove('mobile-mode');
+        }
+
+        // Прибираємо мобільні класи з карток
+        this.cards.forEach(card => {
+            card.classList.remove('mobile-snap');
+        });
 
         this.updateButtons();
         this.updatePosition(false);
 
-        console.log('Desktop layout setup complete');
+        console.log('Desktop layout setup complete with CSS classes');
     }
 
     setupEventListeners() {
@@ -91,7 +119,7 @@ class SimpleCatalogCarousel {
             }
         }
 
-        // Touch events для мобільних пристроїв
+        // Touch events
         if (this.isMobile) {
             this.setupMobileTouchEvents();
         } else {
@@ -105,56 +133,35 @@ class SimpleCatalogCarousel {
     }
 
     setupMobileTouchEvents() {
-        let isScrolling = false;
-
-        // Пасивні обробники для кращої продуктивності на мобільних
-        this.container.addEventListener('touchstart', (e) => {
-            this.startX = e.touches[0].clientX;
-            this.startScrollLeft = this.container.scrollLeft;
-            isScrolling = false;
-        }, { passive: true });
-
-        this.container.addEventListener('touchmove', (e) => {
-            if (!isScrolling) {
-                const deltaX = Math.abs(e.touches[0].clientX - this.startX);
-                const deltaY = Math.abs(e.touches[0].clientY - (this.startY || e.touches[0].clientY));
-
-                if (deltaX > deltaY) {
-                    isScrolling = true;
-                }
-            }
-        }, { passive: true });
+        // На мобільних використовуємо нативний скрол без додаткової логіки
+        // Браузер сам керує тач-подіями для скролу
 
         this.container.addEventListener('scroll', () => {
-            // Оптимізований скрол для мобільних
             this.updateMobileScrollPosition();
         }, { passive: true });
 
-        console.log('Mobile touch events setup complete');
+        // Мінімальна логіка тач-подій для відслідковування
+        this.container.addEventListener('touchstart', (e) => {
+            this.startX = e.touches[0].clientX;
+        }, { passive: true });
+
+        console.log('Mobile touch events setup complete - using native scroll');
     }
 
     setupDesktopTouchEvents() {
-        const element = this.track;
-
-        // Touch events
-        element.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: false });
-        element.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: false });
-        element.addEventListener('touchend', (e) => this.handleTouchEnd(e), { passive: true });
+        // Touch events для desktop
+        this.track.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: false });
+        this.track.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: false });
+        this.track.addEventListener('touchend', (e) => this.handleTouchEnd(e), { passive: true });
 
         // Mouse events для desktop
-        element.addEventListener('mousedown', (e) => this.handleMouseStart(e));
-        element.addEventListener('mousemove', (e) => this.handleMouseMove(e));
-        element.addEventListener('mouseup', (e) => this.handleMouseEnd(e));
-        element.addEventListener('mouseleave', (e) => this.handleMouseEnd(e));
+        this.track.addEventListener('mousedown', (e) => this.handleMouseStart(e));
+        this.track.addEventListener('mousemove', (e) => this.handleMouseMove(e));
+        this.track.addEventListener('mouseup', (e) => this.handleMouseEnd(e));
+        this.track.addEventListener('mouseleave', (e) => this.handleMouseEnd(e));
 
-        // Cursor стилі
-        element.style.cursor = 'grab';
-        element.addEventListener('mousedown', () => {
-            element.style.cursor = 'grabbing';
-        });
-        element.addEventListener('mouseup', () => {
-            element.style.cursor = 'grab';
-        });
+        // Cursor через CSS клас
+        this.track.classList.add('draggable-cursor');
 
         console.log('Desktop touch events setup complete');
     }
@@ -166,7 +173,6 @@ class SimpleCatalogCarousel {
         }
 
         this.scrollTimeout = setTimeout(() => {
-            // Логіка для оновлення позиції на мобільних
             console.log('Mobile scroll position updated');
         }, 100);
     }
@@ -225,6 +231,7 @@ class SimpleCatalogCarousel {
     handleMouseStart(e) {
         e.preventDefault();
         this.handleTouchStart(e);
+        this.track.classList.add('grabbing-cursor');
     }
 
     handleMouseMove(e) {
@@ -233,6 +240,7 @@ class SimpleCatalogCarousel {
 
     handleMouseEnd(e) {
         this.handleTouchEnd(e);
+        this.track.classList.remove('grabbing-cursor');
     }
 
     goToPrev() {
@@ -260,7 +268,7 @@ class SimpleCatalogCarousel {
         if (this.isMobile) return 0;
 
         const containerWidth = this.container.offsetWidth;
-        const cardWidth = 280; // Базова ширина картки
+        const cardWidth = 280;
         const gap = 20;
         const cardsToShow = Math.floor(containerWidth / (cardWidth + gap));
 
@@ -272,20 +280,20 @@ class SimpleCatalogCarousel {
 
         if (animate) {
             this.isAnimating = true;
-            this.track.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            this.track.classList.add('animating');
 
             setTimeout(() => {
                 this.isAnimating = false;
+                this.track.classList.remove('animating');
             }, 300);
-        } else {
-            this.track.style.transition = 'none';
         }
 
         const cardWidth = 280;
         const gap = 20;
         const translateX = -this.currentIndex * (cardWidth + gap);
 
-        this.track.style.transform = `translateX(${translateX}px)`;
+        // Використовуємо CSS custom property замість inline стилю
+        this.track.style.setProperty('--carousel-translate-x', `${translateX}px`);
         console.log('Position updated:', translateX);
     }
 
@@ -296,12 +304,20 @@ class SimpleCatalogCarousel {
 
         if (this.prevBtn) {
             this.prevBtn.disabled = this.currentIndex === 0;
-            this.prevBtn.style.opacity = this.currentIndex === 0 ? '0.3' : '1';
+            if (this.currentIndex === 0) {
+                this.prevBtn.classList.add('disabled');
+            } else {
+                this.prevBtn.classList.remove('disabled');
+            }
         }
 
         if (this.nextBtn) {
             this.nextBtn.disabled = this.currentIndex >= maxIndex;
-            this.nextBtn.style.opacity = this.currentIndex >= maxIndex ? '0.3' : '1';
+            if (this.currentIndex >= maxIndex) {
+                this.nextBtn.classList.add('disabled');
+            } else {
+                this.nextBtn.classList.remove('disabled');
+            }
         }
     }
 
@@ -340,11 +356,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const carousels = document.querySelectorAll('.products-carousel');
 
     if (carousels.length > 0) {
-        console.log(`Ініціалізуємо ${carousels.length} оптимізованих каруселей`);
+        console.log(`Ініціалізуємо ${carousels.length} чистих CSS каруселей`);
 
         carousels.forEach((carousel, index) => {
             carousel.setAttribute('data-carousel-id', index);
-            new SimpleCatalogCarousel(carousel);
+            new CatalogCarousel(carousel);
         });
     }
 

@@ -153,75 +153,58 @@
 
 /* СПЕЦІАЛЬНІ ОПТИМІЗАЦІЇ ДЛЯ ТАЧ-ГОРТАННЯ КАРУСЕЛІ НА iOS */
 @media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
-
+    
     /* Оптимізація каруселі для iOS Safari */
-    .products-carousel {
-        /* Плавний скрол на iOS */
+    .products-carousel.mobile-mode {
         -webkit-overflow-scrolling: touch;
         scroll-behavior: smooth;
-        /* Приховування скролбару */
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        /* Покращення продуктивності */
         will-change: scroll-position;
     }
 
-    .products-carousel::-webkit-scrollbar {
-        display: none;
-    }
-
-    .carousel-container {
-        /* Спеціальні налаштування для iOS Safari */
+    .products-carousel.mobile-mode .carousel-container {
         -webkit-overflow-scrolling: touch;
         scroll-behavior: smooth;
         overscroll-behavior-x: contain;
-        /* Запобігання відскоку */
         scroll-snap-type: x mandatory;
-        /* Snap scrolling */
         position: relative;
         z-index: 1;
-    }
-
-    .carousel-track {
-        /* Віртуалізація для кращої продуктивності */
-        will-change: scroll-position;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        contain: layout style paint;
-        /* Оптимізація рендерингу */
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-    }
-
-    .product-card {
-        /* Scroll snap alignment */
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-        /* GPU acceleration */
+        /* Критично важливо для iPhone */
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-        /* Покращення touch response */
+    }
+
+    .products-carousel.mobile-mode .carousel-track {
+        will-change: scroll-position;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        contain: layout style paint;
+    }
+
+    .products-carousel.mobile-mode .product-card {
+        /* GPU acceleration критично для iOS */
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        /* Touch response оптимізація */
         touch-action: pan-x;
     }
 
     /* Виправлення для products-grid на мобільних */
     .products-grid {
-        /* Центрування сітки */
         justify-content: center;
         align-content: start;
-        /* Оптимізація продуктивності */
         contain: layout style paint;
     }
 
     .products-grid .product-card {
-        /* Забезпечення правильного центрування */
         justify-self: center;
         align-self: start;
-        /* Touch optimization */
         touch-action: manipulation;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
     }
 }
 
@@ -341,15 +324,19 @@
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+        animation-duration: 0.01ms;
+        animation-iteration-count: 1;
+        transition-duration: 0.01ms;
+        scroll-behavior: auto;
     }
-
+    
     .carousel-container {
-        scroll-behavior: auto !important;
-        scroll-snap-type: none !important;
+        scroll-behavior: auto;
+        scroll-snap-type: none;
+    }
+    
+    .carousel-track.animating {
+        transition: none;
     }
 }
 
