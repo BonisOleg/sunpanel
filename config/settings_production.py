@@ -16,7 +16,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1', 
     '.onrender.com',
     '.render.com',
-    'greensolartech.onrender.com'
+    'greensolartech.onrender.com',
+    'sunpanel.onrender.com'
 ]
 
 # Database - PostgreSQL on Render (using DATABASE_URL)
