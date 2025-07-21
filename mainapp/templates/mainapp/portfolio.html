@@ -54,7 +54,7 @@
                 <div class="gallery-grid">
                     {% for image in project1.all_images %}
                     <div class="gallery-item">
-                        <img src="/media/{{ image }}" alt="{{ project1.title }}" loading="lazy">
+                        <img src="{{ MEDIA_URL }}{{ image }}" alt="{{ project1.title }}" loading="lazy">
                     </div>
                     {% endfor %}
                 </div>
@@ -103,7 +103,7 @@
                 <div class="gallery-grid">
                     {% for image in project2.all_images %}
                     <div class="gallery-item">
-                        <img src="/media/{{ image }}" alt="{{ project2.title }}" loading="lazy">
+                        <img src="{{ MEDIA_URL }}{{ image }}" alt="{{ project2.title }}" loading="lazy">
                     </div>
                     {% endfor %}
                 </div>
@@ -152,7 +152,7 @@
                 <div class="gallery-grid">
                     {% for image in project3.all_images %}
                     <div class="gallery-item">
-                        <img src="/media/{{ image }}" alt="{{ project3.title }}" loading="lazy">
+                        <img src="{{ MEDIA_URL }}{{ image }}" alt="{{ project3.title }}" loading="lazy">
                     </div>
                     {% endfor %}
                 </div>

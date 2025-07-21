@@ -1,6 +1,6 @@
 """
-Production settings for Render deployment WITHOUT external media services
-All media files will be served as static files
+Production settings for Render deployment WITH media files as static
+Fixed configuration for proper media handling
 """
 import os
 from pathlib import Path
@@ -19,37 +19,41 @@ ALLOWED_HOSTS = [
     'greensolartech.onrender.com'
 ]
 
-# Database - PostgreSQL on Render
+# Database - PostgreSQL on Render (using DATABASE_URL)
+import dj_database_url
+
+# Render автоматично створює DATABASE_URL
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DATABASE_NAME', 'greensolartech'),
-        'USER': os.environ.get('DATABASE_USER', 'greensolartech'),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD', ''),
-        'HOST': os.environ.get('DATABASE_HOST', 'localhost'),
-        'PORT': os.environ.get('DATABASE_PORT', '5432'),
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL', 'sqlite:///db.sqlite3'),
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
 
 # Static files configuration with WhiteNoise
 MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 
+# Статичні файли
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# ⚡ КРИТИЧНО: Медіа файли як статичні файли
+# Медіа файли - КЛЮЧОВІ ЗМІНИ!
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Додаємо медіа файли до статичних
+# Додаємо медіа папку до статичних директорій для WhiteNoise
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    # Медіа файли будуть копіюватися до static/media/
 ]
 
-# WhiteNoise налаштування
+# WhiteNoise налаштування для медіа файлів
 WHITENOISE_USE_FINDERS = True
 WHITENOISE_AUTOREFRESH = True
+WHITENOISE_STATIC_PREFIX = '/static/'
+
+# Додаткові налаштування для медіа через WhiteNoise
+WHITENOISE_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Email configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
