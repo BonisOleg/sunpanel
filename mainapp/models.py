@@ -121,6 +121,44 @@ class Portfolio(models.Model):
     
     def __str__(self):
         return self.title
+    
+    @property
+    def all_images(self):
+        """Повертає всі зображення для цього проекту"""
+        import os
+        from django.conf import settings
+        
+        # Визначаємо ключ проекту за назвою
+        if "17.2" in self.title or "аналітика" in self.title.lower():
+            project_key = "project1"
+        elif "43" in self.title or "комерційна" in self.title.lower():
+            project_key = "project2" 
+        elif "10.6" in self.title:
+            project_key = "project3"
+        else:
+            return []
+        
+        # Шлях до медіа папки
+        media_portfolio = os.path.join(settings.BASE_DIR, 'media', 'portfolio')
+        if not os.path.exists(media_portfolio):
+            return []
+        
+        # Знаходимо всі зображення для цього проекту
+        project_images = []
+        for image_file in os.listdir(media_portfolio):
+            if image_file.lower().endswith(('.jpg', '.jpeg', '.png')):
+                # Перевіряємо чи належить зображення цьому проекту
+                if project_key == "project1" and (
+                    'аналітика' in image_file or 'буд' in image_file or 
+                    any(x in image_file for x in ['project1'])
+                ):
+                    project_images.append(f'portfolio/{image_file}')
+                elif project_key == "project2" and any(x in image_file for x in ['4083', '65825', '8534', '87209', 'project2']):
+                    project_images.append(f'portfolio/{image_file}')
+                elif project_key == "project3" and any(x in image_file for x in ['1494', '15578', '69046', 'project3']):
+                    project_images.append(f'portfolio/{image_file}')
+        
+        return sorted(project_images)
 
 
 class Review(models.Model):

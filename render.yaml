@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: greensolartech
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn config.wsgi:application"
+    plan: free
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: config.settings_production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "greensolartech.onrender.com,.onrender.com"
+      - key: EMAIL_HOST_USER
+        value: "GreenSolarTech.pe@gmail.com"
+      - key: SECURE_SSL_REDIRECT
+        value: "False"
+      - key: DJANGO_LOG_LEVEL
+        value: "INFO"
+
+databases:
+  - name: greensolartech-db
+    plan: free 
