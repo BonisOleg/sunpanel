@@ -3,7 +3,7 @@ services:
     name: greensolartech
     env: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn config.wsgi:application"
+    startCommand: "python -m gunicorn config.wsgi:application"
     plan: free
     envVars:
       - key: DJANGO_SETTINGS_MODULE
