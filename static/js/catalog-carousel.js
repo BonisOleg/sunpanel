@@ -1,30 +1,21 @@
-// Catalog Carousel Management - Enhanced Touch Version
-class CatalogCarousel {
+// Простий Catalog Carousel з Touch підтримкою
+class SimpleCatalogCarousel {
     constructor(carouselElement) {
         this.carousel = carouselElement;
         this.track = carouselElement.querySelector('.carousel-track');
+        this.container = carouselElement.querySelector('.carousel-container');
         this.prevBtn = carouselElement.querySelector('.carousel-prev');
         this.nextBtn = carouselElement.querySelector('.carousel-next');
         this.cards = carouselElement.querySelectorAll('.product-card');
 
         this.currentIndex = 0;
-        this.cardWidth = this.calculateCardWidth();
-        this.cardGap = this.calculateCardGap();
-        this.cardsToShow = this.calculateCardsToShow();
-        this.maxIndex = Math.max(0, this.cards.length - this.cardsToShow);
-
-        // Прапорці для оптимізації
-        this.isAnimating = false;
-        this.resizeTimeout = null;
-        this.isTouchDevice = this.detectTouchDevice();
         this.isMobile = window.innerWidth <= 768;
+        this.isAnimating = false;
 
-        // Touch/Swipe змінні
-        this.touchStartX = 0;
-        this.touchStartY = 0;
-        this.touchEndX = 0;
-        this.touchEndY = 0;
-        this.isPressed = false;
+        // Touch змінні
+        this.startX = 0;
+        this.currentX = 0;
+        this.isDragging = false;
         this.startTime = 0;
 
         this.init();
@@ -33,167 +24,168 @@ class CatalogCarousel {
     init() {
         if (this.cards.length === 0) return;
 
-        // Завжди додаємо touch підтримку
-        this.setupTouchCarousel();
-        this.setupResizeHandler();
+        this.setupLayout();
+        this.setupEventListeners();
+        this.handleResize();
     }
 
-    detectTouchDevice() {
-        return 'ontouchstart' in window ||
-            navigator.maxTouchPoints > 0 ||
-            navigator.msMaxTouchPoints > 0;
-    }
-
-    calculateCardWidth() {
-        const viewportWidth = window.innerWidth;
-
-        if (viewportWidth >= 1400) return 280;
-        if (viewportWidth >= 1200) return 260;
-        if (viewportWidth >= 992) return 240;
-        if (viewportWidth >= 768) return 220;
-        if (viewportWidth >= 576) return 180;
-        return 160;
-    }
-
-    calculateCardGap() {
-        const viewportWidth = window.innerWidth;
-
-        if (viewportWidth >= 1400) return 20;
-        if (viewportWidth >= 1200) return 18;
-        if (viewportWidth >= 992) return 16;
-        if (viewportWidth >= 768) return 14;
-        if (viewportWidth >= 576) return 12;
-        return 10;
-    }
-
-    calculateCardsToShow() {
-        const container = this.carousel.querySelector('.carousel-container');
-        if (!container) return 1;
-
-        const containerWidth = container.offsetWidth;
-        const totalCardWidth = this.cardWidth + this.cardGap;
-        let cardsToShow = Math.floor(containerWidth / totalCardWidth);
-
-        return Math.max(1, Math.min(cardsToShow, this.cards.length));
-    }
-
-    setupTouchCarousel() {
-        // На мобільних приховуємо кнопки
+    setupLayout() {
         if (this.isMobile) {
-            if (this.prevBtn) this.prevBtn.style.display = 'none';
-            if (this.nextBtn) this.nextBtn.style.display = 'none';
+            // На мобільних: нативний скрол + центрування
+            this.setupMobileLayout();
         } else {
-            this.updateButtons();
-            this.addButtonListeners();
-        }
-
-        // Налаштовуємо контейнер для touch
-        this.setupTouchContainer();
-
-        // Додаємо touch listeners до carousel контейнера
-        this.addTouchListeners();
-    }
-
-    setupTouchContainer() {
-        if (this.isMobile) {
-            // На мобільних використовуємо нативний скрол + touch events
-            this.carousel.style.overflowX = 'auto';
-            this.carousel.style.overflowY = 'hidden';
-            this.carousel.style.scrollbarWidth = 'none';
-            this.carousel.style.msOverflowStyle = 'none';
-            this.carousel.style.webkitOverflowScrolling = 'touch';
-
-            // Налаштовуємо track
-            this.track.style.display = 'flex';
-            this.track.style.gap = `${this.cardGap}px`;
-            this.track.style.transform = 'none';
-            this.track.style.transition = 'none';
-        } else {
-            // На desktop/планшетах використовуємо transform
-            this.carousel.style.overflowX = 'hidden';
-            this.updatePosition(false);
+            // На desktop: JavaScript керування
+            this.setupDesktopLayout();
         }
     }
 
-    addTouchListeners() {
-        // Додаємо touch events до самого carousel контейнера
-        const targetElement = this.isMobile ? this.carousel : this.track;
+    setupMobileLayout() {
+        // Приховуємо кнопки
+        if (this.prevBtn) this.prevBtn.style.display = 'none';
+        if (this.nextBtn) this.nextBtn.style.display = 'none';
+
+        // Налаштовуємо smooth scroll
+        this.container.style.overflowX = 'auto';
+        this.container.style.scrollBehavior = 'smooth';
+        this.container.style.webkitOverflowScrolling = 'touch';
+
+        // Відключаємо transform
+        this.track.style.transform = 'none';
+        this.track.style.transition = 'none';
+
+        // Центруємо картки
+        this.centerCards();
+    }
+
+    setupDesktopLayout() {
+        // Показуємо кнопки
+        if (this.prevBtn) this.prevBtn.style.display = 'flex';
+        if (this.nextBtn) this.nextBtn.style.display = 'flex';
+
+        // Налаштовуємо overflow
+        this.container.style.overflowX = 'hidden';
+
+        // Активуємо transform
+        this.track.style.transition = 'transform 0.3s ease';
+
+        this.updateButtons();
+        this.updatePosition(false);
+    }
+
+    centerCards() {
+        if (!this.isMobile) return;
+
+        // Центруємо картки використовуючи flexbox
+        this.track.style.justifyContent = 'center';
+        this.track.style.minWidth = 'calc(100% - 32px)';
+
+        // Якщо товарів мало - центруємо їх
+        if (this.cards.length <= 3) {
+            this.track.style.justifyContent = 'center';
+            this.track.style.gap = '20px';
+        }
+    }
+
+    setupEventListeners() {
+        // Кнопки навігації (тільки на desktop)
+        if (!this.isMobile) {
+            if (this.prevBtn) {
+                this.prevBtn.addEventListener('click', () => this.goToPrev());
+            }
+            if (this.nextBtn) {
+                this.nextBtn.addEventListener('click', () => this.goToNext());
+            }
+        }
+
+        // Touch events для всіх пристроїв
+        this.setupTouchEvents();
+
+        // Resize handler
+        window.addEventListener('resize', this.debounce(() => {
+            this.handleResize();
+        }, 250));
+    }
+
+    setupTouchEvents() {
+        const element = this.isMobile ? this.container : this.track;
 
         // Touch events
-        targetElement.addEventListener('touchstart', this.handleTouchStart.bind(this), {
-            passive: false
-        });
-        targetElement.addEventListener('touchmove', this.handleTouchMove.bind(this), {
-            passive: false
-        });
-        targetElement.addEventListener('touchend', this.handleTouchEnd.bind(this), {
-            passive: true
-        });
+        element.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: false });
+        element.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: false });
+        element.addEventListener('touchend', (e) => this.handleTouchEnd(e), { passive: true });
 
         // Mouse events для desktop
         if (!this.isMobile) {
-            targetElement.addEventListener('mousedown', this.handleMouseDown.bind(this));
-            targetElement.addEventListener('mousemove', this.handleMouseMove.bind(this));
-            targetElement.addEventListener('mouseup', this.handleMouseUp.bind(this));
-            targetElement.addEventListener('mouseleave', this.handleMouseUp.bind(this));
+            element.addEventListener('mousedown', (e) => this.handleMouseStart(e));
+            element.addEventListener('mousemove', (e) => this.handleMouseMove(e));
+            element.addEventListener('mouseup', (e) => this.handleMouseEnd(e));
+            element.addEventListener('mouseleave', (e) => this.handleMouseEnd(e));
 
-            // Запобігаємо вибору тексту
-            targetElement.addEventListener('selectstart', (e) => e.preventDefault());
-            targetElement.style.cursor = 'grab';
+            // Cursor стилі
+            element.style.cursor = 'grab';
+            element.addEventListener('mousedown', () => {
+                element.style.cursor = 'grabbing';
+            });
+            element.addEventListener('mouseup', () => {
+                element.style.cursor = 'grab';
+            });
         }
-
-        // Keyboard підтримка
-        this.addKeyboardSupport();
     }
 
     handleTouchStart(e) {
-        this.isPressed = true;
+        this.isDragging = true;
         this.startTime = Date.now();
 
         const touch = e.touches ? e.touches[0] : e;
-        this.touchStartX = touch.clientX;
-        this.touchStartY = touch.clientY;
+        this.startX = touch.clientX;
+        this.currentX = touch.clientX;
 
-        console.log('Touch start:', this.touchStartX, this.touchStartY);
-
-        if (!this.isMobile) {
-            this.carousel.style.cursor = 'grabbing';
-        }
+        console.log('Touch start:', this.startX);
     }
 
     handleTouchMove(e) {
-        if (!this.isPressed) return;
+        if (!this.isDragging) return;
 
         const touch = e.touches ? e.touches[0] : e;
-        const deltaX = Math.abs(touch.clientX - this.touchStartX);
-        const deltaY = Math.abs(touch.clientY - this.touchStartY);
+        this.currentX = touch.clientX;
 
-        // Якщо горизонтальний рух більший за вертикальний
-        if (deltaX > deltaY && deltaX > 5) {
-            e.preventDefault(); // Блокуємо скрол сторінки
-            console.log('Horizontal swipe detected');
+        const deltaX = Math.abs(this.currentX - this.startX);
+        const deltaY = Math.abs(touch.clientY - (e.touches?.[0]?.clientY || 0));
+
+        // Якщо горизонтальний рух більший - блокуємо вертикальний скрол
+        if (deltaX > deltaY && deltaX > 10) {
+            e.preventDefault();
         }
     }
 
     handleTouchEnd(e) {
-        if (!this.isPressed) return;
+        if (!this.isDragging) return;
+
+        this.isDragging = false;
 
         const touch = e.changedTouches ? e.changedTouches[0] : e;
-        this.touchEndX = touch.clientX;
-        this.touchEndY = touch.clientY;
+        const endX = touch.clientX;
+        const deltaX = this.startX - endX;
+        const deltaTime = Date.now() - this.startTime;
+        const distance = Math.abs(deltaX);
 
-        this.isPressed = false;
+        console.log('Touch end - deltaX:', deltaX, 'distance:', distance, 'time:', deltaTime);
 
-        console.log('Touch end:', this.touchEndX, this.touchEndY);
+        // Умови для свайпу
+        const minDistance = 30;
+        const maxTime = 500;
 
-        if (!this.isMobile) {
-            this.carousel.style.cursor = 'grab';
+        if (distance > minDistance && deltaTime < maxTime && !this.isMobile) {
+            // Тільки на desktop реагуємо на свайпи переключенням
+            if (deltaX > 0) {
+                this.goToNext();
+            } else {
+                this.goToPrev();
+            }
         }
-
-        this.handleSwipe();
     }
 
-    handleMouseDown(e) {
+    handleMouseStart(e) {
         e.preventDefault();
         this.handleTouchStart(e);
     }
@@ -202,125 +194,48 @@ class CatalogCarousel {
         this.handleTouchMove(e);
     }
 
-    handleMouseUp(e) {
+    handleMouseEnd(e) {
         this.handleTouchEnd(e);
     }
 
-    handleSwipe() {
-        const deltaX = this.touchStartX - this.touchEndX;
-        const deltaY = this.touchStartY - this.touchEndY;
-        const deltaTime = Date.now() - this.startTime;
-        const distance = Math.abs(deltaX);
-
-        console.log('Swipe data:', { deltaX, deltaY, distance, deltaTime });
-
-        // Мінімальні вимоги для свайпу
-        const minDistance = 20; // Ще менше для кращої чутливості
-        const maxTime = 1000;
-
-        // Перевіряємо чи це горизонтальний свайп
-        if (Math.abs(deltaY) > Math.abs(deltaX)) {
-            console.log('Vertical swipe, ignoring');
-            return;
-        }
-
-        if (distance > minDistance && deltaTime < maxTime) {
-            console.log('Valid swipe detected');
-            if (deltaX > 0) {
-                // Свайп ліворуч - наступна картка
-                console.log('Swiping to next');
-                this.goToNext();
-            } else {
-                // Свайп праворуч - попередня картка
-                console.log('Swiping to prev');
-                this.goToPrev();
-            }
-        }
-    }
-
-    addButtonListeners() {
-        // Кнопки навігації
-        if (this.prevBtn) {
-            this.prevBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.goToPrev();
-            });
-        }
-
-        if (this.nextBtn) {
-            this.nextBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.goToNext();
-            });
-        }
-    }
-
-    setupResizeHandler() {
-        const debouncedResize = this.debounce(() => {
-            this.handleResize();
-        }, 250);
-
-        window.addEventListener('resize', debouncedResize);
-    }
-
-    handleResize() {
-        const newIsMobile = window.innerWidth <= 768;
-        const deviceTypeChanged = newIsMobile !== this.isMobile;
-
-        const newCardWidth = this.calculateCardWidth();
-        const newCardGap = this.calculateCardGap();
-        const newCardsToShow = this.calculateCardsToShow();
-
-        this.cardWidth = newCardWidth;
-        this.cardGap = newCardGap;
-        this.isMobile = newIsMobile;
-
-        if (newCardsToShow !== this.cardsToShow || deviceTypeChanged) {
-            this.cardsToShow = newCardsToShow;
-            this.maxIndex = Math.max(0, this.cards.length - this.cardsToShow);
-            this.currentIndex = Math.min(this.currentIndex, this.maxIndex);
-
-            // Повторно ініціалізуємо
-            this.setupTouchCarousel();
-        }
-    }
-
-    addKeyboardSupport() {
-        this.carousel.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                e.preventDefault();
-                this.goToPrev();
-            } else if (e.key === 'ArrowRight') {
-                e.preventDefault();
-                this.goToNext();
-            }
-        });
-    }
-
     goToPrev() {
-        if (this.isAnimating || this.currentIndex === 0) return;
+        if (this.isAnimating || this.currentIndex === 0 || this.isMobile) return;
 
-        console.log('Going to previous');
         this.currentIndex--;
         this.updatePosition();
         this.updateButtons();
+        console.log('Go to prev, index:', this.currentIndex);
     }
 
     goToNext() {
-        if (this.isAnimating || this.currentIndex >= this.maxIndex) return;
+        if (this.isAnimating || this.isMobile) return;
 
-        console.log('Going to next');
+        const maxIndex = this.getMaxIndex();
+        if (this.currentIndex >= maxIndex) return;
+
         this.currentIndex++;
         this.updatePosition();
         this.updateButtons();
+        console.log('Go to next, index:', this.currentIndex);
+    }
+
+    getMaxIndex() {
+        if (this.isMobile) return 0;
+
+        const containerWidth = this.container.offsetWidth;
+        const cardWidth = 280; // Базова ширина картки
+        const gap = 20;
+        const cardsToShow = Math.floor(containerWidth / (cardWidth + gap));
+
+        return Math.max(0, this.cards.length - cardsToShow);
     }
 
     updatePosition(animate = true) {
-        if (!this.track || this.isMobile) return;
+        if (this.isMobile) return;
 
         if (animate) {
             this.isAnimating = true;
-            this.track.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            this.track.style.transition = 'transform 0.3s ease';
 
             setTimeout(() => {
                 this.isAnimating = false;
@@ -329,45 +244,70 @@ class CatalogCarousel {
             this.track.style.transition = 'none';
         }
 
-        const translateX = -this.currentIndex * (this.cardWidth + this.cardGap);
-        this.track.style.transform = `translateX(${translateX}px)`;
+        const cardWidth = 280;
+        const gap = 20;
+        const translateX = -this.currentIndex * (cardWidth + gap);
 
+        this.track.style.transform = `translateX(${translateX}px)`;
         console.log('Position updated:', translateX);
     }
 
     updateButtons() {
+        if (this.isMobile) return;
+
+        const maxIndex = this.getMaxIndex();
+
         if (this.prevBtn) {
-            const isDisabled = this.currentIndex === 0;
-            this.prevBtn.disabled = isDisabled;
-            this.prevBtn.style.opacity = isDisabled ? '0.5' : '1';
-            this.prevBtn.setAttribute('aria-disabled', isDisabled);
+            this.prevBtn.disabled = this.currentIndex === 0;
+            this.prevBtn.style.opacity = this.currentIndex === 0 ? '0.3' : '1';
         }
 
         if (this.nextBtn) {
-            const isDisabled = this.currentIndex >= this.maxIndex;
-            this.nextBtn.disabled = isDisabled;
-            this.nextBtn.style.opacity = isDisabled ? '0.5' : '1';
-            this.nextBtn.setAttribute('aria-disabled', isDisabled);
+            this.nextBtn.disabled = this.currentIndex >= maxIndex;
+            this.nextBtn.style.opacity = this.currentIndex >= maxIndex ? '0.3' : '1';
+        }
+    }
+
+    handleResize() {
+        const wasMobile = this.isMobile;
+        this.isMobile = window.innerWidth <= 768;
+
+        if (wasMobile !== this.isMobile) {
+            // Змінився тип пристрою - повторна ініціалізація
+            this.currentIndex = 0;
+            this.setupLayout();
+            console.log('Device type changed, reinitializing');
+        } else if (!this.isMobile) {
+            // Тільки оновлюємо позицію на desktop
+            this.currentIndex = Math.min(this.currentIndex, this.getMaxIndex());
+            this.updatePosition(false);
+            this.updateButtons();
         }
     }
 
     debounce(func, wait) {
-        return (...args) => {
-            clearTimeout(this.resizeTimeout);
-            this.resizeTimeout = setTimeout(() => func.apply(this, args), wait);
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
         };
     }
 }
 
-// Ініціалізація без підказок
+// Ініціалізація при завантаженні
 document.addEventListener('DOMContentLoaded', () => {
     const carousels = document.querySelectorAll('.products-carousel');
+
     if (carousels.length > 0) {
-        console.log(`Ініціалізуємо ${carousels.length} каруселей з touch підтримкою`);
+        console.log(`Ініціалізуємо ${carousels.length} простих каруселей`);
 
         carousels.forEach((carousel, index) => {
             carousel.setAttribute('data-carousel-id', index);
-            new CatalogCarousel(carousel);
+            new SimpleCatalogCarousel(carousel);
         });
     }
 
