@@ -42,7 +42,7 @@
                             <select name="brand" class="filter-select">
                                 <option value="">Всі виробники</option>
                                 {% for brand in brands %}
-                                <option value="{{ brand }}" {% if selected_brand == brand %}selected{% endif %}>
+                                <option value="{{ brand }}" {% if selected_brand==brand %}selected{% endif %}>
                                     {{ brand }}
                                 </option>
                                 {% endfor %}
@@ -167,5 +167,4 @@
 
 {% block extra_js %}
 <script src="{% static 'js/catalog-carousel.js' %}?v=2025012004"></script>
-<script src="{% static 'js/cart.js' %}?v=2025012001"></script>
 {% endblock %}

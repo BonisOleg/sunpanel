@@ -67,30 +67,14 @@
     <!-- CSRF Token for AJAX -->
     <meta name="csrf-token" content="{% csrf_token %}">
 
-    <!-- CSS - Optimized -->
+    <!-- CSS - Fully Optimized for Index Page -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/main-optimized.css' %}">
-    <link rel="stylesheet" href="{% static 'css/mobile-optimized.css' %}" media="(max-width: 768px)">
+    <link rel="stylesheet" href="{% static 'css/index-optimized.css' %}">
     <link rel="stylesheet" href="{% static 'css/cart-modal.css' %}">
     <link rel="stylesheet" href="{% static 'css/call-button.css' %}">
-
-    <!-- Preload Critical Resources -->
-    <!-- Desktop videos -->
-    <link rel="preload" href="{% static 'videos/hero-video.mp4' %}" as="video" type="video/mp4"
-        media="(min-width: 769px)">
-    <link rel="preload" href="{% static 'videos/scroll-video.mp4' %}" as="video" type="video/mp4"
-        media="(min-width: 769px)">
-    <link rel="preload" href="{% static 'videos/capacity-video.mp4' %}" as="video" type="video/mp4"
-        media="(min-width: 769px)">
-    <!-- Mobile videos -->
-    <link rel="preload" href="{% static 'videos/heromob.mp4' %}" as="video" type="video/mp4" media="(max-width: 768px)">
-    <link rel="preload" href="{% static 'videos/scrollmob.mp4' %}" as="video" type="video/mp4"
-        media="(max-width: 768px)">
-    <link rel="preload" href="{% static 'videos/capacitymob.mp4' %}" as="video" type="video/mp4"
-        media="(max-width: 768px)">
 </head>
 
 <body>
@@ -256,94 +240,7 @@
 
 
 
-        <!-- Production Process Section -->
-        <section class="production" id="production">
-            <div class="production__video-container">
-                <video class="production__video" id="production-video" preload="none" muted playsinline
-                    data-mobile-src="{% static 'videos/scrollmob.mp4' %}"
-                    data-desktop-src="{% static 'videos/scroll-video.mp4' %}">
-                    <source src="{% static 'videos/scroll-video.mp4' %}" type="video/mp4">
-                </video>
-            </div>
-            <div class="production__overlay"></div>
-            <!-- Liquid Glass блок -->
-            <div class="production__glass-backdrop"></div>
-            <div class="production__glass-content">
-                <div class="production__main-layout">
-                    <!-- Ліва половина: таблиця порівняння -->
-                    <div class="production__left-section">
-                        <div class="production__comparison-header">
-                            <h3 class="production__comparison-title">порівняння джерел енергії</h3>
-                            <p class="production__comparison-subtitle">сонячна енергія vs традиційні джерела</p>
-                        </div>
 
-                        <div class="production__table-wrapper">
-                            <table class="production__table fuel-table">
-                                <thead>
-                                    <tr>
-                                        <th>джерело енергії</th>
-                                        <th>вартість кВт·год</th>
-                                        <th>викиди co₂</th>
-                                        <th>відновлюваність</th>
-                                        <th>незалежність</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for fuel in energy_comparison %}
-                                    <tr class="{% if fuel.highlight %}fuel-table__row--highlight{% endif %}">
-                                        <td class="fuel-table__fuel">{{ fuel.fuel|lower }}</td>
-                                        <td>{{ fuel.heat_value }}</td>
-                                        <td>{{ fuel.ash }}</td>
-                                        <td>{{ fuel.co2 }}</td>
-                                        <td>{{ fuel.sulfur }}</td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- Права половина: кроки виробництва -->
-                    <div class="production__right-section">
-                        <div class="production__header">
-                            <h3 class="production__title">етапи реалізації проєкту</h3>
-                        </div>
-
-                        <div class="production__steps-grid">
-                            <!-- Перші 6 кроків в 2 колонки -->
-                            <div class="production__steps-columns">
-                                {% for stage in project_stages %}
-                                {% if stage.step <= 6 %} <div class="production__step-card">
-                                    <div class="production-number-circle">
-                                        <div class="production-number">{{ stage.step }}</div>
-                                    </div>
-                                    <div class="production__step-content">
-                                        <div class="stat-card__label">{{ stage.title|lower }}</div>
-                                        <div class="stat-card__description">{{ stage.description|lower }}</div>
-                                    </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                        </div>
-
-                        <!-- 7-й крок на всю ширину -->
-                        {% for stage in project_stages %}
-                        {% if stage.step == 7 %}
-                        <div class="production__step-card production__step-card--full-width">
-                            <div class="production-number-circle">
-                                <div class="production-number">{{ stage.step }}</div>
-                            </div>
-                            <div class="production__step-content">
-                                <div class="stat-card__label">{{ stage.title|lower }}</div>
-                                <div class="stat-card__description">{{ stage.description|lower }}</div>
-                            </div>
-                        </div>
-                        {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Contacts and Certificates Section -->
         <section class="contacts" id="contacts">
@@ -467,7 +364,7 @@
                     <li><a href="#about">про нас</a></li>
                     <li><a href="#capacity">потужності</a></li>
                     <li><a href="#advantages">переваги</a></li>
-                    <li><a href="#production">рішення</a></li>
+
                     <li><a href="#contacts">контакти</a></li>
                 </ul>
             </nav>
@@ -524,11 +421,8 @@
         </div>
     </div>
 
-    <!-- JavaScript - Optimized -->
-    <script src="{% static 'js/main-optimized.js' %}"></script>
-    <script src="{% static 'js/ios-video-optimizer.js' %}?v=2025012012"></script>
-    <script src="{% static 'js/cart.js' %}"></script>
-    <script src="{% static 'js/callback.js' %}"></script>
+    <!-- JavaScript - Fully Optimized Single Bundle -->
+    <script src="{% static 'js/index-optimized.js' %}"></script>
 </body>
 
 </html>

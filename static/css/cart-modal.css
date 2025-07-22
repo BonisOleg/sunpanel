@@ -122,6 +122,30 @@
     height: 24px;
 }
 
+.cart-modal__controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cart-clear-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-clear-btn:hover {
+    background: #c82333;
+}
+
 .cart-modal__items {
     flex: 1;
     padding: 1rem;
@@ -156,12 +180,20 @@
     height: 80px;
     border-radius: 8px;
     overflow: hidden;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .cart-item__img {
     width: 100%;
     height: 100%;
     object-fit: contain !important;
+    object-position: center !important;
+    background: #f8f9fa !important;
+    display: block !important;
 }
 
 /* Додаткова специфічність для кошика */
@@ -169,7 +201,7 @@
     object-fit: contain !important;
 }
 
-.cart-item__placeholder {
+.cart-item__no-image {
     width: 100%;
     height: 100%;
     background: #f8f9fa;
@@ -178,6 +210,8 @@
     justify-content: center;
     font-size: 0.7rem;
     color: #666;
+    text-align: center;
+    font-weight: 500;
 }
 
 .cart-item__name {

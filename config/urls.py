@@ -24,6 +24,10 @@ urlpatterns = [
     path('', include('mainapp.urls')),
 ]
 
+# Serve media files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 # Завжди додаємо медіа URL (для локалки і для production)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

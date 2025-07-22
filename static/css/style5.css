@@ -55,45 +55,7 @@
         --section-padding: var(--section-padding-mobile);
     }
 
-    /* Navigation Mobile */
-    .nav__menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        height: 100dvh;
-        background: var(--text-white);
-        transition: right var(--transition-normal);
-        padding: 4rem 2rem;
-        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-        z-index: 9999;
-    }
-
-    .nav__menu.active {
-        right: 0;
-    }
-
-    .nav__list {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .nav__toggle {
-        display: flex;
-    }
-
-    .nav__toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(7px, 7px);
-    }
-
-    .nav__toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav__toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-    }
+    /* Navigation Mobile - Removed (handled by index-optimized.css) */
 
     /* Hero Mobile */
     .hero {

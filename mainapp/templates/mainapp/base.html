@@ -42,39 +42,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style3.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style4.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style5.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style6.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style-mobile.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style-mobile-override.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style-production-mobile.css' %}">
-    <link rel="stylesheet" href="{% static 'css/call-button.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style-production-critical.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style-newspaper-mobile.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style-products.css' %}?v=2025011801">
+    <!-- ОСНОВНІ СТИЛІ - ПРАВИЛЬНИЙ ПОРЯДОК -->
+    <link rel="stylesheet" href="{% static 'css/index-optimized.css' %}?v=2025012501">
     <link rel="stylesheet" href="{% static 'css/cart-modal.css' %}?v=2025011801">
+    <link rel="stylesheet" href="{% static 'css/call-button.css' %}">
     <link rel="stylesheet" href="{% static 'css/ios-safari-optimizations.css' %}?v=2025012008">
-
-    <style>
-        /* КРИТИЧНЕ ВИПРАВЛЕННЯ ЗОБРАЖЕНЬ ТОВАРІВ НА ГОЛОВНІЙ */
-        .product-card__image,
-        .product-card .product-card__image {
-            object-fit: contain !important;
-            object-position: center !important;
-            background: #f8f9fa !important;
-        }
-
-        /* КРИТИЧНЕ ВИПРАВЛЕННЯ ЗОБРАЖЕНЬ В КОШИКУ */
-        .cart-item__img,
-        .cart-modal .cart-item__img {
-            object-fit: contain !important;
-            object-position: center !important;
-            background: #f8f9fa !important;
-        }
-    </style>
 
     {% block extra_css %}{% endblock %}
 </head>
@@ -145,12 +117,17 @@
         <div class="cart-modal__content">
             <div class="cart-modal__header">
                 <h3 class="cart-modal__title">Кошик</h3>
-                <button class="cart-modal__close" id="cart-close">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </button>
+                <div class="cart-modal__controls">
+                    <button class="cart-clear-btn" onclick="window.cart.clearLocalStorage()" title="Очистити кошик">
+                        🗑️
+                    </button>
+                    <button class="cart-modal__close" id="cart-close">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
             </div>
             <div class="cart-modal__items" id="cart-items">
                 <!-- Cart items will be inserted here -->
@@ -185,14 +162,9 @@
         </div>
     </div>
 
-    <!-- JavaScript -->
-    <script src="{% static 'js/main1.js' %}"></script>
-    <script src="{% static 'js/main2.js' %}"></script>
-    <script src="{% static 'js/main3.js' %}"></script>
-    <script src="{% static 'js/ios-video-optimizer.js' %}?v=2025012010"></script>
+    <!-- JavaScript - Optimized Bundle -->
     {% block extra_js %}{% endblock %}
-    <script src="{% static 'js/cart.js' %}"></script>
-    <script src="{% static 'js/callback.js' %}"></script>
+    <script src="{% static 'js/index-optimized.js' %}"></script>
 </body>
 
 </html>
