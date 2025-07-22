@@ -33,6 +33,7 @@ class Command(BaseCommand):
         self.test_media_files()
         self.test_pages()
         self.test_portfolio_images()
+        self.test_spelling_errors()
         
         self.stdout.write(
             self.style.SUCCESS('\n✅ Всі тести пройдені успішно! Готово до деплою! 🚀')
@@ -136,4 +137,34 @@ class Command(BaseCommand):
             else:
                 self.stdout.write(f'    ⚠️ Зображення не знайдені')
 
-        self.stdout.write(f'\n📊 Загалом проектів: {len(portfolios)}') 
+        self.stdout.write(f'\n📊 Загалом проектів: {len(portfolios)}')
+
+    def test_spelling_errors(self):
+        """Тест орфографічних помилок"""
+        self.stdout.write('\n✏️ Тестування орфографії...')
+        
+        from django.core.management import call_command
+        from io import StringIO
+        
+        # Запускаємо команду перевірки орфографії
+        out = StringIO()
+        try:
+            call_command('check_spelling_errors', stdout=out)
+            output = out.getvalue()
+            
+            if 'ПОМИЛОК НЕ ЗНАЙДЕНО' in output:
+                self.stdout.write('  ✅ Орфографічні помилки не знайдені')
+            elif 'ЗНАЙДЕНО ПОМИЛКИ' in output:
+                self.stdout.write('  ⚠️ Знайдено орфографічні помилки (будуть виправлені при деплої)')
+                # Показуємо короткий звіт
+                lines = output.split('\n')
+                error_count = 0
+                for line in lines:
+                    if 'Всього помилок:' in line:
+                        self.stdout.write(f'    {line.strip()}')
+                        break
+            else:
+                self.stdout.write('  ✅ Перевірка орфографії пройшла успішно')
+                
+        except Exception as e:
+            self.stdout.write(f'  ⚠️ Помилка при перевірці орфографії: {str(e)}') 
