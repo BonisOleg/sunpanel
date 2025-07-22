@@ -78,8 +78,19 @@
     <link rel="stylesheet" href="{% static 'css/call-button.css' %}">
 
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="{% static 'videos/hero-video.mp4' %}" as="video" type="video/mp4">
-    <link rel="preload" href="{% static 'videos/scroll-video.mp4' %}" as="video" type="video/mp4">
+    <!-- Desktop videos -->
+    <link rel="preload" href="{% static 'videos/hero-video.mp4' %}" as="video" type="video/mp4"
+        media="(min-width: 769px)">
+    <link rel="preload" href="{% static 'videos/scroll-video.mp4' %}" as="video" type="video/mp4"
+        media="(min-width: 769px)">
+    <link rel="preload" href="{% static 'videos/capacity-video.mp4' %}" as="video" type="video/mp4"
+        media="(min-width: 769px)">
+    <!-- Mobile videos -->
+    <link rel="preload" href="{% static 'videos/heromob.mp4' %}" as="video" type="video/mp4" media="(max-width: 768px)">
+    <link rel="preload" href="{% static 'videos/scrollmob.mp4' %}" as="video" type="video/mp4"
+        media="(max-width: 768px)">
+    <link rel="preload" href="{% static 'videos/capacitymob.mp4' %}" as="video" type="video/mp4"
+        media="(max-width: 768px)">
 </head>
 
 <body>
@@ -119,7 +130,10 @@
         <!-- Hero Section -->
         <section class="hero" id="hero">
             <div class="hero__video-container">
-                <video class="hero__video" id="hero-video" preload="metadata" muted playsinline webkit-playsinline>
+                <video class="hero__video" id="hero-video" preload="metadata" muted playsinline webkit-playsinline
+                    x-webkit-airplay="allow" controls="false" poster=""
+                    data-mobile-src="{% static 'videos/heromob.mp4' %}"
+                    data-desktop-src="{% static 'videos/hero-video.mp4' %}">
                     <source src="{% static 'videos/hero-video.mp4' %}" type="video/mp4">
                     Ваш браузер не підтримує відео.
                 </video>
@@ -180,7 +194,9 @@
         <section class="capacity" id="capacity">
             <div class="capacity__video-container">
                 <video class="capacity__video" id="capacity-video" preload="metadata" muted playsinline
-                    webkit-playsinline>
+                    webkit-playsinline x-webkit-airplay="allow" controls="false" poster=""
+                    data-mobile-src="{% static 'videos/capacitymob.mp4' %}"
+                    data-desktop-src="{% static 'videos/capacity-video.mp4' %}">
                     <source src="{% static 'videos/capacity-video.mp4' %}" type="video/mp4">
                 </video>
                 <div class="capacity__overlay"></div>
@@ -244,7 +260,9 @@
         <section class="production" id="production">
             <div class="production__video-container">
                 <video class="production__video" id="production-video" preload="none" muted playsinline
-                    webkit-playsinline loading="lazy">
+                    webkit-playsinline loading="lazy" x-webkit-airplay="allow" controls="false" poster=""
+                    data-mobile-src="{% static 'videos/scrollmob.mp4' %}"
+                    data-desktop-src="{% static 'videos/scroll-video.mp4' %}">
                     <source src="{% static 'videos/scroll-video.mp4' %}" type="video/mp4">
                 </video>
             </div>
