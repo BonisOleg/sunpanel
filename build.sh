@@ -15,6 +15,12 @@ python manage.py migrate --settings=config.settings_production
 echo "📁 Setting up media files for production..."
 python manage.py setup_media_for_production --settings=config.settings_production
 
+echo "🛡️ Перевірка на російський контент..."
+python manage.py prevent_russian_import --settings=config.settings_production
+
+echo "🧹 Повне очищення російського контенту..."
+python manage.py clean_russian_content --settings=config.settings_production
+
 echo "✏️ Перевірка та виправлення орфографії..."
 python manage.py remove_russian_categories --settings=config.settings_production
 python manage.py check_spelling_errors --fix --settings=config.settings_production
