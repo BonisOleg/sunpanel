@@ -18,6 +18,9 @@
         -webkit-overflow-scrolling: touch;
         /* Запобігання випадковому відскоку */
         overscroll-behavior-y: none;
+        /* Додаю safe area відступи */
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
     }
 
     /* Виправлення адресної строки */
@@ -29,8 +32,122 @@
     }
 }
 
+/* КРИТИЧНІ ВИПРАВЛЕННЯ ДЛЯ ГОЛОВНОЇ СТОРІНКИ iOS SAFARI */
+@supports (-webkit-touch-callout: none) {
+
+    /* Контейнери з правильними відступами */
+    .container,
+    .hero__container,
+    .nav__container {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    /* Hero section виправлення */
+    .hero {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    .hero__content {
+        width: 100%;
+        max-width: 100vw;
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+        box-sizing: border-box;
+    }
+
+    /* About section виправлення */
+    .about {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+
+    .about__left-section,
+    .about__right-section {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Capacity section виправлення */
+    .capacity {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    .capacity__glass-container {
+        padding-left: max(4%, env(safe-area-inset-left));
+        padding-right: max(4%, env(safe-area-inset-right));
+        box-sizing: border-box;
+    }
+
+    .capacity__glass-content {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding-left: max(1rem, env(safe-area-inset-left) + 1rem);
+        padding-right: max(1rem, env(safe-area-inset-right) + 1rem);
+    }
+
+    /* Contacts section виправлення */
+    .contacts {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+
+    /* Footer виправлення */
+    .footer {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    .footer__container {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+        box-sizing: border-box;
+    }
+
+    /* Загальне виправлення для всіх основних секцій */
+    main.main,
+    section {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+}
+
 /* iOS Safari специфічні медіа-запити */
 @media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+
+    /* Додаткові виправлення для ретіна дісплеїв */
+    body {
+        /* Запобігання горизонтальному скролу */
+        overflow-x: hidden;
+        max-width: 100vw;
+        position: relative;
+    }
 
     /* Виправлення рендерингу для ретіна дісплеїв */
     * {
@@ -40,11 +157,16 @@
 
     /* Запобігання багам з трансформами */
     .catalog-container,
-    .container {
+    .container,
+    .hero__container,
+    .nav__container {
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
     }
 
     /* Виправлення активних станів */
@@ -92,7 +214,35 @@
     }
 
     .catalog-container,
-    .container {
+    .container,
+    .hero__container,
+    .nav__container {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+
+    /* Додаткові відступи для головної сторінки */
+    .hero__content {
+        padding-left: max(20px, env(safe-area-inset-left) + 4px);
+        padding-right: max(20px, env(safe-area-inset-right) + 4px);
+    }
+
+    .about {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+
+    .capacity__glass-content {
+        padding-left: max(16px, env(safe-area-inset-left) + 8px);
+        padding-right: max(16px, env(safe-area-inset-right) + 8px);
+    }
+
+    .contacts {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+
+    .footer__container {
         padding-left: max(16px, env(safe-area-inset-left));
         padding-right: max(16px, env(safe-area-inset-right));
     }
@@ -119,6 +269,68 @@
     .catalog-title,
     h1 {
         font-size: 1.5rem;
+    }
+
+    /* Додаткові відступи для малих екранів */
+    .hero__container,
+    .nav__container,
+    .container {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+
+    .hero__content {
+        padding-left: max(20px, env(safe-area-inset-left) + 4px);
+        padding-right: max(20px, env(safe-area-inset-right) + 4px);
+    }
+
+    .hero__title {
+        font-size: 2rem;
+        padding: 0 12px;
+        line-height: 1.15;
+    }
+
+    .hero__subtitle {
+        font-size: 0.95rem;
+        padding: 0 12px;
+        line-height: 1.4;
+    }
+
+    .about {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+
+    .about__right-section,
+    .about__left-section {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+
+    .capacity__glass-content {
+        padding-left: max(16px, env(safe-area-inset-left) + 4px);
+        padding-right: max(16px, env(safe-area-inset-right) + 4px);
+    }
+
+    .capacity__stats-vertical {
+        padding: 0 4px;
+        gap: 0.3rem;
+    }
+
+    .capacity__stat-card {
+        padding: 0.6rem 0.3rem;
+        margin: 0 2px;
+        min-width: auto;
+    }
+
+    .contacts {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+
+    .footer__container {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
     }
 }
 
@@ -148,6 +360,169 @@
     .category-title {
         font-size: 1.2rem;
         margin-bottom: 8px;
+    }
+
+    /* Зменшені відступи для landscape */
+    .hero__container,
+    .nav__container,
+    .container {
+        padding-left: max(8px, env(safe-area-inset-left));
+        padding-right: max(8px, env(safe-area-inset-right));
+    }
+}
+
+/* МОБІЛЬНІ ВИПРАВЛЕННЯ ДЛЯ ГОЛОВНОЇ СТОРІНКИ iOS SAFARI */
+@media screen and (max-width: 768px) {
+
+    /* Глобальні виправлення контейнерів */
+    body {
+        overflow-x: hidden;
+        max-width: 100vw;
+        width: 100%;
+    }
+
+    /* Hero section мобільні виправлення */
+    .hero {
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .hero__container {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hero__title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        padding: 0 8px;
+    }
+
+    .hero__subtitle {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+        padding: 0 8px;
+    }
+
+    /* About section мобільні виправлення */
+    .about {
+        padding: 2rem 0;
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+        margin: 0;
+    }
+
+    .about__right-section {
+        padding: 1rem max(20px, env(safe-area-inset-left)) 0 max(20px, env(safe-area-inset-right));
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .about__left-section {
+        padding: 0 max(20px, env(safe-area-inset-left)) 1rem max(20px, env(safe-area-inset-right));
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Capacity section мобільні виправлення */
+    .capacity {
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    .capacity__glass-container {
+        padding: 8% max(4%, env(safe-area-inset-left)) 8% max(4%, env(safe-area-inset-right));
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .capacity__glass-content {
+        padding: 1.5rem max(16px, env(safe-area-inset-left)) 1.5rem max(16px, env(safe-area-inset-right));
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .capacity__stats-vertical {
+        padding: 0 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .capacity__stat-card {
+        min-width: auto;
+        flex: 1;
+        margin: 0 4px;
+        padding: 0.8rem 0.4rem;
+    }
+
+    /* Contacts section мобільні виправлення */
+    .contacts {
+        padding: 2rem max(20px, env(safe-area-inset-left)) 2rem max(20px, env(safe-area-inset-right));
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .contacts__section {
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Footer мобільні виправлення */
+    .footer {
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+        margin: 0;
+    }
+
+    .footer__container {
+        padding: 2rem max(20px, env(safe-area-inset-left)) 2rem max(20px, env(safe-area-inset-right));
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Navigation мобільні виправлення */
+    .nav {
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .nav__container {
+        padding: 0 max(16px, env(safe-area-inset-left)) 0 max(16px, env(safe-area-inset-right));
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Загальні текстові блоки */
+    .section-title,
+    .about__title,
+    .capacity__title {
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+
+    .about__text-content,
+    .capacity__text-content {
+        padding: 0 8px;
+        box-sizing: border-box;
     }
 }
 
