@@ -1,0 +1,199 @@
+/* ================================================
+   УНІФІКОВАНІ СТИЛІ КАРТОК ТОВАРІВ
+   Перезаписують всі інші стилі product-card
+   ================================================ */
+
+/* БАЗОВІ СТИЛІ КАРТОК - НАЙВИЩА СПЕЦИФІЧНІСТЬ */
+.product-card,
+.similar-product-card {
+    flex: 0 0 300px !important;
+    width: 300px !important;
+    background: white !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    position: relative !important;
+    scroll-snap-align: center !important;
+    transform-origin: center !important;
+    will-change: transform, opacity, z-index !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    border: none !important;
+    min-width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+}
+
+/* HOVER ЕФЕКТИ */
+.product-card:hover,
+.similar-product-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ЗОБРАЖЕННЯ КОНТЕЙНЕР */
+.product-image,
+.similar-product-image {
+    position: relative !important;
+    height: 300px !important;
+    width: 300px !important;
+    overflow: hidden !important;
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef) !important;
+    border-radius: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* ЗОБРАЖЕННЯ */
+.product-image img,
+.similar-product-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    transition: transform 0.3s ease !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    border-radius: 0 !important;
+}
+
+.product-card:hover .product-image img,
+.similar-product-card:hover .similar-product-image {
+    transform: scale(1.05) !important;
+}
+
+/* ІНФОРМАЦІЯ ПРО ТОВАР */
+.product-info {
+    padding: 20px !important;
+}
+
+/* АДАПТИВНІСТЬ */
+@media (max-width: 1200px) {
+
+    .product-card,
+    .similar-product-card {
+        flex: 0 0 280px !important;
+        width: 280px !important;
+    }
+
+    .product-image,
+    .similar-product-image {
+        height: 280px !important;
+        width: 280px !important;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .product-card,
+    .similar-product-card {
+        flex: 0 0 260px !important;
+        width: 260px !important;
+    }
+
+    .product-image,
+    .similar-product-image {
+        height: 260px !important;
+        width: 260px !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .product-card,
+    .similar-product-card {
+        flex: 0 0 280px !important;
+        width: 280px !important;
+    }
+
+    .product-image,
+    .similar-product-image {
+        height: 280px !important;
+        width: 280px !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .product-card,
+    .similar-product-card {
+        flex: 0 0 250px !important;
+        width: 250px !important;
+    }
+
+    .product-image,
+    .similar-product-image {
+        height: 250px !important;
+        width: 250px !important;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .product-card,
+    .similar-product-card {
+        flex: 0 0 220px !important;
+        width: 220px !important;
+    }
+
+    .product-image,
+    .similar-product-image {
+        height: 220px !important;
+        width: 220px !important;
+    }
+}
+
+/* FLEX КОНТЕЙНЕРИ */
+.products-grid,
+.similar-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: start !important;
+    gap: 20px !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+.carousel-track {
+    display: flex !important;
+    gap: 20px !important;
+}
+
+/* ПЕРЕПИС СТАРИХ СТИЛІВ */
+@media (max-width: 768px) {
+
+    .products-grid,
+    .similar-grid {
+        gap: 20px !important;
+    }
+
+    .carousel-track {
+        gap: 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .products-grid,
+    .similar-grid {
+        gap: 15px !important;
+    }
+
+    .carousel-track {
+        gap: 15px !important;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .products-grid,
+    .similar-grid {
+        gap: 10px !important;
+    }
+
+    .carousel-track {
+        gap: 10px !important;
+    }
+}
