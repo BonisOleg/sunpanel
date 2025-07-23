@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="{% static 'css/catalog.css' %}?v=2025012004">
 <link rel="stylesheet" href="{% static 'css/product-unified.css' %}?v=2025012301">
 <link rel="stylesheet" href="{% static 'css/product-links.css' %}?v=2025012001">
-<link rel="stylesheet" href="{% static 'css/ios-safari-optimizations.css' %}?v=2025012309">
+<link rel="stylesheet" href="{% static 'css/ios-safari-optimizations.css' %}?v=2025012312">
 {% endblock %}
 
 {% block content %}
@@ -43,7 +43,7 @@
                             <select name="brand" class="filter-select">
                                 <option value="">Всі виробники</option>
                                 {% for brand in brands %}
-                                <option value="{{ brand }}" {% if selected_brand == brand %}selected{% endif %}>
+                                <option value="{{ brand }}" {% if selected_brand==brand %}selected{% endif %}>
                                     {{ brand }}
                                 </option>
                                 {% endfor %}

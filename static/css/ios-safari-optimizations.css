@@ -63,6 +63,17 @@
         box-sizing: border-box;
     }
 
+    /* Зменшені шрифти для hero заголовків на iOS Safari */
+    .hero__title {
+        font-size: 2rem !important;
+        line-height: 1.15 !important;
+    }
+
+    .hero__subtitle {
+        font-size: 0.95rem !important;
+        line-height: 1.4 !important;
+    }
+
     /* About section виправлення */
     .about {
         width: 100%;
@@ -147,6 +158,17 @@
         overflow-x: hidden;
         max-width: 100vw;
         position: relative;
+    }
+
+    /* Зменшені шрифти для мобільних iOS пристроїв */
+    .hero__title {
+        font-size: 1.8rem !important;
+        line-height: 1.1 !important;
+    }
+
+    .hero__subtitle {
+        font-size: 0.85rem !important;
+        line-height: 1.3 !important;
     }
 
     /* Виправлення рендерингу для ретіна дісплеїв */
@@ -269,6 +291,17 @@
     .catalog-title,
     h1 {
         font-size: 1.5rem;
+    }
+
+    /* Дуже зменшені шрифти для малих iPhone екранів */
+    .hero__title {
+        font-size: 1.6rem !important;
+        line-height: 1.05 !important;
+    }
+
+    .hero__subtitle {
+        font-size: 0.8rem !important;
+        line-height: 1.25 !important;
     }
 
     /* Додаткові відступи для малих екранів */
