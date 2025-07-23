@@ -63,15 +63,19 @@
         box-sizing: border-box;
     }
 
-    /* Зменшені шрифти для hero заголовків на iOS Safari */
+    /* ДУЖЕ ЗМЕНШЕНІ шрифти для hero заголовків на iOS Safari (в 1.5 раза менше) */
     .hero__title {
-        font-size: 2rem !important;
-        line-height: 1.15 !important;
+        font-size: 1.33rem !important;
+        line-height: 1.1 !important;
+        /* Підвищуємо специфічність для перекриття clamp() */
+        max-width: 100% !important;
     }
 
     .hero__subtitle {
-        font-size: 0.95rem !important;
-        line-height: 1.4 !important;
+        font-size: 0.63rem !important;
+        line-height: 1.3 !important;
+        /* Підвищуємо специфічність */
+        max-width: 100% !important;
     }
 
     /* About section виправлення */
@@ -160,15 +164,22 @@
         position: relative;
     }
 
-    /* Зменшені шрифти для мобільних iOS пристроїв */
+    /* ДУЖЕ ЗМЕНШЕНІ шрифти для мобільних iOS пристроїв (в 1.5 раза менше) */
     .hero__title {
-        font-size: 1.8rem !important;
-        line-height: 1.1 !important;
+        font-size: 1.2rem !important;
+        line-height: 1.05 !important;
+        /* Підвищуємо специфічність проти основних стилів */
+        max-width: 100% !important;
+        /* Додаткова специфічність */
+        position: relative !important;
     }
 
     .hero__subtitle {
-        font-size: 0.85rem !important;
-        line-height: 1.3 !important;
+        font-size: 0.57rem !important;
+        line-height: 1.25 !important;
+        /* Підвищуємо специфічність */
+        max-width: 100% !important;
+        position: relative !important;
     }
 
     /* Виправлення рендерингу для ретіна дісплеїв */
@@ -293,15 +304,23 @@
         font-size: 1.5rem;
     }
 
-    /* Дуже зменшені шрифти для малих iPhone екранів */
+    /* ЕКСТРА ЗМЕНШЕНІ шрифти для малих iPhone екранів (в 1.5 раза менше) */
     .hero__title {
-        font-size: 1.6rem !important;
-        line-height: 1.05 !important;
+        font-size: 1.07rem !important;
+        line-height: 1.0 !important;
+        /* Максимальна специфічність для перекриття всіх інших стилів */
+        max-width: 100% !important;
+        position: relative !important;
+        z-index: 1 !important;
     }
 
     .hero__subtitle {
-        font-size: 0.8rem !important;
-        line-height: 1.25 !important;
+        font-size: 0.53rem !important;
+        line-height: 1.2 !important;
+        /* Максимальна специфічність */
+        max-width: 100% !important;
+        position: relative !important;
+        z-index: 1 !important;
     }
 
     /* Додаткові відступи для малих екранів */
@@ -412,6 +431,29 @@
         overflow-x: hidden;
         max-width: 100vw;
         width: 100%;
+    }
+
+    /* ФОРСУЄМО МАЛЕНЬКІ ШРИФТИ - підвищена специфічність */
+    .hero .hero__container .hero__title,
+    .hero__content .hero__title,
+    section.hero .hero__title {
+        font-size: 1.1rem !important;
+        line-height: 1.0 !important;
+        max-width: 100% !important;
+        /* Перекриваємо clamp() */
+        min-width: auto !important;
+        width: auto !important;
+    }
+
+    .hero .hero__container .hero__subtitle,
+    .hero__content .hero__subtitle,
+    section.hero .hero__subtitle {
+        font-size: 0.55rem !important;
+        line-height: 1.2 !important;
+        max-width: 100% !important;
+        /* Перекриваємо var() */
+        min-width: auto !important;
+        width: auto !important;
     }
 
     /* Hero section мобільні виправлення */
@@ -556,6 +598,34 @@
     .capacity__text-content {
         padding: 0 8px;
         box-sizing: border-box;
+    }
+}
+
+/* КРИТИЧНО ВАЖЛИВО: ПЕРЕКРИТТЯ CLAMP() З index-optimized.css */
+@supports (-webkit-touch-callout: none) {
+    
+    /* Перекриваємо clamp(2.5rem, 5vw, 4rem) з основного CSS */
+    .hero__title,
+    section .hero__title,
+    .hero .hero__title,
+    main .hero .hero__title {
+        font-size: 1.2rem !important;
+        /* Повністю скидаємо clamp */
+        min-width: 0 !important;
+        max-width: none !important;
+        width: auto !important;
+    }
+
+    /* Перекриваємо var(--font-size-xl) з основного CSS */
+    .hero__subtitle,
+    section .hero__subtitle,
+    .hero .hero__subtitle,
+    main .hero .hero__subtitle {
+        font-size: 0.55rem !important;
+        /* Повністю скидаємо змінні */
+        min-width: 0 !important;
+        max-width: none !important;
+        width: auto !important;
     }
 }
 
