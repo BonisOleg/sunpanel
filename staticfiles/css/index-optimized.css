@@ -22,7 +22,7 @@
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
     --font-size-lg: 1.125rem;
-    --font-size-xl: 1.25rem;
+    --font-size-xl: 0.85rem;
     --font-size-2xl: 1.5rem;
     --font-size-3xl: 1.875rem;
     --font-size-4xl: 2.25rem;
@@ -276,7 +276,7 @@ section {
 }
 
 .hero__title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 900;
     line-height: 1.1;
     margin-bottom: 1.5rem;
@@ -1318,6 +1318,24 @@ body.nav-open {
             background: #f39c12;
         }
     }
+
+    /* =================================
+       Hero Mobile - ПРАВИЛЬНО ВСЕРЕДИНІ МЕДІА-ЗАПИТУ
+       ================================= */
+    .hero__title {
+        font-size: 1.2rem;
+        line-height: 1.1;
+    }
+
+    .hero__subtitle {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+
+    .hero__btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* =================================
@@ -1353,6 +1371,17 @@ body.nav-open {
         width: 20px;
         height: 2.5px;
         margin: 2.5px 0;
+    }
+
+    /* Hero для дуже малих екранів */
+    .hero__title {
+        font-size: 1rem;
+        line-height: 1.05;
+    }
+
+    .hero__subtitle {
+        font-size: 0.7rem;
+        line-height: 1.25;
     }
 }
 
@@ -1504,21 +1533,7 @@ body.nav-open {
     }
 }
 
-/* =================================
-   Hero Mobile
-   ================================= */
-.hero__title {
-    font-size: 2.5rem;
-}
 
-.hero__subtitle {
-    font-size: var(--font-size-base);
-}
-
-.hero__btn {
-    padding: 0.8rem 1.5rem;
-    font-size: var(--font-size-base);
-}
 
 /* About Mobile */
 .about {
