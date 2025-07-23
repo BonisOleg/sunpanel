@@ -240,53 +240,6 @@
     }
 }
 
-/* МОБІЛЬНІ - нативний горизонтальний скрол */
-@media (max-width: 768px) {
-    .products-carousel {
-        overflow: visible;
-        padding: 0;
-    }
-
-    .carousel-container {
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        padding: 10px 0;
-        margin: 0 -16px;
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    .carousel-container::-webkit-scrollbar {
-        display: none;
-    }
-
-    .carousel-track {
-        gap: 16px;
-        min-width: auto;
-        width: auto;
-        transform: none;
-        transition: none;
-    }
-
-    .product-card {
-        flex: 0 0 auto;
-        width: 260px;
-        min-width: 240px;
-        max-width: 280px;
-        scroll-snap-align: start;
-        scroll-snap-stop: normal;
-    }
-
-    .carousel-btn {
-        display: none;
-    }
-}
-
 /* ============================================
    PRODUCT CARDS - CENTERED LAYOUT
    ============================================ */
@@ -664,6 +617,69 @@
 }
 
 /* ============================================
+   МОБІЛЬНІ - нативний горизонтальний скрол
+   ============================================ */
+@media (max-width: 768px) {
+    .products-carousel {
+        overflow: visible;
+        padding: 0;
+    }
+
+    .carousel-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding: 10px 0;
+        margin: 0 -16px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .carousel-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .carousel-track {
+        gap: 16px;
+        min-width: auto;
+        width: auto;
+        transform: none;
+        transition: none;
+    }
+
+    /* UNIFIED MOBILE PRODUCT CARD STYLES */
+    .product-card {
+        flex: 0 0 auto;
+        width: 280px;
+        min-width: 260px;
+        max-width: 300px;
+        scroll-snap-align: start;
+        scroll-snap-stop: normal;
+        background: var(--catalog-white);
+        border: 1px solid var(--catalog-border-light);
+        border-radius: var(--catalog-border-radius);
+        overflow: hidden;
+        transition: var(--catalog-transition);
+        position: relative;
+        box-shadow: var(--catalog-shadow-sm);
+    }
+
+    .product-card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--catalog-shadow-hover);
+        border-color: var(--catalog-primary-color);
+    }
+
+    .carousel-btn {
+        display: none;
+    }
+}
+
+/* ============================================
    MOBILE RESPONSIVE - CENTERED CARDS
    ============================================ */
 @media (max-width: 768px) {
@@ -705,63 +721,116 @@
         align-self: flex-end;
     }
 
-    /* НА МОБІЛЬНИХ ПЕРЕВИЗНАЧАЄМО СТИЛІ КАРУСЕЛІ */
-    .carousel-container {
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        padding: 10px 0;
-        margin: 0 -16px;
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    .carousel-container::-webkit-scrollbar {
-        display: none;
-    }
-
-    .carousel-track {
-        gap: 16px;
-        min-width: auto;
-        width: auto;
-        transform: none;
-        transition: none;
-    }
-
-    .product-card {
-        flex: 0 0 auto;
-        width: 260px;
-        min-width: 240px;
-        max-width: 280px;
-        scroll-snap-align: start;
-    }
-
-    .carousel-btn {
-        display: none;
-    }
-
-    /* ЦЕНТРОВАНІ КАРТКИ НА МОБІЛЬНИХ - GRID */
+    /* UNIFIED GRID LAYOUT FOR CATEGORIES */
     .products-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 20px;
         justify-content: center;
         align-items: start;
         padding: 0;
         width: 100%;
+        max-width: 100%;
     }
 
     .products-grid .product-card {
         width: 100%;
-        max-width: 100%;
-        margin: 0;
+        max-width: 320px;
+        margin: 0 auto;
         justify-self: center;
+        flex: none;
+        background: var(--catalog-white);
+        border: 1px solid var(--catalog-border-light);
+        border-radius: var(--catalog-border-radius);
+        overflow: hidden;
+        transition: var(--catalog-transition);
+        position: relative;
+        box-shadow: var(--catalog-shadow-sm);
     }
 
-    /* ПРИХОВУЄМО КНОПКИ НА МОБІЛЬНИХ */
+    .products-grid .product-card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--catalog-shadow-hover);
+        border-color: var(--catalog-primary-color);
+    }
+
+    /* UNIFIED IMAGE STYLES */
+    .product-image {
+        height: 200px;
+        overflow: hidden;
+        background: var(--catalog-bg-light);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+
+    .product-card:hover .product-image img {
+        transform: scale(1.02);
+    }
+
+    /* UNIFIED INFO STYLES */
+    .product-info {
+        padding: 16px;
+    }
+
+    .product-name {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--catalog-text-primary);
+        margin-bottom: 8px;
+        line-height: 1.4;
+        min-height: 2.4rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .product-brand {
+        color: var(--catalog-text-secondary);
+        font-size: 14px;
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
+
+    .product-price {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--catalog-primary-color);
+        margin-bottom: 14px;
+    }
+
+    /* UNIFIED BUTTON STYLES */
+    .add-to-cart-btn {
+        width: 100%;
+        min-height: 44px;
+        padding: 12px;
+        background: var(--catalog-primary-color);
+        color: var(--catalog-white);
+        border: none;
+        border-radius: var(--catalog-border-radius-sm);
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.1s ease;
+        font-size: 14px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(40, 167, 69, 0.2);
+    }
+
+    .add-to-cart-btn:hover,
+    .add-to-cart-btn:active {
+        background: var(--catalog-primary-hover);
+        transform: translateY(-1px);
+    }
+
     .carousel-btn.mobile-mode {
         display: none;
     }
@@ -788,7 +857,7 @@
         margin-bottom: 24px;
     }
 
-    /* ОПТИМІЗАЦІЇ ДЛЯ iOS SAFARI */
+    /* iOS SAFARI OPTIMIZATIONS */
     .filter-select {
         -webkit-appearance: none;
         appearance: none;
@@ -800,13 +869,6 @@
     .price-input {
         font-size: 16px;
         padding: 12px 15px;
-    }
-
-    .add-to-cart-btn {
-        min-height: 44px;
-        font-size: 16px;
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: rgba(40, 167, 69, 0.2);
     }
 }
 
