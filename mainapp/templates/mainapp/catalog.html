@@ -86,7 +86,7 @@
                         {% for product in inverters %}
                         <div class="product-card">
                             <div class="product-card__image-container">
-                                <img src="{{ product.image_url }}" alt="{{ product.name }}" class="product-card__image">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-card__image">
                                 {% if product.featured %}
                                 <span class="product-card__badge">Рекомендовано</span>
                                 {% endif %}
@@ -97,7 +97,7 @@
                                 <div class="product-card__price">₴{{ product.price|floatformat:0 }}</div>
                                 <button class="product-card__btn add-to-cart-btn" data-product-id="{{ product.id }}"
                                     data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
-                                    data-product-image="{{ product.image_url }}">
+                                    data-product-image="{{ product.image.url }}">
                                     Додати в кошик
                                 </button>
                             </div>
@@ -118,7 +118,7 @@
                         {% for product in solar_panels %}
                         <div class="product-card">
                             <div class="product-card__image-container">
-                                <img src="{{ product.image_url }}" alt="{{ product.name }}" class="product-card__image">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-card__image">
                                 {% if product.featured %}
                                 <span class="product-card__badge">Рекомендовано</span>
                                 {% endif %}
@@ -129,7 +129,7 @@
                                 <div class="product-card__price">₴{{ product.price|floatformat:0 }}</div>
                                 <button class="product-card__btn add-to-cart-btn" data-product-id="{{ product.id }}"
                                     data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
-                                    data-product-image="{{ product.image_url }}">
+                                    data-product-image="{{ product.image.url }}">
                                     Додати в кошик
                                 </button>
                             </div>
@@ -150,7 +150,7 @@
                         {% for product in batteries %}
                         <div class="product-card">
                             <div class="product-card__image-container">
-                                <img src="{{ product.image_url }}" alt="{{ product.name }}" class="product-card__image">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-card__image">
                                 {% if product.featured %}
                                 <span class="product-card__badge">Рекомендовано</span>
                                 {% endif %}
@@ -161,7 +161,7 @@
                                 <div class="product-card__price">₴{{ product.price|floatformat:0 }}</div>
                                 <button class="product-card__btn add-to-cart-btn" data-product-id="{{ product.id }}"
                                     data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
-                                    data-product-image="{{ product.image_url }}">
+                                    data-product-image="{{ product.image.url }}">
                                     Додати в кошик
                                 </button>
                             </div>
@@ -182,7 +182,7 @@
                         {% for product in backup_kits %}
                         <div class="product-card">
                             <div class="product-card__image-container">
-                                <img src="{{ product.image_url }}" alt="{{ product.name }}" class="product-card__image">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-card__image">
                                 {% if product.featured %}
                                 <span class="product-card__badge">Рекомендовано</span>
                                 {% endif %}
@@ -193,7 +193,7 @@
                                 <div class="product-card__price">₴{{ product.price|floatformat:0 }}</div>
                                 <button class="product-card__btn add-to-cart-btn" data-product-id="{{ product.id }}"
                                     data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
-                                    data-product-image="{{ product.image_url }}">
+                                    data-product-image="{{ product.image.url }}">
                                     Додати в кошик
                                 </button>
                             </div>

@@ -84,18 +84,6 @@ class Product(models.Model):
     
     def __str__(self):
         return self.name
-    
-    @property
-    def image_url(self):
-        """Повертає правильний URL для зображення в production"""
-        if self.image:
-            from django.conf import settings
-            if settings.DEBUG:
-                return self.image.url
-            else:
-                # В production використовуємо /static/media/ замість /media/
-                return self.image.url.replace('/media/', '/static/media/')
-        return ''
 
 
 class ProductImage(models.Model):
@@ -112,18 +100,6 @@ class ProductImage(models.Model):
     
     def __str__(self):
         return f"{self.product.name} - Зображення {self.order}"
-    
-    @property
-    def image_url(self):
-        """Повертає правильний URL для зображення в production"""
-        if self.image:
-            from django.conf import settings
-            if settings.DEBUG:
-                return self.image.url
-            else:
-                # В production використовуємо /static/media/ замість /media/
-                return self.image.url.replace('/media/', '/static/media/')
-        return ''
 
 
 class Portfolio(models.Model):

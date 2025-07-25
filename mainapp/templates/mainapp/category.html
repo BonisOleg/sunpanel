@@ -40,7 +40,7 @@
                             <select name="brand" class="filter-select">
                                 <option value="">Всі виробники</option>
                                 {% for brand in brands %}
-                                <option value="{{ brand }}" {% if selected_brand==brand %}selected{% endif %}>
+                                <option value="{{ brand }}" {% if selected_brand == brand %}selected{% endif %}>
                                     {{ brand }}
                                 </option>
                                 {% endfor %}
@@ -104,7 +104,7 @@
                             <a href="{% url 'mainapp:product_detail' product.id %}" class="product-card__link">
                                 <div class="product-card__image-container">
                                     {% if product.image %}
-                                    <img src="{{ product.image_url }}" alt="{{ product.name }}"
+                                    <img src="{{ product.image.url }}" alt="{{ product.name }}"
                                         class="product-card__image">
                                     {% else %}
                                     <div class="product-card__image product-card__image--placeholder">
@@ -146,7 +146,7 @@
                             <div class="product-card__footer">
                                 <button class="product-card__btn add-to-cart-btn" data-product-id="{{ product.id }}"
                                     data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
-                                    data-product-image="{% if product.image %}{{ product.image_url }}{% endif %}">
+                                    data-product-image="{% if product.image %}{{ product.image.url }}{% endif %}">
                                     Додати в кошик
                                 </button>
                             </div>
