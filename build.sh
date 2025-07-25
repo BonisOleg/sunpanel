@@ -31,4 +31,4 @@ python manage.py collectstatic --no-input --settings=config.settings_production
 echo "🔄 Updating media URL settings..."
 python manage.py update_media_urls --settings=config.settings_production
 
-echo "✅ Build completed successfully!" 
+echo "✅ Build completed successfully!" Dummy change to trigger Render rebuild
