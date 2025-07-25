@@ -1,417 +1,563 @@
-/* Reviews Page - Simple Style */
+/* ===== СТОРІНКА ВІДГУКІВ ===== */
 .reviews-page {
-    padding: 20px 0;
-    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: calc(var(--header-height) + 2rem) 0 3rem;
+    min-height: calc(100vh - var(--footer-height));
+    background: var(--bg-gray-50);
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-h1 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-h2 {
-    font-size: 1.5rem;
-    color: #333;
-    margin: 30px 0 15px 0;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
-}
-
-p {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-/* Messages */
-.message {
-    background: #d4edda;
-    color: #155724;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-left: 3px solid #28a745;
-}
-
-/* Stats */
-.stats {
-    text-align: center;
-    margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #ddd;
-}
-
-.stats strong {
-    font-size: 1.5rem;
-    color: #fafbfa;
-    margin-right: 10px;
-}
-
-/* Form */
-form {
-    margin-bottom: 40px;
-}
-
-form div {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-input[type="text"],
-textarea,
-select {
+.reviews-container {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    font-size: 14px;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.reviews-header {
+    text-align: center;
+    max-width: 800px;
+}
+
+.reviews-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.reviews-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+    border-radius: var(--radius-sm);
+}
+
+.reviews-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===== ПОВІДОМЛЕННЯ ===== */
+.reviews-message {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem 1.5rem;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: var(--radius-md);
+    color: #155724;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+/* ===== СТАТИСТИКА ===== */
+.reviews-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 2rem;
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    min-width: 250px;
+}
+
+.stats-rating {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.stats-stars {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.star {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.star-filled {
+    color: #fbbf24;
+}
+
+.star-empty {
+    color: var(--border-gray);
+}
+
+.stats-count {
+    font-size: 1rem;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+/* ===== СЕКЦІЇ ===== */
+.reviews-form-section,
+.reviews-list-section {
+    width: 100%;
+    max-width: 800px;
+}
+
+.section-title {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* ===== ФОРМА ===== */
+.reviews-form {
+    padding: 2rem;
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-gray);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
     font-family: inherit;
+    color: var(--text-dark);
+    background: var(--bg-white);
+    transition: all 0.3s ease;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
-textarea {
-    height: 80px;
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-textarea {
+    min-height: 120px;
     resize: vertical;
+    line-height: 1.6;
 }
 
-.stars {
-    margin: 10px 0;
+.form-select {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 0.75rem;
+    padding-right: 2.5rem;
 }
 
-.stars span {
-    font-size: 24px;
-    color: #ddd;
+/* ===== РЕЙТИНГ ЗІРКИ ===== */
+.rating-stars {
+    display: flex;
+    gap: 0.25rem;
+    margin: 0.5rem 0;
+}
+
+.rating-star {
+    font-size: 2rem;
+    color: var(--border-gray);
     cursor: pointer;
-    margin-right: 3px;
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
-select[name="rating"] {
-    display: none !important;
+.rating-star:hover {
+    transform: scale(1.1);
 }
 
-.error {
-    color: #dc3545;
-    font-size: 12px;
-    display: block;
-    margin-top: 5px;
+.rating-star.rating-hover,
+.rating-star.rating-selected {
+    color: #fbbf24;
 }
 
-button {
-    background: #007bff;
+.rating-star.rating-unselected {
+    color: var(--border-gray);
+}
+
+.rating-hidden {
+    display: none;
+}
+
+/* ===== КНОПКА ВІДПРАВКИ ===== */
+.btn-submit {
+    padding: 1rem 2rem;
+    background: var(--primary-color);
     color: white;
-    padding: 10px 20px;
     border: none;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    font-size: 14px;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
-button:hover {
-    background: #0056b3;
+.btn-submit:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
-/* Reviews */
-.review {
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
+/* ===== ПОМИЛКИ ФОРМИ ===== */
+.form-error {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
-.review:last-child {
-    border-bottom: none;
+/* ===== СПИСОК ВІДГУКІВ ===== */
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.review-card {
+    padding: 2rem;
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Анімація появи відгуків */
+.review-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.review-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
 }
 
 .review-header {
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 1rem;
 }
 
-.review-header strong {
-    font-size: 16px;
-    color: #333;
+.review-author {
+    flex: 1;
 }
 
-.rating {
-    margin-top: 5px;
+.author-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 0.25rem 0;
 }
 
-.rating span {
-    color: #ffc107;
-    font-size: 14px;
+.author-position {
+    font-size: 0.875rem;
+    color: var(--text-gray);
+    margin: 0;
 }
 
-.review p {
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 10px;
+.review-rating {
+    display: flex;
+    gap: 0.125rem;
+    flex-shrink: 0;
 }
 
-.review-info {
-    font-size: 12px;
-    color: #888;
+.review-rating .star {
+    font-size: 1rem;
 }
 
-/* Mobile */
+.review-content {
+    margin-bottom: 1.5rem;
+}
+
+.review-text {
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.review-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-gray);
+    font-size: 0.875rem;
+    color: var(--text-gray);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.meta-date {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* ===== ПУСТА СТОРІНКА ===== */
+.reviews-empty {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.reviews-empty p {
+    font-size: 1.125rem;
+    color: var(--text-gray);
+    margin: 0;
+}
+
+/* ===== АДАПТИВНІСТЬ ===== */
+
+/* Планшети */
+@media (max-width: 1024px) {
+    .reviews-container {
+        gap: 2.5rem;
+    }
+
+    .reviews-title {
+        font-size: 2.25rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Мобільні пристрої */
 @media (max-width: 768px) {
     .reviews-page {
-        padding-top: 130px;
-        /* Опускаємо контент на 50px нижче + заголовок */
-        min-height: 100vh;
-        min-height: -webkit-fill-available;
-        /* iOS Safari виправлення */
+        padding: calc(var(--header-height) + 1rem) 0 2rem;
     }
 
-    .container {
-        padding: 0 20px;
-        /* Адекватні падінги по боках */
-        margin-top: 0;
+    .reviews-container {
+        gap: 2rem;
+        padding: 0 1rem;
     }
 
-    h1 {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-        margin-top: 0;
+    .reviews-title {
+        font-size: 2rem;
     }
 
-    h2 {
-        font-size: 1.3rem;
-        margin: 25px 0 15px;
+    .reviews-subtitle {
+        font-size: 1rem;
     }
 
-    .stars span {
-        font-size: 20px;
-        cursor: pointer;
-        transition: color 0.2s ease;
-        /* iOS Safari оптимізації для тач-подій */
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        user-select: none;
+    .reviews-form,
+    .review-card {
+        padding: 1.5rem;
     }
 
-    /* Форма відгуків */
-    form {
-        background: #fff;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 30px;
+    .form-grid {
+        gap: 1rem;
     }
 
-    form div {
-        margin-bottom: 20px;
+    .form-group {
+        gap: 0.375rem;
     }
 
-    label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: 500;
-        color: #2c3e50;
-    }
-
-    input[type="text"],
-    select,
-    textarea {
+    .btn-submit {
         width: 100%;
-        padding: 12px 15px;
-        border: 2px solid #e9ecef;
-        border-radius: 8px;
-        font-size: 16px;
-        /* Запобігання зуму на iOS */
-        font-family: inherit;
-        /* iOS Safari виправлення */
-        -webkit-appearance: none;
-        appearance: none;
-        -webkit-border-radius: 8px;
-        box-sizing: border-box;
-    }
-
-    input[type="text"]:focus,
-    select:focus,
-    textarea:focus {
-        outline: none;
-        border-color: #28a745;
-        box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
-    }
-
-    textarea {
-        min-height: 100px;
-        resize: vertical;
-        /* iOS Safari виправлення для textarea */
-        -webkit-overflow-scrolling: touch;
-    }
-
-    select {
-        background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
-        background-repeat: no-repeat;
-        background-position: right 12px center;
-        background-size: 12px;
-        padding-right: 40px;
-    }
-
-    button[type="submit"] {
-        width: 100%;
-        padding: 15px;
-        background: #28a745;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        /* iOS Safari виправлення */
-        -webkit-appearance: none;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    button[type="submit"]:hover,
-    button[type="submit"]:active {
-        background: #218838;
-    }
-
-    /* Відгуки */
-    .review {
-        background: #fff;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        margin-bottom: 20px;
-        /* iOS Safari оптимізації */
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
+        align-self: stretch;
     }
 
     .review-header {
-        margin-bottom: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
     }
 
-    .review-header strong {
-        font-size: 1.1rem;
-        color: #2c3e50;
-        display: block;
-        margin-bottom: 5px;
+    .review-meta {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
-    .rating {
-        margin: 10px 0;
-        font-size: 16px;
+    .stats-rating {
+        font-size: 2.5rem;
     }
 
-    .review-info {
-        font-size: 0.9rem;
-        color: #6c757d;
-        margin-top: 15px;
-        padding-top: 15px;
-        border-top: 1px solid #e9ecef;
-    }
-
-    .stats {
-        background: #f8f9fa;
-        padding: 20px;
-        border-radius: 12px;
-        text-align: center;
-        margin: 20px 0;
-        font-size: 1.2rem;
-        color: #2c3e50;
-    }
-
-    .message {
-        padding: 15px 20px;
-        border-radius: 8px;
-        margin: 20px 0;
-        background: #d4edda;
-        border: 1px solid #c3e6cb;
-        color: #155724;
-    }
-
-    .error {
-        color: #dc3545;
-        font-size: 0.9rem;
-        margin-top: 5px;
-        display: block;
+    .rating-star {
+        font-size: 1.75rem;
     }
 }
 
 /* Дуже малі екрани */
 @media (max-width: 480px) {
-    .reviews-page {
-        padding-top: 120px;
+    .reviews-container {
+        padding: 0 0.75rem;
     }
 
-    .container {
-        padding: 0 15px;
+    .reviews-title {
+        font-size: 1.75rem;
     }
 
-    h1 {
-        font-size: 1.6rem;
+    .reviews-form,
+    .review-card {
+        padding: 1rem;
     }
 
-    h2 {
-        font-size: 1.2rem;
+    .reviews-stats {
+        padding: 1.5rem;
+        min-width: auto;
+        width: 100%;
     }
 
-    form,
-    .review {
-        padding: 15px;
-        margin-bottom: 15px;
+    .stats-rating {
+        font-size: 2rem;
     }
 
-    .stats {
-        padding: 15px;
-        font-size: 1.1rem;
+    .rating-star {
+        font-size: 1.5rem;
     }
 }
 
-/* iOS Safari специфічні виправлення */
-@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+/* ===== iOS SAFARI ОПТИМІЗАЦІЇ ===== */
+@media screen and (max-width: 768px) {
+
+    /* Viewport виправлення */
     .reviews-page {
-        /* Виправлення viewport проблем */
         min-height: 100vh;
         min-height: -webkit-fill-available;
     }
 
-    /* Виправлення z-index проблем */
-    form,
-    .review {
-        position: relative;
-        z-index: 1;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
+    /* Input масштабування запобігання */
+    .form-input,
+    .form-textarea,
+    .form-select {
+        font-size: 16px;
+        -webkit-appearance: none;
+        -webkit-border-radius: var(--radius-md);
     }
 
-    /* Виправлення скролу */
-    body {
+    /* Touch оптимізації */
+    .rating-star,
+    .btn-submit {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+    }
+
+    /* Scroll оптимізації */
+    .reviews-container {
         -webkit-overflow-scrolling: touch;
     }
+
+    /* Hardware acceleration */
+    .review-card,
+    .reviews-form {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
 }
 
-/* Landscape orientation */
+/* Landscape орієнтація */
 @media screen and (max-width: 768px) and (orientation: landscape) {
     .reviews-page {
-        padding-top: 100px;
+        padding-top: calc(var(--header-height) + 0.5rem);
     }
 
-    form,
-    .review {
-        padding: 15px;
+    .reviews-container {
+        gap: 1.5rem;
+    }
+
+    .reviews-form,
+    .review-card {
+        padding: 1rem;
     }
 }
 
-/* Зменшення анімацій для користувачів з prefers-reduced-motion */
-@media screen and (max-width: 768px) and (prefers-reduced-motion: reduce) {
+/* Safe area для нових iPhone */
+@media screen and (max-width: 768px) {
+    .reviews-container {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+}
 
-    .stars span,
-    button[type="submit"],
-    input[type="text"],
-    select,
-    textarea {
+/* Зменшення анімацій */
+@media (prefers-reduced-motion: reduce) {
+
+    .rating-star,
+    .btn-submit,
+    .review-card,
+    .form-input,
+    .form-textarea,
+    .form-select {
         transition: none;
+    }
+
+    .review-hidden,
+    .review-visible {
+        transition: none;
+        opacity: 1;
+        transform: none;
     }
 }

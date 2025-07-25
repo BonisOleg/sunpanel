@@ -80,7 +80,7 @@ Web Service → Environment → Add from Database → greensolartech-db
 DJANGO_SETTINGS_MODULE = config.settings_production
 SECRET_KEY = [автогенерується Render]
 DEBUG = False
-ALLOWED_HOSTS = greensolartech.onrender.com,.onrender.com
+ALLOWED_HOSTS = greensolartech.com.ua,www.greensolartech.com.ua,greensolartech.onrender.com,sunpanel.onrender.com,.onrender.com
 EMAIL_HOST_USER = GreenSolarTech.pe@gmail.com
 EMAIL_HOST_PASSWORD = [ваш Gmail App Password]
 SECURE_SSL_REDIRECT = False
@@ -196,8 +196,8 @@ python manage.py prepare_portfolio
 - ⚡ **Швидка робота** через статичні файли
 
 ### 🔗 Готові URL:
-- 🌐 **Сайт**: https://greensolartech.onrender.com
-- 🔧 **Адмін**: https://greensolartech.onrender.com/admin/
+- 🌐 **Сайт**: https://sunpanel.onrender.com або https://greensolartech.com.ua
+- 🔧 **Адмін**: https://sunpanel.onrender.com/admin/
 
 ---
 

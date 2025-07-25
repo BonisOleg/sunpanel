@@ -4,20 +4,17 @@
 {% block title %}{{ title }}{% endblock %}
 {% block description %}{{ description }}{% endblock %}
 {% block keywords %}{{ keywords }}{% endblock %}
-{% block canonical %}https://greensolartech.com/catalog/{% endblock %}
+{% block canonical %}https://greensolartech.com.ua/catalog/{% endblock %}
 
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/catalog.css' %}?v=2025012004">
-<link rel="stylesheet" href="{% static 'css/product-unified.css' %}?v=2025012301">
-<link rel="stylesheet" href="{% static 'css/product-links.css' %}?v=2025011907">
-<link rel="stylesheet" href="{% static 'css/ios-safari-optimizations.css' %}?v=2025012313">
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/catalog.css' %}?v=2025012504">
 {% endblock %}
 
 {% block content %}
 <div class="catalog-page">
     <div class="catalog-container">
         <div class="catalog-layout">
-            <!-- Фільтри ліворуч (20%) -->
+            <!-- Фільтри ліворуч -->
             <aside class="catalog-sidebar">
                 <div class="filters-container">
                     <h3 class="filters-title">Фільтри</h3>
@@ -49,210 +46,201 @@
                             </select>
                         </div>
 
-                        <!-- Фільтр по ціні -->
-                        <div class="filter-group">
-                            <label class="filter-label">Ціна</label>
-                            <div class="price-range">
-                                <input type="number" name="price_min" placeholder="Від" value="{{ price_min }}"
-                                    class="price-input">
-                                <span class="price-separator">-</span>
-                                <input type="number" name="price_max" placeholder="До" value="{{ price_max }}"
-                                    class="price-input">
-                            </div>
+                        <div class="filters-actions">
+                            <button type="submit" class="btn btn-primary filter-btn">Застосувати</button>
+                            <a href="{% url 'mainapp:catalog' %}" class="btn filter-btn filter-btn--clear">Очистити</a>
                         </div>
-
-                        <button type="submit" class="filters-btn">Застосувати фільтри</button>
-                        <a href="{% url 'mainapp:catalog' %}" class="filters-reset">Скинути фільтри</a>
                     </form>
                 </div>
             </aside>
 
-            <!-- Основний контент праворуч (80%) -->
-            <div class="catalog-content">
-                <!-- Інвертори -->
+            <!-- Основний контент -->
+            <main class="catalog-main">
+                <div class="catalog-header">
+                    <h1 class="catalog-title">{{ title }}</h1>
+                    <div class="catalog-controls">
+                        <select class="catalog-sort" name="sort">
+                            <option value="">Сортування</option>
+                            <option value="price_asc">Ціна: за зростанням</option>
+                            <option value="price_desc">Ціна: за спаданням</option>
+                            <option value="name_asc">Назва: А-Я</option>
+                            <option value="name_desc">Назва: Я-А</option>
+                        </select>
+                        <div class="catalog-view-toggle">
+                            <button class="view-toggle-btn active" data-view="grid">⊞</button>
+                            <button class="view-toggle-btn" data-view="list">☰</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 горизонтальні блоки категорій як на скріншотах -->
+
+                <!-- ⚡ Інвертори -->
+                {% if inverters %}
                 <div class="category-section">
                     <div class="category-header">
                         <h2 class="category-title">⚡ Інвертори</h2>
-                        <a href="{% url 'mainapp:category' 'inverters' %}" class="view-all-btn">Дивитися всі</a>
+                        <a href="{% url 'mainapp:category' 'inverters' %}" class="category-view-all">Дивитися всі</a>
                     </div>
-                    {% if inverters %}
-                    <div class="products-carousel" data-category="inverters">
-                        <div class="carousel-container">
-                            <div class="carousel-track">
-                                {% for product in inverters %}
-                                <div class="product-card">
-                                    <a href="{% url 'mainapp:product_detail' product.id %}" class="product-link">
-                                        {% if product.image %}
-                                        <div class="product-image">
-                                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                                        </div>
-                                        {% endif %}
-                                        <div class="product-info">
-                                            <h3 class="product-name">{{ product.name }}</h3>
-                                            <p class="product-brand">{{ product.brand.name }}</p>
-                                            <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
-                                        </div>
-                                    </a>
-                                    <button class="add-to-cart-btn" data-product-id="{{ product.id }}"
-                                        data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
-                                        data-product-image="{% if product.image %}{{ product.image.url }}{% endif %}">
-                                        Додати в кошик
-                                    </button>
-                                </div>
-                                {% endfor %}
+                    <div class="products-horizontal-scroll">
+                        {% for product in inverters %}
+                        <div class="product-card">
+                            <div class="product-card__image-container">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-card__image">
+                                {% if product.featured %}
+                                <span class="product-card__badge">Рекомендовано</span>
+                                {% endif %}
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">{{ product.name }}</h3>
+                                <div class="product-card__brand">{{ product.brand.name }}</div>
+                                <div class="product-card__price">₴{{ product.price|floatformat:0 }}</div>
+                                <button class="product-card__btn add-to-cart-btn" data-product-id="{{ product.id }}"
+                                    data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
+                                    data-product-image="{{ product.image.url }}">
+                                    Додати в кошик
+                                </button>
                             </div>
                         </div>
-                        <button class="carousel-btn carousel-prev" data-direction="prev">‹</button>
-                        <button class="carousel-btn carousel-next" data-direction="next">›</button>
+                        {% endfor %}
                     </div>
-                    {% else %}
-                    <div class="no-products-category">
-                        <p>Товари в категорії інверторів будуть додані найближчим часом</p>
-                    </div>
-                    {% endif %}
                 </div>
+                {% endif %}
 
-                <!-- Сонячні панелі -->
+                <!-- ☀️ Сонячні панелі -->
+                {% if solar_panels %}
                 <div class="category-section">
                     <div class="category-header">
                         <h2 class="category-title">☀️ Сонячні панелі</h2>
-                        <a href="{% url 'mainapp:category' 'solar-panels' %}" class="view-all-btn">Дивитися всі</a>
+                        <a href="{% url 'mainapp:category' 'solar-panels' %}" class="category-view-all">Дивитися всі</a>
                     </div>
-                    {% if solar_panels %}
-                    <div class="products-carousel" data-category="solar-panels">
-                        <div class="carousel-container">
-                            <div class="carousel-track">
-                                {% for product in solar_panels %}
-                                <div class="product-card">
-                                    <a href="{% url 'mainapp:product_detail' product.id %}" class="product-link">
-                                        {% if product.image %}
-                                        <div class="product-image">
-                                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                                        </div>
-                                        {% endif %}
-                                        <div class="product-info">
-                                            <h3 class="product-name">{{ product.name }}</h3>
-                                            <p class="product-brand">{{ product.brand.name }}</p>
-                                            <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
-                                        </div>
-                                    </a>
-                                    <button class="add-to-cart-btn" data-product-id="{{ product.id }}"
-                                        data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
-                                        data-product-image="{% if product.image %}{{ product.image.url }}{% endif %}">
-                                        Додати в кошик
-                                    </button>
-                                </div>
-                                {% endfor %}
+                    <div class="products-horizontal-scroll">
+                        {% for product in solar_panels %}
+                        <div class="product-card">
+                            <div class="product-card__image-container">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-card__image">
+                                {% if product.featured %}
+                                <span class="product-card__badge">Рекомендовано</span>
+                                {% endif %}
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">{{ product.name }}</h3>
+                                <div class="product-card__brand">{{ product.brand.name }}</div>
+                                <div class="product-card__price">₴{{ product.price|floatformat:0 }}</div>
+                                <button class="product-card__btn add-to-cart-btn" data-product-id="{{ product.id }}"
+                                    data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
+                                    data-product-image="{{ product.image.url }}">
+                                    Додати в кошик
+                                </button>
                             </div>
                         </div>
-                        <button class="carousel-btn carousel-prev" data-direction="prev">‹</button>
-                        <button class="carousel-btn carousel-next" data-direction="next">›</button>
+                        {% endfor %}
                     </div>
-                    {% else %}
-                    <div class="no-products-category">
-                        <p>Товари в категорії сонячних панелей будуть додані найближчим часом</p>
-                    </div>
-                    {% endif %}
                 </div>
+                {% endif %}
 
-                <!-- Акумулятори -->
+                <!-- 🔋 Акумуляторні батареї -->
+                {% if batteries %}
                 <div class="category-section">
                     <div class="category-header">
-                        <h2 class="category-title">🔋 Акумулятори</h2>
-                        <a href="{% url 'mainapp:category' 'batteries' %}" class="view-all-btn">Дивитися всі</a>
+                        <h2 class="category-title">🔋 Акумуляторні батареї</h2>
+                        <a href="{% url 'mainapp:category' 'batteries' %}" class="category-view-all">Дивитися всі</a>
                     </div>
-                    {% if batteries %}
-                    <div class="products-carousel" data-category="batteries">
-                        <div class="carousel-container">
-                            <div class="carousel-track">
-                                {% for product in batteries %}
-                                <div class="product-card">
-                                    <a href="{% url 'mainapp:product_detail' product.id %}" class="product-link">
-                                        {% if product.image %}
-                                        <div class="product-image">
-                                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                                        </div>
-                                        {% endif %}
-                                        <div class="product-info">
-                                            <h3 class="product-name">{{ product.name }}</h3>
-                                            <p class="product-brand">{{ product.brand.name }}</p>
-                                            <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
-                                        </div>
-                                    </a>
-                                    <button class="add-to-cart-btn" data-product-id="{{ product.id }}"
-                                        data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
-                                        data-product-image="{% if product.image %}{{ product.image.url }}{% endif %}">
-                                        Додати в кошик
-                                    </button>
-                                </div>
-                                {% endfor %}
+                    <div class="products-horizontal-scroll">
+                        {% for product in batteries %}
+                        <div class="product-card">
+                            <div class="product-card__image-container">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-card__image">
+                                {% if product.featured %}
+                                <span class="product-card__badge">Рекомендовано</span>
+                                {% endif %}
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">{{ product.name }}</h3>
+                                <div class="product-card__brand">{{ product.brand.name }}</div>
+                                <div class="product-card__price">₴{{ product.price|floatformat:0 }}</div>
+                                <button class="product-card__btn add-to-cart-btn" data-product-id="{{ product.id }}"
+                                    data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
+                                    data-product-image="{{ product.image.url }}">
+                                    Додати в кошик
+                                </button>
                             </div>
                         </div>
-                        <button class="carousel-btn carousel-prev" data-direction="prev">‹</button>
-                        <button class="carousel-btn carousel-next" data-direction="next">›</button>
+                        {% endfor %}
                     </div>
-                    {% else %}
-                    <div class="no-products-category">
-                        <p>Товари в категорії акумуляторів будуть додані найближчим часом</p>
-                    </div>
-                    {% endif %}
                 </div>
+                {% endif %}
 
-                <!-- Комплекти резервного живлення -->
+                <!-- 📦 Комплекти резервного живлення -->
+                {% if backup_kits %}
                 <div class="category-section">
                     <div class="category-header">
                         <h2 class="category-title">📦 Комплекти резервного живлення</h2>
-                        <a href="{% url 'mainapp:category' 'backup-power' %}" class="view-all-btn">Дивитися всі</a>
+                        <a href="{% url 'mainapp:category' 'backup-power' %}" class="category-view-all">Дивитися всі</a>
                     </div>
-                    {% if backup_kits %}
-                    <div class="products-carousel" data-category="backup-power">
-                        <div class="carousel-container">
-                            <div class="carousel-track">
-                                {% for product in backup_kits %}
-                                <div class="product-card">
-                                    <a href="{% url 'mainapp:product_detail' product.id %}" class="product-link">
-                                        {% if product.image %}
-                                        <div class="product-image">
-                                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                                        </div>
-                                        {% endif %}
-                                        <div class="product-info">
-                                            <h3 class="product-name">{{ product.name }}</h3>
-                                            <p class="product-brand">{{ product.brand.name }}</p>
-                                            <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
-                                        </div>
-                                    </a>
-                                    <button class="add-to-cart-btn" data-product-id="{{ product.id }}"
-                                        data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
-                                        data-product-image="{% if product.image %}{{ product.image.url }}{% endif %}">
-                                        Додати в кошик
-                                    </button>
-                                </div>
-                                {% endfor %}
+                    <div class="products-horizontal-scroll">
+                        {% for product in backup_kits %}
+                        <div class="product-card">
+                            <div class="product-card__image-container">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-card__image">
+                                {% if product.featured %}
+                                <span class="product-card__badge">Рекомендовано</span>
+                                {% endif %}
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">{{ product.name }}</h3>
+                                <div class="product-card__brand">{{ product.brand.name }}</div>
+                                <div class="product-card__price">₴{{ product.price|floatformat:0 }}</div>
+                                <button class="product-card__btn add-to-cart-btn" data-product-id="{{ product.id }}"
+                                    data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
+                                    data-product-image="{{ product.image.url }}">
+                                    Додати в кошик
+                                </button>
                             </div>
                         </div>
-                        <button class="carousel-btn carousel-prev" data-direction="prev">‹</button>
-                        <button class="carousel-btn carousel-next" data-direction="next">›</button>
+                        {% endfor %}
                     </div>
-                    {% else %}
-                    <div class="no-products-category">
-                        <p>Товари в категорії комплектів будуть додані найближчим часом</p>
-                    </div>
-                    {% endif %}
-                </div>
-
-                {% if not inverters and not solar_panels and not batteries and not backup_kits %}
-                <div class="no-products">
-                    <p>За вашими критеріями товари не знайдено.</p>
-                    <a href="{% url 'mainapp:catalog' %}" class="reset-filters-btn">Скинути фільтри</a>
                 </div>
                 {% endif %}
-            </div>
+
+                <!-- Якщо товарів немає -->
+                {% if not inverters and not solar_panels and not batteries and not backup_kits %}
+                <div class="catalog-empty">
+                    <div class="catalog-empty__icon">📦</div>
+                    <h3 class="catalog-empty__title">Товари не знайдено</h3>
+                    <p class="catalog-empty__text">Спробуйте змінити фільтри або повернутися пізніше</p>
+                    <a href="{% url 'mainapp:catalog' %}" class="btn btn-primary">Скинути фільтри</a>
+                </div>
+                {% endif %}
+
+                <!-- Пагінація -->
+                {% if is_paginated %}
+                <div class="pagination">
+                    {% if page_obj.has_previous %}
+                    <a href="?page=1" class="pagination__item">« Перша</a>
+                    <a href="?page={{ page_obj.previous_page_number }}" class="pagination__item">‹ Попередня</a>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                    <span class="pagination__item pagination__item--active">{{ num }}</span>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %} <a
+                        href="?page={{ num }}" class="pagination__item">{{ num }}</a>
+                        {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}" class="pagination__item">Наступна ›</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}" class="pagination__item">Остання »</a>
+                        {% endif %}
+                </div>
+                {% endif %}
+            </main>
         </div>
     </div>
 </div>
 {% endblock %}
 
-{% block extra_js %}
-<script src="{% static 'js/catalog-carousel.js' %}?v=2025012004"></script>
+{% block page_js %}
+<script src="{% static 'js/catalog.js' %}?v=2025012504"></script>
 {% endblock %}

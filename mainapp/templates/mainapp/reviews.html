@@ -4,133 +4,209 @@
 {% block title %}{{ title }}{% endblock %}
 {% block description %}{{ description }}{% endblock %}
 {% block keywords %}{{ keywords }}{% endblock %}
-{% block canonical %}https://greensolartech.com/reviews/{% endblock %}
+{% block canonical %}https://greensolartech.com.ua/reviews/{% endblock %}
 
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/reviews.css' %}">
-<link rel="stylesheet" href="{% static 'css/catalog-reviews-mobile.css' %}?v=2025011907">
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}?v=2025012502">
+<link rel="stylesheet" href="{% static 'css/reviews.css' %}?v=2025012502">
 {% endblock %}
 
 {% block content %}
-<main class="reviews-page">
-    <div class="container">
-        <h1>Відгуки клієнтів</h1>
-        <p>Думки наших клієнтів про співпрацю з GreenSolarTech</p>
+<div class="reviews-page">
+    <div class="reviews-container">
+        <header class="reviews-header">
+            <h1 class="reviews-title">Відгуки клієнтів</h1>
+            <p class="reviews-subtitle">Думки наших клієнтів про співпрацю з GreenSolarTech</p>
+        </header>
 
         {% if messages %}
         {% for message in messages %}
-        <div class="message">{{ message }}</div>
+        <div class="reviews-message">{{ message }}</div>
         {% endfor %}
         {% endif %}
 
         {% if average_rating %}
-        <div class="stats">
-            <strong>{{ average_rating|floatformat:1 }}</strong>
-            {% for star in "12345" %}
-            {% if forloop.counter <= average_rating %}★{% else %}☆{% endif %} {% endfor %} ({{ total_reviews }}
-                відгуків) </div>
-                {% endif %}
+        <div class="reviews-stats">
+            <div class="stats-rating">{{ average_rating|floatformat:1 }}</div>
+            <div class="stats-stars">
+                {% for star in "12345" %}
+                <span
+                    class="star {% if forloop.counter <= average_rating %}star-filled{% else %}star-empty{% endif %}">★</span>
+                {% endfor %}
+            </div>
+            <div class="stats-count">{{ total_reviews }} відгуків</div>
+        </div>
+        {% endif %}
 
-                <h2>Залишити відгук</h2>
-                <form method="post">
-                    {% csrf_token %}
-                    <div>
-                        <label>{{ form.client_name.label }} *</label>
+        <section class="reviews-form-section">
+            <h2 class="section-title">Залишити відгук</h2>
+            <form method="post" class="reviews-form">
+                {% csrf_token %}
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">{{ form.client_name.label }} *</label>
                         {{ form.client_name }}
                         {% if form.client_name.errors %}
-                        <span class="error">{{ form.client_name.errors.0 }}</span>
+                        <span class="form-error">{{ form.client_name.errors.0 }}</span>
                         {% endif %}
                     </div>
 
-                    <div>
-                        <label>{{ form.client_position.label }}</label>
+                    <div class="form-group">
+                        <label class="form-label">{{ form.client_position.label }}</label>
                         {{ form.client_position }}
                     </div>
 
-                    <div>
-                        <label>{{ form.location.label }}</label>
+                    <div class="form-group">
+                        <label class="form-label">{{ form.location.label }}</label>
                         {{ form.location }}
                     </div>
 
-                    <div>
-                        <label>{{ form.project_type.label }}</label>
+                    <div class="form-group">
+                        <label class="form-label">{{ form.project_type.label }}</label>
                         {{ form.project_type }}
                     </div>
+                </div>
 
-                    <div>
-                        <label>{{ form.review_text.label }} *</label>
-                        {{ form.review_text }}
-                        {% if form.review_text.errors %}
-                        <span class="error">{{ form.review_text.errors.0 }}</span>
-                        {% endif %}
-                    </div>
-
-                    <div>
-                        <label>{{ form.rating.label }} *</label>
-                        <div class="stars" id="stars">
-                            <span data-rating="1">★</span>
-                            <span data-rating="2">★</span>
-                            <span data-rating="3">★</span>
-                            <span data-rating="4">★</span>
-                            <span data-rating="5">★</span>
-                        </div>
-                        {{ form.rating }}
-                        {% if form.rating.errors %}
-                        <span class="error">{{ form.rating.errors.0 }}</span>
-                        {% endif %}
-                    </div>
-
-                    <button type="submit">Надіслати відгук</button>
-                </form>
-
-                {% if reviews %}
-                <h2>Відгуки</h2>
-                {% for review in reviews %}
-                <div class="review">
-                    <div class="review-header">
-                        <strong>{{ review.client_name }}</strong>
-                        {% if review.client_position %} - {{ review.client_position }}{% endif %}
-                        <div class="rating">
-                            {% for star in "12345" %}
-                            {% if forloop.counter <= review.rating %}★{% else %}☆{% endif %} {% endfor %} </div>
-                        </div>
-                        <p>{{ review.review_text }}</p>
-                        <div class="review-info">
-                            {% if review.project_type %}Проєкт: {{ review.project_type }} | {% endif %}
-                            {% if review.location %}{{ review.location }} | {% endif %}
-                            {{ review.created_at|date:"d.m.Y" }}
-                        </div>
-                    </div>
-                    {% endfor %}
-                    {% else %}
-                    <p>Поки що немає відгуків.</p>
+                <div class="form-group">
+                    <label class="form-label">{{ form.review_text.label }} *</label>
+                    {{ form.review_text }}
+                    {% if form.review_text.errors %}
+                    <span class="form-error">{{ form.review_text.errors.0 }}</span>
                     {% endif %}
                 </div>
-</main>
+
+                <div class="form-group">
+                    <label class="form-label">{{ form.rating.label }} *</label>
+                    <div class="rating-stars" id="rating-stars">
+                        <span class="rating-star" data-rating="1">★</span>
+                        <span class="rating-star" data-rating="2">★</span>
+                        <span class="rating-star" data-rating="3">★</span>
+                        <span class="rating-star" data-rating="4">★</span>
+                        <span class="rating-star" data-rating="5">★</span>
+                    </div>
+                    {{ form.rating }}
+                    {% if form.rating.errors %}
+                    <span class="form-error">{{ form.rating.errors.0 }}</span>
+                    {% endif %}
+                </div>
+
+                <button type="submit" class="btn-submit">Надіслати відгук</button>
+            </form>
+        </section>
+
+        {% if reviews %}
+        <section class="reviews-list-section">
+            <h2 class="section-title">Відгуки наших клієнтів</h2>
+            <div class="reviews-list">
+                {% for review in reviews %}
+                <article class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <h3 class="author-name">{{ review.client_name }}</h3>
+                            {% if review.client_position %}
+                            <p class="author-position">{{ review.client_position }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="review-rating">
+                            {% for star in "12345" %}
+                            <span
+                                class="star {% if forloop.counter <= review.rating %}star-filled{% else %}star-empty{% endif %}">★</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">{{ review.review_text }}</p>
+                    </div>
+                    <div class="review-meta">
+                        {% if review.project_type %}
+                        <span class="meta-item">Проєкт: {{ review.project_type }}</span>
+                        {% endif %}
+                        {% if review.location %}
+                        <span class="meta-item">{{ review.location }}</span>
+                        {% endif %}
+                        <span class="meta-item meta-date">{{ review.created_at|date:"d.m.Y" }}</span>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+        {% else %}
+        <div class="reviews-empty">
+            <p>Поки що немає відгуків. Будьте першим, хто залишить відгук!</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
 
 {% block extra_js %}
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const stars = document.querySelectorAll('#stars span');
+        const ratingStars = document.querySelectorAll('#rating-stars .rating-star');
         const ratingInput = document.querySelector('select[name="rating"]');
 
-        if (stars && ratingInput) {
-            ratingInput.style.display = 'none';
+        if (ratingStars.length && ratingInput) {
+            // Ховаємо select через CSS клас замість інлайн стилю
+            ratingInput.classList.add('rating-hidden');
 
-            stars.forEach(function (star) {
+            ratingStars.forEach(function (star) {
                 star.addEventListener('click', function () {
-                    const rating = this.getAttribute('data-rating');
+                    const rating = parseInt(this.getAttribute('data-rating'));
                     ratingInput.value = rating;
 
-                    stars.forEach(function (s, index) {
+                    // Оновлюємо зірки через CSS класи
+                    ratingStars.forEach(function (s, index) {
+                        s.classList.remove('rating-selected', 'rating-unselected');
                         if (index < rating) {
-                            s.style.color = '#ffc107';
+                            s.classList.add('rating-selected');
                         } else {
-                            s.style.color = '#ddd';
+                            s.classList.add('rating-unselected');
                         }
                     });
                 });
+
+                // Hover ефекти
+                star.addEventListener('mouseenter', function () {
+                    const rating = parseInt(this.getAttribute('data-rating'));
+                    ratingStars.forEach(function (s, index) {
+                        s.classList.remove('rating-hover');
+                        if (index < rating) {
+                            s.classList.add('rating-hover');
+                        }
+                    });
+                });
+            });
+
+            // Прибираємо hover при виході з контейнера
+            const ratingContainer = document.getElementById('rating-stars');
+            if (ratingContainer) {
+                ratingContainer.addEventListener('mouseleave', function () {
+                    ratingStars.forEach(function (s) {
+                        s.classList.remove('rating-hover');
+                    });
+                });
+            }
+        }
+
+        // Анімація появи відгуків при скролі
+        const reviewCards = document.querySelectorAll('.review-card');
+        if (reviewCards.length) {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('review-visible');
+                    }
+                });
+            }, observerOptions);
+
+            reviewCards.forEach(function (card) {
+                card.classList.add('review-hidden');
+                observer.observe(card);
             });
         }
     });

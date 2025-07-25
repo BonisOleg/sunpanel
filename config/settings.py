@@ -25,7 +25,15 @@ SECRET_KEY = 'django-insecure-24fx!uxk2(re^b7@buh(r_@=6evj34ir8@^2l041sv%f1914y^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', 'testserver', 'sunpanel.onrender.com']
+ALLOWED_HOSTS = [
+    'greensolartech.com.ua',
+    'www.greensolartech.com.ua',
+    'sunpanel.onrender.com',
+    'localhost',
+    '127.0.0.1',
+    '0.0.0.0',
+    'testserver',
+]
 
 
 # Application definition
@@ -136,7 +144,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'greensolartech@gmail.com'  # Змініть на ваш email
+EMAIL_HOST_USER = 'GreenSolarTech.pe@gmail.com'  # Оновлений email
 EMAIL_HOST_PASSWORD = 'your_app_password'  # Пароль додатку Gmail
-DEFAULT_FROM_EMAIL = 'GreenSolarTech <greensolartech@gmail.com>'
-CONTACT_EMAIL = 'greensolartech@gmail.com'  # Email для отримання заявок
+DEFAULT_FROM_EMAIL = 'GreenSolarTech <GreenSolarTech.pe@gmail.com>'
+CONTACT_EMAIL = 'GreenSolarTech.pe@gmail.com'  # Email для отримання заявок

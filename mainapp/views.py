@@ -25,8 +25,10 @@ class IndexView(TemplateView):
             'keywords': 'сонячні електростанції, сонячні панелі, GreenSolarTech, Київ, зелений тариф, альтернативна енергетика',
             'company_info': {
                 'name': 'GreenSolarTech',
-                'phones': ['+380500344881', '+380634952145'],
-                'address': 'Київська область, м. Київ, Україна',
+                'phones': ['+380737230675'],
+                'email': 'GreenSolarTech.pe@gmail.com',
+                'telegram': '@GreenSolarTech',
+                'address': 'БЦ Центр вулиця Васильківська, 34, Київ, 02000',
                 'production_capacity': 1.8,  # МВт встановлено
                 'storage_area': 18,  # приватних СЕС
                 'stock_capacity': 4,  # комерційних СЕС
@@ -213,13 +215,16 @@ class CatalogView(TemplateView):
         ).order_by('-featured', 'name')[:10]
         
         backup_kits = products.filter(
-            Q(category__name__icontains='комплект') | Q(category__name__icontains='комплек')
+            Q(category__name__icontains='комплект') | 
+            Q(category__name__icontains='резервного') |
+            Q(category__name__icontains='живлення')
         ).order_by('-featured', 'name')[:10]
         
         context.update({
             'title': 'Каталог товарів — GreenSolarTech',
             'description': 'Повний каталог обладнання для сонячних електростанцій: інвертори, панелі, акумулятори, комплекти.',
             'keywords': 'каталог сонячного обладнання, інвертори, сонячні панелі, акумулятори',
+            'products': products.order_by('-featured', 'name'),  # Всі товари для загального каталогу
             'categories': categories,
             'brands': brands,
             'selected_category': category,
@@ -350,25 +355,25 @@ def sitemap_xml(request):
     xml_content = '''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://greensolartech.com/</loc>
+        <loc>https://greensolartech.com.ua/</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://greensolartech.com/portfolio/</loc>
+        <loc>https://greensolartech.com.ua/portfolio/</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://greensolartech.com/catalog/</loc>
+        <loc>https://greensolartech.com.ua/catalog/</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://greensolartech.com/reviews/</loc>
+        <loc>https://greensolartech.com.ua/reviews/</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -381,7 +386,7 @@ def robots_txt(request):
     """Генерація robots.txt для SEO"""
     txt_content = '''User-agent: *
 Allow: /
-Sitemap: https://greensolartech.com/sitemap.xml'''
+Sitemap: https://greensolartech.com.ua/sitemap.xml'''
     return HttpResponse(txt_content, content_type='text/plain')
 
 
@@ -460,7 +465,7 @@ class CallbackAPIView(View):
 Дата та час: {datetime.now().strftime('%d.%m.%Y о %H:%M')}
 
 ---
-Автоматичне повідомлення з сайту greensolartech.com
+Автоматичне повідомлення з сайту greensolartech.com.ua
             """
             
             # Відправка email
@@ -551,7 +556,7 @@ Email: {email}
 Дата та час: {datetime.now().strftime('%d.%m.%Y о %H:%M')}
 
 ---
-Автоматичне повідомлення з сайту greensolartech.com
+Автоматичне повідомлення з сайту greensolartech.com.ua
             """
             
             # Відправка email

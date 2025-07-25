@@ -1,428 +1,196 @@
+{% extends 'mainapp/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="uk" itemscope itemtype="https://schema.org/Organization">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="format-detection" content="telephone=yes">
+{% block title %}{{ title }}{% endblock %}
+{% block description %}{{ description }}{% endblock %}
+{% block keywords %}{{ keywords }}{% endblock %}
+{% block canonical %}https://greensolartech.com.ua/{% endblock %}
 
-    <!-- SEO Meta Tags -->
-    <title>{{ title }}</title>
-    <meta name="description" content="{{ description }}">
-    <meta name="keywords" content="{{ keywords }}">
-    <meta name="author" content="GreenSolarTech">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="https://greensolartech.com/">
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}?v=2025012502">
+{% endblock %}
 
-    <!-- OpenGraph Meta Tags -->
-    <meta property="og:title" content="{{ title }}">
-    <meta property="og:description" content="{{ description }}">
-    <meta property="og:image" content="https://greensolartech.com{% static 'images/og-image.jpg' %}">
-    <meta property="og:url" content="https://greensolartech.com/">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="uk_UA">
-    <meta property="og:site_name" content="GreenSolarTech">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ title }}">
-    <meta name="twitter:description" content="{{ description }}">
-    <meta name="twitter:image" content="https://greensolartech.com{% static 'images/og-image.jpg' %}">
-
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "{{ company_info.name }}",
-        "description": "{{ description }}",
-        "url": "https://greensolartech.com",
-        "telephone": "{{ company_info.phones.0 }}",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "UA",
-            "addressRegion": "Київська область",
-            "addressLocality": "м. Київ"
-        },
-        "sameAs": [],
-        "foundingDate": "2020",
-        "numberOfEmployees": "20-50",
-        "makesOffer": {
-            "@type": "Offer",
-            "itemOffered": {
-                "@type": "Product",
-                "name": "Сонячні електростанції",
-                "category": "Альтернативна енергетика",
-                "brand": "GreenSolarTech"
-            }
+{% block content %}
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ company_info.name }}",
+    "description": "{{ description }}",
+            "url": "https://greensolartech.com.ua",
+    "telephone": "+380 73 723 06 75",
+    "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "UA",
+        "addressRegion": "Київська область",
+        "addressLocality": "м. Київ"
+    },
+    "sameAs": [],
+    "foundingDate": "2020",
+    "numberOfEmployees": "20-50",
+    "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": {
+            "@type": "Product",
+            "name": "Сонячні електростанції",
+            "category": "Альтернативна енергетика",
+            "brand": "GreenSolarTech"
         }
     }
-    </script>
+}
+</script>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
-    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+<!-- Головна сторінка -->
+<!-- Hero Section -->
+<section class="hero" id="hero">
+    <video class="hero__video" id="hero-video" preload="auto" muted playsinline webkit-playsinline
+        data-mobile-src="{% static 'videos/heromob.mp4' %}" data-desktop-src="{% static 'videos/hero-video.mp4' %}">
+        <source src="{% static 'videos/hero-video.mp4' %}" type="video/mp4">
+        Ваш браузер не підтримує відео.
+    </video>
+    <div class="hero__overlay"></div>
 
-    <!-- CSRF Token for AJAX -->
-    <meta name="csrf-token" content="{% csrf_token %}">
-
-    <!-- CSS - Fully Optimized for Index Page -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/index-optimized.css' %}">
-    <link rel="stylesheet" href="{% static 'css/cart-modal.css' %}">
-    <link rel="stylesheet" href="{% static 'css/call-button.css' %}">
-</head>
-
-<body>
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="nav__container">
-            <div class="nav__logo">
-                <span class="nav__logo-text">{{ company_info.name }}</span>
-            </div>
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="{% url 'mainapp:index' %}" class="nav__link">головна</a></li>
-                    <li class="nav__item"><a href="{% url 'mainapp:catalog' %}" class="nav__link">каталог</a></li>
-                    <li class="nav__item"><a href="{% url 'mainapp:portfolio' %}" class="nav__link">портфоліо</a></li>
-                    <li class="nav__item"><a href="{% url 'mainapp:reviews' %}" class="nav__link">відгуки</a></li>
-                    <li class="nav__item"><a href="{% url 'mainapp:index' %}#contacts" class="nav__link">контакти</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="nav__toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="nav__cart" id="cart-btn">
+    <div class="hero__content">
+        <h1 class="hero__title">
+            Сонячні електростанції європейської якості — <br>
+            <span class="hero__title-accent">ваш шлях до енергонезалежності</span>
+        </h1>
+        <p class="hero__subtitle">
+            Проектування та будівництво сонячних електростанцій "під ключ".
+            Понад 1.8 МВт встановлених потужностей.
+        </p>
+        <div class="hero__buttons">
+            <a href="{% url 'mainapp:catalog' %}" class="hero__btn" id="hero-btn">
+                <span>дивитись каталог</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12L12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </a>
+            <a href="tel:+380737230675" class="hero__btn hero__btn--contact">
+                <span>зв'язатися з нами</span>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path
-                        d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13H17Z"
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <span class="nav__cart-count" id="cart-count">0</span>
-            </div>
+            </a>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <main class="main">
-        <!-- Hero Section -->
-        <section class="hero" id="hero">
-            <div class="hero__video-container">
-                <video class="hero__video" id="hero-video" preload="metadata" muted playsinline
-                    data-mobile-src="{% static 'videos/heromob.mp4' %}"
-                    data-desktop-src="{% static 'videos/hero-video.mp4' %}">
-                    <source src="{% static 'videos/hero-video.mp4' %}" type="video/mp4">
-                    Ваш браузер не підтримує відео.
-                </video>
-                <div class="hero__overlay"></div>
-            </div>
-            <div class="hero__content">
-                <div class="hero__container">
-                    <h1 class="hero__title">
-                        Сонячні електростанції європейської якості — <br>
-                        <span class="hero__title-accent">ваш шлях до енергонезалежності</span>
-                    </h1>
-                    <p class="hero__subtitle">
-                        Проектування та будівництво сонячних електростанцій "під ключ".
-                        Понад 1.8 МВт встановлених потужностей.
-                    </p>
-                    <button class="hero__btn" id="hero-btn">
-                        <span>дивитись каталог</span>
-                        <svg class="hero__btn-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 5V19M5 12L12 19L19 12" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </section>
+<!-- About Section -->
+<section class="about" id="about">
 
-        <!-- About Section -->
-        <section class="about" id="about">
-            <!-- Liquid Glass блок -->
-            <div class="about__glass-backdrop"></div>
-            <!-- Ліва половина: зображення виробництва -->
-            <div class="about__left-section">
-                <div class="about__image-container">
-                    <img src="{% static 'images/production.jpeg' %}"
-                        data-mobile-src="{% static 'images/productionmob.png' %}"
-                        data-desktop-src="{% static 'images/production.jpeg' %}"
-                        alt="Виробництво сонячних електростанцій GreenSolarTech" class="about__production-image">
-                </div>
-            </div>
-
-            <!-- Права половина: текст із заголовком -->
-            <div class="about__right-section">
-                <div class="about__header">
-                    <h2 class="about__title section-title">про GreenSolarTech</h2>
-                    <p class="about__subtitle">провідна українська компанія з проектування сонячних електростанцій</p>
-                </div>
-
-                <div class="about__text-content">
-                    <p>GreenSolarTech — провідна українська компанія з проектування
-                        та будівництва сонячних електростанцій. Реалізуємо проєкти
-                        по всій Україні, створюючи енергетичну незалежність.</p>
-                    <p>Всі рішення базуються на сучасних технологіях світових
-                        виробників. Гарантуємо надійність та екологічність
-                        наших сонячних електростанцій.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Capacity Section -->
-        <section class="capacity" id="capacity">
-            <div class="capacity__video-container">
-                <video class="capacity__video" id="capacity-video" preload="metadata" muted playsinline
-                    data-mobile-src="{% static 'videos/capacitymob.mp4' %}"
-                    data-desktop-src="{% static 'videos/capacity-video.mp4' %}">
-                    <source src="{% static 'videos/capacity-video.mp4' %}" type="video/mp4">
-                </video>
-                <div class="capacity__overlay"></div>
-            </div>
-            <!-- Liquid Glass блок -->
-            <div class="capacity__glass-container" id="capacity-glass">
-                <div class="capacity__glass-backdrop"></div>
-                <div class="capacity__glass-content">
-                    <div class="capacity__main-layout">
-                        <!-- Ліва половина: заголовок і лічильники -->
-                        <!-- Ліва половина: заголовок і текст -->
-                        <div class="capacity__left-section">
-                            <div class="capacity__header">
-                                <h2 class="capacity__title section-title">Наші потужності</h2>
-                                <p class="capacity__subtitle">Сучасні технології та досвідчена команда з повним циклом
-                                    реалізації проєктів</p>
-                            </div>
-
-                            <div class="capacity__text-content">
-                                <p>Наша компанія працює з найсучаснішим обладнанням провідних світових виробників, що
-                                    дозволяє нам забезпечувати стабільно високу якість та ефективність станцій.</p>
-                                <p>Ми постійно вдосконалюємо наші технології та підвищуємо кваліфікацію команди, щоб
-                                    наші
-                                    сонячні електростанції відповідали найвищим міжнародним стандартам.</p>
-                                <p>Наша команда професіоналів забезпечує повний цикл реалізації - від проектування
-                                    до введення в експлуатацію та сервісного обслуговування.</p>
-                            </div>
-                        </div>
-
-                        <!-- Права половина: лічільники вертикально -->
-                        <div class="capacity__right-section">
-                            <div class="capacity__stats-vertical">
-                                <div class="capacity__stat-card">
-                                    <div class="stat-card__icon">⚡</div>
-                                    <div class="stat-card__number capacity-counter" data-target="1.8">0</div>
-                                    <div class="stat-card__label">МВт встановлено</div>
-                                    <div class="stat-card__description">Загальна потужність</div>
-                                </div>
-                                <div class="capacity__stat-card">
-                                    <div class="stat-card__icon">🏡</div>
-                                    <div class="stat-card__number capacity-counter" data-target="18">0</div>
-                                    <div class="stat-card__label">приватних СЕС</div>
-                                    <div class="stat-card__description">Реалізованих проєктів</div>
-                                </div>
-                                <div class="capacity__stat-card">
-                                    <div class="stat-card__icon">🏢</div>
-                                    <div class="stat-card__number capacity-counter" data-target="4">0</div>
-                                    <div class="stat-card__label">комерційних СЕС</div>
-                                    <div class="stat-card__description">Промислових об'єктів</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-        <!-- Contacts and Certificates Section -->
-        <section class="contacts" id="contacts">
-            <!-- Contact Section -->
-            <div class="contacts__section">
-                <h2 class="contacts__title">Контакти для зв'язку</h2>
-
-                <div class="contacts__phones">
-                    <a href="tel:+380500344881" class="contacts__phone">+380500344881</a>
-                    <a href="tel:+380634952145" class="contacts__phone">+380634952145</a>
-                </div>
-
-                <div class="contacts__location">
-                    <h3 class="contacts__location-title">Україна, м. Київ</h3>
-
-                    <div class="contacts__distances">
-                        <div class="contacts__country-group">
-                            <h4>Зони обслуговування:</h4>
-                            <ul>
-                                <li>Київська область</li>
-                                <li>Полтавська область</li>
-                                <li>Черкаська область</li>
-                                <li>Вінницька область</li>
-                                <li>Дніпропетровська область</li>
-                            </ul>
-                        </div>
-
-                        <div class="contacts__country-group">
-                            <h4>Послуги:</h4>
-                            <ul>
-                                <li>Проектування СЕС</li>
-                                <li>Монтаж та пуско-налагодження</li>
-                                <li>Підключення до зеленого тарифу</li>
-                                <li>Сервісне обслуговування</li>
-                            </ul>
-                        </div>
-
-                        <div class="contacts__country-group">
-                            <h4>Графік роботи:</h4>
-                            <ul>
-                                <li>Пн-Пт: 9:00 - 18:00</li>
-                                <li>Сб-Нд: за домовленістю</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contacts__messengers">
-                    <a href="https://wa.me/380500344881" class="contacts__messenger contacts__messenger--whatsapp"
-                        target="_blank">
-                        WhatsApp
-                    </a>
-                    <a href="viber://chat?number=380500344881" class="contacts__messenger contacts__messenger--viber"
-                        target="_blank">
-                        Viber
-                    </a>
-                </div>
-            </div>
-
-            <!-- Technology Section -->
-            <div class="contacts__section contacts__section--certificates">
-                <h2 class="contacts__title">Технології та партнери</h2>
-
-                <div class="contacts__certificates">
-                    <div class="contacts__certificate">
-                        <h3>Сонячні панелі</h3>
-                        <p><strong>Провідні виробники</strong></p>
-                        <p>Монокристалічні та полікристалічні модулі</p>
-                        <div class="contacts__certificate-data">
-                            <div class="contacts__spec">
-                                <span>Longi Solar:</span>
-                                <span>540-700 Вт</span>
-                            </div>
-                            <div class="contacts__spec">
-                                <span>Jinko Solar:</span>
-                                <span>450-650 Вт</span>
-                            </div>
-                            <div class="contacts__spec">
-                                <span>Risen Energy:</span>
-                                <span>400-600 Вт</span>
-                            </div>
-                            <div class="contacts__spec">
-                                <span>Ефективність:</span>
-                                <span>до 22%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contacts__certificate">
-                        <h3>Інвертори</h3>
-                        <p><strong>Мережеві та гібридні рішення</strong></p>
-                        <p>Високоефективні перетворювачі</p>
-                        <div class="contacts__certificate-data">
-                            <div class="contacts__spec">
-                                <span>SMA:</span>
-                                <span>5-100 кВт</span>
-                            </div>
-                            <div class="contacts__spec">
-                                <span>Sungrow:</span>
-                                <span>3-80 кВт</span>
-                            </div>
-                            <div class="contacts__spec">
-                                <span>Ефективність:</span>
-                                <span>до 98.5%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__container">
-            <div class="footer__logo">
-                <span class="footer__logo-text">{{ company_info.name }}</span>
-            </div>
-            <nav class="footer__nav">
-                <ul class="footer__nav-list">
-                    <li><a href="#about">про нас</a></li>
-                    <li><a href="#capacity">потужності</a></li>
-                    <li><a href="#advantages">переваги</a></li>
-
-                    <li><a href="#contacts">контакти</a></li>
-                </ul>
-            </nav>
-            <div class="footer__meta">
-                <p>&copy; 2024 {{ company_info.name }}. Усі права захищені.</p>
-                <p><a href="/sitemap.xml">Карта сайту</a> • <a href="#privacy">Політика конфіденційності</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Cart Modal -->
-    <div class="cart-modal" id="cart-modal">
-        <div class="cart-modal__overlay" id="cart-overlay"></div>
-        <div class="cart-modal__content">
-            <div class="cart-modal__header">
-                <h3 class="cart-modal__title">Кошик</h3>
-                <button class="cart-modal__close" id="cart-close">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </button>
-            </div>
-            <div class="cart-modal__items" id="cart-items">
-                <!-- Cart items will be inserted here -->
-            </div>
-            <div class="cart-modal__total">
-                <div class="cart-total">
-                    <span class="cart-total__label">Загальна сума:</span>
-                    <span class="cart-total__amount" id="cart-total">₴0</span>
-                </div>
-            </div>
-            <div class="cart-modal__order-form" id="order-form">
-                <form class="order-form" id="checkout-form">
-                    <div class="form-group">
-                        <label for="customer-name">Ім'я *</label>
-                        <input type="text" id="customer-name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="customer-phone">Телефон *</label>
-                        <input type="tel" id="customer-phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="customer-email">Email *</label>
-                        <input type="email" id="customer-email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="customer-comment">Коментар</label>
-                        <textarea id="customer-comment" name="comment" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary order-btn">Відправити замовлення</button>
-                </form>
-            </div>
+    <!-- Ліва половина: зображення виробництва -->
+    <div class="about__left-section">
+        <div class="about__image-container">
+            <img src="{% static 'images/production.jpeg' %}" data-mobile-src="{% static 'images/productionmob.png' %}"
+                data-desktop-src="{% static 'images/production.jpeg' %}"
+                alt="Виробництво сонячних електростанцій GreenSolarTech" class="about__production-image">
         </div>
     </div>
 
-    <!-- JavaScript - Fully Optimized Single Bundle -->
-    <script src="{% static 'js/index-optimized.js' %}"></script>
-</body>
+    <!-- Права половина: текст із заголовком -->
+    <div class="about__right-section">
+        <div class="about__header">
+            <h2 class="about__title">про GreenSolarTech</h2>
+            <p class="about__subtitle">провідна українська компанія з проектування сонячних електростанцій</p>
+        </div>
 
-</html>
+        <div class="about__text-content">
+            <p>GreenSolarTech — провідна українська компанія з проектування
+                та будівництва сонячних електростанцій. Реалізуємо проєкти
+                по всій Україні, створюючи енергетичну незалежність.</p>
+            <p>Всі рішення базуються на сучасних технологіях світових
+                виробників. Гарантуємо надійність та екологічність
+                наших сонячних електростанцій.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Capacity Section -->
+<section class="capacity" id="capacity">
+    <video class="capacity__video" id="capacity-video" preload="auto" muted playsinline webkit-playsinline
+        data-mobile-src="{% static 'videos/capacitymob.mp4' %}"
+        data-desktop-src="{% static 'videos/capacity-video.mp4' %}">
+        <source src="{% static 'videos/capacity-video.mp4' %}" type="video/mp4">
+    </video>
+    <div class="capacity__overlay"></div>
+
+    <div class="capacity__content">
+        <h2 class="capacity__title">наші потужності</h2>
+        <p class="capacity__subtitle">сучасні технології та досвідчена команда з повним циклом реалізації проєктів</p>
+
+        <div class="capacity__text">
+            <p>наша компанія працює з найсучаснішим обладнанням провідних світових виробників, що дозволяє нам
+                забезпечувати стабільно високу якість та ефективність станцій.</p>
+            <p>ми постійно вдосконалюємо наші технології та підвищуємо кваліфікацію команди, щоб наші сонячні
+                електростанції відповідали найвищим міжнародним стандартам.</p>
+            <p>наша команда професіоналів забезпечує повний цикл реалізації - від проектування до введення в
+                експлуатацію та сервісного обслуговування.</p>
+        </div>
+
+        <div class="capacity__stats">
+            <div class="capacity__stat">
+                <div class="capacity__stat-icon">⚡</div>
+                <div class="capacity__stat-number">1.8</div>
+                <div class="capacity__stat-label">МВт встановлено</div>
+                <div class="capacity__stat-description">Загальна потужність</div>
+            </div>
+            <div class="capacity__stat">
+                <div class="capacity__stat-icon">🏡</div>
+                <div class="capacity__stat-number">18</div>
+                <div class="capacity__stat-label">приватних сес</div>
+                <div class="capacity__stat-description">Реалізованих проєктів</div>
+            </div>
+            <div class="capacity__stat">
+                <div class="capacity__stat-icon">🏢</div>
+                <div class="capacity__stat-number">4</div>
+                <div class="capacity__stat-label">комерційних сес</div>
+                <div class="capacity__stat-description">Промислових об'єктів</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Contacts and Certificates Section -->
+<section class="contacts" id="contacts">
+    <!-- Contact Section -->
+    <div class="contacts__section">
+        <h2 class="contacts__title">Контакти для зв'язку</h2>
+
+        <div class="contacts__phones">
+            <a href="tel:+380737230675" class="contacts__phone">+380 73 723 06 75</a>
+        </div>
+
+        <div class="contacts__location">
+            <h3 class="contacts__location-title">{{ company_info.address }}</h3>
+
+            <div class="contacts__email">
+                <h4>Email:</h4>
+                <p>{{ company_info.email }}</p>
+            </div>
+        </div>
+
+        <div class="contacts__messengers">
+            <a href="https://t.me/GreenSolarTech" class="contacts__messenger contacts__messenger--telegram"
+                target="_blank">
+                {{ company_info.telegram }}
+            </a>
+        </div>
+    </div>
+
+
+</section>
+
+{% endblock %}
+
+{% block page_js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}

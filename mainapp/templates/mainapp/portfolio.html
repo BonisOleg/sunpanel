@@ -4,10 +4,11 @@
 {% block title %}{{ title }}{% endblock %}
 {% block description %}{{ description }}{% endblock %}
 {% block keywords %}{{ keywords }}{% endblock %}
-{% block canonical %}https://greensolartech.com/portfolio/{% endblock %}
+{% block canonical %}https://greensolartech.com.ua/portfolio/{% endblock %}
 
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/portfolio.css' %}?v=2">
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}?v=2025012502">
+<link rel="stylesheet" href="{% static 'css/portfolio.css' %}?v=2025012502">
 {% endblock %}
 
 {% block content %}
@@ -51,9 +52,9 @@
             {% if project1.all_images %}
             <div class="project-gallery">
                 <h3 class="gallery-title">Фотогалерея проекту</h3>
-                <div class="gallery-grid">
+                <div class="gallery-grid" data-project="project1">
                     {% for image in project1.all_images %}
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-src="{{ MEDIA_URL }}{{ image }}" data-alt="{{ project1.title }}">
                         <img src="{{ MEDIA_URL }}{{ image }}" alt="{{ project1.title }}" loading="lazy">
                     </div>
                     {% endfor %}
@@ -100,9 +101,9 @@
             {% if project2.all_images %}
             <div class="project-gallery">
                 <h3 class="gallery-title">Фотогалерея проекту</h3>
-                <div class="gallery-grid">
+                <div class="gallery-grid" data-project="project2">
                     {% for image in project2.all_images %}
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-src="{{ MEDIA_URL }}{{ image }}" data-alt="{{ project2.title }}">
                         <img src="{{ MEDIA_URL }}{{ image }}" alt="{{ project2.title }}" loading="lazy">
                     </div>
                     {% endfor %}
@@ -149,9 +150,9 @@
             {% if project3.all_images %}
             <div class="project-gallery">
                 <h3 class="gallery-title">Фотогалерея проекту</h3>
-                <div class="gallery-grid">
+                <div class="gallery-grid" data-project="project3">
                     {% for image in project3.all_images %}
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-src="{{ MEDIA_URL }}{{ image }}" data-alt="{{ project3.title }}">
                         <img src="{{ MEDIA_URL }}{{ image }}" alt="{{ project3.title }}" loading="lazy">
                     </div>
                     {% endfor %}
@@ -170,95 +171,259 @@
 
 {% block extra_js %}
 <script>
-    // Анімація появи блоків при скролі
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function (entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Додаємо анімацію до всіх блоків проектів
     document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('.project-block').forEach(block => {
-            block.style.opacity = '0';
-            block.style.transform = 'translateY(30px)';
-            block.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(block);
-        });
+        // Змінні для галереї
+        let currentProject = null;
+        let currentIndex = 0;
+        let projectImages = [];
+        let lightboxElement = null;
 
-        // Lightbox для галереї
-        document.querySelectorAll('.gallery-item img').forEach(img => {
-            img.addEventListener('click', function () {
-                const lightbox = document.createElement('div');
-                lightbox.className = 'lightbox';
-                lightbox.innerHTML = `
-                    <div class="lightbox-content">
-                        <img src="${this.src}" alt="${this.alt}">
-                        <button class="lightbox-close">&times;</button>
+        // Створення lightbox
+        function createLightbox() {
+            if (lightboxElement) {
+                console.log('Lightbox already exists');
+                return;
+            }
+
+            console.log('Creating lightbox element');
+            lightboxElement = document.createElement('div');
+            lightboxElement.className = 'lightbox';
+            lightboxElement.innerHTML = `
+                <div class="lightbox-content">
+                    <img class="lightbox-image" src="" alt="">
+                    <button class="lightbox-close">&times;</button>
+                    <button class="lightbox-nav lightbox-prev">&#8249;</button>
+                    <button class="lightbox-nav lightbox-next">&#8250;</button>
+                    <div class="lightbox-info">
+                        <div class="lightbox-counter"></div>
+                        <div class="lightbox-title"></div>
                     </div>
-                `;
-                document.body.appendChild(lightbox);
-                document.body.style.overflow = 'hidden';
+                </div>
+            `;
+            document.body.appendChild(lightboxElement);
+            console.log('Lightbox element created and added to body');
 
-                lightbox.addEventListener('click', function (e) {
-                    if (e.target === lightbox || e.target.classList.contains('lightbox-close')) {
-                        document.body.removeChild(lightbox);
-                        document.body.style.overflow = 'auto';
+            setupLightboxEvents();
+        }
+
+        // Налаштування подій lightbox
+        function setupLightboxEvents() {
+            // Закриття lightbox
+            lightboxElement.addEventListener('click', function (e) {
+                if (e.target === lightboxElement || e.target.classList.contains('lightbox-close')) {
+                    closeLightbox();
+                }
+            });
+
+            // Кнопки навігації
+            const prevBtn = lightboxElement.querySelector('.lightbox-prev');
+            const nextBtn = lightboxElement.querySelector('.lightbox-next');
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    showPrevImage();
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    showNextImage();
+                });
+            }
+
+            // Клавіатурна навігація
+            document.addEventListener('keydown', function (e) {
+                if (!lightboxElement.classList.contains('active')) return;
+
+                switch (e.key) {
+                    case 'Escape':
+                        closeLightbox();
+                        break;
+                    case 'ArrowLeft':
+                        showPrevImage();
+                        break;
+                    case 'ArrowRight':
+                        showNextImage();
+                        break;
+                }
+            });
+        }
+
+        // Відкриття галереї
+        function openLightbox(project, index) {
+            console.log('Opening lightbox for project:', project, 'index:', index);
+            currentProject = project;
+            currentIndex = index;
+
+            // Збираємо зображення проекту
+            const galleryGrid = document.querySelector(`[data-project="${project}"]`);
+            if (!galleryGrid) {
+                console.error('Gallery grid not found for project:', project);
+                return;
+            }
+
+            const galleryItems = galleryGrid.querySelectorAll('.gallery-item');
+            console.log('Found gallery items for project:', galleryItems.length);
+
+            projectImages = Array.from(galleryItems).map(function (item) {
+                const img = item.querySelector('img');
+                const src = item.dataset.src || (img ? img.src : '');
+                const alt = item.dataset.alt || (img ? img.alt : '');
+                console.log('Image data:', { src, alt });
+                return { src, alt };
+            });
+
+            if (projectImages.length === 0) {
+                console.error('No images found in project:', project);
+                return;
+            }
+
+            console.log('Project images:', projectImages);
+
+            updateLightboxContent();
+            lightboxElement.classList.add('active');
+            document.body.classList.add('body-scroll-lock');
+
+            console.log('Lightbox opened, active class added');
+        }
+
+        // Оновлення контенту lightbox
+        function updateLightboxContent() {
+            console.log('Updating lightbox content, current index:', currentIndex);
+            if (!lightboxElement || !projectImages[currentIndex]) {
+                console.error('Lightbox element or current image not found');
+                return;
+            }
+
+            const image = lightboxElement.querySelector('.lightbox-image');
+            const counter = lightboxElement.querySelector('.lightbox-counter');
+            const title = lightboxElement.querySelector('.lightbox-title');
+            const prevBtn = lightboxElement.querySelector('.lightbox-prev');
+            const nextBtn = lightboxElement.querySelector('.lightbox-next');
+
+            const currentImage = projectImages[currentIndex];
+            console.log('Current image:', currentImage);
+
+            if (image) {
+                image.src = currentImage.src;
+                image.alt = currentImage.alt;
+                console.log('Image updated:', currentImage.src);
+            }
+
+            if (counter) {
+                counter.textContent = `${currentIndex + 1} з ${projectImages.length}`;
+            }
+
+            if (title) {
+                title.textContent = currentImage.alt;
+            }
+
+            // Управління видимістю кнопок навігації
+            if (prevBtn) {
+                prevBtn.classList.toggle('hidden', currentIndex === 0);
+            }
+
+            if (nextBtn) {
+                nextBtn.classList.toggle('hidden', currentIndex === projectImages.length - 1);
+            }
+
+            console.log('Lightbox content updated successfully');
+        }
+
+        // Наступне зображення
+        function showNextImage() {
+            if (currentIndex < projectImages.length - 1) {
+                currentIndex++;
+                updateLightboxContent();
+            }
+        }
+
+        // Попереднє зображення
+        function showPrevImage() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateLightboxContent();
+            }
+        }
+
+        // Закриття lightbox
+        function closeLightbox() {
+            if (lightboxElement) {
+                lightboxElement.classList.remove('active');
+            }
+            document.body.classList.remove('body-scroll-lock');
+        }
+
+        // Ініціалізація кліків по галереї
+        function initGalleryClicks() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            console.log('Found gallery items:', galleryItems.length);
+
+            galleryItems.forEach(function (item, globalIndex) {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    console.log('Gallery item clicked:', globalIndex);
+
+                    const galleryGrid = item.closest('.gallery-grid');
+                    if (!galleryGrid) {
+                        console.error('Gallery grid not found');
+                        return;
                     }
+
+                    const project = galleryGrid.dataset.project;
+                    if (!project) {
+                        console.error('Project dataset not found');
+                        return;
+                    }
+
+                    console.log('Opening project:', project);
+
+                    const projectItems = galleryGrid.querySelectorAll('.gallery-item');
+                    const projectIndex = Array.from(projectItems).indexOf(item);
+
+                    console.log('Project index:', projectIndex);
+
+                    createLightbox();
+                    openLightbox(project, projectIndex);
                 });
             });
-        });
+        }
+
+        // Анімації появи блоків
+        function initScrollAnimations() {
+            const projectBlocks = document.querySelectorAll('.project-block');
+
+            projectBlocks.forEach(function (block) {
+                block.classList.add('project-block-hidden');
+            });
+
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('project-block-hidden');
+                        entry.target.classList.add('project-block-visible');
+                    }
+                });
+            }, observerOptions);
+
+            projectBlocks.forEach(function (block) {
+                observer.observe(block);
+            });
+        }
+
+        // Ініціалізація всього
+        console.log('Portfolio gallery script initialized');
+        initGalleryClicks();
+        initScrollAnimations();
+        console.log('Portfolio gallery initialization complete');
     });
 </script>
 
-<style>
-    /* Lightbox стилі */
-    .lightbox {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        padding: 20px;
-    }
-
-    .lightbox-content {
-        position: relative;
-        max-width: 90%;
-        max-height: 90%;
-    }
-
-    .lightbox-content img {
-        width: 100%;
-        height: auto;
-        max-height: 80vh;
-        object-fit: contain;
-    }
-
-    .lightbox-close {
-        position: absolute;
-        top: -40px;
-        right: 0;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 30px;
-        cursor: pointer;
-        width: 40px;
-        height: 40px;
-    }
-</style>
 {% endblock %}

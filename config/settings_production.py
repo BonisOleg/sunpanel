@@ -12,12 +12,14 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-production-key-change
 
 # Hosts
 ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1', 
+    'greensolartech.com.ua',
+    'www.greensolartech.com.ua',
+    'greensolartech.onrender.com',
+    'sunpanel.onrender.com',
     '.onrender.com',
     '.render.com',
-    'greensolartech.onrender.com',
-    'sunpanel.onrender.com'
+    'localhost',
+    '127.0.0.1',
 ]
 
 # Database - PostgreSQL on Render (using DATABASE_URL)

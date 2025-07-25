@@ -4,13 +4,10 @@
 {% block title %}{{ title }}{% endblock %}
 {% block description %}{{ description }}{% endblock %}
 {% block keywords %}{{ keywords }}{% endblock %}
-{% block canonical %}https://greensolartech.com/catalog/{{ category_key }}/{% endblock %}
+{% block canonical %}https://greensolartech.com.ua/catalog/{{ category_key }}/{% endblock %}
 
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/catalog.css' %}?v=2025012004">
-<link rel="stylesheet" href="{% static 'css/product-unified.css' %}?v=2025012301">
-<link rel="stylesheet" href="{% static 'css/product-links.css' %}?v=2025012001">
-<link rel="stylesheet" href="{% static 'css/ios-safari-optimizations.css' %}?v=2025012313">
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/catalog.css' %}?v=2025012504">
 {% endblock %}
 
 {% block content %}
@@ -62,8 +59,11 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="filters-btn">Застосувати фільтри</button>
-                        <a href="{% url 'mainapp:category' category_key %}" class="filters-reset">Скинути фільтри</a>
+                        <div class="filters-actions">
+                            <button type="submit" class="btn btn-primary filter-btn">Застосувати</button>
+                            <a href="{% url 'mainapp:category' category_key %}"
+                                class="btn filter-btn filter-btn--clear">Очистити</a>
+                        </div>
                     </form>
 
                     <!-- Швидкі переходи на інші категорії -->
@@ -87,41 +87,39 @@
                 </div>
             </aside>
 
-            <!-- Список товарів праворуч (80%) - використовуємо ту ж структуру що й в основному каталозі -->
-            <div class="catalog-content">
-                <div class="category-section">
-                    <div class="category-header">
-                        <h2 class="category-title">{{ category_name }}</h2>
-                        <div class="products-count">
-                            Знайдено товарів: <strong>{{ products.count }}</strong>
-                        </div>
+            <!-- Основний контент -->
+            <main class="catalog-main">
+                <div class="catalog-header">
+                    <h1 class="catalog-title">{{ category_name }}</h1>
+                    <div class="products-count">
+                        Знайдено товарів: <strong>{{ products.count }}</strong>
                     </div>
+                </div>
 
-                    {% if products %}
+                {% if products %}
+                <div class="category-section">
                     <div class="products-grid">
                         {% for product in products %}
                         <div class="product-card">
-                            <a href="{% url 'mainapp:product_detail' product.id %}" class="product-link">
-                                {% if product.image %}
-                                <div class="product-image">
-                                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                            <a href="{% url 'mainapp:product_detail' product.id %}" class="product-card__link">
+                                <div class="product-card__image-container">
+                                    {% if product.image %}
+                                    <img src="{{ product.image.url }}" alt="{{ product.name }}"
+                                        class="product-card__image">
+                                    {% else %}
+                                    <div class="product-card__image product-card__image--placeholder">
+                                        <span>Немає зображення</span>
+                                    </div>
+                                    {% endif %}
                                     {% if product.featured %}
-                                    <div class="product-badge">Рекомендовано</div>
+                                    <span class="product-card__badge">Рекомендовано</span>
                                     {% endif %}
                                 </div>
-                                {% else %}
-                                <div class="product-image product-placeholder">
-                                    <span>Немає зображення</span>
-                                    {% if product.featured %}
-                                    <div class="product-badge">Рекомендовано</div>
-                                    {% endif %}
-                                </div>
-                                {% endif %}
-                                <div class="product-info">
-                                    <h3 class="product-name">{{ product.name }}</h3>
-                                    <p class="product-brand">{{ product.brand.name }}</p>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">{{ product.name }}</h3>
+                                    <div class="product-card__brand">{{ product.brand.name }}</div>
                                     {% if product.power or product.efficiency or product.warranty %}
-                                    <div class="product-specs">
+                                    <div class="product-card__specs">
                                         {% if product.power %}
                                         <div class="spec-item">
                                             <span class="spec-label">Потужність:</span>
@@ -142,30 +140,32 @@
                                         {% endif %}
                                     </div>
                                     {% endif %}
-                                    <p class="product-price">₴{{ product.price|floatformat:0 }}</p>
+                                    <div class="product-card__price">₴{{ product.price|floatformat:0 }}</div>
                                 </div>
                             </a>
-                            <button class="add-to-cart-btn" data-product-id="{{ product.id }}"
-                                data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
-                                data-product-image="{% if product.image %}{{ product.image.url }}{% endif %}">
-                                Додати в кошик
-                            </button>
+                            <div class="product-card__footer">
+                                <button class="product-card__btn add-to-cart-btn" data-product-id="{{ product.id }}"
+                                    data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
+                                    data-product-image="{% if product.image %}{{ product.image.url }}{% endif %}">
+                                    Додати в кошик
+                                </button>
+                            </div>
                         </div>
                         {% endfor %}
                     </div>
-                    {% else %}
-                    <div class="no-products">
-                        <p>У категорії "{{ category_name }}" товари не знайдено</p>
-                        <a href="{% url 'mainapp:catalog' %}" class="reset-filters-btn">Переглянути весь каталог</a>
-                    </div>
-                    {% endif %}
                 </div>
-            </div>
+                {% else %}
+                <div class="no-products">
+                    <p>У категорії "{{ category_name }}" товари не знайдено</p>
+                    <a href="{% url 'mainapp:catalog' %}" class="btn btn-primary">Переглянути весь каталог</a>
+                </div>
+                {% endif %}
+            </main>
         </div>
     </div>
 </div>
 {% endblock %}
 
-{% block extra_js %}
-<script src="{% static 'js/catalog-carousel.js' %}?v=2025012004"></script>
+{% block page_js %}
+<script src="{% static 'js/catalog.js' %}?v=2025012504"></script>
 {% endblock %}

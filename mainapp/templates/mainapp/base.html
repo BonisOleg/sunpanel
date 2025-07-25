@@ -13,13 +13,13 @@
     <meta name="keywords" content="{% block keywords %}{{ keywords }}{% endblock %}">
     <meta name="author" content="GreenSolarTech">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="{% block canonical %}https://greensolartech.com/{% endblock %}">
+    <link rel="canonical" href="{% block canonical %}https://greensolartech.com.ua/{% endblock %}">
 
     <!-- OpenGraph Meta Tags -->
     <meta property="og:title" content="{% block og_title %}{{ title }}{% endblock %}">
     <meta property="og:description" content="{% block og_description %}{{ description }}{% endblock %}">
-    <meta property="og:image" content="https://greensolartech.com{% static 'images/og-image.jpg' %}">
-    <meta property="og:url" content="{% block og_url %}https://greensolartech.com/{% endblock %}">
+    <meta property="og:image" content="https://greensolartech.com.ua{% static 'images/og-image.jpg' %}">
+    <meta property="og:url" content="{% block og_url %}https://greensolartech.com.ua/{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="uk_UA">
     <meta property="og:site_name" content="GreenSolarTech">
@@ -28,37 +28,47 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{% block twitter_title %}{{ title }}{% endblock %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ description }}{% endblock %}">
-    <meta name="twitter:image" content="https://greensolartech.com{% static 'images/og-image.jpg' %}">
+    <meta name="twitter:image" content="https://greensolartech.com.ua{% static 'images/og-image.jpg' %}">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
     <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
 
-    <!-- CSRF Token for AJAX -->
+    <!-- CSRF Token -->
     <meta name="csrf-token" content="{% csrf_token %}">
 
-    <!-- CSS -->
+    <!-- Шрифти -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <!-- ОСНОВНІ СТИЛІ - ПРАВИЛЬНИЙ ПОРЯДОК -->
-    <link rel="stylesheet" href="{% static 'css/index-optimized.css' %}?v=2025012501">
-    <link rel="stylesheet" href="{% static 'css/cart-modal.css' %}?v=2025011801">
-    <link rel="stylesheet" href="{% static 'css/call-button.css' %}">
-    <link rel="stylesheet" href="{% static 'css/ios-safari-optimizations.css' %}?v=2025012313">
 
-    {% block extra_css %}{% endblock %}
+    <!-- Базові стилі -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}?v=2025012502">
+    {% block page_css %}{% endblock %}
 </head>
 
 <body>
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav__container">
+            <button class="nav__toggle" id="nav-toggle" aria-label="Відкрити меню" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
             <div class="nav__logo">
                 <a href="{% url 'mainapp:index' %}" class="nav__logo-link">
                     <span class="nav__logo-text">GreenSolarTech</span>
                 </a>
+            </div>
+            <div class="nav__cart" id="cart-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13H17Z"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="nav__cart-count" id="cart-count">0</span>
             </div>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -69,19 +79,6 @@
                     <li class="nav__item"><a href="{% url 'mainapp:index' %}#contacts" class="nav__link">контакти</a>
                     </li>
                 </ul>
-            </div>
-            <div class="nav__toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="nav__cart" id="cart-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path
-                        d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13H17Z"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <span class="nav__cart-count" id="cart-count">0</span>
             </div>
         </div>
     </nav>
@@ -162,9 +159,18 @@
         </div>
     </div>
 
-    <!-- JavaScript - Optimized Bundle -->
-    {% block extra_js %}{% endblock %}
-    <script src="{% static 'js/index-optimized.js' %}"></script>
+    <!-- Call Button -->
+    <a href="tel:+380737230675" class="call-button" title="Зателефонувати">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="{% static 'js/base.js' %}?v=2025012502"></script>
+    {% block page_js %}{% endblock %}
 </body>
 
 </html>

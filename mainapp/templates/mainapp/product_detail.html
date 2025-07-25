@@ -4,11 +4,10 @@
 {% block title %}{{ title }}{% endblock %}
 {% block description %}{{ description }}{% endblock %}
 {% block keywords %}{{ keywords }}{% endblock %}
-{% block canonical %}https://greensolartech.com/product/{{ product.id }}/{% endblock %}
+{% block canonical %}https://greensolartech.com.ua/product/{{ product.id }}/{% endblock %}
 
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/catalog.css' %}">
-<link rel="stylesheet" href="{% static 'css/product-unified.css' %}?v=2025012301">
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/catalog.css' %}?v=2025012504">
 <style>
     /* Стилі для детальної сторінки товару */
     .product-detail {
@@ -712,7 +711,7 @@
                         data-product-image="{% if main_image %}{{ main_image.url }}{% endif %}">
                         Додати в кошик
                     </button>
-                    <a href="tel:+380500344881" class="contact-btn">Зателефонувати</a>
+                    <a href="tel:+380737230675" class="contact-btn">Зателефонувати</a>
                 </div>
             </div>
 
