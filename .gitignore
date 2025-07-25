@@ -31,7 +31,9 @@ venv.bak/
 # Django
 db.sqlite3
 db.sqlite3-journal
-# media/ - Commented out for production deployment
+media/
+static/
+staticfiles/
 
 # IDEs
 .vscode/
