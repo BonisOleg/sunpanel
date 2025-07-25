@@ -28,4 +28,7 @@ python manage.py setup_media_for_production --settings=config.settings_productio
 echo "🎨 Collecting static files..."
 python manage.py collectstatic --no-input --settings=config.settings_production
 
+echo "🔄 Updating media URL settings..."
+python manage.py update_media_urls --settings=config.settings_production
+
 echo "✅ Build completed successfully!" 
