@@ -628,7 +628,7 @@
             <!-- Галерея зображень -->
             <div class="product-gallery">
                 {% if main_image %}
-                <img src="{{ main_image.url }}" alt="{{ product.name }}" class="main-image" id="mainImage">
+                <img src="{{ main_image.image_url }}" alt="{{ product.name }}" class="main-image" id="mainImage">
                 {% else %}
                 <div class="main-image"
                     style="display: flex; align-items: center; justify-content: center; background: #f0f0f0; color: #666;">
@@ -639,14 +639,14 @@
                 {% if product_images %}
                 <div class="thumbnail-gallery">
                     {% for image in product_images %}
-                    <img src="{{ image.image.url }}" alt="{{ image.alt_text|default:product.name }}"
+                    <img src="{{ image.image_url }}" alt="{{ image.alt_text|default:product.name }}"
                         class="thumbnail {% if forloop.first %}active{% endif %}"
-                        onclick="changeMainImage('{{ image.image.url }}', this)">
+                        onclick="changeMainImage('{{ image.image_url }}', this)">
                     {% endfor %}
                 </div>
                 {% elif product.image %}
                 <div class="thumbnail-gallery">
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="thumbnail active">
+                    <img src="{{ product.image_url }}" alt="{{ product.name }}" class="thumbnail active">
                 </div>
                 {% endif %}
             </div>
@@ -732,7 +732,7 @@
                 {% for similar in similar_products %}
                 <div class="similar-product-card">
                     {% if similar.image %}
-                    <img src="{{ similar.image.url }}" alt="{{ similar.name }}" class="similar-product-image">
+                    <img src="{{ similar.image_url }}" alt="{{ similar.name }}" class="similar-product-image">
                     {% else %}
                     <div class="similar-product-image"
                         style="display: flex; align-items: center; justify-content: center; background: #f0f0f0; color: #666;">
