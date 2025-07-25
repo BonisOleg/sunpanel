@@ -409,9 +409,9 @@ class ProductDetailView(TemplateView):
         
         # Якщо немає додаткових зображень, використовуємо основне
         if not product_images and product.image:
-            main_image = product.image
+            main_image = product  # ✅ ПЕРЕДАЄМО ОБ'ЄКТ ТОВАРУ, НЕ ImageField!
         else:
-            main_image = product_images.first().image if product_images else product.image
+            main_image = product_images.first() if product_images else product  # ✅ ОБ'ЄКТ ProductImage або Product!
         
         # Схожі товари (з тієї ж категорії або бренду) з оптимізацією
         similar_products = Product.objects.filter(
