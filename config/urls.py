@@ -24,13 +24,10 @@ urlpatterns = [
     path('', include('mainapp.urls')),
 ]
 
-# Serve media files during development
+# Serve media files during development only
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-# Завжди додаємо медіа URL (для локалки і для production)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-# Статичні файли лише для розробки 
-if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+else:
+    # Production: serve media files through WhiteNoise-compatible path
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

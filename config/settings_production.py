@@ -41,8 +41,8 @@ MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Медіа файли - обслуговуються через static на продакшн
-MEDIA_URL = '/static/media/'
+# Медіа файли - обслуговуються через WhiteNoise як /media/
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'media')
 
 # Додаємо медіа папку до статичних директорій для WhiteNoise
@@ -50,13 +50,16 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# WhiteNoise налаштування для медіа файлів
+# WhiteNoise налаштування 
 WHITENOISE_USE_FINDERS = True
 WHITENOISE_AUTOREFRESH = True
 WHITENOISE_STATIC_PREFIX = '/static/'
 
 # Додаткові налаштування для медіа через WhiteNoise
 WHITENOISE_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Налаштування для обслуговування медіа файлів через WhiteNoise
+WHITENOISE_SKIP_COMPRESS_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'ico', 'woff', 'woff2']
 
 # Email configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
