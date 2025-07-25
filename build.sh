@@ -31,4 +31,10 @@ python manage.py collectstatic --no-input --settings=config.settings_production
 echo "🔄 Updating media URL settings..."
 python manage.py update_media_urls --settings=config.settings_production
 
+echo "📦 Importing products..."
+python manage.py universal_import_products --settings=config.settings_production
+
+echo "🧹 Clearing all caches..."
+python manage.py clear_all_cache --settings=config.settings_production
+
 echo "✅ Build completed successfully!" Dummy change to trigger Render rebuild
