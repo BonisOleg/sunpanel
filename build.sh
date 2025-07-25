@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build script for Render deployment
+# Build script for Render deployment with optimized media handling
 
 set -o errexit  # Exit on error
 
@@ -22,8 +22,11 @@ echo "✏️ Перевірка та виправлення орфографії
 python manage.py remove_russian_categories --settings=config.settings_production
 python manage.py check_spelling_errors --fix --settings=config.settings_production
 
+echo "📦 Імпорт товарів (якщо потрібно)..."
+python manage.py universal_import_products --settings=config.settings_production
+
 echo "📁 Setting up media files for production..."
-python manage.py setup_media_for_production --settings=config.settings_production
+python manage.py setup_media_for_production --verify --settings=config.settings_production
 
 echo "🎨 Collecting static files..."
 python manage.py collectstatic --no-input --settings=config.settings_production
@@ -40,10 +43,7 @@ python manage.py reset_product_ids --settings=config.settings_production
 echo "🗑️ Cleaning up old product files..."
 python manage.py cleanup_old_products --min-id=50 --settings=config.settings_production
 
-echo "📦 Importing products..."
-python manage.py universal_import_products --settings=config.settings_production
-
 echo "🧹 Clearing all caches..."
 python manage.py clear_all_cache --settings=config.settings_production
 
-echo "✅ Build completed successfully!" Dummy change to trigger Render rebuild
+echo "✅ Build completed successfully! All media files ready for WhiteNoise."

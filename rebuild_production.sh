@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # СКРИПТ ДЛЯ ПОВНОГО ПЕРЕБІЛДУ PRODUCTION НА RENDER
+# З оптимізованою логікою обробки зображень
 
 set -o errexit  # Exit on error
 
@@ -32,17 +33,20 @@ echo "✏️ Перевірка та виправлення орфографії
 python manage.py remove_russian_categories --settings=config.settings_production
 python manage.py check_spelling_errors --fix --settings=config.settings_production
 
-echo "📦 ІМПОРТ ТОВАРІВ..."
+echo "📦 ПОВНИЙ ІМПОРТ ТОВАРІВ..."
 python manage.py universal_import_products --settings=config.settings_production
+
+echo "📁 НАЛАШТУВАННЯ МЕДІА ФАЙЛІВ ДЛЯ PRODUCTION..."
+python manage.py setup_media_for_production --verify --clean --settings=config.settings_production
 
 echo "🎨 ЗБІРКА СТАТИЧНИХ ФАЙЛІВ..."
 python manage.py collectstatic --no-input --settings=config.settings_production
 
-echo "📁 НАЛАШТУВАННЯ МЕДІА ФАЙЛІВ..."
-python manage.py setup_media_for_production --settings=config.settings_production
-
 echo "🔄 ОНОВЛЕННЯ МЕДІА URL..."
 python manage.py update_media_urls --settings=config.settings_production
+
+echo "🔍 ТЕСТУВАННЯ ЗОБРАЖЕНЬ..."
+python manage.py test_production_images --limit=5 --settings=config.settings_production
 
 echo "🧹 ОЧИЩЕННЯ ВСІХ КЕШІВ..."
 python manage.py clear_all_cache --settings=config.settings_production
@@ -54,4 +58,5 @@ if [[ "$RENDER" == "true" ]]; then
 fi
 
 echo "🎉 ПОВНИЙ ПЕРЕБІЛД ЗАВЕРШЕНО!"
-echo "🌐 Сайт готовий: https://greensolartech.com.ua" 
+echo "🌐 Сайт готовий: https://greensolartech.com.ua"
+echo "📊 Всі зображення товарів налаштовані для WhiteNoise" 

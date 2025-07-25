@@ -90,24 +90,32 @@ class Product(models.Model):
         return self.name
     
     def get_image_url(self):
-        """Отримує правильний URL зображення з кешбастингом"""
+        """Отримує правильний URL зображення для всіх середовищ"""
         if not self.image:
             return ''
         
         try:
-            # Використовуємо стандартний Django URL який автоматично працює з налаштуваннями
-            base_url = self.image.url
-            
-            # Додаємо версіонування для кешбастингу тільки у продакшні
-            if hasattr(settings, 'DEBUG') and not settings.DEBUG:
-                # У продакшні додаємо хеш для уникнення кешування
-                file_hash = hashlib.md5(f"{self.image.name}{self.updated_at}".encode()).hexdigest()[:8]
-                return f"{base_url}?v={file_hash}"
-            else:
-                # У розробці просто повертаємо стандартний URL
-                return base_url
+            # Перевіряємо чи це продакшн (за MEDIA_URL)
+            if hasattr(settings, 'MEDIA_URL') and settings.MEDIA_URL == '/static/media/':
+                # ПРОДАКШН: файли обслуговуються через WhiteNoise як статичні
+                # Формуємо URL напряму для staticfiles/media/
+                image_path = str(self.image.name)
+                if image_path.startswith('products/'):
+                    # URL вже правильний відносно MEDIA_URL
+                    static_url = f"{settings.MEDIA_URL}{image_path}"
+                else:
+                    static_url = f"{settings.MEDIA_URL}products/gallery/{image_path}"
                 
-        except Exception:
+                # Додаємо кешбастинг для продакшн
+                file_hash = hashlib.md5(f"{self.image.name}{self.updated_at}".encode()).hexdigest()[:8]
+                return f"{static_url}?v={file_hash}"
+            else:
+                # ЛОКАЛЬНА РОЗРОБКА: стандартний Django URL
+                return self.image.url
+                
+        except Exception as e:
+            # Fallback: якщо щось не працює, повертаємо порожній рядок
+            print(f"Error generating image URL for product {self.id}: {e}")
             return ''
     
     @property
@@ -132,24 +140,32 @@ class ProductImage(models.Model):
         return f"{self.product.name} - Зображення {self.order}"
     
     def get_image_url(self):
-        """Отримує правильний URL зображення з кешбастингом"""
+        """Отримує правильний URL зображення для всіх середовищ"""
         if not self.image:
             return ''
         
         try:
-            # Використовуємо стандартний Django URL який автоматично працює з налаштуваннями
-            base_url = self.image.url
-            
-            # Додаємо версіонування для кешбастингу тільки у продакшні
-            if hasattr(settings, 'DEBUG') and not settings.DEBUG:
-                # У продакшні додаємо хеш для уникнення кешування
-                file_hash = hashlib.md5(f"{self.image.name}{self.product.updated_at}".encode()).hexdigest()[:8]
-                return f"{base_url}?v={file_hash}"
-            else:
-                # У розробці просто повертаємо стандартний URL
-                return base_url
+            # Перевіряємо чи це продакшн (за MEDIA_URL)
+            if hasattr(settings, 'MEDIA_URL') and settings.MEDIA_URL == '/static/media/':
+                # ПРОДАКШН: файли обслуговуються через WhiteNoise як статичні
+                # Формуємо URL напряму для staticfiles/media/
+                image_path = str(self.image.name)
+                if image_path.startswith('products/'):
+                    # URL вже правильний відносно MEDIA_URL
+                    static_url = f"{settings.MEDIA_URL}{image_path}"
+                else:
+                    static_url = f"{settings.MEDIA_URL}products/gallery/{image_path}"
                 
-        except Exception:
+                # Додаємо кешбастинг для продакшн
+                file_hash = hashlib.md5(f"{self.image.name}{self.product.updated_at}".encode()).hexdigest()[:8]
+                return f"{static_url}?v={file_hash}"
+            else:
+                # ЛОКАЛЬНА РОЗРОБКА: стандартний Django URL
+                return self.image.url
+                
+        except Exception as e:
+            # Fallback: якщо щось не працює, повертаємо порожній рядок
+            print(f"Error generating image URL for product image {self.id}: {e}")
             return ''
     
     @property
