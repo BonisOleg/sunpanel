@@ -83,16 +83,7 @@ class Command(BaseCommand):
             )
         )
         
-        # Запускаємо collectstatic для збирання всіх статичних файлів
-        self.stdout.write('📦 Запускаю collectstatic...')
-        try:
-            collect_command = CollectStaticCommand()
-            collect_command.handle(interactive=False, verbosity=0)
-            self.stdout.write(self.style.SUCCESS('✅ Collectstatic завершено'))
-        except Exception as e:
-            self.stdout.write(
-                self.style.WARNING(f'⚠️ Помилка collectstatic: {e}')
-            )
+        # Collectstatic буде запущено окремо в build.sh
         
         self.stdout.write(
             self.style.SUCCESS(

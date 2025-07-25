@@ -17,14 +17,14 @@ class Command(BaseCommand):
         self.stdout.write(f'📦 STATIC_URL: {settings.STATIC_URL}')
         self.stdout.write(f'📁 STATIC_ROOT: {settings.STATIC_ROOT}')
         
-        # Перевіряємо чи правильні налаштування
+        # Перевіряємо чи правильні налаштування для production
         if settings.MEDIA_URL == '/static/media/':
             self.stdout.write(
-                self.style.SUCCESS('✅ MEDIA_URL правильно налаштований на /static/media/')
+                self.style.SUCCESS('✅ MEDIA_URL правильно налаштований на /static/media/ для WhiteNoise')
             )
         else:
             self.stdout.write(
-                self.style.WARNING(f'⚠️ MEDIA_URL: {settings.MEDIA_URL} (очікується /static/media/)')
+                self.style.WARNING(f'⚠️ MEDIA_URL: {settings.MEDIA_URL} (для production має бути /static/media/)')
             )
         
         # Перевіряємо Django cache
