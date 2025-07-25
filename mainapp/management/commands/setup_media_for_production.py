@@ -23,7 +23,7 @@ class Command(BaseCommand):
         self.stdout.write('🚀 Налаштування медіа файлів для production...')
         
         # Шляхи
-        media_source = settings.MEDIA_ROOT
+        media_source = os.path.join(settings.BASE_DIR, 'media')  # Вихідна папка media
         staticfiles_root = settings.STATIC_ROOT
         static_media_dest = os.path.join(staticfiles_root, 'media')
         
