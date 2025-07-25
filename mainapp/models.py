@@ -1,6 +1,10 @@
 from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
+from django.conf import settings
+import os
+import hashlib
+from django.core.files.storage import default_storage
 
 # Create your models here.
 
@@ -85,16 +89,31 @@ class Product(models.Model):
     def __str__(self):
         return self.name
     
+    def get_image_url(self):
+        """Отримує правильний URL зображення з кешбастингом"""
+        if not self.image:
+            return ''
+        
+        try:
+            # Використовуємо стандартний Django URL який автоматично працює з налаштуваннями
+            base_url = self.image.url
+            
+            # Додаємо версіонування для кешбастингу тільки у продакшні
+            if hasattr(settings, 'DEBUG') and not settings.DEBUG:
+                # У продакшні додаємо хеш для уникнення кешування
+                file_hash = hashlib.md5(f"{self.image.name}{self.updated_at}".encode()).hexdigest()[:8]
+                return f"{base_url}?v={file_hash}"
+            else:
+                # У розробці просто повертаємо стандартний URL
+                return base_url
+                
+        except Exception:
+            return ''
+    
     @property
-    def static_image_url(self):
-        """Завжди повертає /static/media/ URL для production"""
-        if self.image:
-            # Отримуємо базову назву файлу
-            import os
-            filename = os.path.basename(self.image.name)
-            # Завжди генеруємо /static/media/products/ URL
-            return f'/static/media/products/{filename}'
-        return ''
+    def image_url(self):
+        """Властивість для зручного доступу до URL зображення"""
+        return self.get_image_url()
 
 
 class ProductImage(models.Model):
@@ -112,16 +131,31 @@ class ProductImage(models.Model):
     def __str__(self):
         return f"{self.product.name} - Зображення {self.order}"
     
+    def get_image_url(self):
+        """Отримує правильний URL зображення з кешбастингом"""
+        if not self.image:
+            return ''
+        
+        try:
+            # Використовуємо стандартний Django URL який автоматично працює з налаштуваннями
+            base_url = self.image.url
+            
+            # Додаємо версіонування для кешбастингу тільки у продакшні
+            if hasattr(settings, 'DEBUG') and not settings.DEBUG:
+                # У продакшні додаємо хеш для уникнення кешування
+                file_hash = hashlib.md5(f"{self.image.name}{self.product.updated_at}".encode()).hexdigest()[:8]
+                return f"{base_url}?v={file_hash}"
+            else:
+                # У розробці просто повертаємо стандартний URL
+                return base_url
+                
+        except Exception:
+            return ''
+    
     @property
-    def static_image_url(self):
-        """Завжди повертає /static/media/ URL для production"""
-        if self.image:
-            # Отримуємо базову назву файлу
-            import os
-            filename = os.path.basename(self.image.name)
-            # Завжди генеруємо /static/media/products/gallery/ URL
-            return f'/static/media/products/gallery/{filename}'
-        return ''
+    def image_url(self):
+        """Властивість для зручного доступу до URL зображення"""
+        return self.get_image_url()
 
 
 class Portfolio(models.Model):
