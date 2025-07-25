@@ -1,0 +1,731 @@
+/* ===== ГОЛОВНА СТОРІНКА - ДИЗАЙН 1В1 ЗІ СКРІНШТОТІВ ===== */
+
+/* Hero секція - перший скрін */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+.hero__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    background: black;
+    pointer-events: none;
+}
+
+.hero__video::-webkit-media-controls {
+    display: none !important;
+}
+
+.hero__video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+.hero__video::-webkit-media-controls-panel {
+    display: none !important;
+}
+
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    padding: 0 2rem;
+}
+
+.hero__title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero__title-accent {
+    background: linear-gradient(135deg, #F4B942 0%, #FF6B35 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline;
+}
+
+.hero__subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    opacity: 0.95;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero__btn {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.hero__btn:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.2) 100%);
+    transform: translateY(-2px);
+}
+
+.hero__btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.hero__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .hero__buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+}
+
+/* About секція - другий скрін */
+.about {
+    display: flex;
+    min-height: 100vh;
+    background: white;
+}
+
+.about__left-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about__image-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.about__production-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about__right-section {
+    flex: 1;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+}
+
+.about__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    text-transform: lowercase;
+}
+
+.about__subtitle {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 2rem;
+    text-transform: lowercase;
+}
+
+.about__text-content {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+}
+
+.about__text-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Capacity секція - третій скрін */
+.capacity {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+}
+
+.capacity__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    background: black;
+    pointer-events: none;
+}
+
+.capacity__video::-webkit-media-controls {
+    display: none !important;
+}
+
+.capacity__video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+.capacity__video::-webkit-media-controls-panel {
+    display: none !important;
+}
+
+.capacity__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.capacity__content {
+    position: relative;
+    z-index: 3;
+    max-width: 1200px;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.capacity__title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: lowercase;
+}
+
+.capacity__subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    text-transform: lowercase;
+}
+
+.capacity__text {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.capacity__text p {
+    margin-bottom: 1.5rem;
+}
+
+.capacity__stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.capacity__stat {
+    flex: 1;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    min-width: 160px;
+    max-width: 220px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+.capacity__stat:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.capacity__stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    display: block;
+    line-height: 1;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.capacity__stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.02em;
+}
+
+.capacity__stat-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    opacity: 0.95;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.capacity__stat-description {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    line-height: 1.3;
+    margin-top: 0.25rem;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: 2.5rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.125rem;
+    }
+
+    .hero__content {
+        padding: 0 1rem;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about__left-section {
+        height: 50vh;
+    }
+
+    .about__image-container {
+        height: 50vh;
+    }
+
+    .about__right-section {
+        padding: 2rem 1rem;
+    }
+
+    .about__title {
+        font-size: 2rem;
+    }
+
+    .capacity__title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .capacity__subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .capacity__text {
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+    }
+
+    .capacity__stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: stretch;
+        margin-top: 1.5rem;
+        padding: 0 0.5rem;
+        justify-content: space-between;
+    }
+
+    .capacity__stat {
+        flex: 1;
+        width: auto;
+        min-width: 110px;
+        max-width: calc(33.333% - 0.5rem);
+        padding: 0.9rem 0.5rem;
+    }
+
+    .capacity__stat-icon {
+        font-size: 1.8rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .capacity__stat-number {
+        font-size: 1.8rem;
+        margin-bottom: 0.3rem;
+        line-height: 1;
+    }
+
+    .capacity__stat-label {
+        font-size: 0.65rem;
+        margin-bottom: 0.15rem;
+        line-height: 1.1;
+    }
+
+    .capacity__stat-description {
+        font-size: 0.55rem;
+        line-height: 1.2;
+    }
+
+    .capacity__content {
+        padding: 0 1rem;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__title {
+        font-size: 1.75rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1rem;
+    }
+
+    .about__title {
+        font-size: 1.5rem;
+    }
+
+    .about__subtitle {
+        font-size: 1rem;
+    }
+
+    .capacity__title {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .capacity__subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .capacity__text {
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .capacity__stats {
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding: 0 0.25rem;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .capacity__stat {
+        flex: 1;
+        width: auto;
+        min-width: 100px;
+        max-width: calc(33.333% - 0.35rem);
+        margin: 0;
+        padding: 0.8rem 0.4rem;
+    }
+
+    .capacity__stat-icon {
+        font-size: 1.6rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .capacity__stat-number {
+        font-size: 1.6rem;
+        margin-bottom: 0.25rem;
+        line-height: 0.9;
+    }
+
+    .capacity__stat-label {
+        font-size: 0.6rem;
+        margin-bottom: 0.1rem;
+        line-height: 1;
+    }
+
+    .capacity__stat-description {
+        font-size: 0.5rem;
+        line-height: 1.1;
+    }
+
+    .capacity__content {
+        padding: 0 0.75rem;
+    }
+}
+
+/* iOS Safari спеціальні оптимізації */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 768px) {
+        .capacity {
+            min-height: 100vh;
+            height: auto;
+            padding: 2rem 0;
+        }
+
+        .capacity__content {
+            width: 100vw;
+            max-width: 100vw;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding-left: max(0.75rem, env(safe-area-inset-left));
+            padding-right: max(0.75rem, env(safe-area-inset-right));
+        }
+
+        .capacity__stats {
+            width: 100%;
+            max-width: 100%;
+            padding: 0 0.25rem;
+            gap: 0.4rem;
+            margin-top: 1rem;
+            overflow: visible;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        .capacity__stat {
+            flex: 1;
+            width: auto;
+            min-width: 95px;
+            max-width: calc(33.333% - 0.3rem);
+            margin: 0;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 0.7rem 0.3rem;
+        }
+
+        .capacity__stat:hover {
+            transform: none;
+        }
+
+        .capacity__stat-number {
+            font-size: 1.5rem;
+            font-weight: 900;
+            line-height: 0.85;
+            margin-bottom: 0.2rem;
+        }
+
+        .capacity__stat-icon {
+            font-size: 1.4rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .capacity__stat-label {
+            font-size: 0.55rem;
+            font-weight: 800;
+            line-height: 0.95;
+            margin-bottom: 0.08rem;
+        }
+
+        .capacity__stat-description {
+            font-size: 0.45rem;
+            line-height: 1;
+        }
+    }
+}
+
+/* Контактна секція */
+.contacts {
+    padding: 4rem 2rem;
+    background: #f8fafc;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacts__section {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contacts__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.contacts__phones {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.contacts__phone {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contacts__phone:hover {
+    color: var(--primary-hover);
+}
+
+.contacts__location {
+    margin-bottom: 1.5rem;
+}
+
+.contacts__location-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.contacts__email h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.contacts__email p {
+    font-size: 1.125rem;
+    color: var(--text-gray);
+}
+
+.contacts__messengers {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.contacts__messenger {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contacts__messenger--telegram {
+    background: #0088cc;
+    color: white;
+}
+
+.contacts__messenger--telegram:hover {
+    background: #006699;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Адаптивність контактів */
+@media (max-width: 768px) {
+    .contacts {
+        padding: 2rem 1rem;
+    }
+
+    .contacts__title {
+        font-size: 2rem;
+    }
+
+    .contacts__phone {
+        font-size: 1.5rem;
+    }
+
+    .contacts__location-title {
+        font-size: 1.125rem;
+    }
+
+    .contacts__email h4 {
+        font-size: 1rem;
+    }
+
+    .contacts__email p {
+        font-size: 1rem;
+    }
+
+    .contacts__messenger {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacts {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .contacts__title {
+        font-size: 1.75rem;
+    }
+
+    .contacts__phone {
+        font-size: 1.25rem;
+    }
+
+    .contacts__messengers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contacts__messenger {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+}
