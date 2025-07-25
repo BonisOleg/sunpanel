@@ -31,6 +31,15 @@ python manage.py collectstatic --no-input --settings=config.settings_production
 echo "🔄 Updating media URL settings..."
 python manage.py update_media_urls --settings=config.settings_production
 
+echo "🗑️ Cleaning up old database products..."
+python manage.py cleanup_old_database_products --min-id=50 --settings=config.settings_production
+
+echo "🔄 Resetting product IDs..."
+python manage.py reset_product_ids --settings=config.settings_production
+
+echo "🗑️ Cleaning up old product files..."
+python manage.py cleanup_old_products --min-id=50 --settings=config.settings_production
+
 echo "📦 Importing products..."
 python manage.py universal_import_products --settings=config.settings_production
 
