@@ -1,6 +1,6 @@
 """
 Production settings for Render deployment WITH media files as static
-Fixed configuration for proper media handling
+Оптимізовано для ідеального деплою без проблем з зображеннями
 """
 import os
 from pathlib import Path
@@ -13,7 +13,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-production-key-change
 # Hosts
 ALLOWED_HOSTS = [
     'greensolartech.com.ua',
-    'www.greensolartech.com.ua',
+    'www.greensolartech.com.ua', 
     'greensolartech.onrender.com',
     'sunpanel.onrender.com',
     '.onrender.com',
@@ -26,13 +26,28 @@ ALLOWED_HOSTS = [
 import dj_database_url
 
 # Render автоматично створює DATABASE_URL
-DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL', 'sqlite:///db.sqlite3'),
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
-}
+try:
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.environ.get('DATABASE_URL'),
+            conn_max_age=600,
+            conn_health_checks=True,
+        )
+    }
+    
+    # Перевіряємо чи DATABASE_URL існує
+    if not os.environ.get('DATABASE_URL'):
+        raise ValueError("DATABASE_URL not found")
+        
+except (ValueError, Exception):
+    # Fallback до SQLite якщо PostgreSQL недоступна
+    print("⚠️ PostgreSQL недоступна, використовуємо SQLite")
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 # Static files configuration with WhiteNoise
 MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
@@ -41,7 +56,8 @@ MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Медіа файли - обслуговуються через WhiteNoise як /static/media/
+# МЕДІА ФАЙЛИ - КЛЮЧОВІ НАЛАШТУВАННЯ ДЛЯ RENDER
+# Медіа файли обслуговуються через WhiteNoise як /static/media/
 MEDIA_URL = '/static/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'media')
 
@@ -50,13 +66,16 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# WhiteNoise налаштування
+# WhiteNoise налаштування для оптимальної роботи з медіа
 WHITENOISE_USE_FINDERS = True
-WHITENOISE_AUTOREFRESH = True
+WHITENOISE_AUTOREFRESH = True  
 WHITENOISE_STATIC_PREFIX = '/static/'
-
-# Налаштування для медіа файлів
+WHITENOISE_MAX_AGE = 31536000  # 1 рік кеш для статики
 WHITENOISE_SKIP_COMPRESS_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'ico', 'woff', 'woff2']
+
+# Додаткові налаштування для медіа файлів
+FILE_UPLOAD_PERMISSIONS = 0o644
+FILE_UPLOAD_DIRECTORY_PERMISSIONS = 0o755
 
 # Email configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -75,26 +94,62 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_REFERRER_POLICY = 'same-origin'
+SECURE_HSTS_SECONDS = 3600  # Для безпеки HTTPS
 
-# Performance
+# Performance та кеш
 CONN_MAX_AGE = 60
 
-# Logging
+# Налаштування завантаження файлів для production
+DATA_UPLOAD_MAX_MEMORY_SIZE = 52428800  # 50MB
+FILE_UPLOAD_MAX_MEMORY_SIZE = 52428800  # 50MB
+
+# Logging оптимізований для Render
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '[{levelname}] {asctime} {name}: {message}',
+            'style': '{',
+        },
+    },
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
         },
     },
     'root': {
         'handlers': ['console'],
+        'level': 'INFO',
     },
     'loggers': {
         'django': {
             'handlers': ['console'],
             'level': os.environ.get('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': False,
+        },
+        'mainapp': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
         },
     },
-} 
+}
+
+# Django налаштування для стабільної роботи на Render
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+TIME_ZONE = 'Europe/Kiev'
+USE_TZ = True
+
+# Оптимізація для production
+if not DEBUG:
+    # Кешування шаблонів
+    TEMPLATES[0]['APP_DIRS'] = False
+    TEMPLATES[0]['OPTIONS']['loaders'] = [
+        ('django.template.loaders.cached.Loader', [
+            'django.template.loaders.filesystem.Loader',
+            'django.template.loaders.app_directories.Loader',
+        ]),
+    ] 
