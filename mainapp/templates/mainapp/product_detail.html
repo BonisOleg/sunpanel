@@ -628,7 +628,7 @@
             <!-- Галерея зображень -->
             <div class="product-gallery">
                 {% if main_image %}
-                <img src="{{ main_image.image.url }}" alt="{{ product.name }}" class="main-image" id="mainImage">
+                <img src="{{ main_image.static_image_url }}" alt="{{ product.name }}" class="main-image" id="mainImage">
                 {% else %}
                 <div class="main-image"
                     style="display: flex; align-items: center; justify-content: center; background: #f0f0f0; color: #666;">
@@ -639,14 +639,14 @@
                 {% if product_images %}
                 <div class="thumbnail-gallery">
                     {% for image in product_images %}
-                    <img src="{{ image.image.url }}" alt="{{ image.alt_text|default:product.name }}"
+                    <img src="{{ image.static_image_url }}" alt="{{ image.alt_text|default:product.name }}"
                         class="thumbnail {% if forloop.first %}active{% endif %}"
-                        onclick="changeMainImage('{{ image.image.url }}', this)">
+                        onclick="changeMainImage('{{ image.static_image_url }}', this)">
                     {% endfor %}
                 </div>
                 {% elif product.image %}
                 <div class="thumbnail-gallery">
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="thumbnail active">
+                    <img src="{{ product.static_image_url }}" alt="{{ product.name }}" class="thumbnail active">
                 </div>
                 {% endif %}
             </div>
@@ -708,7 +708,7 @@
                 <div class="product-actions">
                     <button class="add-to-cart-btn" data-product-id="{{ product.id }}"
                         data-product-name="{{ product.name }}" data-product-price="{{ product.price }}"
-                        data-product-image="{% if main_image %}{{ main_image.url }}{% endif %}">
+                        data-product-image="{% if main_image %}{{ main_image.static_image_url }}{% endif %}">
                         Додати в кошик
                     </button>
                     <a href="tel:+380737230675" class="contact-btn">Зателефонувати</a>

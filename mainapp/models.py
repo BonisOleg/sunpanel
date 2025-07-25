@@ -84,6 +84,17 @@ class Product(models.Model):
     
     def __str__(self):
         return self.name
+    
+    @property
+    def static_image_url(self):
+        """Завжди повертає /static/media/ URL для production"""
+        if self.image:
+            # Отримуємо базову назву файлу
+            import os
+            filename = os.path.basename(self.image.name)
+            # Завжди генеруємо /static/media/products/ URL
+            return f'/static/media/products/{filename}'
+        return ''
 
 
 class ProductImage(models.Model):
@@ -100,6 +111,17 @@ class ProductImage(models.Model):
     
     def __str__(self):
         return f"{self.product.name} - Зображення {self.order}"
+    
+    @property
+    def static_image_url(self):
+        """Завжди повертає /static/media/ URL для production"""
+        if self.image:
+            # Отримуємо базову назву файлу
+            import os
+            filename = os.path.basename(self.image.name)
+            # Завжди генеруємо /static/media/products/gallery/ URL
+            return f'/static/media/products/gallery/{filename}'
+        return ''
 
 
 class Portfolio(models.Model):
