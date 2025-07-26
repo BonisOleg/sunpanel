@@ -1,6 +1,6 @@
 """
 Команда для повного імпорту каталогу з Excel таблиць
-Імпортує всі 42 товари тільки з українським контентом
+Імпортує всі 42 товари з автоматичним перекладом та очищенням HTML
 """
 import pandas as pd
 import requests
@@ -17,7 +17,7 @@ from mainapp.models import Product, Category, Brand, ProductImage
 from bs4 import BeautifulSoup
 
 class Command(BaseCommand):
-    help = 'Повний імпорт каталогу з Excel таблиць (42 товари)'
+    help = 'Повний імпорт каталогу з Excel таблиць (всі 42 товари)'
 
     def add_arguments(self, parser):
         parser.add_argument(
@@ -38,7 +38,7 @@ class Command(BaseCommand):
         if self.dry_run:
             self.stdout.write(self.style.WARNING("🔍 РЕЖИМ ПОПЕРЕДНЬОГО ПЕРЕГЛЯДУ"))
         
-        self.stdout.write("🚀 ПОВНИЙ ІМПОРТ КАТАЛОГУ")
+        self.stdout.write("🚀 ПОВНИЙ ІМПОРТ КАТАЛОГУ (42 ТОВАРИ)")
         self.stdout.write('='*60)
         
         # Ініціалізуємо статистику
@@ -48,6 +48,7 @@ class Command(BaseCommand):
             'brands_created': 0,
             'images_downloaded': 0,
             'products_skipped': 0,
+            'products_translated': 0,
             'errors': 0
         }
         
@@ -105,6 +106,10 @@ class Command(BaseCommand):
             {
                 'name': 'Комплекти резервного живлення',
                 'description': 'Готові рішення для автономного електропостачання'
+            },
+            {
+                'name': 'Додаткові послуги',
+                'description': 'Монтаж, налаштування та обслуговування обладнання'
             }
         ]
         
@@ -135,41 +140,94 @@ class Command(BaseCommand):
             'Аккумуляторы для ИБП lvtopsun': 'Акумуляторні батареї',
             'Солнечные панели Longi Solar': 'Сонячні панелі',
             'Солнечные панели Risen Energy': 'Сонячні панелі',
-            'Автономні та гібридні комплекти резервного живлення': 'Комплекти резервного живлення'
+            'Автономні та гібридні комплекти резервного живлення': 'Комплекти резервного живлення',
+            'Дополниельные услуги': 'Додаткові послуги'
         }
 
-    def contains_russian(self, text):
-        """Перевіряє чи містить текст російські символи"""
+    def translate_russian_to_ukrainian(self, text):
+        """Автоматичний переклад російської на українську"""
         if pd.isna(text):
-            return False
+            return ""
+            
+        text = str(text).strip()
         
-        russian_chars = ['ы', 'э', 'ъ', 'ё']
-        russian_words = [
-            'мощность', 'производитель', 'гарантия', 'номинальная', 
-            'допустимая', 'пиковая', 'рабочая', 'величина', 'срок', 'службы'
-        ]
+        # Словник перекладів
+        translations = {
+            # Загальні терміни
+            'Гибридный': 'Гібридний',
+            'инвертор': 'інвертор',
+            'Инвертор': 'Інвертор',
+            'Аккумуляторная': 'Акумуляторна',
+            'батарея': 'батарея',
+            'Батарея': 'Батарея',
+            'Солнечная': 'Сонячна',
+            'панель': 'панель',
+            'Панель': 'Панель',
+            'Комплект': 'Комплект',
+            'резервного': 'резервного',
+            'питания': 'живлення',
+            'жизни': 'життя',
+            'мощность': 'потужність',
+            'напряжение': 'напруга',
+            'емкость': 'ємність',
+            'гарантия': 'гарантія',
+            'производитель': 'виробник',
+            'высокое': 'високе',
+            'низкое': 'низьке',
+            'система': 'система',
+            'хранения': 'зберігання',
+            'энергии': 'енергії',
+            'модулей': 'модулів',
+            'услуги': 'послуги',
+            'монтаж': 'монтаж',
+            'установка': 'встановлення',
+            
+            # Технічні терміни
+            'кВт': 'кВт',
+            'кВтч': 'кВт⋅год',
+            'литиевая': 'літієва',
+            'железофосфатная': 'залізно-фосфатна',
+            'LiFePO4': 'LiFePO4',
+            'фазный': 'фазний',
+            'автономный': 'автономний',
+            'гибридный': 'гібридний',
+            'высоковольтная': 'високовольтна',
+            'низковольтная': 'низьковольтна',
+            
+            # Бренди (зберігаємо як є)
+            'Must': 'Must',
+            'Deye': 'Deye',
+            'Longi': 'Longi',
+            'LONGI': 'LONGI',
+            'Risen': 'Risen',
+            'lvtopsun': 'lvtopsun',
+            'LVTOPSUN': 'LVTOPSUN',
+            
+            # Характеристики
+            'Характеристики': 'Характеристики',
+            'Технические': 'Технічні',
+            'параметры': 'параметри',
+            'описание': 'опис',
+            'применение': 'застосування',
+            'преимущества': 'переваги',
+            'особенности': 'особливості',
+        }
         
-        text_lower = str(text).lower()
-        
-        # Перевіряємо російські літери
-        for char in russian_chars:
-            if char in text_lower:
-                return True
-        
-        # Перевіряємо російські слова
-        for word in russian_words:
-            if word in text_lower:
-                return True
-                
-        return False
+        # Заміна по словнику
+        for ru_word, uk_word in translations.items():
+            text = re.sub(re.escape(ru_word), uk_word, text, flags=re.IGNORECASE)
+            
+        return text
 
     def clean_html_description(self, description):
         """Очищає опис від HTML тегів, але зберігає структуру"""
         if pd.isna(description):
             return ""
         
+        description = str(description)
+        
         # Замінюємо <br /> на нові рядки
-        description = str(description).replace('<br />', '\n').replace('<br/>', '\n').replace('<br>', '\n')
+        description = description.replace('<br />', '\n').replace('<br/>', '\n').replace('<br>', '\n')
         
         # Видаляємо HTML теги
         soup = BeautifulSoup(description, 'html.parser')
@@ -179,6 +237,21 @@ class Command(BaseCommand):
         lines = [line.strip() for line in clean_text.split('\n') if line.strip()]
         
         return '\n'.join(lines)
+
+    def contains_russian(self, text):
+        """Перевіряє чи містить текст російські символи"""
+        if pd.isna(text):
+            return False
+        
+        russian_chars = ['ы', 'э', 'ъ', 'ё']
+        text_lower = str(text).lower()
+        
+        # Перевіряємо російські літери
+        for char in russian_chars:
+            if char in text_lower:
+                return True
+                
+        return False
 
     def create_or_get_brand(self, brand_name):
         """Створює або отримує бренд"""
@@ -238,7 +311,7 @@ class Command(BaseCommand):
             return None
 
     def get_characteristics(self, row):
-        """Витягує характеристики товару (тільки українські)"""
+        """Витягує характеристики товару"""
         characteristics = {}
         
         for i in range(15):  # 0-14 характеристики
@@ -251,15 +324,18 @@ class Command(BaseCommand):
                 char_value = row[value_col]
                 char_unit = row.get(unit_col, '')
                 
-                if (pd.notna(char_name) and pd.notna(char_value) and 
-                    not self.contains_russian(char_name) and 
-                    not self.contains_russian(char_value)):
+                if pd.notna(char_name) and pd.notna(char_value):
+                    # Перекладаємо назву характеристики
+                    char_name = self.translate_russian_to_ukrainian(char_name)
                     
                     value_str = str(char_value)
-                    if pd.notna(char_unit) and not self.contains_russian(char_unit):
-                        value_str += f" {char_unit}"
+                    if pd.notna(char_unit):
+                        char_unit = self.translate_russian_to_ukrainian(char_unit)
+                        if char_unit and not self.contains_russian(char_unit):
+                            value_str += f" {char_unit}"
                     
-                    characteristics[str(char_name)] = value_str
+                    if char_name and not self.contains_russian(char_name):
+                        characteristics[char_name] = value_str
         
         return characteristics
 
@@ -274,10 +350,21 @@ class Command(BaseCommand):
         
         for index, row in df.iterrows():
             try:
-                # Перевіряємо українську назву
+                # Отримуємо назви (українську або російську для перекладу)
                 ukrainian_name = row.get('Назва_позиції_укр')
-                if pd.isna(ukrainian_name) or self.contains_russian(ukrainian_name):
-                    self.stdout.write(f"⏭️ Пропускаємо товар {index+1}: немає української назви")
+                russian_name = row.get('Назва_позиції')
+                
+                # Визначаємо фінальну назву
+                if pd.notna(ukrainian_name) and ukrainian_name.strip():
+                    final_name = self.clean_html_description(ukrainian_name)
+                elif pd.notna(russian_name) and russian_name.strip():
+                    # Перекладаємо з російської
+                    translated_name = self.translate_russian_to_ukrainian(russian_name)
+                    final_name = self.clean_html_description(translated_name)
+                    self.stats['products_translated'] += 1
+                    self.stdout.write(f"🔄 Переклад товару {index+1}: {russian_name[:50]}...")
+                else:
+                    self.stdout.write(f"⏭️ Пропускаємо товар {index+1}: немає назви")
                     self.stats['products_skipped'] += 1
                     continue
                 
@@ -290,16 +377,24 @@ class Command(BaseCommand):
                 
                 # Отримуємо дані товару
                 category_name = category_mapping[product_group]
-                ukrainian_description = self.clean_html_description(row.get('Опис_укр'))
+                
+                # Обробляємо опис
+                ukrainian_description = row.get('Опис_укр')
+                russian_description = row.get('Опис')
+                
+                if pd.notna(ukrainian_description) and ukrainian_description.strip():
+                    final_description = self.clean_html_description(ukrainian_description)
+                elif pd.notna(russian_description) and russian_description.strip():
+                    translated_desc = self.translate_russian_to_ukrainian(russian_description)
+                    final_description = self.clean_html_description(translated_desc)
+                else:
+                    final_description = ""
+                
                 price = row.get('Ціна', 0)
                 brand_name = row.get('Виробник')
                 
-                # Перевіряємо що опис українською
-                if self.contains_russian(ukrainian_description):
-                    ukrainian_description = ""
-                
                 if self.dry_run:
-                    self.stdout.write(f"   [DRY RUN] Створив би товар: {ukrainian_name}")
+                    self.stdout.write(f"   [DRY RUN] Створив би товар: {final_name}")
                     continue
                 
                 # Отримуємо категорію та бренд
@@ -310,7 +405,7 @@ class Command(BaseCommand):
                 characteristics = self.get_characteristics(row)
                 
                 # Формуємо повний опис з характеристиками
-                full_description = ukrainian_description
+                full_description = final_description
                 if characteristics:
                     full_description += "\n\nХарактеристики:\n"
                     for char_name, char_value in characteristics.items():
@@ -318,7 +413,7 @@ class Command(BaseCommand):
                 
                 # Створюємо товар
                 product = Product.objects.create(
-                    name=ukrainian_name,
+                    name=final_name,
                     description=full_description,
                     price=float(price) if pd.notna(price) else 0,
                     category=category,
@@ -335,7 +430,7 @@ class Command(BaseCommand):
                     
                     for img_index, img_url in enumerate(image_urls):
                         if img_url:
-                            image_file = self.download_image(img_url, ukrainian_name)
+                            image_file = self.download_image(img_url, final_name)
                             if image_file:
                                 if img_index == 0:
                                     # Перше зображення як головне
@@ -346,12 +441,12 @@ class Command(BaseCommand):
                                     ProductImage.objects.create(
                                         product=product,
                                         image=image_file,
-                                        alt_text=f"{ukrainian_name} - зображення {img_index + 1}",
+                                        alt_text=f"{final_name} - зображення {img_index + 1}",
                                         order=img_index
                                     )
                 
                 self.stats['products_created'] += 1
-                self.stdout.write(f"✅ Створено товар: {ukrainian_name}")
+                self.stdout.write(f"✅ Створено товар: {final_name}")
                 
                 # Невелика затримка між запитами
                 time.sleep(0.5)
@@ -365,6 +460,7 @@ class Command(BaseCommand):
         self.stdout.write('\n' + '='*60)
         self.stdout.write('🎉 ІМПОРТ ЗАВЕРШЕНО')
         self.stdout.write(f"✅ Створено товарів: {self.stats['products_created']}")
+        self.stdout.write(f"🔄 Перекладено з російської: {self.stats['products_translated']}")
         self.stdout.write(f"📂 Створено категорій: {self.stats['categories_created']}")
         self.stdout.write(f"🏷️ Створено брендів: {self.stats['brands_created']}")
         self.stdout.write(f"🖼️ Завантажено зображень: {self.stats['images_downloaded']}")
@@ -376,6 +472,7 @@ class Command(BaseCommand):
             self.stdout.write('\n📈 Статистика по категоріях:')
             for category in Category.objects.all():
                 count = Product.objects.filter(category=category).count()
-                self.stdout.write(f"   📂 {category.name}: {count} товарів")
+                if count > 0:
+                    self.stdout.write(f"   📂 {category.name}: {count} товарів")
         
         self.stdout.write('='*60) 
