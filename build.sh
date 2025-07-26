@@ -45,12 +45,12 @@ python manage.py remove_russian_categories --settings=config.settings_production
 log "✏️ Виправлення орфографічних помилок..."
 python manage.py check_spelling_errors --fix --settings=config.settings_production || log "⚠️ Spelling check skipped"
 
-# 6. Імпорт товарів (безпечно)
-log "📦 Безпечний імпорт товарів..."
-if python manage.py universal_import_products --settings=config.settings_production; then
-    log "✅ Товари успішно імпортовані"
+# 6. Імпорт товарів з Excel файлів (НОВИЙ МЕТОД!)
+log "📦 Імпорт каталогу з Excel файлів..."
+if python manage.py import_full_catalog --clear-existing --settings=config.settings_production; then
+    log "✅ Каталог успішно імпортований з Excel файлів"
 else
-    log "⚠️ Імпорт товарів пропущено (може бути файли відсутні)"
+    log "⚠️ Імпорт каталогу пропущено (перевірте Excel файли)"
 fi
 
 # 7. Налаштування медіа файлів (КЛЮЧОВИЙ КРОК!)
