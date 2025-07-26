@@ -58,13 +58,13 @@ else
     fi
 fi
 
-# 7. Налаштування медіа файлів (КЛЮЧОВИЙ КРОК!)
+# 7. Збір статичних файлів
+log "🎨 Збір статичних файлів..."
+python manage.py collectstatic --no-input --settings=config.settings_production || handle_error "collectstatic"
+
+# 8. Налаштування медіа файлів (ПІСЛЯ collectstatic щоб не втратити)
 log "📁 Налаштування медіа файлів для production..."
 python manage.py setup_media_for_production --verify --settings=config.settings_production || handle_error "media setup"
-
-# 8. Збір статичних файлів
-log "🎨 Збір статичних файлів..."
-python manage.py collectstatic --no-input --clear --settings=config.settings_production || handle_error "collectstatic"
 
 # 9. Оновлення медіа URL
 log "🔄 Оновлення медіа URL налаштувань..."
