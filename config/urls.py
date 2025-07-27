@@ -28,7 +28,3 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-else:
-    # В production WhiteNoise обслуговує статичні файли
-    # Але медіа файли потребують додаткового налаштування
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

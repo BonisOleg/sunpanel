@@ -95,8 +95,8 @@ class Product(models.Model):
             return ''
         
         try:
-            # Перевіряємо чи це продакшн (якщо DEBUG=False і використовується WhiteNoise)
-            if not settings.DEBUG and hasattr(settings, 'STATICFILES_STORAGE'):
+            # Перевіряємо чи це продакшн (якщо DEBUG=False або MEDIA_URL=/static/media/)
+            if not settings.DEBUG or settings.MEDIA_URL == '/static/media/':
                 # ПРОДАКШН: файли обслуговуються через WhiteNoise 
                 # Формуємо URL для staticfiles/media/ через MEDIA_URL
                 image_path = str(self.image.name)
@@ -149,8 +149,8 @@ class ProductImage(models.Model):
             return ''
         
         try:
-            # Перевіряємо чи це продакшн (якщо DEBUG=False і використовується WhiteNoise)
-            if not settings.DEBUG and hasattr(settings, 'STATICFILES_STORAGE'):
+            # Перевіряємо чи це продакшн (якщо DEBUG=False або MEDIA_URL=/static/media/)
+            if not settings.DEBUG or settings.MEDIA_URL == '/static/media/':
                 # ПРОДАКШН: файли обслуговуються через WhiteNoise 
                 # Формуємо URL для staticfiles/media/ через MEDIA_URL
                 image_path = str(self.image.name)

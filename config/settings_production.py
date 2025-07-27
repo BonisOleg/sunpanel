@@ -56,9 +56,9 @@ MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# МЕДІА ФАЙЛИ - ВИПРАВЛЕННЯ КОНФЛІКТУ
-# Медіа файли мають окремий URL щоб не конфліктувати зі статичними
-MEDIA_URL = '/media/'
+# МЕДІА ФАЙЛИ - ДЛЯ RENDER ПОТРІБНО /static/media/
+# На Render медіа файли обслуговуються через WhiteNoise як статичні
+MEDIA_URL = '/static/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'media')
 
 # Додаємо і static і media папки до статичних директорій для WhiteNoise

@@ -45,16 +45,16 @@ python manage.py remove_russian_categories --settings=config.settings_production
 log "✏️ Виправлення орфографічних помилок..."
 python manage.py check_spelling_errors --fix --settings=config.settings_production || log "⚠️ Spelling check skipped"
 
-# 6. Імпорт товарів з Excel файлів (НОВИЙ МЕТОД!)
-log "📦 Імпорт каталогу з Excel файлів..."
-if python manage.py import_full_catalog --clear-existing --settings=config.settings_production; then
-    log "✅ Каталог успішно імпортований з Excel файлів"
+# 6. Екстрене відновлення товарів (НОВИЙ МЕТОД!)
+log "🚨 Відновлення товарів після деплою..."
+if python manage.py restore_products_render --settings=config.settings_production; then
+    log "✅ Товари та контент відновлені"
 else
-    log "⚠️ Excel імпорт не вдався, використовуємо backup метод..."
-    if python manage.py create_sample_products --settings=config.settings_production; then
-        log "✅ Створено зразкові товари (backup метод)"
+    log "⚠️ Відновлення не вдалося, використовуємо backup..."
+    if python manage.py import_full_catalog --clear-existing --settings=config.settings_production; then
+        log "✅ Каталог імпортований backup методом"
     else
-        log "❌ Не вдалося створити товари"
+        log "❌ Критична помилка імпорту"
     fi
 fi
 
