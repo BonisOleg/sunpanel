@@ -295,7 +295,7 @@ class CatalogView(TemplateView):
         ).order_by('-featured', 'name')[:10]
         
         backup_kits = products.filter(
-            category__name='Комплекти та послуги'
+            category__name='Комплекти резервного живлення'
         ).order_by('-featured', 'name')[:10]
         
         context.update({
