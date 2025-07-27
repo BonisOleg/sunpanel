@@ -281,23 +281,21 @@ class CatalogView(TemplateView):
             is_active=True
         ).values_list('name', flat=True).distinct().order_by('name')
         
-        # Товари по категоріях для каруселей (підтримка українських та російських назв)
+        # Товари по категоріях для каруселей (правильні назви наших категорій)
         inverters = products.filter(
-            Q(category__name__icontains='Інвертор') | Q(category__name__icontains='Инвертор')
+            category__name='Інвертори'
         ).order_by('-featured', 'name')[:10]
         
         solar_panels = products.filter(
-            Q(category__name__icontains='панел') | Q(category__name__icontains='панел')
+            category__name='Сонячні панелі'
         ).order_by('-featured', 'name')[:10]
         
         batteries = products.filter(
-            Q(category__name__icontains='Акумулятор') | Q(category__name__icontains='Аккумулятор')
+            category__name='Акумуляторні батареї'
         ).order_by('-featured', 'name')[:10]
         
         backup_kits = products.filter(
-            Q(category__name__icontains='комплект') | 
-            Q(category__name__icontains='резервного') |
-            Q(category__name__icontains='живлення')
+            category__name='Комплекти та послуги'
         ).order_by('-featured', 'name')[:10]
         
         context.update({
