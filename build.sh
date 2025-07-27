@@ -56,8 +56,13 @@ python manage.py import_full_catalog --clear-existing --settings=config.settings
 log "🇺🇦 ПОВНЕ ОЧИЩЕННЯ РОСІЙСЬКОЇ ХЕРНІ..."
 python manage.py clean_russian_content --settings=config.settings_production || log "⚠️ Очищення помилка"
 
-# Ще раз очищаємо для гарантії
-python manage.py clean_russian_content --settings=config.settings_production || log "⚠️ Повторне очищення"
+# ФІНАЛЬНЕ ВИПРАВЛЕННЯ ВСЬОГО
+log "🔥 ФІНАЛЬНЕ ВИПРАВЛЕННЯ КАТЕГОРІЙ ТА РОСІЙСЬКОЇ МОВИ..."
+python manage.py fix_categories_final --settings=config.settings_production || log "⚠️ Final fix failed"
+
+# Оновлення портфоліо згідно фото
+log "🏢 ОНОВЛЕННЯ ПОРТФОЛІО ЗГІДНО ФОТО..."
+python manage.py update_portfolio_descriptions --settings=config.settings_production || log "⚠️ Portfolio update failed"
 
 # Створюємо медіа структуру FORCE
 log "📁 СТВОРЕННЯ МЕДІА СТРУКТУРИ..."
@@ -104,7 +109,7 @@ python manage.py clean_russian_content --settings=config.settings_production || 
 
 # Перевіряємо кількість товарів
 log "📊 Перевірка кількості товарів..."
-PRODUCTS_COUNT=$(python manage.py shell --settings=config.settings_production -c "from mainapp.models import Product; print(Product.objects.count())" 2>/dev/null || echo "0")
+PRODUCTS_COUNT=$(python manage.py shell --settings=config.settings_production -c "from mainapp.models import Product; print(Product.objects.count())" 2>/dev/null | tail -1)
 log "📦 Товарів у базі: $PRODUCTS_COUNT"
 
 if [ "$PRODUCTS_COUNT" -lt "40" ]; then
@@ -120,9 +125,9 @@ python manage.py clear_all_cache --settings=config.settings_production || log "�
 log "🔍 ДЕТАЛЬНА ФІНАЛЬНА ПЕРЕВІРКА..."
 
 # Перевіряємо всі компоненти
-PRODUCTS=$(python manage.py shell --settings=config.settings_production -c "from mainapp.models import Product; print(Product.objects.count())" 2>/dev/null || echo "0")
-CATEGORIES=$(python manage.py shell --settings=config.settings_production -c "from mainapp.models import Category; print(Category.objects.count())" 2>/dev/null || echo "0") 
-PORTFOLIO=$(python manage.py shell --settings=config.settings_production -c "from mainapp.models import Portfolio; print(Portfolio.objects.count())" 2>/dev/null || echo "0")
+PRODUCTS=$(python manage.py shell --settings=config.settings_production -c "from mainapp.models import Product; print(Product.objects.count())" 2>/dev/null | tail -1)
+CATEGORIES=$(python manage.py shell --settings=config.settings_production -c "from mainapp.models import Category; print(Category.objects.count())" 2>/dev/null | tail -1) 
+PORTFOLIO=$(python manage.py shell --settings=config.settings_production -c "from mainapp.models import Portfolio; print(Portfolio.objects.count())" 2>/dev/null | tail -1)
 
 log "📊 ФІНАЛЬНА СТАТИСТИКА:"
 log "   📦 Товари: $PRODUCTS/42"
