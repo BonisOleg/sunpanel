@@ -95,10 +95,10 @@ class Product(models.Model):
             return ''
         
         try:
-            # Перевіряємо чи це продакшн (за MEDIA_URL)
-            if hasattr(settings, 'MEDIA_URL') and settings.MEDIA_URL == '/static/media/':
-                # ПРОДАКШН: файли обслуговуються через WhiteNoise як статичні
-                # Формуємо URL напряму для staticfiles/media/
+            # Перевіряємо чи це продакшн (якщо DEBUG=False і використовується WhiteNoise)
+            if not settings.DEBUG and hasattr(settings, 'STATICFILES_STORAGE'):
+                # ПРОДАКШН: файли обслуговуються через WhiteNoise 
+                # Формуємо URL для staticfiles/media/ через MEDIA_URL
                 image_path = str(self.image.name)
                 if image_path.startswith('products/'):
                     # URL вже правильний відносно MEDIA_URL
@@ -107,8 +107,12 @@ class Product(models.Model):
                     static_url = f"{settings.MEDIA_URL}products/gallery/{image_path}"
                 
                 # Додаємо кешбастинг для продакшн
-                file_hash = hashlib.md5(f"{self.image.name}{self.updated_at}".encode()).hexdigest()[:8]
-                return f"{static_url}?v={file_hash}"
+                try:
+                    import hashlib
+                    file_hash = hashlib.md5(f"{self.image.name}{self.updated_at}".encode()).hexdigest()[:8]
+                    return f"{static_url}?v={file_hash}"
+                except:
+                    return static_url
             else:
                 # ЛОКАЛЬНА РОЗРОБКА: стандартний Django URL
                 return self.image.url
@@ -145,10 +149,10 @@ class ProductImage(models.Model):
             return ''
         
         try:
-            # Перевіряємо чи це продакшн (за MEDIA_URL)
-            if hasattr(settings, 'MEDIA_URL') and settings.MEDIA_URL == '/static/media/':
-                # ПРОДАКШН: файли обслуговуються через WhiteNoise як статичні
-                # Формуємо URL напряму для staticfiles/media/
+            # Перевіряємо чи це продакшн (якщо DEBUG=False і використовується WhiteNoise)
+            if not settings.DEBUG and hasattr(settings, 'STATICFILES_STORAGE'):
+                # ПРОДАКШН: файли обслуговуються через WhiteNoise 
+                # Формуємо URL для staticfiles/media/ через MEDIA_URL
                 image_path = str(self.image.name)
                 if image_path.startswith('products/'):
                     # URL вже правильний відносно MEDIA_URL
@@ -157,8 +161,12 @@ class ProductImage(models.Model):
                     static_url = f"{settings.MEDIA_URL}products/gallery/{image_path}"
                 
                 # Додаємо кешбастинг для продакшн
-                file_hash = hashlib.md5(f"{self.image.name}{self.product.updated_at}".encode()).hexdigest()[:8]
-                return f"{static_url}?v={file_hash}"
+                try:
+                    import hashlib
+                    file_hash = hashlib.md5(f"{self.image.name}{self.product.updated_at}".encode()).hexdigest()[:8]
+                    return f"{static_url}?v={file_hash}"
+                except:
+                    return static_url
             else:
                 # ЛОКАЛЬНА РОЗРОБКА: стандартний Django URL
                 return self.image.url

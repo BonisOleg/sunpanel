@@ -56,22 +56,28 @@ MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# МЕДІА ФАЙЛИ - КЛЮЧОВІ НАЛАШТУВАННЯ ДЛЯ RENDER
-# Медіа файли обслуговуються через WhiteNoise як /static/media/
-MEDIA_URL = '/static/media/'
+# МЕДІА ФАЙЛИ - ВИПРАВЛЕННЯ КОНФЛІКТУ
+# Медіа файли мають окремий URL щоб не конфліктувати зі статичними
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'media')
 
-# Додаємо медіа папку до статичних директорій для WhiteNoise
+# Додаємо і static і media папки до статичних директорій для WhiteNoise
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
+    # Додаємо media папку щоб WhiteNoise міг її обслуговувати
+    ('media', os.path.join(BASE_DIR, 'media')),
 ]
 
-# WhiteNoise налаштування для оптимальної роботи з медіа
+# WhiteNoise налаштування для оптимальної роботи з медіа та статикою
 WHITENOISE_USE_FINDERS = True
 WHITENOISE_AUTOREFRESH = True  
 WHITENOISE_STATIC_PREFIX = '/static/'
 WHITENOISE_MAX_AGE = 31536000  # 1 рік кеш для статики
 WHITENOISE_SKIP_COMPRESS_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'ico', 'woff', 'woff2']
+
+# Додаткові налаштування для обслуговування медіа через WhiteNoise
+WHITENOISE_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+WHITENOISE_INDEX_FILE = True
 
 # Додаткові налаштування для медіа файлів
 FILE_UPLOAD_PERMISSIONS = 0o644
