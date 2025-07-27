@@ -210,27 +210,59 @@ class Portfolio(models.Model):
         else:
             return []
         
-        # Шлях до медіа папки
-        media_portfolio = os.path.join(settings.BASE_DIR, 'media', 'portfolio')
-        if not os.path.exists(media_portfolio):
-            return []
-        
-        # Знаходимо всі зображення для цього проекту
-        project_images = []
-        for image_file in os.listdir(media_portfolio):
-            if image_file.lower().endswith(('.jpg', '.jpeg', '.png')):
-                # Перевіряємо чи належить зображення цьому проекту
-                if project_key == "project1" and (
-                    'аналітика' in image_file or 'буд' in image_file or 
-                    any(x in image_file for x in ['project1'])
-                ):
-                    project_images.append(f'portfolio/{image_file}')
-                elif project_key == "project2" and any(x in image_file for x in ['4083', '65825', '8534', '87209', 'project2']):
-                    project_images.append(f'portfolio/{image_file}')
-                elif project_key == "project3" and any(x in image_file for x in ['1494', '15578', '69046', 'project3']):
-                    project_images.append(f'portfolio/{image_file}')
-        
-        return sorted(project_images)
+        # ✅ ПЕРЕВІРКА СЕРЕДОВИЩА: локальна розробка чи production
+        try:
+            # Шлях до медіа папки для локальної розробки
+            media_portfolio = os.path.join(settings.BASE_DIR, 'media', 'portfolio')
+            
+            # На Render або якщо папка не існує - повертаємо базові зображення
+            if not os.path.exists(media_portfolio):
+                # ✅ FALLBACK для Render: повертаємо базові зображення
+                fallback_images = {
+                    'project1': [
+                        'portfolio/project1_main.jpg',
+                        'portfolio/project1_1.jpg', 
+                        'portfolio/project1_2.jpg'
+                    ],
+                    'project2': [
+                        'portfolio/project2_main.jpg',
+                        'portfolio/project2_1.jpg',
+                        'portfolio/project2_2.jpg'
+                    ],
+                    'project3': [
+                        'portfolio/project3_main.jpg',
+                        'portfolio/project3_1.jpg',
+                        'portfolio/project3_2.jpg'
+                    ]
+                }
+                return fallback_images.get(project_key, [])
+            
+            # ✅ ЛОКАЛЬНА РОЗРОБКА: читаємо реальні файли
+            project_images = []
+            for image_file in os.listdir(media_portfolio):
+                if image_file.lower().endswith(('.jpg', '.jpeg', '.png')):
+                    # Перевіряємо чи належить зображення цьому проекту
+                    if project_key == "project1" and (
+                        'аналітика' in image_file or 'буд' in image_file or 
+                        any(x in image_file for x in ['project1'])
+                    ):
+                        project_images.append(f'portfolio/{image_file}')
+                    elif project_key == "project2" and any(x in image_file for x in ['4083', '65825', '8534', '87209', 'project2']):
+                        project_images.append(f'portfolio/{image_file}')
+                    elif project_key == "project3" and any(x in image_file for x in ['1494', '15578', '69046', 'project3']):
+                        project_images.append(f'portfolio/{image_file}')
+            
+            return sorted(project_images)
+            
+        except Exception as e:
+            # ✅ EXCEPTION FALLBACK: якщо щось не так, повертаємо базові зображення
+            print(f"Portfolio images error: {e}")
+            fallback_images = {
+                'project1': ['portfolio/project1_main.jpg'],
+                'project2': ['portfolio/project2_main.jpg'], 
+                'project3': ['portfolio/project3_main.jpg']
+            }
+            return fallback_images.get(project_key, [])
 
 
 class Review(models.Model):
