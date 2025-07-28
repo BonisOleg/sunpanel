@@ -69,8 +69,14 @@ window.app.nav = {
         const navMenu = document.getElementById('nav-menu');
 
         if (navToggle && navMenu) {
-            navToggle.addEventListener('click', (e) => {
+            // Оптимізована обробка для мобільних пристроїв
+            const isMobile = window.innerWidth <= 768;
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            
+            // Подія для відкриття/закриття меню
+            const toggleMenu = (e) => {
                 e.preventDefault();
+                e.stopPropagation();
                 const isOpen = navMenu.classList.contains('active');
 
                 if (isOpen) {
@@ -78,7 +84,14 @@ window.app.nav = {
                 } else {
                     this.openMenu();
                 }
-            });
+            };
+
+            // Додаємо обробники для різних типів подій
+            if (isMobile) {
+                navToggle.addEventListener('touchstart', toggleMenu, { passive: false });
+                navToggle.addEventListener('touchend', (e) => e.preventDefault(), { passive: false });
+            }
+            navToggle.addEventListener('click', toggleMenu);
 
             // Закриття меню при кліку поза ним (тільки на overlay)
             navMenu.addEventListener('click', (e) => {
@@ -113,6 +126,13 @@ window.app.nav = {
         const navList = document.querySelector('.nav__list');
 
         if (navMenu && navToggle) {
+            // Зберігаємо поточну позицію скролу для iOS Safari
+            const isIOSSafari = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            if (isIOSSafari) {
+                const scrollY = window.scrollY;
+                document.body.style.top = `-${scrollY}px`;
+            }
+
             navMenu.classList.add('active');
             navToggle.classList.add('active');
             navToggle.setAttribute('aria-expanded', 'true');
@@ -126,6 +146,14 @@ window.app.nav = {
             // Блокуємо скролл
             document.documentElement.classList.add('nav-open');
             document.body.classList.add('nav-open');
+
+            // Фокусуємо на першому посиланні для доступності
+            setTimeout(() => {
+                const firstLink = navMenu.querySelector('.nav__link');
+                if (firstLink) {
+                    firstLink.focus();
+                }
+            }, 100);
         }
     },
 
@@ -135,6 +163,16 @@ window.app.nav = {
         const navList = document.querySelector('.nav__list');
 
         if (navMenu && navToggle) {
+            // Відновлюємо позицію скролу для iOS Safari
+            const isIOSSafari = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            if (isIOSSafari) {
+                const scrollY = document.body.style.top;
+                document.body.style.top = '';
+                if (scrollY) {
+                    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+                }
+            }
+
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
             navToggle.setAttribute('aria-expanded', 'false');
@@ -490,10 +528,43 @@ window.app.cart = {
     }
 };
 
+// ===== iOS SAFARI SCROLL FIX =====
+function fixIOSSafariScroll() {
+    const isIOSSafari = /iPad|iPhone|iPod/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent);
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isIOSSafari && isMobile) {
+        // Створюємо прихований елемент для вирішення проблем scroll в iOS Safari
+        const scrollFix = document.createElement('div');
+        scrollFix.style.height = '0px';
+        scrollFix.style.overflow = 'hidden';
+        scrollFix.style.position = 'absolute';
+        scrollFix.style.top = '-1px';
+        scrollFix.style.left = '-1px';
+        scrollFix.style.width = '1px';
+        scrollFix.style.zIndex = '-1';
+        document.body.appendChild(scrollFix);
+
+        // Функція оновлення для вирішення scroll проблем
+        function updateScrollFix() {
+            scrollFix.innerHTML = window.scrollY.toFixed(0);
+        }
+
+        // Додаємо слухачі подій
+        window.addEventListener('scroll', updateScrollFix, { passive: true, capture: true });
+        window.addEventListener('touchstart', updateScrollFix, { passive: true, capture: true });
+        window.addEventListener('touchmove', updateScrollFix, { passive: true, capture: true });
+        window.addEventListener('touchend', updateScrollFix, { passive: true, capture: true });
+    }
+}
+
 // ===== ІНІЦІАЛІЗАЦІЯ =====
 document.addEventListener('DOMContentLoaded', () => {
     window.app.nav.init();
     window.app.cart.init();
+
+    // iOS Safari scroll fix
+    fixIOSSafariScroll();
 
     // Динамічне обчислення висоти viewport для мобільних
     function setViewportHeight() {
