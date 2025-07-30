@@ -125,9 +125,8 @@ window.app.nav = {
             // Зберігаємо позицію скролу для всіх мобільних
             this.scrollPosition = window.pageYOffset;
 
-            // Активуємо меню
+            // Активуємо меню - ТІЛЬКИ CSS класи, БЕЗ inline стилів
             navMenu.classList.add('active');
-            navMenu.classList.add('nav__menu--mobile-open');
             navToggle.classList.add('active');
             navToggle.setAttribute('aria-expanded', 'true');
             navToggle.setAttribute('aria-label', 'Закрити меню');
@@ -135,9 +134,6 @@ window.app.nav = {
             // Блокуємо скролл
             document.documentElement.classList.add('nav-open');
             document.body.classList.add('nav-open');
-            document.body.classList.add('body--nav-scroll-locked');
-            // Використовуємо CSS Custom Property замість inline стилю
-            document.body.style.setProperty('--scroll-position', `-${this.scrollPosition}px`);
 
             // Фокус для доступності
             setTimeout(() => {
@@ -154,9 +150,8 @@ window.app.nav = {
         const navToggle = document.getElementById('nav-toggle');
 
         if (navMenu && navToggle) {
-            // Деактивуємо меню
+            // Деактивуємо меню - ТІЛЬКИ CSS класи
             navMenu.classList.remove('active');
-            navMenu.classList.remove('nav__menu--mobile-open');
             navToggle.classList.remove('active');
             navToggle.setAttribute('aria-expanded', 'false');
             navToggle.setAttribute('aria-label', 'Відкрити меню');
@@ -164,10 +159,6 @@ window.app.nav = {
             // Розблокуємо скролл
             document.documentElement.classList.remove('nav-open');
             document.body.classList.remove('nav-open');
-            document.body.classList.remove('body--nav-scroll-locked');
-            
-            // Скидаємо CSS Custom Property
-            document.body.style.removeProperty('--scroll-position');
 
             // Відновлюємо позицію скролу
             if (this.scrollPosition !== undefined) {
@@ -490,7 +481,7 @@ window.app.cart = {
             padding: '12px 20px',
             borderRadius: '8px',
             boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-            zIndex: '9999',
+            zIndex: '9999999',
             fontSize: '14px',
             fontWeight: '500',
             transform: 'translateX(100%)',
