@@ -136,6 +136,12 @@ window.app.nav = {
             document.body.classList.add('nav-open');
             document.body.style.top = `-${this.scrollPosition}px`;
 
+            // Додаткові стилі для iOS Safari
+            navMenu.style.display = 'flex';
+            navMenu.style.visibility = 'visible';
+            navMenu.style.opacity = '1';
+            navMenu.style.pointerEvents = 'auto';
+
             // Фокус для доступності
             setTimeout(() => {
                 const firstLink = navMenu.querySelector('.nav__link');
@@ -161,6 +167,12 @@ window.app.nav = {
             document.documentElement.classList.remove('nav-open');
             document.body.classList.remove('nav-open');
             document.body.style.top = '';
+
+            // Скидаємо додаткові стилі
+            navMenu.style.display = '';
+            navMenu.style.visibility = '';
+            navMenu.style.opacity = '';
+            navMenu.style.pointerEvents = '';
 
             // Відновлюємо позицію скролу
             if (this.scrollPosition !== undefined) {
