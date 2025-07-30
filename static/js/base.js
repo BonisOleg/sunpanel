@@ -481,7 +481,7 @@ window.app.cart = {
             padding: '12px 20px',
             borderRadius: '8px',
             boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-            zIndex: '9999999',
+            zIndex: getComputedStyle(document.documentElement).getPropertyValue('--z-notification').trim() || '9800',
             fontSize: '14px',
             fontWeight: '500',
             transform: 'translateX(100%)',
