@@ -44,7 +44,7 @@
         rel="stylesheet">
 
     <!-- Базові стилі -->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}?v=2025012505">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}?v=2025012506">
     {% block page_css %}{% endblock %}
 </head>
 
@@ -70,16 +70,17 @@
                 </svg>
                 <span class="nav__cart-count" id="cart-count">0</span>
             </div>
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="{% url 'mainapp:index' %}" class="nav__link">головна</a></li>
-                    <li class="nav__item"><a href="{% url 'mainapp:catalog' %}" class="nav__link">каталог</a></li>
-                    <li class="nav__item"><a href="{% url 'mainapp:portfolio' %}" class="nav__link">портфоліо</a></li>
-                    <li class="nav__item"><a href="{% url 'mainapp:reviews' %}" class="nav__link">відгуки</a></li>
-                    <li class="nav__item"><a href="{% url 'mainapp:index' %}#contacts" class="nav__link">контакти</a>
-                    </li>
-                </ul>
-            </div>
+        </div>
+        <!-- КРИТИЧНО: Мобільне меню ЗА МЕЖАМИ КОНТЕЙНЕРА для 100% покриття екрану -->
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="{% url 'mainapp:index' %}" class="nav__link">головна</a></li>
+                <li class="nav__item"><a href="{% url 'mainapp:catalog' %}" class="nav__link">каталог</a></li>
+                <li class="nav__item"><a href="{% url 'mainapp:portfolio' %}" class="nav__link">портфоліо</a></li>
+                <li class="nav__item"><a href="{% url 'mainapp:reviews' %}" class="nav__link">відгуки</a></li>
+                <li class="nav__item"><a href="{% url 'mainapp:index' %}#contacts" class="nav__link">контакти</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
@@ -169,7 +170,7 @@
     </a>
 
     <!-- JavaScript -->
-    <script src="{% static 'js/base.js' %}?v=2025012505"></script>
+    <script src="{% static 'js/base.js' %}?v=2025012506"></script>
     {% block page_js %}{% endblock %}
 </body>
 

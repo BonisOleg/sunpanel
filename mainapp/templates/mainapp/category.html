@@ -7,7 +7,7 @@
 {% block canonical %}https://greensolartech.com.ua/catalog/{{ category_key }}/{% endblock %}
 
 {% block page_css %}
-<link rel="stylesheet" href="{% static 'css/catalog.css' %}?v=2025012504">
+<link rel="stylesheet" href="{% static 'css/catalog.css' %}?v=2025012506">
 {% endblock %}
 
 {% block content %}
@@ -40,7 +40,7 @@
                             <select name="brand" class="filter-select">
                                 <option value="">Всі виробники</option>
                                 {% for brand in brands %}
-                                <option value="{{ brand }}" {% if selected_brand == brand %}selected{% endif %}>
+                                <option value="{{ brand }}" {% if selected_brand==brand %}selected{% endif %}>
                                     {{ brand }}
                                 </option>
                                 {% endfor %}
