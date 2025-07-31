@@ -67,11 +67,7 @@
                 </ul>
             </div>
 
-            <button class="nav__burger" id="nav-burger" aria-label="Відкрити меню" aria-expanded="false">
-                <span class="nav__burger-line"></span>
-                <span class="nav__burger-line"></span>
-                <span class="nav__burger-line"></span>
-            </button>
+
             <div class="nav__cart" id="cart-btn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path
@@ -83,16 +79,7 @@
         </div>
     </nav>
 
-    <!-- Мобільне меню -->
-    <div class="nav__mobile-menu" id="nav-mobile-menu">
-        <ul class="nav__mobile-list">
-            <li class="nav__mobile-item"><a href="{% url 'mainapp:index' %}" class="nav__mobile-link">головна</a></li>
-            <li class="nav__mobile-item"><a href="{% url 'mainapp:catalog' %}" class="nav__mobile-link">каталог</a></li>
-            <li class="nav__mobile-item"><a href="{% url 'mainapp:portfolio' %}" class="nav__mobile-link">портфоліо</a></li>
-            <li class="nav__mobile-item"><a href="{% url 'mainapp:reviews' %}" class="nav__mobile-link">відгуки</a></li>
-            <li class="nav__mobile-item"><a href="{% url 'mainapp:index' %}#contacts" class="nav__mobile-link">контакти</a></li>
-        </ul>
-    </div>
+
 
     <main class="main">
         {% block content %}{% endblock %}

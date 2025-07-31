@@ -59,16 +59,13 @@ window.app.utils = {
 
 // ===== НАВІГАЦІЯ =====
 window.app.nav = {
-    isOpen: false,
-
     init() {
         this.handleActiveLink();
-        this.bindMobileMenuEvents();
     },
 
     handleActiveLink() {
         const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav__link, .nav__mobile-link');
+        const navLinks = document.querySelectorAll('.nav__link');
 
         navLinks.forEach(link => {
             const href = link.getAttribute('href');
@@ -78,83 +75,6 @@ window.app.nav = {
                 link.classList.remove('active');
             }
         });
-    },
-
-    bindMobileMenuEvents() {
-        const burgerBtn = document.getElementById('nav-burger');
-        const mobileMenu = document.getElementById('nav-mobile-menu');
-        const mobileLinks = document.querySelectorAll('.nav__mobile-link');
-
-        if (burgerBtn && mobileMenu) {
-            burgerBtn.addEventListener('click', () => this.toggleMobileMenu());
-            
-            // Закриття меню при кліку на посилання
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => this.closeMobileMenu());
-            });
-
-            // Закриття меню при кліку поза межами
-            mobileMenu.addEventListener('click', (e) => {
-                if (e.target === mobileMenu) {
-                    this.closeMobileMenu();
-                }
-            });
-
-            // Закриття меню клавішею Escape
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && this.isOpen) {
-                    this.closeMobileMenu();
-                }
-            });
-
-            // Закриття меню при зміні орієнтації екрану
-            window.addEventListener('orientationchange', () => {
-                if (this.isOpen) {
-                    this.closeMobileMenu();
-                }
-            });
-
-            // Закриття меню при зміні розміру вікна
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768 && this.isOpen) {
-                    this.closeMobileMenu();
-                }
-            });
-        }
-    },
-
-    toggleMobileMenu() {
-        if (this.isOpen) {
-            this.closeMobileMenu();
-        } else {
-            this.openMobileMenu();
-        }
-    },
-
-    openMobileMenu() {
-        const burgerBtn = document.getElementById('nav-burger');
-        const mobileMenu = document.getElementById('nav-mobile-menu');
-
-        if (burgerBtn && mobileMenu) {
-            this.isOpen = true;
-            burgerBtn.classList.add('active');
-            burgerBtn.setAttribute('aria-expanded', 'true');
-            mobileMenu.classList.add('active');
-            document.body.classList.add('menu-open');
-        }
-    },
-
-    closeMobileMenu() {
-        const burgerBtn = document.getElementById('nav-burger');
-        const mobileMenu = document.getElementById('nav-mobile-menu');
-
-        if (burgerBtn && mobileMenu) {
-            this.isOpen = false;
-            burgerBtn.classList.remove('active');
-            burgerBtn.setAttribute('aria-expanded', 'false');
-            mobileMenu.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        }
     }
 };
 
