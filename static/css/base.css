@@ -201,14 +201,7 @@ img {
     align-items: center;
 }
 
-/* Приховуємо бургер кнопку та мобільне меню на десктопі */
-.nav__burger {
-    display: none;
-}
 
-.nav__mobile-menu {
-    display: none;
-}
 
 .nav__list {
     display: flex;
@@ -265,112 +258,7 @@ img {
         font-size: 1.25rem;
     }
 
-    /* Бургер кнопка */
-    .nav__burger {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 24px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        z-index: var(--z-nav-elements);
-        position: relative;
-    }
 
-
-
-    .nav__burger-line {
-        width: 100%;
-        height: 3px;
-        background-color: var(--text-dark);
-        border-radius: 2px;
-        transition: all 0.3s ease;
-        transform-origin: center;
-    }
-
-    .nav__burger.active .nav__burger-line:nth-child(1) {
-        transform: translateY(10.5px) rotate(45deg);
-    }
-
-    .nav__burger.active .nav__burger-line:nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav__burger.active .nav__burger-line:nth-child(3) {
-        transform: translateY(-10.5px) rotate(-45deg);
-    }
-
-    /* Приховуємо десктопну навігацію на мобільних пристроях */
-    .nav__menu {
-        display: none;
-    }
-
-    /* Мобільне меню */
-    .nav__mobile-menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        z-index: var(--z-overlay);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        display: none;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .nav__mobile-menu.active {
-        opacity: 1;
-        visibility: visible;
-        display: flex;
-    }
-
-    .nav__mobile-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-
-    .nav__mobile-item {
-        margin: 1.5rem 0;
-    }
-
-    .nav__mobile-link {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: white;
-        text-decoration: none;
-        padding: 1rem 2rem;
-        display: block;
-        transition: all 0.3s ease;
-        border-radius: var(--radius-md);
-    }
-
-    .nav__mobile-link:hover {
-        background: rgba(255, 255, 255, 0.1);
-        transform: translateY(-2px);
-    }
-
-    .nav__mobile-link.active {
-        color: var(--primary-color);
-        background: rgba(37, 99, 235, 0.1);
-    }
-
-    /* Блокування скролу при відкритому меню */
-    body.menu-open {
-        overflow: hidden;
-        position: fixed;
-        width: 100%;
-    }
 }
 
 /* ===== ДОДАТКОВІ СТИЛІ ===== */
