@@ -36,7 +36,6 @@
     --z-cart: 9900;
     --z-nav: 9990;
     --z-nav-elements: 9995;
-    --z-mobile-menu: 9999;
 }
 
 * {
@@ -255,6 +254,11 @@ img {
 
     h3 {
         font-size: 1.25rem;
+    }
+
+    /* Приховуємо навігацію на мобільних пристроях */
+    .nav__menu {
+        display: none;
     }
 }
 

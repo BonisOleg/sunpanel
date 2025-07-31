@@ -58,8 +58,25 @@ window.app.utils = {
 };
 
 // ===== НАВІГАЦІЯ =====
-// Використовуємо новий оптимізований мобільний меню
-window.app.nav = window.mobileMenu;
+window.app.nav = {
+    init() {
+        this.handleActiveLink();
+    },
+
+    handleActiveLink() {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav__link');
+
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentPath || (currentPath.includes(href) && href !== '/')) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+};
 
 // ===== КОШИК =====
 window.app.cart = {
