@@ -1204,3 +1204,16 @@
         border-color: var(--primary-color);
     }
 }
+
+/* ===== СТИЛІ ДЛЯ PRODUCT DETAIL ===== */
+.no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    color: #666;
+}
+
+.in-stock {
+    color: #27ae60;
+}

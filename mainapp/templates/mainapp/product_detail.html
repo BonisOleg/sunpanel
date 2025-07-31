@@ -630,8 +630,7 @@
                 {% if main_image %}
                 <img src="{{ main_image.image_url }}" alt="{{ product.name }}" class="main-image" id="mainImage">
                 {% else %}
-                <div class="main-image"
-                    style="display: flex; align-items: center; justify-content: center; background: #f0f0f0; color: #666;">
+                <div class="main-image no-image">
                     Немає зображення
                 </div>
                 {% endif %}
@@ -700,7 +699,7 @@
                     </div>
                     <div class="spec-item">
                         <span class="spec-label">Наявність:</span>
-                        <span class="spec-value" style="color: #27ae60;">✓ В наявності</span>
+                        <span class="spec-value in-stock">✓ В наявності</span>
                     </div>
                 </div>
 
@@ -734,8 +733,7 @@
                     {% if similar.image %}
                     <img src="{{ similar.image_url }}" alt="{{ similar.name }}" class="similar-product-image">
                     {% else %}
-                    <div class="similar-product-image"
-                        style="display: flex; align-items: center; justify-content: center; background: #f0f0f0; color: #666;">
+                    <div class="similar-product-image no-image">
                         Немає фото
                     </div>
                     {% endif %}
