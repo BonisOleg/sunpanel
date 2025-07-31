@@ -148,15 +148,13 @@ window.app.home = {
             video.addEventListener('ended', () => {
                 video.pause();
                 video.currentTime = video.duration;
-                console.log('Відео зупинено на останньому кадрі:', video.id);
             });
-            
+
             // Додатковий контроль: зупинка коли відео майже закінчилось
             video.addEventListener('timeupdate', () => {
                 if (video.currentTime >= video.duration - 0.1) {
                     video.pause();
                     video.currentTime = video.duration;
-                    console.log('Відео зупинено через timeupdate:', video.id);
                 }
             });
 
