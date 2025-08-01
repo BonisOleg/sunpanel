@@ -1,0 +1,464 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block description %}{{ description }}{% endblock %}
+{% block keywords %}{{ keywords }}{% endblock %}
+{% block canonical %}https://greensolartech.com.ua/contact/{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<style>
+    .contact-page {
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+        background: #f8f9fa;
+        min-height: 80vh;
+    }
+
+    .contact-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .contact-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .contact-header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    .contact-header p {
+        font-size: 1.1rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .contact-info {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-info h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+        transition: all 0.3s;
+    }
+
+    .contact-item:hover {
+        background: #e9ecef;
+        transform: translateY(-2px);
+    }
+
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: #e67e22;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        font-size: 1.2rem;
+        color: white;
+    }
+
+    .contact-details h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 0.3rem;
+    }
+
+    .contact-details p {
+        color: #666;
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    .contact-details a {
+        color: #e67e22;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .contact-details a:hover {
+        color: #d35400;
+    }
+
+    .contact-form {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #e67e22;
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        background: #e67e22;
+        color: white;
+        border: none;
+        padding: 1rem;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .submit-btn:hover {
+        background: #d35400;
+        transform: translateY(-2px);
+    }
+
+    .map-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .map-section h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 1.5rem;
+    }
+
+    .map-placeholder {
+        width: 100%;
+        height: 300px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+        font-size: 1.1rem;
+        border: 2px dashed #ddd;
+    }
+
+    /* Мобільна адаптація */
+    @media (max-width: 768px) {
+        .contact-page {
+            padding-top: 85px;
+            padding-bottom: 2rem;
+        }
+
+        .contact-container {
+            padding: 0 16px;
+        }
+
+        .contact-header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-header p {
+            font-size: 1rem;
+        }
+
+        .contact-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .contact-info,
+        .contact-form {
+            padding: 1.5rem;
+        }
+
+        .contact-item {
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+            margin-right: 0.8rem;
+        }
+
+        .contact-details h3 {
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.7rem;
+            font-size: 16px; /* iOS Safari fix */
+        }
+
+        .submit-btn {
+            padding: 0.9rem;
+            font-size: 16px;
+            min-height: 48px;
+        }
+
+        .map-placeholder {
+            height: 200px;
+            font-size: 1rem;
+        }
+    }
+
+    /* Малі мобільні екрани */
+    @media (max-width: 480px) {
+        .contact-container {
+            padding: 0 12px;
+        }
+
+        .contact-header h1 {
+            font-size: 1.8rem;
+        }
+
+        .contact-info,
+        .contact-form {
+            padding: 1.2rem;
+        }
+
+        .contact-item {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .contact-icon {
+            margin-right: 0;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    /* iOS Safari специфічні оптимізації */
+    @supports (-webkit-touch-callout: none) {
+        @media (max-width: 768px) {
+            .contact-page {
+                -webkit-text-size-adjust: 100%;
+                min-height: -webkit-fill-available;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                -webkit-appearance: none;
+                appearance: none;
+                border-radius: 8px;
+            }
+
+            .submit-btn {
+                -webkit-appearance: none;
+                appearance: none;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                user-select: none;
+            }
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="contact-page">
+    <div class="contact-container">
+        <!-- Заголовок -->
+        <div class="contact-header">
+            <h1>Контакти</h1>
+            <p>Зв'яжіться з нами для консультації та замовлення сонячних електростанцій. Наші спеціалісти готові відповісти на всі ваші запитання.</p>
+        </div>
+
+        <!-- Основний контент -->
+        <div class="contact-content">
+            <!-- Контактна інформація -->
+            <div class="contact-info">
+                <h2>Наші контакти</h2>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h3>Телефон</h3>
+                        <p><a href="tel:+380737230675">+38 (073) 723-06-75</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p><a href="mailto:GreenSolarTech.pe@gmail.com">GreenSolarTech.pe@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-details">
+                        <h3>Telegram</h3>
+                        <p><a href="https://t.me/GreenSolarTech" target="_blank">@GreenSolarTech</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h3>Адреса офісу</h3>
+                        <p>БЦ Центр<br>вулиця Васильківська, 34<br>Київ, 02000</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🕒</div>
+                    <div class="contact-details">
+                        <h3>Робочі години</h3>
+                        <p>Пн-Пт: 9:00-18:00<br>Сб: 10:00-15:00<br>Нд: Вихідний</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Форма зворотного зв'язку -->
+            <div class="contact-form">
+                <h2>Напишіть нам</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Ім'я *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Повідомлення</label>
+                        <textarea id="message" name="message" placeholder="Опишіть ваш проєкт або запитання..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Надіслати повідомлення</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Карта -->
+        <div class="map-section">
+            <h2>Наше розташування</h2>
+            <div class="map-placeholder">
+                <div>
+                    <p>📍 БЦ Центр, вул. Васильківська, 34</p>
+                    <p>Київ, 02000</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #999;">
+                        (Тут буде інтерактивна карта)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+    
+    // Відправка через API
+    fetch('/api/callback/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Дякуємо! Ваше повідомлення успішно відправлено.');
+            document.getElementById('contactForm').reset();
+        } else {
+            alert('Помилка: ' + (data.error || 'Спробуйте пізніше'));
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Помилка відправки. Спробуйте пізніше.');
+    });
+});
+</script>
+{% endblock %} 

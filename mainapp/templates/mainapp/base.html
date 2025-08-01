@@ -115,7 +115,13 @@
             </nav>
             <div class="footer__meta">
                 <p>&copy; 2024 GreenSolarTech. Усі права захищені.</p>
-                <p><a href="/sitemap.xml">Карта сайту</a> • <a href="#privacy">Політика конфіденційності</a></p>
+                <p>
+                    <a href="/sitemap.xml">Карта сайту</a> • 
+                    <a href="{% url 'mainapp:contact' %}">Контакти</a> • 
+                    <a href="{% url 'mainapp:shipping_policy' %}">Доставка</a> • 
+                    <a href="{% url 'mainapp:return_policy' %}">Повернення</a> • 
+                    <a href="{% url 'mainapp:privacy_policy' %}">Конфіденційність</a>
+                </p>
             </div>
         </div>
     </footer>
@@ -179,6 +185,34 @@
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
     </a>
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GreenSolarTech",
+      "url": "https://greensolartech.com.ua",
+      "logo": "https://greensolartech.com.ua{% static 'images/favicon.ico' %}",
+      "description": "Проектування та будівництво сонячних електростанцій під ключ. Понад 50 МВт встановлених потужностей.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "вулиця Васильківська, 34",
+        "addressLocality": "Київ",
+        "postalCode": "02000",
+        "addressCountry": "UA"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+380737230675",
+        "contactType": "customer service",
+        "email": "GreenSolarTech.pe@gmail.com"
+      },
+      "sameAs": [
+        "https://t.me/GreenSolarTech"
+      ]
+    }
+    </script>
 
     <!-- JavaScript -->
     <script src="{% static 'js/base.js' %}"></script>

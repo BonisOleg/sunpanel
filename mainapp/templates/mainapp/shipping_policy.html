@@ -1,0 +1,351 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block description %}{{ description }}{% endblock %}
+{% block keywords %}{{ keywords }}{% endblock %}
+{% block canonical %}https://greensolartech.com.ua/shipping-policy/{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<style>
+    .policy-page {
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+        background: #f8f9fa;
+        min-height: 80vh;
+    }
+
+    .policy-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .policy-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .policy-header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    .policy-header p {
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .policy-content {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        line-height: 1.8;
+    }
+
+    .policy-section {
+        margin-bottom: 2.5rem;
+    }
+
+    .policy-section:last-child {
+        margin-bottom: 0;
+    }
+
+    .policy-section h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e67e22;
+    }
+
+    .policy-section h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+        margin: 1.5rem 0 0.8rem 0;
+    }
+
+    .policy-section p {
+        margin-bottom: 1rem;
+        color: #555;
+    }
+
+    .policy-section ul {
+        margin: 1rem 0;
+        padding-left: 1.5rem;
+    }
+
+    .policy-section li {
+        margin-bottom: 0.5rem;
+        color: #555;
+    }
+
+    .highlight-box {
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .highlight-box h4 {
+        color: #856404;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .highlight-box p {
+        color: #856404;
+        margin: 0;
+    }
+
+    .info-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        background: #f8f9fa;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .info-table th,
+    .info-table td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .info-table th {
+        background: #e67e22;
+        color: white;
+        font-weight: 600;
+    }
+
+    .info-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .info-table tr:hover {
+        background: #e9ecef;
+    }
+
+    /* Мобільна адаптація */
+    @media (max-width: 768px) {
+        .policy-page {
+            padding-top: 85px;
+            padding-bottom: 2rem;
+        }
+
+        .policy-container {
+            padding: 0 16px;
+        }
+
+        .policy-header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .policy-header p {
+            font-size: 1rem;
+        }
+
+        .policy-content {
+            padding: 1.5rem;
+        }
+
+        .policy-section h2 {
+            font-size: 1.3rem;
+        }
+
+        .policy-section h3 {
+            font-size: 1.1rem;
+        }
+
+        .highlight-box {
+            padding: 1.2rem;
+        }
+
+        .info-table {
+            font-size: 0.9rem;
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 0.8rem;
+        }
+    }
+
+    /* Малі мобільні екрани */
+    @media (max-width: 480px) {
+        .policy-container {
+            padding: 0 12px;
+        }
+
+        .policy-header h1 {
+            font-size: 1.8rem;
+        }
+
+        .policy-content {
+            padding: 1.2rem;
+        }
+
+        .policy-section h2 {
+            font-size: 1.2rem;
+        }
+
+        .info-table {
+            font-size: 0.85rem;
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 0.6rem;
+        }
+    }
+
+    /* iOS Safari специфічні оптимізації */
+    @supports (-webkit-touch-callout: none) {
+        @media (max-width: 768px) {
+            .policy-page {
+                -webkit-text-size-adjust: 100%;
+                min-height: -webkit-fill-available;
+            }
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="policy-page">
+    <div class="policy-container">
+        <!-- Заголовок -->
+        <div class="policy-header">
+            <h1>Політика доставки</h1>
+            <p>Умови доставки обладнання для сонячних електростанцій по всій Україні</p>
+        </div>
+
+        <!-- Основний контент -->
+        <div class="policy-content">
+            <div class="policy-section">
+                <h2>Загальні умови доставки</h2>
+                <p>Компанія GreenSolarTech здійснює доставку обладнання для сонячних електростанцій по всій території України. Ми працюємо з надійними транспортними компаніями для забезпечення безпечної та своєчасної доставки вашого замовлення.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>Зони доставки</h2>
+                <h3>Безкоштовна доставка</h3>
+                <ul>
+                    <li>Київ та Київська область (в межах 50 км від міста)</li>
+                    <li>При замовленні на суму від 50,000 грн</li>
+                    <li>Доставка здійснюється нашим транспортом</li>
+                </ul>
+
+                <h3>Платна доставка</h3>
+                <ul>
+                    <li>Всі інші регіони України</li>
+                    <li>Віддалені райони Київської області (понад 50 км)</li>
+                    <li>Доставка здійснюється перевізниками: Нова Пошта, Укрпошта, Делівері</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>Терміни доставки</h2>
+                
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th>Регіон</th>
+                            <th>Термін доставки</th>
+                            <th>Вартість</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Київ та область (до 50 км)</td>
+                            <td>1-2 робочі дні</td>
+                            <td>Безкоштовно*</td>
+                        </tr>
+                        <tr>
+                            <td>Центральна Україна</td>
+                            <td>2-3 робочі дні</td>
+                            <td>від 500 грн</td>
+                        </tr>
+                        <tr>
+                            <td>Західна Україна</td>
+                            <td>3-4 робочі дні</td>
+                            <td>від 800 грн</td>
+                        </tr>
+                        <tr>
+                            <td>Східна Україна</td>
+                            <td>3-5 робочих днів</td>
+                            <td>від 1000 грн</td>
+                        </tr>
+                        <tr>
+                            <td>Південна Україна</td>
+                            <td>4-5 робочих днів</td>
+                            <td>від 1200 грн</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <h4>💡 Важливо!</h4>
+                    <p>* Безкоштовна доставка діє при замовленні на суму від 50,000 грн. При меншій сумі замовлення вартість доставки становить 500 грн.</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2>Процес доставки</h2>
+                <h3>1. Підтвердження замовлення</h3>
+                <p>Після оформлення замовлення наш менеджер зв'яжеться з вами для уточнення деталей доставки та підтвердження замовлення.</p>
+
+                <h3>2. Підготовка до відправки</h3>
+                <p>Обладнання ретельно перевіряється, пакується та готується до відправки. Термін підготовки - 1-2 робочі дні.</p>
+
+                <h3>3. Відправка</h3>
+                <p>Ви отримаєте SMS/email з номером відстеження посилки. Можете відстежувати статус доставки на сайті перевізника.</p>
+
+                <h3>4. Отримання</h3>
+                <p>При отриманні товару обов'язково перевірте цілісність упаковки та комплектність замовлення.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>Особливості доставки обладнання</h2>
+                <ul>
+                    <li><strong>Сонячні панелі:</strong> Доставляються в спеціальних контейнерах для захисту від пошкоджень</li>
+                    <li><strong>Інвертори та акумулятори:</strong> Потребують особливої обережності при транспортуванні</li>
+                    <li><strong>Великі замовлення:</strong> Можуть доставлятися частинами за домовленістю</li>
+                    <li><strong>Монтажне обладнання:</strong> Доставляється разом з основними компонентами</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>Відмова від доставки</h2>
+                <p>У разі відмови від замовлення після його відправки, вартість доставки не повертається. Повернення товару здійснюється за рахунок покупця, якщо товар не має дефектів.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>Контакти для питань щодо доставки</h2>
+                <p>Якщо у вас виникли питання щодо доставки, звертайтеся до нас:</p>
+                <ul>
+                    <li><strong>Телефон:</strong> <a href="tel:+380737230675">+38 (073) 723-06-75</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:GreenSolarTech.pe@gmail.com">GreenSolarTech.pe@gmail.com</a></li>
+                    <li><strong>Telegram:</strong> <a href="https://t.me/GreenSolarTech" target="_blank">@GreenSolarTech</a></li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📞 Потрібна консультація?</h4>
+                <p>Наші спеціалісти готові допомогти вам з вибором оптимального варіанту доставки та відповісти на всі питання. Зв'яжіться з нами!</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

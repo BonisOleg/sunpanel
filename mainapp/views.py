@@ -456,6 +456,30 @@ def sitemap_xml(request):
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+    <url>
+        <loc>https://greensolartech.com.ua/contact/</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://greensolartech.com.ua/shipping-policy/</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://greensolartech.com.ua/return-policy/</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://greensolartech.com.ua/privacy-policy/</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
 </urlset>'''
     return HttpResponse(xml_content, content_type='application/xml')
 
@@ -507,6 +531,66 @@ class ProductDetailView(TemplateView):
             'similar_products': similar_products,
         })
         
+        return context
+
+
+class ContactView(TemplateView):
+    template_name = 'mainapp/contact.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'title': 'Контакти — GreenSolarTech',
+            'description': 'Зв\'яжіться з нами для консультації та замовлення сонячних електростанцій. Телефон, email, адреса офісу.',
+            'keywords': 'контакти GreenSolarTech, телефон, email, адреса, сонячні електростанції',
+            'company_info': {
+                'name': 'GreenSolarTech',
+                'phones': ['+380737230675'],
+                'email': 'GreenSolarTech.pe@gmail.com',
+                'telegram': '@GreenSolarTech',
+                'address': 'БЦ Центр вулиця Васильківська, 34, Київ, 02000',
+                'working_hours': 'Пн-Пт: 9:00-18:00, Сб: 10:00-15:00',
+            }
+        })
+        return context
+
+
+class ShippingPolicyView(TemplateView):
+    template_name = 'mainapp/shipping_policy.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'title': 'Політика доставки — GreenSolarTech',
+            'description': 'Умови доставки обладнання для сонячних електростанцій по Україні. Безкоштовна доставка, терміни, зони.',
+            'keywords': 'доставка сонячних панелей, доставка обладнання СЕС, політика доставки',
+        })
+        return context
+
+
+class ReturnPolicyView(TemplateView):
+    template_name = 'mainapp/return_policy.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'title': 'Політика повернення — GreenSolarTech',
+            'description': 'Умови повернення та обміну обладнання для сонячних електростанцій. Гарантія, терміни повернення.',
+            'keywords': 'повернення обладнання СЕС, гарантія, політика повернення',
+        })
+        return context
+
+
+class PrivacyPolicyView(TemplateView):
+    template_name = 'mainapp/privacy_policy.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'title': 'Політика конфіденційності — GreenSolarTech',
+            'description': 'Політика конфіденційності та обробки персональних даних на сайті GreenSolarTech.',
+            'keywords': 'політика конфіденційності, персональні дані, GreenSolarTech',
+        })
         return context
 
 

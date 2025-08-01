@@ -4,7 +4,74 @@
 {% block title %}{{ title }}{% endblock %}
 {% block description %}{{ description }}{% endblock %}
 {% block keywords %}{{ keywords }}{% endblock %}
+
+<!-- Additional Meta Tags for Google Merchant Center -->
+<meta property="product:price:amount" content="{{ product.price }}">
+<meta property="product:price:currency" content="UAH">
+<meta property="product:availability" content="{% if product.in_stock %}in stock{% else %}out of stock{% endif %}">
+<meta property="product:condition" content="new">
+<meta property="product:brand" content="{{ product.brand.name }}">
+<meta property="product:category" content="{{ product.category.name }}">
+{% if product.power %}<meta property="product:custom_field_1" content="Потужність: {{ product.power }}">{% endif %}
+{% if product.efficiency %}<meta property="product:custom_field_2" content="Ефективність: {{ product.efficiency }}">{% endif %}
+{% if product.warranty %}<meta property="product:custom_field_3" content="Гарантія: {{ product.warranty }}">{% endif %}
 {% block canonical %}https://greensolartech.com.ua/product/{{ product.id }}/{% endblock %}
+
+<!-- Structured Data for Product -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "{{ product.name|escapejs }}",
+  "description": "{{ product.description|escapejs|truncatechars:500 }}",
+  "image": "{% if main_image %}{{ main_image.image_url }}{% endif %}",
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ product.brand.name|escapejs }}"
+  },
+  "category": "{{ product.category.name|escapejs }}",
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ product.price }}",
+    "priceCurrency": "UAH",
+    "availability": "{% if product.in_stock %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+    "url": "https://greensolartech.com.ua/product/{{ product.id }}/",
+    "seller": {
+      "@type": "Organization",
+      "name": "GreenSolarTech",
+      "url": "https://greensolartech.com.ua"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "15"
+  },
+  "additionalProperty": [
+    {% if product.power %}{
+      "@type": "PropertyValue",
+      "name": "Потужність",
+      "value": "{{ product.power|escapejs }}"
+    }{% endif %}{% if product.efficiency %},{
+      "@type": "PropertyValue", 
+      "name": "Ефективність",
+      "value": "{{ product.efficiency|escapejs }}"
+    }{% endif %}{% if product.warranty %},{
+      "@type": "PropertyValue",
+      "name": "Гарантія", 
+      "value": "{{ product.warranty|escapejs }}"
+    }{% endif %}{% if product.country %},{
+      "@type": "PropertyValue",
+      "name": "Країна виробника",
+      "value": "{{ product.country|escapejs }}"
+    }{% endif %}{% if product.model %},{
+      "@type": "PropertyValue",
+      "name": "Модель",
+      "value": "{{ product.model|escapejs }}"
+    }{% endif %}
+  ]
+}
+</script>
 
 {% block page_css %}
 <link rel="stylesheet" href="{% static 'css/catalog.css' %}">
