@@ -506,6 +506,60 @@
 /* iOS Safari спеціальні оптимізації */
 @supports (-webkit-touch-callout: none) {
     @media (max-width: 768px) {
+
+        /* Hero заголовки для iOS */
+        .hero__title {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 800;
+        }
+
+        .hero__subtitle {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            font-weight: 600;
+        }
+
+        /* About заголовки для iOS */
+        .about__title {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 800;
+        }
+
+        .about__subtitle {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            font-weight: 600;
+        }
+
+        /* Capacity заголовки для iOS */
+        .capacity__title {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 800;
+        }
+
+        .capacity__subtitle {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            font-weight: 600;
+        }
+
+        /* Contacts заголовки для iOS */
+        .contacts__title {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 800;
+        }
+
         .capacity {
             min-height: 100vh;
             height: auto;
@@ -727,5 +781,64 @@
         width: 100%;
         max-width: 280px;
         justify-content: center;
+    }
+}
+
+/* iOS Safari спеціальні оптимізації для малих екранів */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 480px) {
+
+        /* Hero заголовки для iOS малих екранів */
+        .hero__title {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            font-weight: 800;
+        }
+
+        .hero__subtitle {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            font-weight: 600;
+        }
+
+        /* About заголовки для iOS малих екранів */
+        .about__title {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            font-weight: 800;
+        }
+
+        .about__subtitle {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            font-weight: 600;
+        }
+
+        /* Capacity заголовки для iOS малих екранів */
+        .capacity__title {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            font-weight: 800;
+        }
+
+        .capacity__subtitle {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            font-weight: 600;
+        }
+
+        /* Contacts заголовки для iOS малих екранів */
+        .contacts__title {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            font-weight: 800;
+        }
     }
 }
