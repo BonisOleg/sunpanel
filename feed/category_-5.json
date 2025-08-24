@@ -1,0 +1,343 @@
+{
+  "meta": {
+    "export_date": "2025-08-01T12:51:37.764292+00:00",
+    "total_products": 42,
+    "total_categories": 5,
+    "total_brands": 10,
+    "version": "1.0",
+    "source": "GreenSolarTech Catalog",
+    "category_name": "Сонячні панелі",
+    "category_slug": "-5",
+    "products_count": 7
+  },
+  "category": {
+    "id": 50,
+    "name": "Сонячні панелі",
+    "slug": "-5",
+    "description": "Категорія Сонячні панелі"
+  },
+  "products": [
+    {
+      "id": 850,
+      "name": "Сонячна панель на 420Вт LONGI Solar Hi-MO 6 Explorer LR5-54HTB-420M",
+      "description": "Сонячна панель на 420Вт LONGI Solar Hi-MO 6 Explorer LR5-54HTB-420M - високоефективна сонячна панель від LONGi Solar. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 2400.0,
+      "model": "LONGi Solar Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:19.033571+00:00",
+      "updated_at": "2025-07-27T09:47:26.982582+00:00",
+      "category": {
+        "id": 50,
+        "name": "Сонячні панелі",
+        "slug": "-5"
+      },
+      "brand": {
+        "id": 5,
+        "name": "LONGi Solar",
+        "slug": "longi-solar"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_%D0%BD%D0%B0_420%D0%92%D1%82_LONG_c794ac1f_IuV7dBV.jpg",
+          "alt": "Сонячна панель на 420Вт LONGI Solar Hi-MO 6 Explorer LR5-54HTB-420M"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_%D0%BD%D0%B0_420%D0%92%D1%82_LONG_ef18703c_56hRq8m.jpg",
+          "alt": "Солнечная панель на 420Вт LONGI Solar Hi-MO 6 Explorer LR5-54HTB-420M - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_%D0%BD%D0%B0_420%D0%92%D1%82_LONG_59738437_KsZLZEH.jpg",
+          "alt": "Солнечная панель на 420Вт LONGI Solar Hi-MO 6 Explorer LR5-54HTB-420M - зображення 3",
+          "is_main": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": 846,
+      "name": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG",
+      "description": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG - високоефективна сонячна панель від Risen Energy. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 4440.0,
+      "model": "Risen Energy Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:15.681164+00:00",
+      "updated_at": "2025-07-27T09:45:31.453735+00:00",
+      "category": {
+        "id": 50,
+        "name": "Сонячні панелі",
+        "slug": "-5"
+      },
+      "brand": {
+        "id": 4,
+        "name": "Risen Energy",
+        "slug": "risen-energy"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_700_%D0%92%D1%82_Risen_En_6af25628_9Q0IVJG.jpg",
+          "alt": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_700_%D0%92%D1%82_Risen_En_f200e427_4IY2NAa.jpg",
+          "alt": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_700_%D0%92%D1%82_Risen_En_0da38586_Gt9zA8l.jpg",
+          "alt": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_700_%D0%92%D1%82_Risen_En_15498f26_AjBLeTA.jpg",
+          "alt": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 845,
+      "name": "Сонячна панель Longi Solar LR5-54HTH-435M Black Frame",
+      "description": "Сонячна панель Longi Solar LR5-54HTH-435M Black Frame - високоефективна сонячна панель від LONGi Solar. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 2600.0,
+      "model": "LONGi Solar Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:14.847662+00:00",
+      "updated_at": "2025-07-27T09:45:31.456103+00:00",
+      "category": {
+        "id": 50,
+        "name": "Сонячні панелі",
+        "slug": "-5"
+      },
+      "brand": {
+        "id": 5,
+        "name": "LONGi Solar",
+        "slug": "longi-solar"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_829dc5a3_QbQsUQA.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-54HTH-435M Black Frame"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_f364e670_9B7I7QX.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-54HTH-435M Black Frame - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_4ae1083a_CPwJcxM.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-54HTH-435M Black Frame - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_6d8a68d3_TWXu3pA.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-54HTH-435M Black Frame - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 844,
+      "name": "Сонячна панель Longi Solar LR5-66HTH-530M Black Frame",
+      "description": "Сонячна панель Longi Solar LR5-66HTH-530M Black Frame - високоефективна сонячна панель від LONGi Solar. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 3500.0,
+      "model": "LONGi Solar Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:13.999851+00:00",
+      "updated_at": "2025-07-27T09:45:31.458407+00:00",
+      "category": {
+        "id": 50,
+        "name": "Сонячні панелі",
+        "slug": "-5"
+      },
+      "brand": {
+        "id": 5,
+        "name": "LONGi Solar",
+        "slug": "longi-solar"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_f364e670_vX0omNN.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-66HTH-530M Black Frame"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_829dc5a3_s4bjrY8.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-66HTH-530M Black Frame - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_4ae1083a_1dOaw2M.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-66HTH-530M Black Frame - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_6d8a68d3_OlE4q9H.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-66HTH-530M Black Frame - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 843,
+      "name": "Сонячна панель Longi Solar LR5-72HTH-590M",
+      "description": "Сонячна панель Longi Solar LR5-72HTH-590M - високоефективна сонячна панель від LONGi Solar. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 4080.0,
+      "model": "LONGi Solar Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:13.264939+00:00",
+      "updated_at": "2025-07-27T09:45:31.460457+00:00",
+      "category": {
+        "id": 50,
+        "name": "Сонячні панелі",
+        "slug": "-5"
+      },
+      "brand": {
+        "id": 5,
+        "name": "LONGi Solar",
+        "slug": "longi-solar"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_180493e4_IhLongG.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-72HTH-590M"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_385ccd6b_PsxyJeA.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-72HTH-590M - зображення 2",
+          "is_main": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": 842,
+      "name": "Сонячна панель Longi Solar LR7-72HTH-610M",
+      "description": "Сонячна панель Longi Solar LR7-72HTH-610M - високоефективна сонячна панель від LONGi Solar. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 3700.0,
+      "model": "LONGi Solar Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:12.546306+00:00",
+      "updated_at": "2025-07-27T09:45:31.462433+00:00",
+      "category": {
+        "id": 50,
+        "name": "Сонячні панелі",
+        "slug": "-5"
+      },
+      "brand": {
+        "id": 5,
+        "name": "LONGi Solar",
+        "slug": "longi-solar"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR7_180493e4_yNsqHoK.jpg",
+          "alt": "Сонячна панель Longi Solar LR7-72HTH-610M"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR7_385ccd6b_o1ROgss.jpg",
+          "alt": "Сонячна панель Longi Solar LR7-72HTH-610M - зображення 2",
+          "is_main": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": 841,
+      "name": "Сонячна панель Longi Solar LR8-66HGD-615M",
+      "description": "Сонячна панель Longi Solar LR8-66HGD-615M - високоефективна сонячна панель від LONGi Solar. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 3740.0,
+      "model": "LONGi Solar Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:11.806147+00:00",
+      "updated_at": "2025-07-27T09:45:31.463949+00:00",
+      "category": {
+        "id": 50,
+        "name": "Сонячні панелі",
+        "slug": "-5"
+      },
+      "brand": {
+        "id": 5,
+        "name": "LONGi Solar",
+        "slug": "longi-solar"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR8_180493e4_vhOs79u.jpg",
+          "alt": "Сонячна панель Longi Solar LR8-66HGD-615M"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR8_385ccd6b_oMnEAQY.jpg",
+          "alt": "Сонячна панель Longi Solar LR8-66HGD-615M - зображення 2",
+          "is_main": false,
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

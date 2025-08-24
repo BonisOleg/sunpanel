@@ -1,0 +1,257 @@
+{
+  "meta": {
+    "export_date": "2025-08-01T12:51:37.764292+00:00",
+    "total_products": 42,
+    "total_categories": 5,
+    "total_brands": 10,
+    "version": "1.0",
+    "source": "GreenSolarTech Catalog",
+    "category_name": "Комплекти резервного живлення",
+    "category_slug": "",
+    "products_count": 3
+  },
+  "category": {
+    "id": 52,
+    "name": "Комплекти резервного живлення",
+    "slug": "",
+    "description": ""
+  },
+  "products": [
+    {
+      "id": 848,
+      "name": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А)",
+      "description": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А) - готове рішення для резервного живлення від Must.\n\nКомплект включає:\n• Гібридний інвертор високої якості\n• Літій-залізо-фосфатну батарею\n• Необхідні кабелі та з'єднання\n• Систему моніторингу та управління\n\nПереваги готового рішення:\n• Всі компоненти протестовані разом\n• Простий монтаж та налаштування\n• Технічна підтримка та гарантія\n• Оптимальне співвідношення ціна/якість\n\nЗабезпечує надійне резервне живлення для дому чи офісу.",
+      "price": 30500.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:17.275204+00:00",
+      "updated_at": "2025-07-27T11:04:49.129891+00:00",
+      "category": {
+        "id": 52,
+        "name": "Комплекти резервного живлення",
+        "slug": ""
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_2_a12b29f3_RKOVtKC.jpg",
+          "alt": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А)"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_2_bde36ecc_mssnJS2.jpg",
+          "alt": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А) - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_2_781dcc72_jR7dGDl.jpg",
+          "alt": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А) - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_2_8e36f51c_6T7MIaw.jpg",
+          "alt": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А) - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 817,
+      "name": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt)",
+      "description": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - готове рішення для резервного живлення від Must.\n\nКомплект включає:\n• Гібридний інвертор високої якості\n• Літій-залізо-фосфатну батарею\n• Необхідні кабелі та з'єднання\n• Систему моніторингу та управління\n\nПереваги готового рішення:\n• Всі компоненти протестовані разом\n• Простий монтаж та налаштування\n• Технічна підтримка та гарантія\n• Оптимальне співвідношення ціна/якість\n\nЗабезпечує надійне резервне живлення для дому чи офісу.",
+      "price": 74900.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:46.853860+00:00",
+      "updated_at": "2025-07-27T11:04:49.130751+00:00",
+      "category": {
+        "id": 52,
+        "name": "Комплекти резервного живлення",
+        "slug": ""
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_7c1a1e05.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt)"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_c5d80d10.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_3a0766ca.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_14f086d3.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_81dc1dd5.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_b741897c.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 6",
+          "is_main": false,
+          "order": 5
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_2ecdb5c2.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 7",
+          "is_main": false,
+          "order": 6
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_7056a1be.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 8",
+          "is_main": false,
+          "order": 7
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_c4b42232.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 9",
+          "is_main": false,
+          "order": 8
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_2fba78a8.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 10",
+          "is_main": false,
+          "order": 9
+        }
+      ]
+    },
+    {
+      "id": 815,
+      "name": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100",
+      "description": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - готове рішення для резервного живлення від Must.\n\nКомплект включає:\n• Гібридний інвертор високої якості\n• Літій-залізо-фосфатну батарею\n• Необхідні кабелі та з'єднання\n• Систему моніторингу та управління\n\nПереваги готового рішення:\n• Всі компоненти протестовані разом\n• Простий монтаж та налаштування\n• Технічна підтримка та гарантія\n• Оптимальне співвідношення ціна/якість\n\nЗабезпечує надійне резервне живлення для дому чи офісу.",
+      "price": 40999.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:44.322218+00:00",
+      "updated_at": "2025-07-27T11:04:49.131338+00:00",
+      "category": {
+        "id": 52,
+        "name": "Комплекти резервного живлення",
+        "slug": ""
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___659cdb22.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___a1061e0c.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___659b62de.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___97e85669.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___e14902ee.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___f6e6eeef.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 6",
+          "is_main": false,
+          "order": 5
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___db7f0bc2.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 7",
+          "is_main": false,
+          "order": 6
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___51c28b36.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 8",
+          "is_main": false,
+          "order": 7
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___2e3f2054.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 9",
+          "is_main": false,
+          "order": 8
+        }
+      ]
+    }
+  ]
+}

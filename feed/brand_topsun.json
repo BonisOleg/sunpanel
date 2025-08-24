@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "export_date": "2025-08-01T12:51:37.764292+00:00",
+    "total_products": 42,
+    "total_categories": 5,
+    "total_brands": 10,
+    "version": "1.0",
+    "source": "GreenSolarTech Catalog",
+    "brand_name": "TopSun",
+    "brand_slug": "topsun",
+    "products_count": 1
+  },
+  "brand": {
+    "id": 8,
+    "name": "TopSun",
+    "slug": "topsun",
+    "description": "Бренд TopSun",
+    "website": ""
+  },
+  "products": [
+    {
+      "id": 819,
+      "name": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А)",
+      "description": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А) - надійна літій-залізо-фосфатна (LiFePO4) батарея від TopSun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 87000.0,
+      "model": "TopSun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:49.891118+00:00",
+      "updated_at": "2025-07-27T09:45:31.503615+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 8,
+        "name": "TopSun",
+        "slug": "topsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_LVTOPSUN__3a8eaa3d_GcKtBa7.jpg",
+          "alt": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А)"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_LVTOPSUN__1f145745_791TnC9.jpg",
+          "alt": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А) - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_LVTOPSUN__b8043114_CYzYpmZ.jpg",
+          "alt": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А) - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_LVTOPSUN__b26b3936_03FZXSS.jpg",
+          "alt": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А) - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    }
+  ]
+}

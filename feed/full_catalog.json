@@ -1,0 +1,2484 @@
+{
+  "meta": {
+    "export_date": "2025-08-01T12:51:37.764292+00:00",
+    "total_products": 42,
+    "total_categories": 5,
+    "total_brands": 10,
+    "version": "1.0",
+    "source": "GreenSolarTech Catalog"
+  },
+  "categories": [
+    {
+      "id": 47,
+      "name": "Інвертори",
+      "slug": "-1",
+      "description": "Категорія Інвертори",
+      "is_active": true,
+      "created_at": "2025-07-24T16:46:10.900437+00:00"
+    },
+    {
+      "id": 48,
+      "name": "Акумуляторні батареї",
+      "slug": "-3",
+      "description": "Категорія Акумуляторні батареї",
+      "is_active": true,
+      "created_at": "2025-07-24T16:46:11.901696+00:00"
+    },
+    {
+      "id": 53,
+      "name": "Додаткові послуги",
+      "slug": "-2",
+      "description": "",
+      "is_active": true,
+      "created_at": "2025-07-27T11:04:49.127681+00:00"
+    },
+    {
+      "id": 52,
+      "name": "Комплекти резервного живлення",
+      "slug": "",
+      "description": "",
+      "is_active": true,
+      "created_at": "2025-07-27T11:04:49.125744+00:00"
+    },
+    {
+      "id": 50,
+      "name": "Сонячні панелі",
+      "slug": "-5",
+      "description": "Категорія Сонячні панелі",
+      "is_active": true,
+      "created_at": "2025-07-24T16:46:45.341006+00:00"
+    }
+  ],
+  "brands": [
+    {
+      "id": 6,
+      "name": "Deye",
+      "slug": "deye",
+      "description": "Бренд Deye",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-19T06:37:26.401264+00:00"
+    },
+    {
+      "id": 5,
+      "name": "LONGi Solar",
+      "slug": "longi-solar",
+      "description": "Бренд LONGi Solar",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-19T06:37:26.391330+00:00"
+    },
+    {
+      "id": 7,
+      "name": "Lvtopsun",
+      "slug": "lvtopsun",
+      "description": "Бренд Lvtopsun",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-19T06:37:26.405415+00:00"
+    },
+    {
+      "id": 9,
+      "name": "Must",
+      "slug": "must",
+      "description": "Бренд Must",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-19T06:37:26.441869+00:00"
+    },
+    {
+      "id": 4,
+      "name": "Risen Energy",
+      "slug": "risen-energy",
+      "description": "Бренд Risen Energy",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-19T06:37:26.387701+00:00"
+    },
+    {
+      "id": 8,
+      "name": "TopSun",
+      "slug": "topsun",
+      "description": "Бренд TopSun",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-19T06:37:26.438657+00:00"
+    },
+    {
+      "id": 12,
+      "name": "Без бренду",
+      "slug": "-2",
+      "description": "",
+      "website": "",
+      "is_active": false,
+      "created_at": "2025-07-19T10:19:28.443542+00:00"
+    },
+    {
+      "id": 11,
+      "name": "Загальний",
+      "slug": "-1",
+      "description": "Загальний бренд",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-19T07:27:29.151267+00:00"
+    },
+    {
+      "id": 13,
+      "name": "Невідомий",
+      "slug": "-3",
+      "description": "Продукція бренду Невідомий",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-27T09:42:16.648111+00:00"
+    },
+    {
+      "id": 10,
+      "name": "Послуги",
+      "slug": "",
+      "description": "Послуги компанії",
+      "website": "",
+      "is_active": false,
+      "created_at": "2025-07-19T06:46:34.964233+00:00"
+    }
+  ],
+  "products": [
+    {
+      "id": 854,
+      "name": "Гібридний інвертор Deye 80 кВт SUN-80K-SG02HP3-EU-EM6 3-фазний",
+      "description": "Гібридний інвертор Deye 80 кВт SUN-80K-SG02HP3-EU-EM6 3-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 274000.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:22.543501+00:00",
+      "updated_at": "2025-07-27T09:45:31.436679+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_80_%D0%BA%D0%92%D1%82_7486fa88_WppkqIW.jpg",
+          "alt": "Гібридний інвертор Deye 80 кВт SUN-80K-SG02HP3-EU-EM6 3-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_80_%D0%BA%D0%92%D1%82_a271718d_iVBrpmA.jpg",
+          "alt": "Гібридний інвертор Deye 80 кВт SUN-80K-SG02HP3-EU-EM6 3-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_80_%D0%BA%D0%92%D1%82_a801d6f0_Lm9eqlc.jpg",
+          "alt": "Гібридний інвертор Deye 80 кВт SUN-80K-SG02HP3-EU-EM6 3-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_80_%D0%BA%D0%92%D1%82_e2226039_EEeTHb1.jpg",
+          "alt": "Гібридний інвертор Deye 80 кВт SUN-80K-SG02HP3-EU-EM6 3-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_80_%D0%BA%D0%92%D1%82_53568d66_0v4gtRT.jpg",
+          "alt": "Гібридний інвертор Deye 80 кВт SUN-80K-SG02HP3-EU-EM6 3-фазний - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 853,
+      "name": "Гібридний інвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазний",
+      "description": "Гібридний інвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазний - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 95300.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:21.504085+00:00",
+      "updated_at": "2025-07-27T09:47:26.978724+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_15_%D0%BA%D0%92%D1%82_91d14c48.jpg",
+          "alt": "Гібридний інвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_15_%D0%BA%D0%92%D1%82_96235a81.jpg",
+          "alt": "Гибридный инвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазный - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_15_%D0%BA%D0%92%D1%82_8456e069.jpg",
+          "alt": "Гибридный инвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазный - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_15_%D0%BA%D0%92%D1%82_ceb5b403.jpg",
+          "alt": "Гибридный инвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазный - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_15_%D0%BA%D0%92%D1%82_bae78ea3.jpg",
+          "alt": "Гибридный инвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазный - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_15_%D0%BA%D0%92%D1%82_9f060d41.jpg",
+          "alt": "Гибридный инвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазный - зображення 6",
+          "is_main": false,
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": 852,
+      "name": "Гібридний інвертор Deye 8 кВт SUN-8K-SG05LP1-EU-SM2 1-фазний",
+      "description": "Гібридний інвертор Deye 8 кВт SUN-8K-SG05LP1-EU-SM2 1-фазний - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 55400.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:20.445766+00:00",
+      "updated_at": "2025-07-27T09:47:26.980594+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__cba124c1.jpg",
+          "alt": "Гібридний інвертор Deye 8 кВт SUN-8K-SG05LP1-EU-SM2 1-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__05b81058.jpg",
+          "alt": "Гибридный инвертор Deye 8 кВт SUN-8K-SG05LP1-EU-SM2 1-фазный - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__1aae2492.jpg",
+          "alt": "Гибридный инвертор Deye 8 кВт SUN-8K-SG05LP1-EU-SM2 1-фазный - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__83845891.jpg",
+          "alt": "Гибридный инвертор Deye 8 кВт SUN-8K-SG05LP1-EU-SM2 1-фазный - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__d39883b9.jpg",
+          "alt": "Гибридный инвертор Deye 8 кВт SUN-8K-SG05LP1-EU-SM2 1-фазный - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 851,
+      "name": "Гібридний інвертор Deye 6 кВт SUN-6K-SG04LP1-EU-SM2 1-фазний",
+      "description": "Гібридний інвертор Deye 6 кВт SUN-6K-SG04LP1-EU-SM2 1-фазний - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 37800.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:19.770481+00:00",
+      "updated_at": "2025-07-27T09:47:26.981634+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_6_%D0%BA%D0%92%D1%82__4370fa56.jpg",
+          "alt": "Гібридний інвертор Deye 6 кВт SUN-6K-SG04LP1-EU-SM2 1-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_6_%D0%BA%D0%92%D1%82__00a9abb2.jpg",
+          "alt": "Гибридный инвертор Deye 6 кВт SUN-6K-SG04LP1-EU-SM2 1-фазный - зображення 2",
+          "is_main": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": 850,
+      "name": "Сонячна панель на 420Вт LONGI Solar Hi-MO 6 Explorer LR5-54HTB-420M",
+      "description": "Сонячна панель на 420Вт LONGI Solar Hi-MO 6 Explorer LR5-54HTB-420M - високоефективна сонячна панель від LONGi Solar. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 2400.0,
+      "model": "LONGi Solar Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:19.033571+00:00",
+      "updated_at": "2025-07-27T09:47:26.982582+00:00",
+      "category": {
+        "id": 50,
+        "name": "Сонячні панелі",
+        "slug": "-5"
+      },
+      "brand": {
+        "id": 5,
+        "name": "LONGi Solar",
+        "slug": "longi-solar"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_%D0%BD%D0%B0_420%D0%92%D1%82_LONG_c794ac1f_IuV7dBV.jpg",
+          "alt": "Сонячна панель на 420Вт LONGI Solar Hi-MO 6 Explorer LR5-54HTB-420M"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_%D0%BD%D0%B0_420%D0%92%D1%82_LONG_ef18703c_56hRq8m.jpg",
+          "alt": "Солнечная панель на 420Вт LONGI Solar Hi-MO 6 Explorer LR5-54HTB-420M - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_%D0%BD%D0%B0_420%D0%92%D1%82_LONG_59738437_KsZLZEH.jpg",
+          "alt": "Солнечная панель на 420Вт LONGI Solar Hi-MO 6 Explorer LR5-54HTB-420M - зображення 3",
+          "is_main": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": 849,
+      "name": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт",
+      "description": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт - сучасний гібридний інвертор від Must, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 14900.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:18.163105+00:00",
+      "updated_at": "2025-07-27T09:45:31.446967+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%86%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-5248_PRO__M_5fc78ead_z0ifT77.jpg",
+          "alt": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%86%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-5248_PRO__M_103dc0b8_ZxJ7Lih.jpg",
+          "alt": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%86%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-5248_PRO__M_f53a1d5f_2qej3X5.jpg",
+          "alt": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%86%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-5248_PRO__M_b7840b2b_rUoyJob.jpg",
+          "alt": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 848,
+      "name": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А)",
+      "description": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А) - готове рішення для резервного живлення від Must.\n\nКомплект включає:\n• Гібридний інвертор високої якості\n• Літій-залізо-фосфатну батарею\n• Необхідні кабелі та з'єднання\n• Систему моніторингу та управління\n\nПереваги готового рішення:\n• Всі компоненти протестовані разом\n• Простий монтаж та налаштування\n• Технічна підтримка та гарантія\n• Оптимальне співвідношення ціна/якість\n\nЗабезпечує надійне резервне живлення для дому чи офісу.",
+      "price": 30500.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:17.275204+00:00",
+      "updated_at": "2025-07-27T11:04:49.129891+00:00",
+      "category": {
+        "id": 52,
+        "name": "Комплекти резервного живлення",
+        "slug": ""
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_2_a12b29f3_RKOVtKC.jpg",
+          "alt": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А)"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_2_bde36ecc_mssnJS2.jpg",
+          "alt": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А) - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_2_781dcc72_jR7dGDl.jpg",
+          "alt": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А) - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_2_8e36f51c_6T7MIaw.jpg",
+          "alt": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А) - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 847,
+      "name": "Монтаж сонячних електростанцій",
+      "description": "Монтаж сонячних електростанцій - високоефективна сонячна панель від Невідомий. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 1.0,
+      "model": "nan Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:16.653928+00:00",
+      "updated_at": "2025-07-27T11:04:49.131895+00:00",
+      "category": {
+        "id": 53,
+        "name": "Додаткові послуги",
+        "slug": "-2"
+      },
+      "brand": {
+        "id": 13,
+        "name": "Невідомий",
+        "slug": "-3"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%9C%D0%BE%D0%BD%D1%82%D0%B0%D0%B6_%D1%81%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B8%D1%85_%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D1%86%D1%96%D0%B9_f376ec28.jpg",
+          "alt": "Монтаж сонячних електростанцій"
+        }
+      ]
+    },
+    {
+      "id": 846,
+      "name": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG",
+      "description": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG - високоефективна сонячна панель від Risen Energy. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 4440.0,
+      "model": "Risen Energy Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:15.681164+00:00",
+      "updated_at": "2025-07-27T09:45:31.453735+00:00",
+      "category": {
+        "id": 50,
+        "name": "Сонячні панелі",
+        "slug": "-5"
+      },
+      "brand": {
+        "id": 4,
+        "name": "Risen Energy",
+        "slug": "risen-energy"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_700_%D0%92%D1%82_Risen_En_6af25628_9Q0IVJG.jpg",
+          "alt": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_700_%D0%92%D1%82_Risen_En_f200e427_4IY2NAa.jpg",
+          "alt": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_700_%D0%92%D1%82_Risen_En_0da38586_Gt9zA8l.jpg",
+          "alt": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_700_%D0%92%D1%82_Risen_En_15498f26_AjBLeTA.jpg",
+          "alt": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 845,
+      "name": "Сонячна панель Longi Solar LR5-54HTH-435M Black Frame",
+      "description": "Сонячна панель Longi Solar LR5-54HTH-435M Black Frame - високоефективна сонячна панель від LONGi Solar. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 2600.0,
+      "model": "LONGi Solar Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:14.847662+00:00",
+      "updated_at": "2025-07-27T09:45:31.456103+00:00",
+      "category": {
+        "id": 50,
+        "name": "Сонячні панелі",
+        "slug": "-5"
+      },
+      "brand": {
+        "id": 5,
+        "name": "LONGi Solar",
+        "slug": "longi-solar"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_829dc5a3_QbQsUQA.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-54HTH-435M Black Frame"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_f364e670_9B7I7QX.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-54HTH-435M Black Frame - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_4ae1083a_CPwJcxM.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-54HTH-435M Black Frame - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_6d8a68d3_TWXu3pA.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-54HTH-435M Black Frame - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 844,
+      "name": "Сонячна панель Longi Solar LR5-66HTH-530M Black Frame",
+      "description": "Сонячна панель Longi Solar LR5-66HTH-530M Black Frame - високоефективна сонячна панель від LONGi Solar. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 3500.0,
+      "model": "LONGi Solar Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:13.999851+00:00",
+      "updated_at": "2025-07-27T09:45:31.458407+00:00",
+      "category": {
+        "id": 50,
+        "name": "Сонячні панелі",
+        "slug": "-5"
+      },
+      "brand": {
+        "id": 5,
+        "name": "LONGi Solar",
+        "slug": "longi-solar"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_f364e670_vX0omNN.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-66HTH-530M Black Frame"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_829dc5a3_s4bjrY8.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-66HTH-530M Black Frame - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_4ae1083a_1dOaw2M.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-66HTH-530M Black Frame - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_6d8a68d3_OlE4q9H.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-66HTH-530M Black Frame - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 843,
+      "name": "Сонячна панель Longi Solar LR5-72HTH-590M",
+      "description": "Сонячна панель Longi Solar LR5-72HTH-590M - високоефективна сонячна панель від LONGi Solar. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 4080.0,
+      "model": "LONGi Solar Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:13.264939+00:00",
+      "updated_at": "2025-07-27T09:45:31.460457+00:00",
+      "category": {
+        "id": 50,
+        "name": "Сонячні панелі",
+        "slug": "-5"
+      },
+      "brand": {
+        "id": 5,
+        "name": "LONGi Solar",
+        "slug": "longi-solar"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_180493e4_IhLongG.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-72HTH-590M"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR5_385ccd6b_PsxyJeA.jpg",
+          "alt": "Сонячна панель Longi Solar LR5-72HTH-590M - зображення 2",
+          "is_main": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": 842,
+      "name": "Сонячна панель Longi Solar LR7-72HTH-610M",
+      "description": "Сонячна панель Longi Solar LR7-72HTH-610M - високоефективна сонячна панель від LONGi Solar. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 3700.0,
+      "model": "LONGi Solar Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:12.546306+00:00",
+      "updated_at": "2025-07-27T09:45:31.462433+00:00",
+      "category": {
+        "id": 50,
+        "name": "Сонячні панелі",
+        "slug": "-5"
+      },
+      "brand": {
+        "id": 5,
+        "name": "LONGi Solar",
+        "slug": "longi-solar"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR7_180493e4_yNsqHoK.jpg",
+          "alt": "Сонячна панель Longi Solar LR7-72HTH-610M"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR7_385ccd6b_o1ROgss.jpg",
+          "alt": "Сонячна панель Longi Solar LR7-72HTH-610M - зображення 2",
+          "is_main": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": 841,
+      "name": "Сонячна панель Longi Solar LR8-66HGD-615M",
+      "description": "Сонячна панель Longi Solar LR8-66HGD-615M - високоефективна сонячна панель від LONGi Solar. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 3740.0,
+      "model": "LONGi Solar Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:11.806147+00:00",
+      "updated_at": "2025-07-27T09:45:31.463949+00:00",
+      "category": {
+        "id": 50,
+        "name": "Сонячні панелі",
+        "slug": "-5"
+      },
+      "brand": {
+        "id": 5,
+        "name": "LONGi Solar",
+        "slug": "longi-solar"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR8_180493e4_vhOs79u.jpg",
+          "alt": "Сонячна панель Longi Solar LR8-66HGD-615M"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_Longi_Solar_LR8_385ccd6b_oMnEAQY.jpg",
+          "alt": "Сонячна панель Longi Solar LR8-66HGD-615M - зображення 2",
+          "is_main": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": 840,
+      "name": "Акумуляторна батарея Deye SE-G5.1Pro-B",
+      "description": "Акумуляторна батарея Deye SE-G5.1Pro-B - надійна літій-залізо-фосфатна (LiFePO4) батарея від Deye.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 36990.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:11.063152+00:00",
+      "updated_at": "2025-07-27T09:45:31.466287+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_SE-G_11c23dfe_zFINXHL.jpg",
+          "alt": "Акумуляторна батарея Deye SE-G5.1Pro-B"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_SE-G_27a1de05_w5RLsNK.jpg",
+          "alt": "Акумуляторна батарея Deye SE-G5.1Pro-B - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_SE-G_06bbed41_swneGaE.jpg",
+          "alt": "Акумуляторна батарея Deye SE-G5.1Pro-B - зображення 3",
+          "is_main": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": 839,
+      "name": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А",
+      "description": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А - надійна літій-залізо-фосфатна (LiFePO4) батарея від Lvtopsun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 22000.0,
+      "model": "Lvtopsun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:10.174713+00:00",
+      "updated_at": "2025-07-27T09:45:31.468271+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 7,
+        "name": "Lvtopsun",
+        "slug": "lvtopsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__12398170_5Oip9HS.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__78b914eb_mGnnTdY.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__8813e4cb_UqW5IWM.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__d43adcd7_qzJ7w3H.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 838,
+      "name": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V",
+      "description": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - надійна літій-залізо-фосфатна (LiFePO4) батарея від Lvtopsun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 95500.0,
+      "model": "Lvtopsun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:09.069841+00:00",
+      "updated_at": "2025-07-27T09:45:31.470012+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 7,
+        "name": "Lvtopsun",
+        "slug": "lvtopsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__65280f8e_BqD72JN.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__0fb61f13_2c92yZc.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__f25ebe48_AeZvW1K.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__d1a014c5_H3id5Ca.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__f97ec114_Lo4FuBz.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__dca150ca_HGPGn9K.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - зображення 6",
+          "is_main": false,
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": 837,
+      "name": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V",
+      "description": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - надійна літій-залізо-фосфатна (LiFePO4) батарея від Lvtopsun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 63000.0,
+      "model": "Lvtopsun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:07.908117+00:00",
+      "updated_at": "2025-07-27T09:45:31.472107+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 7,
+        "name": "Lvtopsun",
+        "slug": "lvtopsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__ea34488c_jRGYWvQ.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__6c5c9706_obGBwPi.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__9b3eedc7_48B7Fk9.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__2155f07a_wPxENdW.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__9b571294_skgbAJN.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__c14b10df_TG6JTzE.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 6",
+          "is_main": false,
+          "order": 5
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__330b534a_hyLdz8y.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 7",
+          "is_main": false,
+          "order": 6
+        }
+      ]
+    },
+    {
+      "id": 836,
+      "name": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V",
+      "description": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V - надійна літій-залізо-фосфатна (LiFePO4) батарея від Lvtopsun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 70000.0,
+      "model": "Lvtopsun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:06.973810+00:00",
+      "updated_at": "2025-07-27T09:45:31.474386+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 7,
+        "name": "Lvtopsun",
+        "slug": "lvtopsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__68e92027_WwWM6Bk.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__71e68cac_SbSPaWH.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__c17f5d5e_Txv1UvU.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__cf083e52_HHfQLTi.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 835,
+      "name": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V",
+      "description": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - надійна літій-залізо-фосфатна (LiFePO4) батарея від Lvtopsun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 84000.0,
+      "model": "Lvtopsun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:05.884552+00:00",
+      "updated_at": "2025-07-27T09:45:31.476432+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 7,
+        "name": "Lvtopsun",
+        "slug": "lvtopsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__542bc823_ZIwXR3U.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__30f2380b_cl4fTTY.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__71e68cac_LEbFmUe.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__4efd044a_UBAYf5K.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__e271a44d_CHGdXPh.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__a5fd4171_qOxuglK.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - зображення 6",
+          "is_main": false,
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": 834,
+      "name": "Високовольтна система зберігання енергії на 20 кВт: 4 модулів 100 А Deye BOS-G20-20,48kW 204.8 V 100 Ah",
+      "description": "Високовольтна система зберігання енергії на 20 кВт: 4 модулів 100 А Deye BOS-G20-20,48kW 204.8 V 100 Ah - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 226500.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:05.058484+00:00",
+      "updated_at": "2025-07-27T09:45:31.478099+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_67ee1883_jV26esQ.jpg",
+          "alt": "Високовольтна система зберігання енергії на 20 кВт: 4 модулів 100 А Deye BOS-G20-20,48kW 204.8 V 100 Ah"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_fc46b9a5_nLF5QSz.jpg",
+          "alt": "Високовольтна система зберігання енергії на 20 кВт: 4 модулів 100 А Deye BOS-G20-20,48kW 204.8 V 100 Ah - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_88471259_7fsr4YY.jpg",
+          "alt": "Високовольтна система зберігання енергії на 20 кВт: 4 модулів 100 А Deye BOS-G20-20,48kW 204.8 V 100 Ah - зображення 3",
+          "is_main": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": 833,
+      "name": "Високовольтна система зберігання енергії на 30 кВт: 6 модулів 100 А Deye BOS-G30-30,72kW 307.2V 100Ah",
+      "description": "Високовольтна система зберігання енергії на 30 кВт: 6 модулів 100 А Deye BOS-G30-30,72kW 307.2V 100Ah - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 308500.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:04.228398+00:00",
+      "updated_at": "2025-07-27T09:45:31.479729+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_e6841d1c_elnXYBZ.jpg",
+          "alt": "Високовольтна система зберігання енергії на 30 кВт: 6 модулів 100 А Deye BOS-G30-30,72kW 307.2V 100Ah"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_b5a4463e_jy9q4A8.jpg",
+          "alt": "Високовольтна система зберігання енергії на 30 кВт: 6 модулів 100 А Deye BOS-G30-30,72kW 307.2V 100Ah - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_374c7cc7_CEGerLX.jpg",
+          "alt": "Високовольтна система зберігання енергії на 30 кВт: 6 модулів 100 А Deye BOS-G30-30,72kW 307.2V 100Ah - зображення 3",
+          "is_main": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": 832,
+      "name": "Високовольтна система зберігання енергії на 40 кВт: 8 модулів 100 А Deye BOS-G40-40,96kW 409.6V 100Ah",
+      "description": "Високовольтна система зберігання енергії на 40 кВт: 8 модулів 100 А Deye BOS-G40-40,96kW 409.6V 100Ah - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 390500.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:03.425197+00:00",
+      "updated_at": "2025-07-27T09:45:31.481230+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_8a54392a_rCqkyfD.jpg",
+          "alt": "Високовольтна система зберігання енергії на 40 кВт: 8 модулів 100 А Deye BOS-G40-40,96kW 409.6V 100Ah"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_4bb304cb_CJQXZdf.jpg",
+          "alt": "Високовольтна система зберігання енергії на 40 кВт: 8 модулів 100 А Deye BOS-G40-40,96kW 409.6V 100Ah - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_8a754761_Msu9McJ.jpg",
+          "alt": "Високовольтна система зберігання енергії на 40 кВт: 8 модулів 100 А Deye BOS-G40-40,96kW 409.6V 100Ah - зображення 3",
+          "is_main": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": 831,
+      "name": "Високовольтна система зберігання енергії на 60 кВт: 12 модулів 100 А Deye BOS-G60-61,44kW 614V 100Ah L",
+      "description": "Високовольтна система зберігання енергії на 60 кВт: 12 модулів 100 А Deye BOS-G60-61,44kW 614V 100Ah L - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 554500.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:02.561639+00:00",
+      "updated_at": "2025-07-27T09:45:31.483141+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_2d2f242f_pMLm1CB.jpg",
+          "alt": "Високовольтна система зберігання енергії на 60 кВт: 12 модулів 100 А Deye BOS-G60-61,44kW 614V 100Ah L"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_c5627e60_Li8RHMk.jpg",
+          "alt": "Високовольтна система зберігання енергії на 60 кВт: 12 модулів 100 А Deye BOS-G60-61,44kW 614V 100Ah L - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_96946eb2_LoPp6Eq.jpg",
+          "alt": "Високовольтна система зберігання енергії на 60 кВт: 12 модулів 100 А Deye BOS-G60-61,44kW 614V 100Ah L - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_414cb110_BOt4lbT.jpg",
+          "alt": "Високовольтна система зберігання енергії на 60 кВт: 12 модулів 100 А Deye BOS-G60-61,44kW 614V 100Ah L - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 830,
+      "name": "Акумуляторна батарея Deye LiFePO4 10,24 кВт рік 51,2B 200A RW-F10.6",
+      "description": "Акумуляторна батарея Deye LiFePO4 10,24 кВт рік 51,2B 200A RW-F10.6 - надійна літій-залізо-фосфатна (LiFePO4) батарея від Deye.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 69900.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:01.571249+00:00",
+      "updated_at": "2025-07-27T09:45:31.484938+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_76b6dfef_BV800eV.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 10,24 кВт рік 51,2B 200A RW-F10.6"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_d77000cb_VDE05lm.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 10,24 кВт рік 51,2B 200A RW-F10.6 - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_cca15363_HPAEy74.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 10,24 кВт рік 51,2B 200A RW-F10.6 - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_e06ec8a1_gbN1z1D.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 10,24 кВт рік 51,2B 200A RW-F10.6 - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 829,
+      "name": "Акумуляторна батарея Deye LiFePO4 5,12 кВт рік високовольтна 100A BOS-GM5.1",
+      "description": "Акумуляторна батарея Deye LiFePO4 5,12 кВт рік високовольтна 100A BOS-GM5.1 - надійна літій-залізо-фосфатна (LiFePO4) батарея від Deye.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 34990.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:00.501989+00:00",
+      "updated_at": "2025-07-27T09:45:31.486551+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_25d0b91f_VGZDpVT.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 5,12 кВт рік високовольтна 100A BOS-GM5.1"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_9520b77c_CedLwyh.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 5,12 кВт рік високовольтна 100A BOS-GM5.1 - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_755b563c_xiVjyi5.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 5,12 кВт рік високовольтна 100A BOS-GM5.1 - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_691ff16e_936WjsF.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 5,12 кВт рік високовольтна 100A BOS-GM5.1 - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_2e84cfa6_aMngSPc.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 5,12 кВт рік високовольтна 100A BOS-GM5.1 - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 828,
+      "name": "Гібридний інвертор Deye 50 кВт SUN-50K-SG01HP3-EU-BM 3-фазний",
+      "description": "Гібридний інвертор Deye 50 кВт SUN-50K-SG01HP3-EU-BM 3-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 199290.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:58.759108+00:00",
+      "updated_at": "2025-07-27T09:45:31.487986+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_50_%D0%BA%D0%92%D1%82_c04d1c61_ulDEVo6.jpg",
+          "alt": "Гібридний інвертор Deye 50 кВт SUN-50K-SG01HP3-EU-BM 3-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_50_%D0%BA%D0%92%D1%82_99493853_DgipgmZ.jpg",
+          "alt": "Гібридний інвертор Deye 50 кВт SUN-50K-SG01HP3-EU-BM 3-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": 827,
+      "name": "Гібридний інвертор Deye 30 кВт SUN-30K-SG01HP3-EU-BM3 3-фазний",
+      "description": "Гібридний інвертор Deye 30 кВт SUN-30K-SG01HP3-EU-BM3 3-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 143990.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:57.935890+00:00",
+      "updated_at": "2025-07-27T09:45:31.489624+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_30_%D0%BA%D0%92%D1%82_7b248311_BDC53ZU.jpg",
+          "alt": "Гібридний інвертор Deye 30 кВт SUN-30K-SG01HP3-EU-BM3 3-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_30_%D0%BA%D0%92%D1%82_22bb043f_jTLBaQj.jpg",
+          "alt": "Гібридний інвертор Deye 30 кВт SUN-30K-SG01HP3-EU-BM3 3-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_30_%D0%BA%D0%92%D1%82_a838ec78_a7fhGEF.jpg",
+          "alt": "Гібридний інвертор Deye 30 кВт SUN-30K-SG01HP3-EU-BM3 3-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_30_%D0%BA%D0%92%D1%82_99493853_0nvfZSk.jpg",
+          "alt": "Гібридний інвертор Deye 30 кВт SUN-30K-SG01HP3-EU-BM3 3-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 826,
+      "name": "Гібридний інвертор Deye 20 кВт SUN-20K-SG05LP3-EU-SM2 3-фазний",
+      "description": "Гібридний інвертор Deye 20 кВт SUN-20K-SG05LP3-EU-SM2 3-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 125990.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:56.987331+00:00",
+      "updated_at": "2025-07-27T09:45:31.491459+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_20_%D0%BA%D0%92%D1%82_8c17b85e_RvtsoHx.jpg",
+          "alt": "Гібридний інвертор Deye 20 кВт SUN-20K-SG05LP3-EU-SM2 3-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_20_%D0%BA%D0%92%D1%82_d83d8629_k5Pm6a8.jpg",
+          "alt": "Гібридний інвертор Deye 20 кВт SUN-20K-SG05LP3-EU-SM2 3-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_20_%D0%BA%D0%92%D1%82_8a344458_09V6UKL.jpg",
+          "alt": "Гібридний інвертор Deye 20 кВт SUN-20K-SG05LP3-EU-SM2 3-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_20_%D0%BA%D0%92%D1%82_5bc0dcd2_nrotpRx.jpg",
+          "alt": "Гібридний інвертор Deye 20 кВт SUN-20K-SG05LP3-EU-SM2 3-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_20_%D0%BA%D0%92%D1%82_99493853_U5fwWAp.jpg",
+          "alt": "Гібридний інвертор Deye 20 кВт SUN-20K-SG05LP3-EU-SM2 3-фазний - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 825,
+      "name": "Гібридний інвертор Deye 18 кВт SUN-18K-SG05LP3-EU-SM2 3-фазний",
+      "description": "Гібридний інвертор Deye 18 кВт SUN-18K-SG05LP3-EU-SM2 3-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 112990.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:56.077492+00:00",
+      "updated_at": "2025-07-27T09:45:31.493061+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_18_%D0%BA%D0%92%D1%82_d83d8629_sVmd2Qn.jpg",
+          "alt": "Гібридний інвертор Deye 18 кВт SUN-18K-SG05LP3-EU-SM2 3-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_18_%D0%BA%D0%92%D1%82_8c17b85e_FHx8kE5.jpg",
+          "alt": "Гібридний інвертор Deye 18 кВт SUN-18K-SG05LP3-EU-SM2 3-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_18_%D0%BA%D0%92%D1%82_8a344458_YNYsiWJ.jpg",
+          "alt": "Гібридний інвертор Deye 18 кВт SUN-18K-SG05LP3-EU-SM2 3-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_18_%D0%BA%D0%92%D1%82_5bc0dcd2_B8eowPL.jpg",
+          "alt": "Гібридний інвертор Deye 18 кВт SUN-18K-SG05LP3-EU-SM2 3-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_18_%D0%BA%D0%92%D1%82_99493853_mST4tQ1.jpg",
+          "alt": "Гібридний інвертор Deye 18 кВт SUN-18K-SG05LP3-EU-SM2 3-фазний - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 824,
+      "name": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний",
+      "description": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 73299.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:54.980603+00:00",
+      "updated_at": "2025-07-27T09:45:31.494751+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_6703fda1_vzr14M8.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_e839c683_9pKqmwt.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_d32e22d7_unTVvoL.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_87656a5f_Lv7WxET.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_8e0a7e2a_ZSlmSYJ.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_99493853_kmzlLpC.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний - зображення 6",
+          "is_main": false,
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": 823,
+      "name": "Гібридний інвертор Deye 12 кВт SUN-12K-SG02LP1-EU-AM3 1-фазний",
+      "description": "Гібридний інвертор Deye 12 кВт SUN-12K-SG02LP1-EU-AM3 1-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 76490.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:54.006982+00:00",
+      "updated_at": "2025-07-27T09:45:31.496395+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_07db217f_rGfYyoj.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG02LP1-EU-AM3 1-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_931ba1c3_MvpH5IJ.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG02LP1-EU-AM3 1-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_efb4979c_2WA7q22.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG02LP1-EU-AM3 1-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_f0f80d47_ptU14hC.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG02LP1-EU-AM3 1-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_99493853_iLySil9.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG02LP1-EU-AM3 1-фазний - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 822,
+      "name": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний",
+      "description": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 79900.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:52.858281+00:00",
+      "updated_at": "2025-07-27T09:45:31.497957+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_10_%D0%BA%D0%92%D1%82_a1a3ccb6_bJ0irOz.jpg",
+          "alt": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_10_%D0%BA%D0%92%D1%82_2d8c644d_cUc2WOK.jpg",
+          "alt": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_10_%D0%BA%D0%92%D1%82_8e502565_GWfME2g.jpg",
+          "alt": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_10_%D0%BA%D0%92%D1%82_f22d824e_wZCjDYi.jpg",
+          "alt": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_10_%D0%BA%D0%92%D1%82_676dc657_6mDRoES.jpg",
+          "alt": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_10_%D0%BA%D0%92%D1%82_99493853_fV7Bklg.jpg",
+          "alt": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний - зображення 6",
+          "is_main": false,
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": 821,
+      "name": "Гібридний інвертор Deye 8 кВт SUN-8K-SG01LP1-EU 1-фазний",
+      "description": "Гібридний інвертор Deye 8 кВт SUN-8K-SG01LP1-EU 1-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 51890.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:51.870693+00:00",
+      "updated_at": "2025-07-27T09:45:31.500056+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__5b268291_fsdaAgg.jpg",
+          "alt": "Гібридний інвертор Deye 8 кВт SUN-8K-SG01LP1-EU 1-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__8dd776fa_NiMJuoe.jpg",
+          "alt": "Гібридний інвертор Deye 8 кВт SUN-8K-SG01LP1-EU 1-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__c5e6b5b0_xoJmwps.jpg",
+          "alt": "Гібридний інвертор Deye 8 кВт SUN-8K-SG01LP1-EU 1-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__96c39587_Ff1ayPf.jpg",
+          "alt": "Гібридний інвертор Deye 8 кВт SUN-8K-SG01LP1-EU 1-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__99493853_P4MtxKn.jpg",
+          "alt": "Гібридний інвертор Deye 8 кВт SUN-8K-SG01LP1-EU 1-фазний - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 820,
+      "name": "Гібридний інвертор Deye 6 кВт SUN-6K-SG03LP1-EU 1-фазний",
+      "description": "Гібридний інвертор Deye 6 кВт SUN-6K-SG03LP1-EU 1-фазний - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 37500.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:50.807929+00:00",
+      "updated_at": "2025-07-27T09:47:26.984594+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_6_%D0%BA%D0%92%D1%82__842daa22.jpg",
+          "alt": "Гібридний інвертор Deye 6 кВт SUN-6K-SG03LP1-EU 1-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_6_%D0%BA%D0%92%D1%82__8e1d56f2.jpg",
+          "alt": "Гибридный инвертор Deye 6 кВт SUN-6K-SG03LP1-EU 1-фазный - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_6_%D0%BA%D0%92%D1%82__86705b61.jpg",
+          "alt": "Гибридный инвертор Deye 6 кВт SUN-6K-SG03LP1-EU 1-фазный - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_6_%D0%BA%D0%92%D1%82__db3af1e9.jpg",
+          "alt": "Гибридный инвертор Deye 6 кВт SUN-6K-SG03LP1-EU 1-фазный - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_6_%D0%BA%D0%92%D1%82__99493853.jpg",
+          "alt": "Гибридный инвертор Deye 6 кВт SUN-6K-SG03LP1-EU 1-фазный - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 819,
+      "name": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А)",
+      "description": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А) - надійна літій-залізо-фосфатна (LiFePO4) батарея від TopSun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 87000.0,
+      "model": "TopSun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:49.891118+00:00",
+      "updated_at": "2025-07-27T09:45:31.503615+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 8,
+        "name": "TopSun",
+        "slug": "topsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_LVTOPSUN__3a8eaa3d_GcKtBa7.jpg",
+          "alt": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А)"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_LVTOPSUN__1f145745_791TnC9.jpg",
+          "alt": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А) - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_LVTOPSUN__b8043114_CYzYpmZ.jpg",
+          "alt": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А) - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_LVTOPSUN__b26b3936_03FZXSS.jpg",
+          "alt": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А) - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 818,
+      "name": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт",
+      "description": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - сучасний гібридний інвертор від Must, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 11000.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:48.404492+00:00",
+      "updated_at": "2025-07-27T09:45:31.505548+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_fcf4730c_C9L57L1.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_fdbd125f_tTbzqVH.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_dd00a957_5rwUR6i.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_220b1d98_XXSEuua.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_0bb5e471_b8rCxus.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_47d49c4d_GzspROc.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 6",
+          "is_main": false,
+          "order": 5
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_749f4602_Fi10T8y.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 7",
+          "is_main": false,
+          "order": 6
+        }
+      ]
+    },
+    {
+      "id": 817,
+      "name": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt)",
+      "description": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - готове рішення для резервного живлення від Must.\n\nКомплект включає:\n• Гібридний інвертор високої якості\n• Літій-залізо-фосфатну батарею\n• Необхідні кабелі та з'єднання\n• Систему моніторингу та управління\n\nПереваги готового рішення:\n• Всі компоненти протестовані разом\n• Простий монтаж та налаштування\n• Технічна підтримка та гарантія\n• Оптимальне співвідношення ціна/якість\n\nЗабезпечує надійне резервне живлення для дому чи офісу.",
+      "price": 74900.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:46.853860+00:00",
+      "updated_at": "2025-07-27T11:04:49.130751+00:00",
+      "category": {
+        "id": 52,
+        "name": "Комплекти резервного живлення",
+        "slug": ""
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_7c1a1e05.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt)"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_c5d80d10.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_3a0766ca.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_14f086d3.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_81dc1dd5.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_b741897c.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 6",
+          "is_main": false,
+          "order": 5
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_2ecdb5c2.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 7",
+          "is_main": false,
+          "order": 6
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_7056a1be.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 8",
+          "is_main": false,
+          "order": 7
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_c4b42232.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 9",
+          "is_main": false,
+          "order": 8
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_2fba78a8.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 10",
+          "is_main": false,
+          "order": 9
+        }
+      ]
+    },
+    {
+      "id": 816,
+      "name": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A",
+      "description": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A - надійна літій-залізо-фосфатна (LiFePO4) батарея від Must.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 62999.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:45.919671+00:00",
+      "updated_at": "2025-07-27T09:45:31.509106+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_9b3b9f9f_tcWTC7N.jpg",
+          "alt": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_3a65595b_g2loCQw.jpg",
+          "alt": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_5a05fb5c_yAcLEFu.jpg",
+          "alt": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_6fd35b62_TwR2MBA.jpg",
+          "alt": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 815,
+      "name": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100",
+      "description": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - готове рішення для резервного живлення від Must.\n\nКомплект включає:\n• Гібридний інвертор високої якості\n• Літій-залізо-фосфатну батарею\n• Необхідні кабелі та з'єднання\n• Систему моніторингу та управління\n\nПереваги готового рішення:\n• Всі компоненти протестовані разом\n• Простий монтаж та налаштування\n• Технічна підтримка та гарантія\n• Оптимальне співвідношення ціна/якість\n\nЗабезпечує надійне резервне живлення для дому чи офісу.",
+      "price": 40999.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:44.322218+00:00",
+      "updated_at": "2025-07-27T11:04:49.131338+00:00",
+      "category": {
+        "id": 52,
+        "name": "Комплекти резервного живлення",
+        "slug": ""
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___659cdb22.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___a1061e0c.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___659b62de.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___97e85669.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___e14902ee.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___f6e6eeef.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 6",
+          "is_main": false,
+          "order": 5
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___db7f0bc2.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 7",
+          "is_main": false,
+          "order": 6
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___51c28b36.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 8",
+          "is_main": false,
+          "order": 7
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___2e3f2054.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 9",
+          "is_main": false,
+          "order": 8
+        }
+      ]
+    },
+    {
+      "id": 814,
+      "name": "Акумуляторна Батарея MUST LiFePO4 LP16-48100 5 kWt 48V 100A",
+      "description": "Акумуляторна Батарея MUST LiFePO4 LP16-48100 5 kWt 48V 100A - надійна літій-залізо-фосфатна (LiFePO4) батарея від Must.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 29399.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:43.530091+00:00",
+      "updated_at": "2025-07-27T09:45:31.512904+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%91%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_244c278f_rnptbIe.jpg",
+          "alt": "Акумуляторна Батарея MUST LiFePO4 LP16-48100 5 kWt 48V 100A"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%91%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_74f34999_WT8dcnW.jpg",
+          "alt": "Акумуляторна Батарея MUST LiFePO4 LP16-48100 5 kWt 48V 100A - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%91%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_53271174_9ANyrLY.jpg",
+          "alt": "Акумуляторна Батарея MUST LiFePO4 LP16-48100 5 kWt 48V 100A - зображення 3",
+          "is_main": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": 813,
+      "name": "Гібридний інвертор MUST PV19-6048 EXP 6квт",
+      "description": "Гібридний інвертор MUST PV19-6048 EXP 6квт - сучасний гібридний інвертор від Must, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 14900.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:42.641229+00:00",
+      "updated_at": "2025-07-27T09:45:31.514620+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_MUST_PV19-6_a30bde42_EYHaiGV.jpg",
+          "alt": "Гібридний інвертор MUST PV19-6048 EXP 6квт"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_MUST_PV19-6_3180a07b_i09pNSC.jpg",
+          "alt": "Гібридний інвертор MUST PV19-6048 EXP 6квт - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_MUST_PV19-6_8fe5e0ed_S1tzIkY.jpg",
+          "alt": "Гібридний інвертор MUST PV19-6048 EXP 6квт - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_MUST_PV19-6_d07e6c1d_SlKiZUp.jpg",
+          "alt": "Гібридний інвертор MUST PV19-6048 EXP 6квт - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    }
+  ]
+}

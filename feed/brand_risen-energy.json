@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "export_date": "2025-08-01T12:51:37.764292+00:00",
+    "total_products": 42,
+    "total_categories": 5,
+    "total_brands": 10,
+    "version": "1.0",
+    "source": "GreenSolarTech Catalog",
+    "brand_name": "Risen Energy",
+    "brand_slug": "risen-energy",
+    "products_count": 1
+  },
+  "brand": {
+    "id": 4,
+    "name": "Risen Energy",
+    "slug": "risen-energy",
+    "description": "Бренд Risen Energy",
+    "website": ""
+  },
+  "products": [
+    {
+      "id": 846,
+      "name": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG",
+      "description": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG - високоефективна сонячна панель від Risen Energy. \nПотужність: високої потужності. Ефективність: 22%.\n\nТехнічні характеристики:\n• Монокристалічні кремнієві елементи\n• Висока ефективність перетворення сонячного світла\n• Стійкість до механічних навантажень\n• Захист від несприятливих погодних умов\n• Мінімальна деградація потужності\n• Сертифікована якість та надійність\n\nГарантія: 25 років на потужність. Підходить для житлових та комерційних проєктів.\nЗабезпечує стабільну генерацію електроенергії протягом десятиліть.",
+      "price": 4440.0,
+      "model": "Risen Energy Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:15.681164+00:00",
+      "updated_at": "2025-07-27T09:45:31.453735+00:00",
+      "category": {
+        "id": 50,
+        "name": "Сонячні панелі",
+        "slug": "-5"
+      },
+      "brand": {
+        "id": 4,
+        "name": "Risen Energy",
+        "slug": "risen-energy"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_700_%D0%92%D1%82_Risen_En_6af25628_9Q0IVJG.jpg",
+          "alt": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_700_%D0%92%D1%82_Risen_En_f200e427_4IY2NAa.jpg",
+          "alt": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_700_%D0%92%D1%82_Risen_En_0da38586_Gt9zA8l.jpg",
+          "alt": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%A1%D0%BE%D0%BD%D1%8F%D1%87%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_700_%D0%92%D1%82_Risen_En_15498f26_AjBLeTA.jpg",
+          "alt": "Сонячна панель 700 Вт Risen Energy RSM132-8-700BHDG - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    }
+  ]
+}

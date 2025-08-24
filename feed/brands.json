@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "export_date": "2025-08-01T12:51:37.764292+00:00",
+    "total_products": 42,
+    "total_categories": 5,
+    "total_brands": 10,
+    "version": "1.0",
+    "source": "GreenSolarTech Catalog"
+  },
+  "brands": [
+    {
+      "id": 6,
+      "name": "Deye",
+      "slug": "deye",
+      "description": "Бренд Deye",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-19T06:37:26.401264+00:00"
+    },
+    {
+      "id": 5,
+      "name": "LONGi Solar",
+      "slug": "longi-solar",
+      "description": "Бренд LONGi Solar",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-19T06:37:26.391330+00:00"
+    },
+    {
+      "id": 7,
+      "name": "Lvtopsun",
+      "slug": "lvtopsun",
+      "description": "Бренд Lvtopsun",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-19T06:37:26.405415+00:00"
+    },
+    {
+      "id": 9,
+      "name": "Must",
+      "slug": "must",
+      "description": "Бренд Must",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-19T06:37:26.441869+00:00"
+    },
+    {
+      "id": 4,
+      "name": "Risen Energy",
+      "slug": "risen-energy",
+      "description": "Бренд Risen Energy",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-19T06:37:26.387701+00:00"
+    },
+    {
+      "id": 8,
+      "name": "TopSun",
+      "slug": "topsun",
+      "description": "Бренд TopSun",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-19T06:37:26.438657+00:00"
+    },
+    {
+      "id": 12,
+      "name": "Без бренду",
+      "slug": "-2",
+      "description": "",
+      "website": "",
+      "is_active": false,
+      "created_at": "2025-07-19T10:19:28.443542+00:00"
+    },
+    {
+      "id": 11,
+      "name": "Загальний",
+      "slug": "-1",
+      "description": "Загальний бренд",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-19T07:27:29.151267+00:00"
+    },
+    {
+      "id": 13,
+      "name": "Невідомий",
+      "slug": "-3",
+      "description": "Продукція бренду Невідомий",
+      "website": "",
+      "is_active": true,
+      "created_at": "2025-07-27T09:42:16.648111+00:00"
+    },
+    {
+      "id": 10,
+      "name": "Послуги",
+      "slug": "",
+      "description": "Послуги компанії",
+      "website": "",
+      "is_active": false,
+      "created_at": "2025-07-19T06:46:34.964233+00:00"
+    }
+  ]
+}

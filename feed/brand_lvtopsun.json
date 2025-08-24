@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "export_date": "2025-08-01T12:51:37.764292+00:00",
+    "total_products": 42,
+    "total_categories": 5,
+    "total_brands": 10,
+    "version": "1.0",
+    "source": "GreenSolarTech Catalog",
+    "brand_name": "Lvtopsun",
+    "brand_slug": "lvtopsun",
+    "products_count": 5
+  },
+  "brand": {
+    "id": 7,
+    "name": "Lvtopsun",
+    "slug": "lvtopsun",
+    "description": "Бренд Lvtopsun",
+    "website": ""
+  },
+  "products": [
+    {
+      "id": 839,
+      "name": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А",
+      "description": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А - надійна літій-залізо-фосфатна (LiFePO4) батарея від Lvtopsun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 22000.0,
+      "model": "Lvtopsun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:10.174713+00:00",
+      "updated_at": "2025-07-27T09:45:31.468271+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 7,
+        "name": "Lvtopsun",
+        "slug": "lvtopsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__12398170_5Oip9HS.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__78b914eb_mGnnTdY.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__8813e4cb_UqW5IWM.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__d43adcd7_qzJ7w3H.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 838,
+      "name": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V",
+      "description": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - надійна літій-залізо-фосфатна (LiFePO4) батарея від Lvtopsun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 95500.0,
+      "model": "Lvtopsun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:09.069841+00:00",
+      "updated_at": "2025-07-27T09:45:31.470012+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 7,
+        "name": "Lvtopsun",
+        "slug": "lvtopsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__65280f8e_BqD72JN.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__0fb61f13_2c92yZc.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__f25ebe48_AeZvW1K.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__d1a014c5_H3id5Ca.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__f97ec114_Lo4FuBz.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__dca150ca_HGPGn9K.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - зображення 6",
+          "is_main": false,
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": 837,
+      "name": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V",
+      "description": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - надійна літій-залізо-фосфатна (LiFePO4) батарея від Lvtopsun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 63000.0,
+      "model": "Lvtopsun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:07.908117+00:00",
+      "updated_at": "2025-07-27T09:45:31.472107+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 7,
+        "name": "Lvtopsun",
+        "slug": "lvtopsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__ea34488c_jRGYWvQ.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__6c5c9706_obGBwPi.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__9b3eedc7_48B7Fk9.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__2155f07a_wPxENdW.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__9b571294_skgbAJN.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__c14b10df_TG6JTzE.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 6",
+          "is_main": false,
+          "order": 5
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__330b534a_hyLdz8y.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 7",
+          "is_main": false,
+          "order": 6
+        }
+      ]
+    },
+    {
+      "id": 836,
+      "name": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V",
+      "description": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V - надійна літій-залізо-фосфатна (LiFePO4) батарея від Lvtopsun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 70000.0,
+      "model": "Lvtopsun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:06.973810+00:00",
+      "updated_at": "2025-07-27T09:45:31.474386+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 7,
+        "name": "Lvtopsun",
+        "slug": "lvtopsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__68e92027_WwWM6Bk.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__71e68cac_SbSPaWH.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__c17f5d5e_Txv1UvU.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__cf083e52_HHfQLTi.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 835,
+      "name": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V",
+      "description": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - надійна літій-залізо-фосфатна (LiFePO4) батарея від Lvtopsun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 84000.0,
+      "model": "Lvtopsun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:05.884552+00:00",
+      "updated_at": "2025-07-27T09:45:31.476432+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 7,
+        "name": "Lvtopsun",
+        "slug": "lvtopsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__542bc823_ZIwXR3U.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__30f2380b_cl4fTTY.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__71e68cac_LEbFmUe.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__4efd044a_UBAYf5K.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__e271a44d_CHGdXPh.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__a5fd4171_qOxuglK.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - зображення 6",
+          "is_main": false,
+          "order": 5
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,537 @@
+{
+  "meta": {
+    "export_date": "2025-08-01T12:51:37.764292+00:00",
+    "total_products": 42,
+    "total_categories": 5,
+    "total_brands": 10,
+    "version": "1.0",
+    "source": "GreenSolarTech Catalog",
+    "brand_name": "Must",
+    "brand_slug": "must",
+    "products_count": 8
+  },
+  "brand": {
+    "id": 9,
+    "name": "Must",
+    "slug": "must",
+    "description": "Бренд Must",
+    "website": ""
+  },
+  "products": [
+    {
+      "id": 849,
+      "name": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт",
+      "description": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт - сучасний гібридний інвертор від Must, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 14900.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:18.163105+00:00",
+      "updated_at": "2025-07-27T09:45:31.446967+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%86%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-5248_PRO__M_5fc78ead_z0ifT77.jpg",
+          "alt": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%86%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-5248_PRO__M_103dc0b8_ZxJ7Lih.jpg",
+          "alt": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%86%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-5248_PRO__M_f53a1d5f_2qej3X5.jpg",
+          "alt": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%86%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-5248_PRO__M_b7840b2b_rUoyJob.jpg",
+          "alt": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 848,
+      "name": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А)",
+      "description": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А) - готове рішення для резервного живлення від Must.\n\nКомплект включає:\n• Гібридний інвертор високої якості\n• Літій-залізо-фосфатну батарею\n• Необхідні кабелі та з'єднання\n• Систему моніторингу та управління\n\nПереваги готового рішення:\n• Всі компоненти протестовані разом\n• Простий монтаж та налаштування\n• Технічна підтримка та гарантія\n• Оптимальне співвідношення ціна/якість\n\nЗабезпечує надійне резервне живлення для дому чи офісу.",
+      "price": 30500.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:17.275204+00:00",
+      "updated_at": "2025-07-27T11:04:49.129891+00:00",
+      "category": {
+        "id": 52,
+        "name": "Комплекти резервного живлення",
+        "slug": ""
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_2_a12b29f3_RKOVtKC.jpg",
+          "alt": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А)"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_2_bde36ecc_mssnJS2.jpg",
+          "alt": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А) - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_2_781dcc72_jR7dGDl.jpg",
+          "alt": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А) - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_2_8e36f51c_6T7MIaw.jpg",
+          "alt": "Комплект резервного живлення 2.51 кВт (must pv18-3224 vpmII +LVTS 256100 ( 24 В , 100А) - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 818,
+      "name": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт",
+      "description": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - сучасний гібридний інвертор від Must, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 11000.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:48.404492+00:00",
+      "updated_at": "2025-07-27T09:45:31.505548+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_fcf4730c_C9L57L1.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_fdbd125f_tTbzqVH.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_dd00a957_5rwUR6i.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_220b1d98_XXSEuua.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_0bb5e471_b8rCxus.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_47d49c4d_GzspROc.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 6",
+          "is_main": false,
+          "order": 5
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_749f4602_Fi10T8y.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 7",
+          "is_main": false,
+          "order": 6
+        }
+      ]
+    },
+    {
+      "id": 817,
+      "name": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt)",
+      "description": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - готове рішення для резервного живлення від Must.\n\nКомплект включає:\n• Гібридний інвертор високої якості\n• Літій-залізо-фосфатну батарею\n• Необхідні кабелі та з'єднання\n• Систему моніторингу та управління\n\nПереваги готового рішення:\n• Всі компоненти протестовані разом\n• Простий монтаж та налаштування\n• Технічна підтримка та гарантія\n• Оптимальне співвідношення ціна/якість\n\nЗабезпечує надійне резервне живлення для дому чи офісу.",
+      "price": 74900.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:46.853860+00:00",
+      "updated_at": "2025-07-27T11:04:49.130751+00:00",
+      "category": {
+        "id": 52,
+        "name": "Комплекти резервного живлення",
+        "slug": ""
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_7c1a1e05.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt)"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_c5d80d10.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_3a0766ca.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_14f086d3.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_81dc1dd5.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_b741897c.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 6",
+          "is_main": false,
+          "order": 5
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_2ecdb5c2.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 7",
+          "is_main": false,
+          "order": 6
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_7056a1be.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 8",
+          "is_main": false,
+          "order": 7
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_c4b42232.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 9",
+          "is_main": false,
+          "order": 8
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%96%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_M_2fba78a8.jpg",
+          "alt": "Комплект резервного Живлення Must PV19-6048 EXP(6kWT)+Must LP16-48200 (10kWt) - зображення 10",
+          "is_main": false,
+          "order": 9
+        }
+      ]
+    },
+    {
+      "id": 816,
+      "name": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A",
+      "description": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A - надійна літій-залізо-фосфатна (LiFePO4) батарея від Must.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 62999.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:45.919671+00:00",
+      "updated_at": "2025-07-27T09:45:31.509106+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_9b3b9f9f_tcWTC7N.jpg",
+          "alt": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_3a65595b_g2loCQw.jpg",
+          "alt": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_5a05fb5c_yAcLEFu.jpg",
+          "alt": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_6fd35b62_TwR2MBA.jpg",
+          "alt": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 815,
+      "name": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100",
+      "description": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - готове рішення для резервного живлення від Must.\n\nКомплект включає:\n• Гібридний інвертор високої якості\n• Літій-залізо-фосфатну батарею\n• Необхідні кабелі та з'єднання\n• Систему моніторингу та управління\n\nПереваги готового рішення:\n• Всі компоненти протестовані разом\n• Простий монтаж та налаштування\n• Технічна підтримка та гарантія\n• Оптимальне співвідношення ціна/якість\n\nЗабезпечує надійне резервне живлення для дому чи офісу.",
+      "price": 40999.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:44.322218+00:00",
+      "updated_at": "2025-07-27T11:04:49.131338+00:00",
+      "category": {
+        "id": 52,
+        "name": "Комплекти резервного живлення",
+        "slug": ""
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___659cdb22.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___a1061e0c.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___659b62de.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___97e85669.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___e14902ee.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___f6e6eeef.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 6",
+          "is_main": false,
+          "order": 5
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___db7f0bc2.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 7",
+          "is_main": false,
+          "order": 6
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___51c28b36.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 8",
+          "is_main": false,
+          "order": 7
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B6%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F___2e3f2054.jpg",
+          "alt": "Комплект резервного живлення  Must PV19-6048 EXP(6kWT)+Must LP16-48100 - зображення 9",
+          "is_main": false,
+          "order": 8
+        }
+      ]
+    },
+    {
+      "id": 814,
+      "name": "Акумуляторна Батарея MUST LiFePO4 LP16-48100 5 kWt 48V 100A",
+      "description": "Акумуляторна Батарея MUST LiFePO4 LP16-48100 5 kWt 48V 100A - надійна літій-залізо-фосфатна (LiFePO4) батарея від Must.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 29399.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:43.530091+00:00",
+      "updated_at": "2025-07-27T09:45:31.512904+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%91%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_244c278f_rnptbIe.jpg",
+          "alt": "Акумуляторна Батарея MUST LiFePO4 LP16-48100 5 kWt 48V 100A"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%91%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_74f34999_WT8dcnW.jpg",
+          "alt": "Акумуляторна Батарея MUST LiFePO4 LP16-48100 5 kWt 48V 100A - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%91%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_53271174_9ANyrLY.jpg",
+          "alt": "Акумуляторна Батарея MUST LiFePO4 LP16-48100 5 kWt 48V 100A - зображення 3",
+          "is_main": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": 813,
+      "name": "Гібридний інвертор MUST PV19-6048 EXP 6квт",
+      "description": "Гібридний інвертор MUST PV19-6048 EXP 6квт - сучасний гібридний інвертор від Must, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 14900.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:42.641229+00:00",
+      "updated_at": "2025-07-27T09:45:31.514620+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_MUST_PV19-6_a30bde42_EYHaiGV.jpg",
+          "alt": "Гібридний інвертор MUST PV19-6048 EXP 6квт"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_MUST_PV19-6_3180a07b_i09pNSC.jpg",
+          "alt": "Гібридний інвертор MUST PV19-6048 EXP 6квт - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_MUST_PV19-6_8fe5e0ed_S1tzIkY.jpg",
+          "alt": "Гібридний інвертор MUST PV19-6048 EXP 6квт - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_MUST_PV19-6_d07e6c1d_SlKiZUp.jpg",
+          "alt": "Гібридний інвертор MUST PV19-6048 EXP 6квт - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    }
+  ]
+}

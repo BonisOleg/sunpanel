@@ -1,0 +1,837 @@
+{
+  "meta": {
+    "export_date": "2025-08-01T12:51:37.764292+00:00",
+    "total_products": 42,
+    "total_categories": 5,
+    "total_brands": 10,
+    "version": "1.0",
+    "source": "GreenSolarTech Catalog",
+    "category_name": "Акумуляторні батареї",
+    "category_slug": "-3",
+    "products_count": 15
+  },
+  "category": {
+    "id": 48,
+    "name": "Акумуляторні батареї",
+    "slug": "-3",
+    "description": "Категорія Акумуляторні батареї"
+  },
+  "products": [
+    {
+      "id": 840,
+      "name": "Акумуляторна батарея Deye SE-G5.1Pro-B",
+      "description": "Акумуляторна батарея Deye SE-G5.1Pro-B - надійна літій-залізо-фосфатна (LiFePO4) батарея від Deye.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 36990.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:11.063152+00:00",
+      "updated_at": "2025-07-27T09:45:31.466287+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_SE-G_11c23dfe_zFINXHL.jpg",
+          "alt": "Акумуляторна батарея Deye SE-G5.1Pro-B"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_SE-G_27a1de05_w5RLsNK.jpg",
+          "alt": "Акумуляторна батарея Deye SE-G5.1Pro-B - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_SE-G_06bbed41_swneGaE.jpg",
+          "alt": "Акумуляторна батарея Deye SE-G5.1Pro-B - зображення 3",
+          "is_main": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": 839,
+      "name": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А",
+      "description": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А - надійна літій-залізо-фосфатна (LiFePO4) батарея від Lvtopsun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 22000.0,
+      "model": "Lvtopsun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:10.174713+00:00",
+      "updated_at": "2025-07-27T09:45:31.468271+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 7,
+        "name": "Lvtopsun",
+        "slug": "lvtopsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__12398170_5Oip9HS.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__78b914eb_mGnnTdY.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__8813e4cb_UqW5IWM.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__d43adcd7_qzJ7w3H.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-256100 2,56 квт*год 25,6 В 100А - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 838,
+      "name": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V",
+      "description": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - надійна літій-залізо-фосфатна (LiFePO4) батарея від Lvtopsun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 95500.0,
+      "model": "Lvtopsun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:09.069841+00:00",
+      "updated_at": "2025-07-27T09:45:31.470012+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 7,
+        "name": "Lvtopsun",
+        "slug": "lvtopsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__65280f8e_BqD72JN.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__0fb61f13_2c92yZc.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__f25ebe48_AeZvW1K.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__d1a014c5_H3id5Ca.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__f97ec114_Lo4FuBz.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__dca150ca_HGPGn9K.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-48100 220V и 110V - зображення 6",
+          "is_main": false,
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": 837,
+      "name": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V",
+      "description": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - надійна літій-залізо-фосфатна (LiFePO4) батарея від Lvtopsun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 63000.0,
+      "model": "Lvtopsun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:07.908117+00:00",
+      "updated_at": "2025-07-27T09:45:31.472107+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 7,
+        "name": "Lvtopsun",
+        "slug": "lvtopsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__ea34488c_jRGYWvQ.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__6c5c9706_obGBwPi.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__9b3eedc7_48B7Fk9.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__2155f07a_wPxENdW.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__9b571294_skgbAJN.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__c14b10df_TG6JTzE.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 6",
+          "is_main": false,
+          "order": 5
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__330b534a_hyLdz8y.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512200 220V и 110V - зображення 7",
+          "is_main": false,
+          "order": 6
+        }
+      ]
+    },
+    {
+      "id": 836,
+      "name": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V",
+      "description": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V - надійна літій-залізо-фосфатна (LiFePO4) батарея від Lvtopsun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 70000.0,
+      "model": "Lvtopsun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:06.973810+00:00",
+      "updated_at": "2025-07-27T09:45:31.474386+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 7,
+        "name": "Lvtopsun",
+        "slug": "lvtopsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__68e92027_WwWM6Bk.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__71e68cac_SbSPaWH.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__c17f5d5e_Txv1UvU.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__cf083e52_HHfQLTi.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512228 220V и 110V - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 835,
+      "name": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V",
+      "description": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - надійна літій-залізо-фосфатна (LiFePO4) батарея від Lvtopsun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 84000.0,
+      "model": "Lvtopsun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:05.884552+00:00",
+      "updated_at": "2025-07-27T09:45:31.476432+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 7,
+        "name": "Lvtopsun",
+        "slug": "lvtopsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__542bc823_ZIwXR3U.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__30f2380b_cl4fTTY.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__71e68cac_LEbFmUe.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__4efd044a_UBAYf5K.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__e271a44d_CHGdXPh.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_lvtopsun__a5fd4171_qOxuglK.jpg",
+          "alt": "Акумуляторна батарея lvtopsun Lithium Battery-G2 LVTS-512300 220V и 110V - зображення 6",
+          "is_main": false,
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": 834,
+      "name": "Високовольтна система зберігання енергії на 20 кВт: 4 модулів 100 А Deye BOS-G20-20,48kW 204.8 V 100 Ah",
+      "description": "Високовольтна система зберігання енергії на 20 кВт: 4 модулів 100 А Deye BOS-G20-20,48kW 204.8 V 100 Ah - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 226500.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:05.058484+00:00",
+      "updated_at": "2025-07-27T09:45:31.478099+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_67ee1883_jV26esQ.jpg",
+          "alt": "Високовольтна система зберігання енергії на 20 кВт: 4 модулів 100 А Deye BOS-G20-20,48kW 204.8 V 100 Ah"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_fc46b9a5_nLF5QSz.jpg",
+          "alt": "Високовольтна система зберігання енергії на 20 кВт: 4 модулів 100 А Deye BOS-G20-20,48kW 204.8 V 100 Ah - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_88471259_7fsr4YY.jpg",
+          "alt": "Високовольтна система зберігання енергії на 20 кВт: 4 модулів 100 А Deye BOS-G20-20,48kW 204.8 V 100 Ah - зображення 3",
+          "is_main": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": 833,
+      "name": "Високовольтна система зберігання енергії на 30 кВт: 6 модулів 100 А Deye BOS-G30-30,72kW 307.2V 100Ah",
+      "description": "Високовольтна система зберігання енергії на 30 кВт: 6 модулів 100 А Deye BOS-G30-30,72kW 307.2V 100Ah - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 308500.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:04.228398+00:00",
+      "updated_at": "2025-07-27T09:45:31.479729+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_e6841d1c_elnXYBZ.jpg",
+          "alt": "Високовольтна система зберігання енергії на 30 кВт: 6 модулів 100 А Deye BOS-G30-30,72kW 307.2V 100Ah"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_b5a4463e_jy9q4A8.jpg",
+          "alt": "Високовольтна система зберігання енергії на 30 кВт: 6 модулів 100 А Deye BOS-G30-30,72kW 307.2V 100Ah - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_374c7cc7_CEGerLX.jpg",
+          "alt": "Високовольтна система зберігання енергії на 30 кВт: 6 модулів 100 А Deye BOS-G30-30,72kW 307.2V 100Ah - зображення 3",
+          "is_main": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": 832,
+      "name": "Високовольтна система зберігання енергії на 40 кВт: 8 модулів 100 А Deye BOS-G40-40,96kW 409.6V 100Ah",
+      "description": "Високовольтна система зберігання енергії на 40 кВт: 8 модулів 100 А Deye BOS-G40-40,96kW 409.6V 100Ah - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 390500.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:03.425197+00:00",
+      "updated_at": "2025-07-27T09:45:31.481230+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_8a54392a_rCqkyfD.jpg",
+          "alt": "Високовольтна система зберігання енергії на 40 кВт: 8 модулів 100 А Deye BOS-G40-40,96kW 409.6V 100Ah"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_4bb304cb_CJQXZdf.jpg",
+          "alt": "Високовольтна система зберігання енергії на 40 кВт: 8 модулів 100 А Deye BOS-G40-40,96kW 409.6V 100Ah - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_8a754761_Msu9McJ.jpg",
+          "alt": "Високовольтна система зберігання енергії на 40 кВт: 8 модулів 100 А Deye BOS-G40-40,96kW 409.6V 100Ah - зображення 3",
+          "is_main": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": 831,
+      "name": "Високовольтна система зберігання енергії на 60 кВт: 12 модулів 100 А Deye BOS-G60-61,44kW 614V 100Ah L",
+      "description": "Високовольтна система зберігання енергії на 60 кВт: 12 модулів 100 А Deye BOS-G60-61,44kW 614V 100Ah L - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 554500.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:02.561639+00:00",
+      "updated_at": "2025-07-27T09:45:31.483141+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_2d2f242f_pMLm1CB.jpg",
+          "alt": "Високовольтна система зберігання енергії на 60 кВт: 12 модулів 100 А Deye BOS-G60-61,44kW 614V 100Ah L"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_c5627e60_Li8RHMk.jpg",
+          "alt": "Високовольтна система зберігання енергії на 60 кВт: 12 модулів 100 А Deye BOS-G60-61,44kW 614V 100Ah L - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_96946eb2_LoPp6Eq.jpg",
+          "alt": "Високовольтна система зберігання енергії на 60 кВт: 12 модулів 100 А Deye BOS-G60-61,44kW 614V 100Ah L - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%B1%D0%B5%D1%80%D1%96%D0%B3%D0%B0%D0%BD_414cb110_BOt4lbT.jpg",
+          "alt": "Високовольтна система зберігання енергії на 60 кВт: 12 модулів 100 А Deye BOS-G60-61,44kW 614V 100Ah L - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 830,
+      "name": "Акумуляторна батарея Deye LiFePO4 10,24 кВт рік 51,2B 200A RW-F10.6",
+      "description": "Акумуляторна батарея Deye LiFePO4 10,24 кВт рік 51,2B 200A RW-F10.6 - надійна літій-залізо-фосфатна (LiFePO4) батарея від Deye.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 69900.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:01.571249+00:00",
+      "updated_at": "2025-07-27T09:45:31.484938+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_76b6dfef_BV800eV.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 10,24 кВт рік 51,2B 200A RW-F10.6"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_d77000cb_VDE05lm.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 10,24 кВт рік 51,2B 200A RW-F10.6 - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_cca15363_HPAEy74.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 10,24 кВт рік 51,2B 200A RW-F10.6 - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_e06ec8a1_gbN1z1D.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 10,24 кВт рік 51,2B 200A RW-F10.6 - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 829,
+      "name": "Акумуляторна батарея Deye LiFePO4 5,12 кВт рік високовольтна 100A BOS-GM5.1",
+      "description": "Акумуляторна батарея Deye LiFePO4 5,12 кВт рік високовольтна 100A BOS-GM5.1 - надійна літій-залізо-фосфатна (LiFePO4) батарея від Deye.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 34990.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:00.501989+00:00",
+      "updated_at": "2025-07-27T09:45:31.486551+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_25d0b91f_VGZDpVT.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 5,12 кВт рік високовольтна 100A BOS-GM5.1"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_9520b77c_CedLwyh.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 5,12 кВт рік високовольтна 100A BOS-GM5.1 - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_755b563c_xiVjyi5.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 5,12 кВт рік високовольтна 100A BOS-GM5.1 - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_691ff16e_936WjsF.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 5,12 кВт рік високовольтна 100A BOS-GM5.1 - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_Deye_LiFe_2e84cfa6_aMngSPc.jpg",
+          "alt": "Акумуляторна батарея Deye LiFePO4 5,12 кВт рік високовольтна 100A BOS-GM5.1 - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 819,
+      "name": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А)",
+      "description": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А) - надійна літій-залізо-фосфатна (LiFePO4) батарея від TopSun.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 87000.0,
+      "model": "TopSun Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:49.891118+00:00",
+      "updated_at": "2025-07-27T09:45:31.503615+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 8,
+        "name": "TopSun",
+        "slug": "topsun"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_LVTOPSUN__3a8eaa3d_GcKtBa7.jpg",
+          "alt": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А)"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_LVTOPSUN__1f145745_791TnC9.jpg",
+          "alt": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А) - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_LVTOPSUN__b8043114_CYzYpmZ.jpg",
+          "alt": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А) - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_LVTOPSUN__b26b3936_03FZXSS.jpg",
+          "alt": "Акумуляторна батарея LVTOPSUN LVTS-512200 (10 кВт, 48В, 200А) - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 816,
+      "name": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A",
+      "description": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A - надійна літій-залізо-фосфатна (LiFePO4) батарея від Must.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 62999.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:45.919671+00:00",
+      "updated_at": "2025-07-27T09:45:31.509106+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_9b3b9f9f_tcWTC7N.jpg",
+          "alt": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_3a65595b_g2loCQw.jpg",
+          "alt": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_5a05fb5c_yAcLEFu.jpg",
+          "alt": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_6fd35b62_TwR2MBA.jpg",
+          "alt": "Акумуляторна батарея MUST LiFePO4 LP16-48200 10 kWt 48V 200A - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 814,
+      "name": "Акумуляторна Батарея MUST LiFePO4 LP16-48100 5 kWt 48V 100A",
+      "description": "Акумуляторна Батарея MUST LiFePO4 LP16-48100 5 kWt 48V 100A - надійна літій-залізо-фосфатна (LiFePO4) батарея від Must.\nЄмність: високої ємності.\n\nПереваги технології LiFePO4:\n• Довгий термін служби (понад 6000 циклів)\n• Висока безпека експлуатації\n• Стабільна робота при різних температурах\n• Швидка зарядка та розрядка\n• Екологічність та нетоксичність\n• Мінімальний саморозряд\n\nГарантія: 10 років. Ідеально підходить для систем резервного живлення, \nсонячних електростанцій та автономних енергосистем.",
+      "price": 29399.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:43.530091+00:00",
+      "updated_at": "2025-07-27T09:45:31.512904+00:00",
+      "category": {
+        "id": 48,
+        "name": "Акумуляторні батареї",
+        "slug": "-3"
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%91%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_244c278f_rnptbIe.jpg",
+          "alt": "Акумуляторна Батарея MUST LiFePO4 LP16-48100 5 kWt 48V 100A"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%91%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_74f34999_WT8dcnW.jpg",
+          "alt": "Акумуляторна Батарея MUST LiFePO4 LP16-48100 5 kWt 48V 100A - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%90%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%BD%D0%B0_%D0%91%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%8F_MUST_LiFe_53271174_9ANyrLY.jpg",
+          "alt": "Акумуляторна Батарея MUST LiFePO4 LP16-48100 5 kWt 48V 100A - зображення 3",
+          "is_main": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

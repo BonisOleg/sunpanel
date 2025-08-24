@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "export_date": "2025-08-01T12:51:37.764292+00:00",
+    "total_products": 42,
+    "total_categories": 5,
+    "total_brands": 10,
+    "version": "1.0",
+    "source": "GreenSolarTech Catalog",
+    "brand_name": "Загальний",
+    "brand_slug": "-1",
+    "products_count": 0
+  },
+  "brand": {
+    "id": 11,
+    "name": "Загальний",
+    "slug": "-1",
+    "description": "Загальний бренд",
+    "website": ""
+  },
+  "products": []
+}

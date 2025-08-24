@@ -1,0 +1,953 @@
+{
+  "meta": {
+    "export_date": "2025-08-01T12:51:37.764292+00:00",
+    "total_products": 42,
+    "total_categories": 5,
+    "total_brands": 10,
+    "version": "1.0",
+    "source": "GreenSolarTech Catalog",
+    "category_name": "Інвертори",
+    "category_slug": "-1",
+    "products_count": 16
+  },
+  "category": {
+    "id": 47,
+    "name": "Інвертори",
+    "slug": "-1",
+    "description": "Категорія Інвертори"
+  },
+  "products": [
+    {
+      "id": 854,
+      "name": "Гібридний інвертор Deye 80 кВт SUN-80K-SG02HP3-EU-EM6 3-фазний",
+      "description": "Гібридний інвертор Deye 80 кВт SUN-80K-SG02HP3-EU-EM6 3-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 274000.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:22.543501+00:00",
+      "updated_at": "2025-07-27T09:45:31.436679+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_80_%D0%BA%D0%92%D1%82_7486fa88_WppkqIW.jpg",
+          "alt": "Гібридний інвертор Deye 80 кВт SUN-80K-SG02HP3-EU-EM6 3-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_80_%D0%BA%D0%92%D1%82_a271718d_iVBrpmA.jpg",
+          "alt": "Гібридний інвертор Deye 80 кВт SUN-80K-SG02HP3-EU-EM6 3-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_80_%D0%BA%D0%92%D1%82_a801d6f0_Lm9eqlc.jpg",
+          "alt": "Гібридний інвертор Deye 80 кВт SUN-80K-SG02HP3-EU-EM6 3-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_80_%D0%BA%D0%92%D1%82_e2226039_EEeTHb1.jpg",
+          "alt": "Гібридний інвертор Deye 80 кВт SUN-80K-SG02HP3-EU-EM6 3-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_80_%D0%BA%D0%92%D1%82_53568d66_0v4gtRT.jpg",
+          "alt": "Гібридний інвертор Deye 80 кВт SUN-80K-SG02HP3-EU-EM6 3-фазний - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 853,
+      "name": "Гібридний інвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазний",
+      "description": "Гібридний інвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазний - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 95300.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:21.504085+00:00",
+      "updated_at": "2025-07-27T09:47:26.978724+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_15_%D0%BA%D0%92%D1%82_91d14c48.jpg",
+          "alt": "Гібридний інвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_15_%D0%BA%D0%92%D1%82_96235a81.jpg",
+          "alt": "Гибридный инвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазный - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_15_%D0%BA%D0%92%D1%82_8456e069.jpg",
+          "alt": "Гибридный инвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазный - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_15_%D0%BA%D0%92%D1%82_ceb5b403.jpg",
+          "alt": "Гибридный инвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазный - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_15_%D0%BA%D0%92%D1%82_bae78ea3.jpg",
+          "alt": "Гибридный инвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазный - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_15_%D0%BA%D0%92%D1%82_9f060d41.jpg",
+          "alt": "Гибридный инвертор Deye 15 кВт SUN-15K-SG05LP3-EU-SM2 3-фазный - зображення 6",
+          "is_main": false,
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": 852,
+      "name": "Гібридний інвертор Deye 8 кВт SUN-8K-SG05LP1-EU-SM2 1-фазний",
+      "description": "Гібридний інвертор Deye 8 кВт SUN-8K-SG05LP1-EU-SM2 1-фазний - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 55400.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:20.445766+00:00",
+      "updated_at": "2025-07-27T09:47:26.980594+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__cba124c1.jpg",
+          "alt": "Гібридний інвертор Deye 8 кВт SUN-8K-SG05LP1-EU-SM2 1-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__05b81058.jpg",
+          "alt": "Гибридный инвертор Deye 8 кВт SUN-8K-SG05LP1-EU-SM2 1-фазный - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__1aae2492.jpg",
+          "alt": "Гибридный инвертор Deye 8 кВт SUN-8K-SG05LP1-EU-SM2 1-фазный - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__83845891.jpg",
+          "alt": "Гибридный инвертор Deye 8 кВт SUN-8K-SG05LP1-EU-SM2 1-фазный - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__d39883b9.jpg",
+          "alt": "Гибридный инвертор Deye 8 кВт SUN-8K-SG05LP1-EU-SM2 1-фазный - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 851,
+      "name": "Гібридний інвертор Deye 6 кВт SUN-6K-SG04LP1-EU-SM2 1-фазний",
+      "description": "Гібридний інвертор Deye 6 кВт SUN-6K-SG04LP1-EU-SM2 1-фазний - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 37800.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:19.770481+00:00",
+      "updated_at": "2025-07-27T09:47:26.981634+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_6_%D0%BA%D0%92%D1%82__4370fa56.jpg",
+          "alt": "Гібридний інвертор Deye 6 кВт SUN-6K-SG04LP1-EU-SM2 1-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_6_%D0%BA%D0%92%D1%82__00a9abb2.jpg",
+          "alt": "Гибридный инвертор Deye 6 кВт SUN-6K-SG04LP1-EU-SM2 1-фазный - зображення 2",
+          "is_main": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": 849,
+      "name": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт",
+      "description": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт - сучасний гібридний інвертор від Must, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 14900.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:42:18.163105+00:00",
+      "updated_at": "2025-07-27T09:45:31.446967+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%86%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-5248_PRO__M_5fc78ead_z0ifT77.jpg",
+          "alt": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%86%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-5248_PRO__M_103dc0b8_ZxJ7Lih.jpg",
+          "alt": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%86%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-5248_PRO__M_f53a1d5f_2qej3X5.jpg",
+          "alt": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%86%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-5248_PRO__M_b7840b2b_rUoyJob.jpg",
+          "alt": "Інвертор Must PV18-5248 PRO (MPPT) 5.2 кВт - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 828,
+      "name": "Гібридний інвертор Deye 50 кВт SUN-50K-SG01HP3-EU-BM 3-фазний",
+      "description": "Гібридний інвертор Deye 50 кВт SUN-50K-SG01HP3-EU-BM 3-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 199290.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:58.759108+00:00",
+      "updated_at": "2025-07-27T09:45:31.487986+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_50_%D0%BA%D0%92%D1%82_c04d1c61_ulDEVo6.jpg",
+          "alt": "Гібридний інвертор Deye 50 кВт SUN-50K-SG01HP3-EU-BM 3-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_50_%D0%BA%D0%92%D1%82_99493853_DgipgmZ.jpg",
+          "alt": "Гібридний інвертор Deye 50 кВт SUN-50K-SG01HP3-EU-BM 3-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": 827,
+      "name": "Гібридний інвертор Deye 30 кВт SUN-30K-SG01HP3-EU-BM3 3-фазний",
+      "description": "Гібридний інвертор Deye 30 кВт SUN-30K-SG01HP3-EU-BM3 3-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 143990.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:57.935890+00:00",
+      "updated_at": "2025-07-27T09:45:31.489624+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_30_%D0%BA%D0%92%D1%82_7b248311_BDC53ZU.jpg",
+          "alt": "Гібридний інвертор Deye 30 кВт SUN-30K-SG01HP3-EU-BM3 3-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_30_%D0%BA%D0%92%D1%82_22bb043f_jTLBaQj.jpg",
+          "alt": "Гібридний інвертор Deye 30 кВт SUN-30K-SG01HP3-EU-BM3 3-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_30_%D0%BA%D0%92%D1%82_a838ec78_a7fhGEF.jpg",
+          "alt": "Гібридний інвертор Deye 30 кВт SUN-30K-SG01HP3-EU-BM3 3-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_30_%D0%BA%D0%92%D1%82_99493853_0nvfZSk.jpg",
+          "alt": "Гібридний інвертор Deye 30 кВт SUN-30K-SG01HP3-EU-BM3 3-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": 826,
+      "name": "Гібридний інвертор Deye 20 кВт SUN-20K-SG05LP3-EU-SM2 3-фазний",
+      "description": "Гібридний інвертор Deye 20 кВт SUN-20K-SG05LP3-EU-SM2 3-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 125990.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:56.987331+00:00",
+      "updated_at": "2025-07-27T09:45:31.491459+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_20_%D0%BA%D0%92%D1%82_8c17b85e_RvtsoHx.jpg",
+          "alt": "Гібридний інвертор Deye 20 кВт SUN-20K-SG05LP3-EU-SM2 3-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_20_%D0%BA%D0%92%D1%82_d83d8629_k5Pm6a8.jpg",
+          "alt": "Гібридний інвертор Deye 20 кВт SUN-20K-SG05LP3-EU-SM2 3-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_20_%D0%BA%D0%92%D1%82_8a344458_09V6UKL.jpg",
+          "alt": "Гібридний інвертор Deye 20 кВт SUN-20K-SG05LP3-EU-SM2 3-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_20_%D0%BA%D0%92%D1%82_5bc0dcd2_nrotpRx.jpg",
+          "alt": "Гібридний інвертор Deye 20 кВт SUN-20K-SG05LP3-EU-SM2 3-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_20_%D0%BA%D0%92%D1%82_99493853_U5fwWAp.jpg",
+          "alt": "Гібридний інвертор Deye 20 кВт SUN-20K-SG05LP3-EU-SM2 3-фазний - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 825,
+      "name": "Гібридний інвертор Deye 18 кВт SUN-18K-SG05LP3-EU-SM2 3-фазний",
+      "description": "Гібридний інвертор Deye 18 кВт SUN-18K-SG05LP3-EU-SM2 3-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 112990.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:56.077492+00:00",
+      "updated_at": "2025-07-27T09:45:31.493061+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_18_%D0%BA%D0%92%D1%82_d83d8629_sVmd2Qn.jpg",
+          "alt": "Гібридний інвертор Deye 18 кВт SUN-18K-SG05LP3-EU-SM2 3-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_18_%D0%BA%D0%92%D1%82_8c17b85e_FHx8kE5.jpg",
+          "alt": "Гібридний інвертор Deye 18 кВт SUN-18K-SG05LP3-EU-SM2 3-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_18_%D0%BA%D0%92%D1%82_8a344458_YNYsiWJ.jpg",
+          "alt": "Гібридний інвертор Deye 18 кВт SUN-18K-SG05LP3-EU-SM2 3-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_18_%D0%BA%D0%92%D1%82_5bc0dcd2_B8eowPL.jpg",
+          "alt": "Гібридний інвертор Deye 18 кВт SUN-18K-SG05LP3-EU-SM2 3-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_18_%D0%BA%D0%92%D1%82_99493853_mST4tQ1.jpg",
+          "alt": "Гібридний інвертор Deye 18 кВт SUN-18K-SG05LP3-EU-SM2 3-фазний - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 824,
+      "name": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний",
+      "description": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 73299.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:54.980603+00:00",
+      "updated_at": "2025-07-27T09:45:31.494751+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_6703fda1_vzr14M8.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_e839c683_9pKqmwt.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_d32e22d7_unTVvoL.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_87656a5f_Lv7WxET.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_8e0a7e2a_ZSlmSYJ.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_99493853_kmzlLpC.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG04LP3-EU 3-фазний - зображення 6",
+          "is_main": false,
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": 823,
+      "name": "Гібридний інвертор Deye 12 кВт SUN-12K-SG02LP1-EU-AM3 1-фазний",
+      "description": "Гібридний інвертор Deye 12 кВт SUN-12K-SG02LP1-EU-AM3 1-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 76490.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:54.006982+00:00",
+      "updated_at": "2025-07-27T09:45:31.496395+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_07db217f_rGfYyoj.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG02LP1-EU-AM3 1-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_931ba1c3_MvpH5IJ.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG02LP1-EU-AM3 1-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_efb4979c_2WA7q22.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG02LP1-EU-AM3 1-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_f0f80d47_ptU14hC.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG02LP1-EU-AM3 1-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_12_%D0%BA%D0%92%D1%82_99493853_iLySil9.jpg",
+          "alt": "Гібридний інвертор Deye 12 кВт SUN-12K-SG02LP1-EU-AM3 1-фазний - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 822,
+      "name": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний",
+      "description": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 79900.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:52.858281+00:00",
+      "updated_at": "2025-07-27T09:45:31.497957+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_10_%D0%BA%D0%92%D1%82_a1a3ccb6_bJ0irOz.jpg",
+          "alt": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_10_%D0%BA%D0%92%D1%82_2d8c644d_cUc2WOK.jpg",
+          "alt": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_10_%D0%BA%D0%92%D1%82_8e502565_GWfME2g.jpg",
+          "alt": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_10_%D0%BA%D0%92%D1%82_f22d824e_wZCjDYi.jpg",
+          "alt": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_10_%D0%BA%D0%92%D1%82_676dc657_6mDRoES.jpg",
+          "alt": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_10_%D0%BA%D0%92%D1%82_99493853_fV7Bklg.jpg",
+          "alt": "Гібридний інвертор Deye 10 кВт SUN-10K-SG02LP1-EU-AM3 1-фазний - зображення 6",
+          "is_main": false,
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": 821,
+      "name": "Гібридний інвертор Deye 8 кВт SUN-8K-SG01LP1-EU 1-фазний",
+      "description": "Гібридний інвертор Deye 8 кВт SUN-8K-SG01LP1-EU 1-фазний - сучасний гібридний інвертор від Deye, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 51890.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:51.870693+00:00",
+      "updated_at": "2025-07-27T09:45:31.500056+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__5b268291_fsdaAgg.jpg",
+          "alt": "Гібридний інвертор Deye 8 кВт SUN-8K-SG01LP1-EU 1-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__8dd776fa_NiMJuoe.jpg",
+          "alt": "Гібридний інвертор Deye 8 кВт SUN-8K-SG01LP1-EU 1-фазний - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__c5e6b5b0_xoJmwps.jpg",
+          "alt": "Гібридний інвертор Deye 8 кВт SUN-8K-SG01LP1-EU 1-фазний - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__96c39587_Ff1ayPf.jpg",
+          "alt": "Гібридний інвертор Deye 8 кВт SUN-8K-SG01LP1-EU 1-фазний - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_8_%D0%BA%D0%92%D1%82__99493853_P4MtxKn.jpg",
+          "alt": "Гібридний інвертор Deye 8 кВт SUN-8K-SG01LP1-EU 1-фазний - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 820,
+      "name": "Гібридний інвертор Deye 6 кВт SUN-6K-SG03LP1-EU 1-фазний",
+      "description": "Гібридний інвертор Deye 6 кВт SUN-6K-SG03LP1-EU 1-фазний - якісний продукт від Deye для сонячної енергетики.\n\nОсновні характеристики:\n• Сучасні технології виробництва\n• Висока надійність та довговічність\n• Відповідність міжнародним стандартам\n• Оптимальне співвідношення ціна/якість\n• Професійна технічна підтримка\n\nІдеальний вибір для створення ефективних сонячних енергосистем.\nЗабезпечує стабільну роботу та економію коштів на електроенергії.",
+      "price": 37500.0,
+      "model": "Deye  Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:50.807929+00:00",
+      "updated_at": "2025-07-27T09:47:26.984594+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 6,
+        "name": "Deye",
+        "slug": "deye"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_6_%D0%BA%D0%92%D1%82__842daa22.jpg",
+          "alt": "Гібридний інвертор Deye 6 кВт SUN-6K-SG03LP1-EU 1-фазний"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_6_%D0%BA%D0%92%D1%82__8e1d56f2.jpg",
+          "alt": "Гибридный инвертор Deye 6 кВт SUN-6K-SG03LP1-EU 1-фазный - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_6_%D0%BA%D0%92%D1%82__86705b61.jpg",
+          "alt": "Гибридный инвертор Deye 6 кВт SUN-6K-SG03LP1-EU 1-фазный - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_6_%D0%BA%D0%92%D1%82__db3af1e9.jpg",
+          "alt": "Гибридный инвертор Deye 6 кВт SUN-6K-SG03LP1-EU 1-фазный - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D0%B8%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Deye_6_%D0%BA%D0%92%D1%82__99493853.jpg",
+          "alt": "Гибридный инвертор Deye 6 кВт SUN-6K-SG03LP1-EU 1-фазный - зображення 5",
+          "is_main": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": 818,
+      "name": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт",
+      "description": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - сучасний гібридний інвертор від Must, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 11000.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:48.404492+00:00",
+      "updated_at": "2025-07-27T09:45:31.505548+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_fcf4730c_C9L57L1.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_fdbd125f_tTbzqVH.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_dd00a957_5rwUR6i.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_220b1d98_XXSEuua.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 4",
+          "is_main": false,
+          "order": 3
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_0bb5e471_b8rCxus.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 5",
+          "is_main": false,
+          "order": 4
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_47d49c4d_GzspROc.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 6",
+          "is_main": false,
+          "order": 5
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_Must_PV18-3_749f4602_Fi10T8y.jpg",
+          "alt": "Гібридний інвертор Must PV18-3224 VPM II 3.2 кВт - зображення 7",
+          "is_main": false,
+          "order": 6
+        }
+      ]
+    },
+    {
+      "id": 813,
+      "name": "Гібридний інвертор MUST PV19-6048 EXP 6квт",
+      "description": "Гібридний інвертор MUST PV19-6048 EXP 6квт - сучасний гібридний інвертор від Must, розроблений для ефективного \nперетворення сонячної енергії. Потужність: високої потужності. Ефективність: 98%.\n\nОсновні переваги:\n• Висока ефективність перетворення енергії\n• Надійна робота в будь-яких погодних умовах\n• Можливість роботи з акумуляторними батареями\n• Інтелектуальна система управління\n• Захист від перенапруги та короткого замикання\n• Простий монтаж та налаштування\n\nГарантія: 5 років. Відповідає всім європейським стандартам якості та безпеки.\nІдеальний вибір для приватних та комерційних сонячних електростанцій.",
+      "price": 14900.0,
+      "model": "Must Model",
+      "power": "",
+      "efficiency": "",
+      "warranty": "",
+      "country": "",
+      "in_stock": true,
+      "featured": false,
+      "created_at": "2025-07-27T09:41:42.641229+00:00",
+      "updated_at": "2025-07-27T09:45:31.514620+00:00",
+      "category": {
+        "id": 47,
+        "name": "Інвертори",
+        "slug": "-1"
+      },
+      "brand": {
+        "id": 9,
+        "name": "Must",
+        "slug": "must"
+      },
+      "images": [
+        {
+          "type": "main",
+          "url": "https://greensolartech.com.ua/media/products/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_MUST_PV19-6_a30bde42_EYHaiGV.jpg",
+          "alt": "Гібридний інвертор MUST PV19-6048 EXP 6квт"
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_MUST_PV19-6_3180a07b_i09pNSC.jpg",
+          "alt": "Гібридний інвертор MUST PV19-6048 EXP 6квт - зображення 2",
+          "is_main": false,
+          "order": 1
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_MUST_PV19-6_8fe5e0ed_S1tzIkY.jpg",
+          "alt": "Гібридний інвертор MUST PV19-6048 EXP 6квт - зображення 3",
+          "is_main": false,
+          "order": 2
+        },
+        {
+          "type": "gallery",
+          "url": "https://greensolartech.com.ua/media/products/gallery/%D0%93%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B8%D0%B9_%D1%96%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_MUST_PV19-6_d07e6c1d_SlKiZUp.jpg",
+          "alt": "Гібридний інвертор MUST PV19-6048 EXP 6квт - зображення 4",
+          "is_main": false,
+          "order": 3
+        }
+      ]
+    }
+  ]
+}
